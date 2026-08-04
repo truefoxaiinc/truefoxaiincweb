@@ -106,7 +106,10 @@ export const navGroups = [
       ["Downloads", "/resources"]
     ]
   }
-] as const;
+] satisfies ReadonlyArray<{
+  label: string;
+  items: ReadonlyArray<readonly [string, string]>;
+}>;
 
 export const solutions: Card[] = [
   {
