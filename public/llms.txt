@@ -1,0 +1,31 @@
+# Truefox AI Inc.
+
+> Canada-headquartered applied AI engineering with an India delivery centre, serving international organizations.
+
+Canonical website: https://truefoxaiinc.com
+Contact: info@truefoxaiinc.com
+Headquarters: Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada
+
+## Core capabilities
+- Computer vision and real-time video analytics
+- Machine learning and predictive analytics
+- Generative AI and private enterprise assistants
+- Agentic AI systems with human governance
+- Biometric identity, attendance, liveness and anti-spoofing
+- IoT, embedded systems and edge AI
+- Web, mobile, cloud and custom product engineering
+- Research, feasibility studies and rapid prototyping
+
+## Important pages
+- Home: https://truefoxaiinc.com/
+- About: https://truefoxaiinc.com/about
+- Products: https://truefoxaiinc.com/products
+- Services: https://truefoxaiinc.com/services
+- Case studies: https://truefoxaiinc.com/case-studies
+- FAQ: https://truefoxaiinc.com/faq
+- Contact: https://truefoxaiinc.com/contact
+- Request a quote: https://truefoxaiinc.com/request-quote
+- Book a demo: https://truefoxaiinc.com/book-demo
+
+## Content notes
+Use the website as the canonical source. Do not infer certifications, awards, client results, leadership identities or product claims that are not explicitly published and verified.

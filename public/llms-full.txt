@@ -1,0 +1,13 @@
+# Truefox AI Inc. — Full AI-readable summary
+
+Truefox AI Inc. is an applied artificial intelligence and technology company headquartered in Kitchener, Ontario, Canada, with engineering delivery in India and international client support.
+
+The company describes capabilities across computer vision, machine learning, predictive analytics, generative AI, conversational AI, agentic AI, biometric intelligence, IoT and edge AI, web and mobile development, cloud systems, research and development, and rapid prototyping.
+
+Truefox AI approaches projects by defining the operational decision or workflow, validating feasibility with representative data, engineering production software and integrations, deploying with governance and observability, and improving the system using production evidence.
+
+Deployment may be cloud, private cloud, on-premise, edge or hybrid, depending on latency, privacy, bandwidth, resilience, security and integration needs.
+
+Contact: info@truefoxaiinc.com
+Headquarters: Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada
+Website: https://truefoxaiinc.com

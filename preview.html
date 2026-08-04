@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Truefox AI Cinematic Preview</title>
+    <link rel="stylesheet" href="app/globals.css">
+    <style>
+        .preview-nav {
+            position: absolute !important
+        }
+
+        .preview-only-orbit {
+            position: absolute;
+            right: 4%;
+            top: 18%;
+            width: 45vw;
+            height: 70%;
+            pointer-events: none
+        }
+
+        .preview-only-orbit i {
+            position: absolute;
+            border: 1px solid rgba(255, 114, 0, .32);
+            border-radius: 50%;
+            animation: orbitSpin 20s linear infinite
+        }
+
+        .preview-only-orbit i:nth-child(1) {
+            inset: 2%
+        }
+
+        .preview-only-orbit i:nth-child(2) {
+            inset: 16%;
+            border-style: dashed;
+            animation-direction: reverse
+        }
+
+        .preview-only-orbit i:nth-child(3) {
+            inset: 32%
+        }
+
+        .preview-only-orbit b {
+            position: absolute;
+            inset: 43%;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #ff7200;
+            color: #050505;
+            font: 900 2vw Arial;
+            box-shadow: 0 0 80px rgba(255, 114, 0, .4)
+        }
+
+        @media(max-width:900px) {
+            .preview-only-orbit {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header cinematic-header preview-nav">
+        <div class="header-inner shell"><a class="brand"><img src="public/images/truefox-logo.webp"></a>
+            <nav class="desktop-nav"><a>Home</a><a>Company</a><a>Solutions</a><a>Proof</a><a>Resources</a><a>Contact</a>
+            </nav>
+            <div class="header-actions"><a class="button button-small button-primary">Start a project</a><button
+                    class="menu-button">☰</button></div>
+        </div>
+    </header>
+    <main>
+        <section class="cinematic-hero">
+            <div class="cinematic-media">
+                <picture class="hero-poster"><img src="public/media/video-poster-4k.jpg"></picture>
+                <div class="cinematic-vignette"></div>
+                <div class="cinematic-scan"></div>
+                <div class="cinematic-grid"></div>
+            </div>
+            <div class="preview-only-orbit"><i></i><i></i><i></i><b>TFX</b></div>
+            <div class="hero-stage shell">
+                <div class="hero-topline"><span><i></i> LIVE DELIVERY NETWORK</span><span>KITCHENER / INDIA /
+                        WORLDWIDE</span></div>
+                <div class="hero-copy">
+                    <p class="hero-kicker">CANADA-HEADQUARTERED APPLIED AI ENGINEERING</p>
+                    <h1><span class="hero-line"><i>Intelligence</i></span><span
+                            class="hero-line hero-line-2"><i>engineered</i></span><span
+                            class="hero-line hero-line-3"><i>for reality.</i></span></h1>
+                    <p class="hero-lede">Computer vision, generative AI, agentic automation, biometrics, IoT and custom
+                        software—designed around real workflows, deployed with control and built to improve.</p>
+                    <div class="hero-actions"><a class="button button-primary">Start a project ↗</a><a
+                            class="button button-glass">Explore selected work ↗</a></div>
+                </div>
+                <aside class="hero-console">
+                    <div class="console-head"><span>TFX / SYSTEM MAP</span><b>ONLINE</b></div>
+                    <div class="console-core"><span>APPLIED<br>AI</span><i></i><i></i><i></i></div>
+                    <div class="console-row"><span>01</span>
+                        <p><b>SEE</b>Computer vision & biometrics</p>
+                    </div>
+                    <div class="console-row"><span>02</span>
+                        <p><b>REASON</b>Private assistants & agents</p>
+                    </div>
+                    <div class="console-row"><span>03</span>
+                        <p><b>ACT</b>IoT, automation & products</p>
+                    </div>
+                    <div class="console-foot"><span>DEPLOY</span><b>CLOUD · EDGE · ON-PREM</b></div>
+                </aside>
+                <div class="hero-metrics"><span><b>CA</b>Strategy & client leadership</span><span><b>IN</b>Engineering &
+                        R&D</span><span><b>24H</b>Connected international delivery</span><span><b>01</b>Accountable
+                        end-to-end team</span></div>
+            </div>
+        </section>
+        <section class="signal-rail">
+            <div class="signal-label"><span>CAPABILITY SIGNAL</span><i></i></div>
+            <div class="signal-track-wrap">
+                <div class="signal-track"><span>COMPUTER VISION<i></i></span><span>GENERATIVE
+                        AI<i></i></span><span>AGENTIC SYSTEMS<i></i></span><span>BIOMETRICS<i></i></span><span>EDGE
+                        AI<i></i></span><span>IoT<i></i></span></div>
+            </div>
+        </section>
+        <section class="section manifesto-section">
+            <div class="shell manifesto-grid">
+                <div class="manifesto-index"><span>01 / INTENT</span><i></i></div>
+                <div class="manifesto-copy">
+                    <p class="eyebrow">BEYOND IMAGINATION / GROUNDED IN DELIVERY</p>
+                    <h2>We turn ambitious intelligence into systems people can trust, use and improve.</h2>
+                    <div class="manifesto-bottom">
+                        <p>Truefox AI combines strategy, research, product design, model engineering, software, cloud,
+                            embedded systems and deployment. The goal is not a disconnected demonstration—it is a useful
+                            operating capability.</p><a class="text-link">Inside Truefox AI ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="kinetic-section">
+            <p>NOT AI FOR SHOW. <strong>AI FOR OPERATIONS.</strong></p>
+            <p><strong>FROM SIGNAL</strong> TO DECISION TO ACTION.</p>
+        </section>
+        <section class="section bento-section">
+            <div class="shell">
+                <div class="cinematic-heading">
+                    <div><span class="eyebrow">02 / CAPABILITIES</span>
+                        <h2>One connected AI engineering stack.</h2>
+                    </div>
+                    <p>Choose a focused capability or assemble an integrated platform around your operation.</p>
+                </div>
+                <div class="capability-bento">
+                    <div class="capability-cell cell-1">
+                        <article class="capability-card">
+                            <div class="capability-visual"><span>01</span><i></i><i></i><i></i></div>
+                            <div class="capability-copy"><span>01 / TFX</span>
+                                <h3>AI Smart Security</h3>
+                                <p>Real-time video analytics for threat detection, safety monitoring and situational
+                                    awareness.</p><b>Explore capability ↗</b>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="capability-cell cell-2">
+                        <article class="capability-card">
+                            <div class="capability-visual"><span>02</span><i></i><i></i><i></i></div>
+                            <div class="capability-copy"><span>02 / TFX</span>
+                                <h3>Biometric Intelligence</h3>
+                                <p>Identity, liveness and anti-spoofing for trusted workflows.</p><b>Explore capability
+                                    ↗</b>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="capability-cell cell-3">
+                        <article class="capability-card">
+                            <div class="capability-visual"><span>03</span><i></i><i></i><i></i></div>
+                            <div class="capability-copy"><span>03 / TFX</span>
+                                <h3>Private AI Assistants</h3>
+                                <p>Grounded enterprise knowledge and connected tools.</p><b>Explore capability ↗</b>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="capability-cell cell-4">
+                        <article class="capability-card">
+                            <div class="capability-visual"><span>04</span><i></i><i></i><i></i></div>
+                            <div class="capability-copy"><span>04 / TFX</span>
+                                <h3>Agentic Automation</h3>
+                                <p>Governed AI agents that complete multi-step workflows.</p><b>Explore capability ↗</b>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section systems-section">
+            <div class="shell systems-layout">
+                <div class="systems-sticky">
+                    <div><span class="eyebrow">03 / APPLIED SYSTEMS</span>
+                        <h2>Built around the environment—not forced into it.</h2>
+                        <p>Every system is shaped by users, infrastructure, data quality, response time and governance.
+                        </p>
+                    </div>
+                </div>
+                <div class="system-stories">
+                    <article class="system-story">
+                        <div class="system-story-head"><span>01</span><b>VISION INTELLIGENCE</b></div>
+                        <h3>Make visual operations observable.</h3>
+                        <p>Live video and sensor context become events, evidence and decisions—with operator controls
+                            built into the workflow.</p>
+                        <div><span>Detection</span><span>Tracking</span><span>Inspection</span></div>
+                    </article>
+                    <article class="system-story">
+                        <div class="system-story-head"><span>02</span><b>AGENTIC EXECUTION</b></div>
+                        <h3>Automate work without losing control.</h3>
+                        <p>Agents coordinate tools while approvals, permissions and exceptions remain visible.</p>
+                        <div><span>Tools</span><span>Approvals</span><span>Audit</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="global-cinematic">
+            <div class="global-lines"></div>
+            <div class="shell global-stage">
+                <div class="global-copy"><span class="eyebrow">06 / GLOBAL DELIVERY</span>
+                    <h2>Canada-led.<br>India-powered.<br><em>Worldwide ready.</em></h2>
+                    <p>Client leadership in Kitchener connects with engineering delivery in India to support
+                        international discovery, product development and improvement.</p><a
+                        class="button button-primary">Connect with our team ↗</a>
+                </div>
+                <div class="world-interface">
+                    <div class="world-ring ring-1"></div>
+                    <div class="world-ring ring-2"></div>
+                    <div class="world-ring ring-3"></div>
+                    <div class="world-core">TFX<span>GLOBAL<br>DELIVERY</span></div>
+                    <div class="world-node node-canada"><i></i><span><b>KITCHENER</b>CANADA HQ</span></div>
+                    <div class="world-node node-india"><i></i><span><b>INDIA</b>ENGINEERING</span></div>
+                    <div class="world-node node-global"><i></i><span><b>WORLDWIDE</b>ENGAGEMENTS</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="final-cta">
+            <div class="final-cta-media"><img src="public/media/video-poster-4k.jpg"
+                    style="width:100%;height:100%;object-fit:cover"><i></i></div>
+            <div class="shell final-cta-content">
+                <div><span class="eyebrow">YOUR NEXT SYSTEM</span>
+                    <h2>What should intelligence change in your operation?</h2>
+                    <p>Bring the workflow, constraint or idea. We will help define a practical next move.</p>
+                    <div><a class="button button-primary">Request a proposal ↗</a><a class="button button-glass">Book a
+                            consultation ↗</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

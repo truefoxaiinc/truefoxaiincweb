@@ -1,0 +1,10 @@
+/* TEAM */
+Company: Truefox AI Inc.
+Contact: info@truefoxaiinc.com
+Location: Kitchener, Ontario, Canada / Engineering delivery in India
+
+/* SITE */
+Framework: Next.js App Router
+Animation: Motion + Three.js
+Design system: Custom cinematic UI
+Accessibility: Reduced-motion support, keyboard navigation, semantic content
