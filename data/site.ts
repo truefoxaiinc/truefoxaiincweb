@@ -250,6 +250,35 @@ export const pages: Record<string, PageData> = {
       { title: "International", text: "Remote discovery, implementation and support for clients across regions." }
     ]
   },
+  "attention-minder-privacy-policy": {
+    slug: "attention-minder-privacy-policy",
+    navLabel: "Attention Minder Privacy Policy",
+    eyebrow: "LEGAL · UPDATED 25 NOVEMBER 2025",
+    title: "Attention Minder Privacy Policy",
+    description: "Terms and Conditions of Use and Privacy Policy for the Attention Minder platform by Truefox AI Inc.",
+    intro: "These Terms and Conditions of Use and Privacy Policy govern access to and use of the Attention Minder website, mobile application, and related online services provided by Truefox AI Inc. By using the Platform, you agree to this Agreement. If you do not agree, you must discontinue use immediately.",
+    kind: "legal",
+    sections: [
+      { title: "1. Not Medical Advice", text: "The Platform offers AI-powered, real-time camera tools that analyze student behavior, posture, and attention levels. It is a supportive educational and behavioral tool only. Always seek qualified professional advice for health, attention disorder, learning disability, or mental health concerns. Contact a qualified healthcare professional immediately in a medical or psychological emergency.", bullets: ["Nothing on the Platform should be treated as medical advice.", "It does not diagnose ADHD or any other medical condition.", "It does not replace professional evaluation, therapy, treatment, or medical counsel."] },
+      { title: "2. Modification of Terms", text: "Truefox AI may update, modify, or revise this Agreement at any time. Updates become effective when posted, and continued use indicates acceptance of the latest version. Additional guidelines, privacy notices, and policies may apply to specific features or services." },
+      { title: "3. Age Requirements", text: "The Platform is intended for parents, teachers, institutions, and students aged five and above.", bullets: ["Users under 18 must use the Platform under parent or teacher supervision.", "Account creation by minors may require parent or school authorization.", "The Platform is not intended for independent use by children without supervision."] },
+      { title: "4. Acceptable Use Policy", text: "Violations may result in account suspension or legal action. You agree that you will not:", bullets: ["Use the Platform for unlawful, harmful, harassing, threatening, or abusive purposes.", "Interfere with security features or attempt unauthorized access.", "Use automated bots, scrapers, or crawlers to copy or extract data.", "Post or transmit defamatory, obscene, hateful, or illegal content.", "Upload viruses, malware, or harmful components.", "Reverse-engineer, modify, or interfere with AI models, monitoring systems, or network architecture.", "Use the Platform for surveillance, spying, or unethical monitoring."] },
+      { title: "5. Camera-Based Features", text: "The Platform uses the device camera only for live analysis. Analysis occurs in real time and is not stored on servers unless a future feature expressly provides otherwise with user consent.", bullets: ["Analysis may detect attention shifts, eye or face direction, posture, screen engagement, and non-medical behavioral signs of distraction.", "We do not record video, store images, capture screenshots, or save biometric facial data."] },
+      { title: "6. Account Setup and Responsibility", text: "Truefox AI may suspend or terminate accounts for violations of this Agreement or inaccurate information.", bullets: ["Provide accurate and current registration information.", "Maintain the confidentiality of login credentials.", "Do not share accounts with others.", "Inform us immediately of unauthorized access."] },
+      { title: "7. Privacy Policy — Data We Collect", text: "We collect only information needed to provide and improve the Platform.", bullets: ["Information you provide: name, email, grade level or age, optional school or institution details, and profile preferences.", "Real-time sensor information: live camera monitoring that is not saved, engagement analytics, and generated attention scores.", "Automatic data: device type, operating system, crash logs, session duration, and application usage insights.", "No biometric storage: we do not collect or store facial recognition data, biometric identifiers, or recorded footage."] },
+      { title: "8. How We Use Your Information", text: "We use data to provide focus and attention monitoring, improve student engagement, generate teacher or parent reports, and enhance Platform functionality. We never sell or trade your information for advertising purposes." },
+      { title: "9. Data Security", text: "We use encryption, secure servers, and regular audits to protect data. However, no system is perfectly secure. Users are responsible for safeguarding their login credentials." },
+      { title: "10. Children’s Data and Consent", text: "Because the Platform supports students, parents, guardians, or institutions must authorize its use. We collect only the minimum data required and comply with COPPA and other applicable laws." },
+      { title: "11. User-Generated Content", text: "Feedback or suggestions submitted to Truefox AI are granted on a royalty-free and perpetual basis. Users may not submit harmful or illegal content." },
+      { title: "12. Intellectual Property", text: "All content, AI systems, graphics, and code belong exclusively to Truefox AI Inc. Reproduction without permission is prohibited." },
+      { title: "13. Disclaimers", text: "The Platform is provided ‘as is.’ Truefox AI makes no warranties regarding the accuracy of AI analysis, continuous availability, or fitness for medical use." },
+      { title: "14. Limitation of Liability", text: "Truefox AI is not liable for damage arising from misuse, service interruptions, or incorrect AI insights. Your sole remedy is to stop using the Platform." },
+      { title: "15. Third-Party Links", text: "We are not responsible for the content or privacy practices of external websites linked from the Platform." },
+      { title: "16. Termination of Use", text: "We may suspend access for Agreement violations or security threats. You may terminate your account at any time by contacting support." },
+      { title: "17. Governing Law", text: "These Terms are governed by the laws of your jurisdiction. Disputes shall be settled in the applicable courts." },
+      { title: "18. Contact Information", text: "For questions related to these Terms, privacy, or support, contact Truefox AI Inc. at truefoxaiinc@gmail.com or visit https://truefoxaiinc.com/." }
+    ]
+  },
   "privacy-policy": {
     slug: "privacy-policy",
     navLabel: "Privacy Policy",

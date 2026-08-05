@@ -78,13 +78,13 @@ export default function VideoHero() {
       <NeuralField />
 
       <motion.div className="hero-stage shell" style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}>
-        <div className="hero-topline">
+        {/* <div className="hero-topline">
           <span><i /> LIVE DELIVERY NETWORK</span>
           <span>KITCHENER / INDIA / WORLDWIDE</span>
-        </div>
+        </div> */}
 
         <div className="hero-copy">
-          <motion.p className="hero-kicker" initial={reduce ? false : { opacity: 0, y: 16 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>CANADA-HEADQUARTERED APPLIED AI ENGINEERING</motion.p>
+          <motion.p className="hero-kicker" initial={reduce ? false : { opacity: 0, y: 16 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>GLOBAL AI PRODUCT ENGINEERING</motion.p>
           <h1 id="hero-title" aria-label="Intelligence engineered for reality.">
             {headline.map((line, index) => (
               <span className={`hero-line hero-line-${index + 1}`} key={line}>
@@ -102,12 +102,12 @@ export default function VideoHero() {
         </div>
 
         <motion.aside className="hero-console" initial={reduce ? false : { opacity: 0, x: 36 }} animate={reduce ? undefined : { opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.45 }} aria-label="Truefox AI capability summary">
-          <div className="console-head"><span>TFX / SYSTEM MAP</span><b>ONLINE</b></div>
-          <div className="console-core"><span>APPLIED<br />AI</span><i /><i /><i /></div>
-          <div className="console-row"><span>01</span><p><b>SEE</b>Computer vision & biometrics</p></div>
-          <div className="console-row"><span>02</span><p><b>REASON</b>Private assistants & agents</p></div>
-          <div className="console-row"><span>03</span><p><b>ACT</b>IoT, automation & products</p></div>
-          <div className="console-foot"><span>DEPLOY</span><b>CLOUD · EDGE · ON-PREM</b></div>
+          <div className="console-head"><span>AI ECOSYSTEM</span><b>ACTIVE</b></div>
+          <div className="console-core"><span>AGENTIC AI <br /></span><i /><i /><i /></div>
+          <div className="console-row"><span>01</span><p><b>PERCEIVE</b>Vision, surveillance & detection</p></div>
+          <div className="console-row"><span>02</span><p><b>UNDERSTAND</b>AI agent, insights & decisions</p></div>
+          <div className="console-row"><span>03</span><p><b>TRANSFORM</b>Intelligent apps, platform & automation</p></div>
+          <div className="console-foot"><span>BUILT TO SCALE </span><b>WEB · MOBILE · CLOUD · EDGE </b></div>
         </motion.aside>
 
         <div className="hero-metrics" aria-label="Delivery model">

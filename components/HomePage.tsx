@@ -87,11 +87,31 @@ export default function HomePage() {
             {solutions.map((item, index) => (
               <StaggerItem className={`capability-cell cell-${index + 1}`} key={item.title}>
                 <Link href={item.href || "/services"} className="capability-card">
-                  <div className="capability-visual" aria-hidden="true">
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <i /><i /><i />
-                  </div>
-                  <div className="capability-copy"><span>{item.eyebrow} / TFX</span><h3>{item.title}</h3><p>{item.text}</p><b>Explore capability<ArrowUpRight /></b></div>
+                  <motion.div
+                    className="capability-card-anim"
+                    whileHover={reduce ? undefined : { scale: 1.035 }}
+                    whileTap={reduce ? undefined : { scale: 0.985 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                    onPointerMove={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      const rect = el.getBoundingClientRect();
+                      const x = e.clientX - rect.left;
+                      const y = e.clientY - rect.top;
+                      el.style.setProperty("--mx", `${x}px`);
+                      el.style.setProperty("--my", `${y}px`);
+                    }}
+                    onPointerLeave={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.removeProperty("--mx");
+                      el.style.removeProperty("--my");
+                    }}
+                  >
+                    <div className="capability-visual" aria-hidden="true">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <i /><i /><i />
+                    </div>
+                    <div className="capability-copy"><span>{item.eyebrow} / TFX</span><h3>{item.title}</h3><p>{item.text}</p><b>Explore capability<ArrowUpRight /></b></div>
+                  </motion.div>
                 </Link>
               </StaggerItem>
             ))}

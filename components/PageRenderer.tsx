@@ -5,6 +5,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/Animated";
 import LeadForm from "@/components/LeadForm";
 import InnerHeroMedia from "@/components/InnerHeroMedia";
 import { PageEntityGraph } from "@/components/seo/JsonLd";
+import AttentionMinderPolicyPage from "@/components/AttentionMinderPolicyPage";
 
 function CardGrid({ page }: { page: PageData }) {
   if (!page.cards?.length) return null;
@@ -57,6 +58,7 @@ function ContentSections({ page }: { page: PageData }) {
 }
 
 export default function PageRenderer({ page }: { page: PageData }) {
+  if (page.slug === "attention-minder-privacy-policy") return <AttentionMinderPolicyPage page={page} />;
   const formIntent = page.slug === "request-quote" ? "quote" : page.slug === "book-demo" ? "demo" : "contact";
   const faqData = page.kind === "faq" ? page.sections?.map(({ title, text }) => ({ title, text })) : undefined;
   return (
