@@ -46,7 +46,7 @@ export default function Header() {
           <Link className={pathname === "/contact" ? "active" : ""} href="/contact">Contact</Link>
         </nav>
         <div className="header-actions">
-          <Link href="/request-quote" className="button button-small button-primary">Start a project<ArrowUpRight /></Link>
+          <Link href="/request-quote" className="button button-small button-primary">Get Started<ArrowUpRight /></Link>
           <button className="menu-button" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"}>{open ? <CloseIcon /> : <MenuIcon />}</button>
         </div>
       </div>

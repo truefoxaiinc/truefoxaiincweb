@@ -93,10 +93,10 @@ export default function VideoHero() {
             ))}
           </h1>
           <motion.p className="hero-lede" initial={reduce ? false : { opacity: 0, y: 18 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.5 }}>
-            Computer vision, generative AI, agentic automation, biometrics, IoT and custom software—designed around real workflows, deployed with control and built to improve.
+            Computer vision, generative AI, agentic automation, biometrics, IoT and custom software - designed around real workflows, deployed with control and built to improve.
           </motion.p>
           <motion.div className="hero-actions" initial={reduce ? false : { opacity: 0, y: 18 }} animate={reduce ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.62 }}>
-            <Link href="/request-quote" className="button button-primary button-cinematic">Start a project<ArrowUpRight /></Link>
+            <Link href="/request-quote" className="button button-primary button-cinematic">Get Started<ArrowUpRight /></Link>
             <Link href="/case-studies" className="button button-glass">Explore selected work<ArrowUpRight /></Link>
           </motion.div>
         </div>
@@ -110,16 +110,9 @@ export default function VideoHero() {
           <div className="console-foot"><span>BUILT TO SCALE </span><b>WEB · MOBILE · CLOUD · EDGE </b></div>
         </motion.aside>
 
-        <div className="hero-metrics" aria-label="Delivery model">
-          <span><b>CA</b>Strategy & client leadership</span>
-          <span><b>IN</b>Engineering & R&amp;D</span>
-          <span><b>24H</b>Connected international delivery</span>
-          <span><b>01</b>Accountable end-to-end team</span>
-        </div>
       </motion.div>
 
       <button className="video-control cinematic-control" onClick={toggleVideo} aria-label={playing ? "Pause background video" : "Play background video"}>{playing ? <PauseIcon /> : <PlayIcon />}</button>
-      <div className="scroll-cue cinematic-scroll"><span>SCROLL TO EXPLORE</span><i /></div>
     </section>
   );
 }

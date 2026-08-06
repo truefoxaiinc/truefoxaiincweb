@@ -10,7 +10,6 @@ type Message = { role: "bot" | "user"; text: string; href?: string; label?: stri
 const answers = [
   { terms: ["service", "build", "develop"], text: "Truefox AI delivers computer vision, biometrics, private AI assistants, agentic automation, IoT, data/ML, web, mobile and cloud systems.", href: "/services", label: "Explore services" },
   { terms: ["product", "security", "biometric", "assistant", "agent"], text: "Our product areas include AI Smart Security, Biometric Intelligence, Private AI Assistants, Agentic Automation and IoT / Edge AI.", href: "/products", label: "View products" },
-  { terms: ["price", "cost", "budget", "quote"], text: "Pricing depends on scope, data readiness, integrations, deployment and support. A discovery sprint, pilot, production project or managed support model can be proposed.", href: "/request-quote", label: "Request a quote" },
   { terms: ["demo", "meeting", "consultation", "call"], text: "You can book a tailored product demonstration or technical consultation. Share the environment and area of interest so the session is relevant.", href: "/book-demo", label: "Book a demo" },
   { terms: ["canada", "india", "office", "location"], text: "Truefox AI is headquartered in Kitchener, Ontario, Canada, with an engineering delivery centre in India and international client delivery." },
   { terms: ["support", "help", "issue", "problem"], text: "Existing clients should use the support route defined in their agreement. General support and security reports can be submitted through the Help Centre.", href: "/support", label: "Open Help Centre" },
@@ -21,7 +20,7 @@ export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([
-    { role: "bot", text: "Hello — I’m the Truefox AI website assistant. Ask about services, products, pricing, demos, offices, support or careers." }
+    { role: "bot", text: "Hello — I’m the Truefox AI website assistant. Ask about services, products, demos, offices, support or careers." }
   ]);
   const listRef = useRef<HTMLDivElement>(null);
   const suggestions = useMemo(() => ["Explore services", "Book a demo", "Request a quote"], []);
