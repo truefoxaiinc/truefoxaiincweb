@@ -323,20 +323,17 @@ export const pages: Record<string, PageData> = {
     slug: "team",
     navLabel: "Our Team",
     eyebrow: "PEOPLE",
-    title: "A multidisciplinary team for applied intelligence.",
-    description: "Meet the disciplines behind Truefox AI's product, research and delivery work.",
-    intro: "Our work brings together business analysis, AI research, data engineering, software, cloud, embedded systems, product design, QA and client success.",
+    title: "DIFFERENT DISCIPLINES. ONE SHARED STANDARD.",
+    description: "Our team brings together business insight, AI and data expertise, software and cloud engineering, embedded systems, product design, quality assurance and client delivery—working as one team from idea to operation.",
+    intro: "Our team brings together business insight, AI and data expertise, software and cloud engineering, embedded systems, product design, quality assurance and client delivery—working as one team from idea to operation.",
     kind: "team",
     cards: [
-      { eyebrow: "LEADERSHIP", title: "Strategy & Client Success", text: "Clarifies outcomes, operating constraints, delivery model and executive alignment." },
-      { eyebrow: "AI", title: "Research & Machine Learning", text: "Builds and evaluates computer vision, language, prediction and optimization models." },
-      { eyebrow: "ENGINEERING", title: "Product & Platform", text: "Develops web, mobile, backend, integration and cloud systems for production use." },
-      { eyebrow: "EDGE", title: "IoT & Embedded", text: "Connects sensors, gateways, devices and edge inference to operational workflows." },
-      { eyebrow: "QUALITY", title: "QA, Security & Reliability", text: "Tests performance, resilience, data handling, access controls and release readiness." },
-      { eyebrow: "ADOPTION", title: "Delivery & Support", text: "Coordinates rollout, documentation, training, monitoring and continuous improvement." }
-    ],
-    sections: [
-      { title: "Leadership profiles", text: "Verified names, biographies and photographs should be added only after company approval." }
+      { eyebrow: "LEADERSHIP", title: "STRATEGY & CLIENT SUCCESS", text: "Translates business priorities into clear outcomes, practical delivery plans and lasting client relationships." },
+      { eyebrow: "INTELLIGENCE", title: "AI RESEARCH & MACHINE LEARNING", text: "Designs, trains and evaluates computer vision, language, predictive and optimization systems." },
+      { eyebrow: "ENGINEERING", title: "PRODUCT & PLATFORM", text: "Builds the web, mobile, backend, integration and cloud foundations required for dependable production systems." },
+      { eyebrow: "EDGE", title: "IoT & EMBEDDED SYSTEMS", text: "Connects sensors, devices, gateways and edge intelligence with the workflows they support." },
+      { eyebrow: "QUALITY", title: "QA, SECURITY & RELIABILITY", text: "Validates performance, resilience, data protection, access controls and production readiness." },
+      { eyebrow: "ADOPTION", title: "DELIVERY & SUPPORT", text: "Guides rollout, documentation, training, monitoring and continuous improvement after launch." }
     ],
     cta: { label: "Explore careers", href: "/careers" }
   },
@@ -436,15 +433,7 @@ export const pages: Record<string, PageData> = {
     title: "Practical thinking for applied AI teams.",
     description: "Truefox AI articles, project insights, product news and technical explainers.",
     intro: "A publication area for useful, evidence-based perspectives on AI deployment, computer vision, agents, data, edge systems and digital products.",
-    kind: "blog",
-    cards: [
-      { eyebrow: "GUIDE", title: "From AI demo to production system", text: "The architecture, operating and governance questions that should be answered before scaling a prototype.", meta: "8 min read · Draft editorial concept" },
-      { eyebrow: "COMPUTER VISION", title: "Designing inspection for the factory floor", text: "Why lighting, camera position, line speed, defect definitions and operator workflow matter as much as the model.", meta: "7 min read · Draft editorial concept" },
-      { eyebrow: "AGENTIC AI", title: "Where human approval belongs in an AI workflow", text: "A practical framework for choosing checkpoints, permissions, audit history and exception handling.", meta: "6 min read · Draft editorial concept" },
-      { eyebrow: "EDGE AI", title: "Cloud, edge or hybrid?", text: "A decision guide based on latency, bandwidth, privacy, resilience and lifecycle management.", meta: "6 min read · Draft editorial concept" },
-      { eyebrow: "NEWS", title: "Company announcements", text: "Publish verified partnerships, product releases, events and hiring updates here.", meta: "Newsroom template" },
-      { eyebrow: "R&D", title: "Research notes", text: "Share reproducible experiments, evaluations and practical lessons without exposing client-confidential information.", meta: "Technical publication template" }
-    ]
+    kind: "blog"
   },
   "request-quote": {
     slug: "request-quote",
