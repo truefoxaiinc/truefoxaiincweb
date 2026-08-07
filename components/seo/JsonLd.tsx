@@ -95,8 +95,7 @@ export function HomeEntityGraph() {
           ["What does Truefox AI build?", "Applied AI systems including computer vision, machine learning, generative AI, private assistants, agentic workflows, biometric intelligence, IoT and custom web or mobile products."],
           ["Can Truefox AI solutions run on-premise or at the edge?", "Yes. Architecture can be cloud, private cloud, on-premise, edge or hybrid depending on latency, privacy, bandwidth, resilience and integration requirements."],
           ["Where is Truefox AI located?", "Truefox AI is headquartered in Kitchener, Ontario, Canada, with engineering delivery in India and international client support."],
-          ["How does a Truefox AI engagement begin?", "Engagements typically begin by defining the operational problem, users, data, systems, constraints and success criteria before selecting discovery, prototype, pilot or production delivery."],
-          ["How is Truefox AI pricing determined?", "Pricing depends on scope clarity, technical risk, data readiness, integrations, deployment, validation, support and the commercial model."]
+          ["How does a Truefox AI engagement begin?", "Engagements typically begin by defining the operational problem, users, data, systems, constraints and success criteria before selecting discovery, prototype, pilot or production delivery."]
         ].map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } }))
       }
     ]
