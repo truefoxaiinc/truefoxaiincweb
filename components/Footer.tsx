@@ -59,10 +59,18 @@ export default function Footer() {
       <div className="footer-grid shell">
         <section className="footer-brand-card" aria-label="Truefox AI contact information">
           <Image src="/images/truefox-logo.webp" width={620} height={190} alt="Truefox AI Inc." sizes="(max-width: 640px) 250px, 280px" />
-          <p>{site.description}</p>
           <div className="brand-accent" aria-hidden="true" />
           <a href={`mailto:${site.email}`} className="footer-contact-line"><MailIcon /> <span>{site.email}</span></a>
-          <address className="footer-contact-line"><PinIcon /><span>{site.address.street}<br />{site.address.city}, {site.address.region} {site.address.postalCode}<br />Canada</span></address>
+          <div className="footer-office-list">
+            <address className="footer-contact-line">
+              <PinIcon />
+              <span><strong>Canada office</strong>{site.address.street}<br />{site.address.city}, {site.address.region} {site.address.postalCode}<br />Canada</span>
+            </address>
+            <address className="footer-contact-line">
+              <PinIcon />
+              <span><strong>India office</strong>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</span>
+            </address>
+          </div>
           <div className="social-block">
             <span>OFFICIAL SOCIAL</span>
             <div className="social-row" aria-label="Social media">
@@ -82,28 +90,25 @@ export default function Footer() {
               </nav>
             </section>
           ))}
+          <section className="footer-nav-card">
+            <div className="footer-card-icon"><ShieldIcon /></div>
+            <h2>Privacy Policies</h2>
+            <p>Data Protection &amp; Product Privacy</p>
+            <nav aria-label="Product privacy policies">
+              {privacyPolicies.map(([label, href]) => (
+                <Link key={href} href={href}>
+                  <span>{label}</span><span aria-hidden="true">›</span>
+                </Link>
+              ))}
+            </nav>
+          </section>
         </div>
-
-        <aside className="footer-privacy-card">
-          <div className="footer-card-icon"><ShieldIcon /></div>
-          <h2>Privacy Policies</h2>
-          <p className="footer-privacy-subtitle">Data Protection &amp; Product Privacy</p>
-          <p className="footer-privacy-notice"></p>
-          <nav aria-label="Product privacy policies">
-            {privacyPolicies.map(([label, href]) => (
-              <a key={href} href={href}>
-                <span>{label}</span><span aria-hidden="true"> {'>'}</span>
-              </a>
-            ))}
-          </nav>
-        </aside>
       </div>
 
       <div className="footer-legal">
         <div className="shell footer-legal-inner">
           <p>© {new Date().getFullYear()} Truefox AI Inc. All rights reserved.</p>
           <nav aria-label="Legal links"><Link href="/privacy-policy">Privacy &amp; Policy</Link><Link href="/terms-and-conditions">Terms</Link><Link href="/sitemap.xml">Sitemap</Link><Link href="/llms.txt">LLMs.txt</Link></nav>
-          <span className="footer-country"><span aria-hidden="true">🇨🇦</span> Canada <span aria-hidden="true">⌄</span></span>
         </div>
       </div>
     </footer>

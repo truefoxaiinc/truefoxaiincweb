@@ -59,7 +59,7 @@ Set these values in `.env.local` or your deployment platform:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://truefoxaiinc.com
-NEXT_PUBLIC_WHATSAPP_NUMBER=
+NEXT_PUBLIC_WHATSAPP_NUMBER=919074897768
 NEXT_PUBLIC_LINKEDIN_URL=https://ca.linkedin.com/company/truefox-ai-inc
 NEXT_PUBLIC_INSTAGRAM_URL=
 NEXT_PUBLIC_FACEBOOK_URL=

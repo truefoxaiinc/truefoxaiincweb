@@ -25,7 +25,10 @@ export function MessageIcon(props: SVGProps<SVGSVGElement>) {
   return <svg viewBox="0 0 24 24" aria-hidden="true" {...props}><path d="M5 5h14v10H9l-4 4V5Z" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/></svg>;
 }
 export function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
-  return <svg viewBox="0 0 32 32" aria-hidden="true" {...props}><path fill="currentColor" d="M19.11 17.31c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.98 2.66 1.12 2.84.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.59-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"/><path fill="currentColor" d="M16.03 3.2A12.74 12.74 0 0 0 5.08 22.43L3.2 28.8l6.54-1.71A12.79 12.79 0 1 0 16.03 3.2Zm0 23.29c-2.08 0-4.12-.56-5.9-1.62l-.42-.25-3.88 1.02 1.04-3.78-.27-.44a10.45 10.45 0 1 1 9.43 5.07Z"/></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <path d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4A8 8 0 1 1 20 11.6Z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="m8.1 7.5-1 1c-.45.45-.3 1.2-.05 1.75a11.2 11.2 0 0 0 5.45 5.45c.55.25 1.3.4 1.75-.05l1-1-2.15-1.7-.9.9a8.2 8.2 0 0 1-3.35-3.35l.9-.9-1.65-2.1Z" fill="currentColor" />
+  </svg>;
 }
 export function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
   return <svg viewBox="0 0 24 24" aria-hidden="true" {...props}><path fill="currentColor" d="M6.5 8.3H3.2V19h3.3V8.3ZM4.85 3A1.92 1.92 0 1 0 4.85 6.84 1.92 1.92 0 0 0 4.85 3ZM19 12.9c0-3.22-1.72-4.72-4.02-4.72-1.85 0-2.68 1.02-3.15 1.74V8.3H8.5V19h3.33v-5.3c0-1.4.27-2.77 2.01-2.77 1.72 0 1.74 1.61 1.74 2.86V19H19v-6.1Z"/></svg>;

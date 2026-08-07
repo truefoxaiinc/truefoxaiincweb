@@ -23,7 +23,6 @@ export type PageData = {
     | "proof"
     | "faq"
     | "blog"
-    | "resources"
     | "form";
   stats?: { value: string; label: string }[];
   cards?: Card[];
@@ -61,8 +60,8 @@ export const site = {
   ],
   social: {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://ca.linkedin.com/company/truefox-ai-inc",
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
-    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/truefox.ai.inc?igsh=amNoYXQ0b25ueWl4",
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/people/Truefox-AI-Inc/61592832576925/?mibextid=wwXIfr&rdid=tWitnXkc7ef7wYfz&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ByRraP2ty%2F%3Fmibextid%3DwwXIfr",
     x: process.env.NEXT_PUBLIC_X_URL || "",
     youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || ""
   }
@@ -90,8 +89,7 @@ export const navGroups = [
     label: "Proof",
     items: [
       ["Clients & Partners", "/clients-partners"],
-      ["Case Studies", "/case-studies"],
-      ["Testimonials", "/testimonials"]
+      ["Case Studies", "/case-studies"]
     ]
   },
   {
@@ -99,8 +97,7 @@ export const navGroups = [
     items: [
       ["Blog & News", "/blog"],
       ["FAQ", "/faq"],
-      ["Help Centre", "/support"],
-      ["Downloads", "/resources"]
+      ["Help Centre", "/support"]
     ]
   }
 ] satisfies ReadonlyArray<{
@@ -249,14 +246,14 @@ export const pages: Record<string, PageData> = {
     slug: "contact",
     navLabel: "Contact Us",
     eyebrow: "CONTACT",
-    title: "Tell us what needs to change in your operation.",
+    title: "WHAT SHOULD WORK BETTER?",
     description: "Contact Truefox AI for AI consulting, product development, demonstrations, support and partnerships.",
-    intro: "Share the workflow, challenge or product idea. We will help clarify the most practical next step.",
+    intro: "Tell us about the workflow, operational challenge or product idea you’re exploring. We’ll help turn the context into a clear and practical next step.",
     kind: "contact",
     sections: [
-      { title: "Canada", text: "Kitchener, Ontario — headquarters, strategy and client success." },
-      { title: "India", text: "Engineering delivery centre — AI research, software engineering and support." },
-      { title: "International", text: "Remote discovery, implementation and support for clients across regions." }
+      { title: "CANADA", text: "Kitchener, Ontario\nHeadquarters, client strategy and delivery leadership." },
+      { title: "INDIA", text: "Kochi, Kerala\nAI engineering, software development and technical support." },
+      { title: "INTERNATIONAL", text: "Remote discovery, delivery and ongoing support for clients across regions." }
     ]
   },
   "attention-minder-privacy-policy": {
@@ -293,16 +290,16 @@ export const pages: Record<string, PageData> = {
     navLabel: "Privacy Policy",
     eyebrow: "LEGAL",
     title: "Privacy Policy",
-    description: "Truefox AI website privacy policy template.",
-    intro: "This template describes how website and enquiry information may be collected, used and protected. It requires legal review before publication.",
+    description: "This policy explains how Truefox AI Inc. collects, uses, stores and protects personal information when you visit our website, contact our team or submit an enquiry.",
+    intro: "This policy explains how Truefox AI Inc. collects, uses, stores and protects personal information when you visit our website, contact our team or submit an enquiry.",
     kind: "legal",
     sections: [
-      { title: "Information we collect", text: "Information you submit through forms, email or support interactions, plus limited technical information such as browser type and website usage data." },
-      { title: "How information is used", text: "To respond to enquiries, provide requested services, maintain website security, improve experiences and meet legal obligations." },
-      { title: "Sharing and processors", text: "Information may be handled by approved service providers for hosting, analytics, communications or customer support under appropriate safeguards." },
-      { title: "Retention and security", text: "Information should be retained only as long as necessary and protected using administrative, technical and organizational controls appropriate to its sensitivity." },
-      { title: "Your choices", text: "Depending on your jurisdiction, you may request access, correction, deletion or restriction of personal information." },
-      { title: "Contact", text: "Privacy enquiries can be sent to info@truefoxaiinc.com." }
+      { title: "INFORMATION WE COLLECT", text: "We may collect information you provide through contact forms, email and support requests. We may also collect limited technical data, including browser type, device information, IP address and website usage data." },
+      { title: "HOW WE USE INFORMATION", text: "We use this information to respond to enquiries, provide requested services, operate and secure our website, improve user experiences and comply with applicable legal obligations." },
+      { title: "SERVICE PROVIDERS AND INFORMATION SHARING", text: "We may share information with trusted service providers that support hosting, analytics, communications and customer service. These providers are permitted to process information only for authorized purposes and subject to appropriate safeguards." },
+      { title: "RETENTION AND SECURITY", text: "We retain personal information only for as long as reasonably necessary for the purposes described in this policy or as required by law. We use administrative, technical and organizational measures appropriate to the nature and sensitivity of the information." },
+      { title: "YOUR PRIVACY RIGHTS", text: "Depending on where you live, you may have the right to request access to, correction of or deletion of your personal information, or to restrict or object to certain processing." },
+      { title: "CONTACT US", text: "For privacy-related questions or requests, contact Truefox AI Inc. at info@truefoxaiinc.com." }
     ]
   },
   "terms-and-conditions": {
@@ -310,16 +307,16 @@ export const pages: Record<string, PageData> = {
     navLabel: "Terms and Conditions",
     eyebrow: "LEGAL",
     title: "Terms and Conditions",
-    description: "Truefox AI website terms and conditions template.",
-    intro: "These website terms are a general template and must be reviewed by qualified legal counsel before publication.",
+    description: "These terms govern your access to and use of the Truefox AI Inc. website. By using this website, you agree to the conditions outlined below.",
+    intro: "These terms govern your access to and use of the Truefox AI Inc. website. By using this website, you agree to the conditions outlined below.",
     kind: "legal",
     sections: [
-      { title: "Website use", text: "The website is provided for general company, product and service information. You agree not to misuse, disrupt or attempt unauthorized access to the website." },
-      { title: "No professional guarantee", text: "Website content is general information and does not create a client relationship, warranty or binding service commitment." },
-      { title: "Intellectual property", text: "Branding, design, text, software and original materials remain the property of their respective owners and may not be copied without permission." },
-      { title: "Third-party links", text: "External links may be provided for convenience. Truefox AI is not responsible for third-party content, security or privacy practices." },
-      { title: "Limitation and changes", text: "To the extent permitted by law, liability is limited. Terms may be updated as business, legal or technical requirements change." },
-      { title: "Contact", text: "Questions about these terms can be sent to info@truefoxaiinc.com." }
+      { title: "USE OF THIS WEBSITE", text: "This website provides general information about Truefox AI Inc., our products and our services. You must not misuse the website, interfere with its operation, introduce malicious code or attempt to access any system or information without authorization." },
+      { title: "INFORMATIONAL PURPOSE", text: "Website content is provided for general informational purposes. It does not constitute professional advice, create a client relationship or form a binding commitment to provide products or services. Any engagement is governed by a separate written agreement." },
+      { title: "INTELLECTUAL PROPERTY", text: "Unless otherwise stated, the Truefox AI name, branding, website design, text, software and original materials are owned by or licensed to Truefox AI Inc. They may not be copied, modified, distributed or commercially used without prior written permission." },
+      { title: "THIRD-PARTY LINKS", text: "This website may contain links to third-party websites or services for convenience. Truefox AI Inc. does not control and is not responsible for their availability, content, security or privacy practices." },
+      { title: "LIABILITY AND CHANGES", text: "To the fullest extent permitted by applicable law, Truefox AI Inc. limits its liability arising from access to or use of this website. We may update the website and these terms as our business, technology or legal obligations evolve." },
+      { title: "CONTACT US", text: "For questions about these terms, contact Truefox AI Inc. at info@truefoxaiinc.com." }
     ]
   },
   team: {
@@ -364,60 +361,43 @@ export const pages: Record<string, PageData> = {
   "clients-partners": {
     slug: "clients-partners",
     navLabel: "Clients & Partners",
-    eyebrow: "RELATIONSHIPS",
-    title: "Collaboration across industries and regions.",
-    description: "Selected Truefox AI client engagements and partnership opportunities.",
-    intro: "We work with operating companies, product businesses, technology providers and specialists that value practical execution and long-term relationships.",
+    eyebrow: "PARTNERSHIPS",
+    title: "AMBITIOUS WORK IS RARELY BUILT ALONE.",
+    description: "Partnership opportunities with Truefox AI.",
+    intro: "We collaborate with operating companies, product teams, technology providers and domain specialists who value practical execution, shared ownership and relationships built to last.",
     kind: "proof",
     cards: [
-      { title: "Laymoon Inc.", text: "Selected client engagement reference." },
-      { title: "Stoney Lake", text: "Selected client engagement reference." },
-      { title: "VCare Flooring", text: "Selected client engagement reference." },
-      { title: "Al Rabeah Water Factory", text: "Industrial automation engagement reference." },
-      { title: "Teqnia Inc.", text: "Selected technology engagement reference." },
-      { title: "K&S Food Inc.", text: "Food manufacturing computer vision engagement reference." }
+      { eyebrow: "01", title: "LAYMOON INC.", text: "Client engagement" },
+      { eyebrow: "02", title: "STONEY LAKE", text: "Client engagement" },
+      { eyebrow: "03", title: "VCARE FLOORING", text: "Client engagement" },
+      { eyebrow: "04", title: "AL RABEAH WATER FACTORY", text: "Industrial automation" },
+      { eyebrow: "05", title: "TEQNIA INC.", text: "Technology engagement" },
+      { eyebrow: "06", title: "K&S FOOD INC.", text: "Computer vision for food manufacturing" },
+      { eyebrow: "07", title: "WOW BRAIDS", text: "E-commerce experience for hand-braided wigs" }
     ],
     sections: [
-      { title: "Technology partnerships", text: "We collaborate with cloud, hardware, data, security and specialist technology providers when they improve the solution." },
-      { title: "Delivery partnerships", text: "Regional consultants and system integrators can work with Truefox AI for specialist AI, computer vision and product engineering capacity." }
+      { title: "TECHNOLOGY PARTNERSHIPS", text: "We collaborate with cloud, hardware, data, security and specialist technology providers when shared expertise creates a stronger, better-integrated solution." },
+      { title: "DELIVERY & INTEGRATION PARTNERSHIPS", text: "Consultancies and system integrators can extend their delivery capabilities with Truefox AI’s expertise in artificial intelligence, computer vision and digital product engineering—without fragmenting the client experience." }
     ],
-    cta: { label: "Explore partnership options", href: "/contact" }
-  },
-  testimonials: {
-    slug: "testimonials",
-    navLabel: "Testimonials",
-    eyebrow: "CLIENT VOICE",
-    title: "Trust is earned through delivery.",
-    description: "A structured area for verified Truefox AI client testimonials.",
-    intro: "This page is ready for approved customer quotes, video testimonials and references. Placeholder claims have intentionally not been invented.",
-    kind: "proof",
-    cards: [
-      { eyebrow: "VERIFIED QUOTE", title: "Client outcome story", text: "Add an approved quote with the client's name, role, organization and permission status." },
-      { eyebrow: "VIDEO", title: "Executive testimonial", text: "Embed a captioned customer video with a transcript and accessibility controls." },
-      { eyebrow: "REFERENCE", title: "Reference conversation", text: "Offer qualified prospects a reference call where client consent and context allow." }
-    ],
-    sections: [
-      { title: "Testimonial publishing checklist", text: "Every testimonial should be approved, attributable and representative.", bullets: ["Written client permission", "Accurate role and organization", "No unsupported performance claims", "Date and project context", "Accessible transcript for video"] }
-    ],
-    cta: { label: "View case studies", href: "/case-studies" }
+    cta: { label: "EXPLORE PARTNERSHIPS", href: "/contact" }
   },
   "case-studies": {
     slug: "case-studies",
     navLabel: "Case Studies",
     eyebrow: "SELECTED WORK",
-    title: "Systems designed for actual operating conditions.",
-    description: "Selected Truefox AI case study summaries across computer vision, automation and biometrics.",
-    intro: "The following summaries are based on client engagement references previously published by Truefox AI. Quantified outcomes should be added only when verified and approved.",
+    title: "SYSTEMS SHAPED BY THE WORK THEY NEED TO DO.",
+    description: "Selected Truefox AI engagements across intelligent operations, automation, computer vision and digital product engineering.",
+    intro: "Explore selected engagements across intelligent operations, automation, computer vision and digital product engineering—each designed around the people, processes and environments it serves.",
     kind: "proof",
     cards: [
-      { eyebrow: "FOOD MANUFACTURING · ONTARIO", title: "Real-time quality intelligence", text: "A computer vision approach designed to detect product defects on a production conveyor and support faster operator response.", meta: "Computer vision · Edge deployment · Operator workflow" },
-      { eyebrow: "INDUSTRIAL AUTOMATION · SAUDI ARABIA", title: "Connected process control", text: "A custom automated filling system tailored around the requirements of water production operations.", meta: "Automation · Controls · Operational integration" },
-      { eyebrow: "HOSPITALITY · ONTARIO", title: "Trusted workforce identity", text: "A biometric employee login and attendance workflow designed for everyday hospitality operations.", meta: "Biometrics · Attendance · Workflow integration" }
+      { eyebrow: "FOOD MANUFACTURING · ONTARIO", title: "REAL-TIME QUALITY INTELLIGENCE", text: "A conveyor-side computer vision system designed to identify visible product defects and help operators investigate issues sooner.", meta: "COMPUTER VISION · EDGE PROCESSING · OPERATOR WORKFLOW" },
+      { eyebrow: "INDUSTRIAL AUTOMATION · SAUDI ARABIA", title: "CONNECTED PROCESS CONTROL", text: "A custom filling and control system designed around the production requirements, equipment and operating workflow of a water manufacturer.", meta: "AUTOMATION · CONTROL SYSTEMS · OPERATIONAL INTEGRATION" },
+      { eyebrow: "HOSPITALITY · ONTARIO", title: "WORKFORCE IDENTITY & ATTENDANCE", text: "A biometric sign-in and attendance system designed to make everyday employee access and workforce records easier to manage.", meta: "BIOMETRICS · ATTENDANCE · WORKFLOW INTEGRATION" }
     ],
     sections: [
-      { title: "How we document outcomes", text: "Each case study should explain the context, constraints, architecture, implementation, adoption and verified result rather than presenting isolated technology features." }
+      { eyebrow: "HOW WE DOCUMENT OUTCOMES", title: "THE FULL STORY—NOT JUST THE TECHNOLOGY.", text: "Our case studies follow the work from operating context and constraints through architecture, implementation and adoption. Results are included only when they can be verified and approved." }
     ],
-    cta: { label: "Discuss a similar challenge", href: "/request-quote" }
+    cta: { label: "DISCUSS A SIMILAR CHALLENGE", href: "/request-quote" }
   },
   careers: {
     slug: "careers",
@@ -435,18 +415,18 @@ export const pages: Record<string, PageData> = {
     slug: "faq",
     navLabel: "Frequently Asked Questions",
     eyebrow: "FAQ",
-    title: "Useful answers before the first meeting.",
+    title: "CLEAR ANSWERS. BETTER FIRST CONVERSATIONS.",
     description: "Frequently asked questions about Truefox AI services, delivery, deployment, data and support.",
-    intro: "These answers explain our typical approach. Final scope, architecture, security and commercial terms depend on the engagement.",
+    intro: "Explore how we typically approach products, projects, deployment and long-term support. Every engagement is different, so final recommendations, architecture, security requirements and commercial terms are defined around your specific context.",
     kind: "faq",
     sections: [
-      { title: "What kinds of projects does Truefox AI take on?", text: "Applied AI, computer vision, biometrics, private assistants, agentic workflows, IoT, industrial automation, web and mobile products, data platforms and R&D." },
-      { title: "Can you work with an existing product or team?", text: "Yes. We can provide focused architecture, specialist engineering, a pilot team or end-to-end delivery depending on the gap." },
-      { title: "Do you support on-premise and edge deployment?", text: "Yes. Deployment can be cloud, private cloud, on-premise, edge or hybrid based on latency, bandwidth, integration and privacy needs." },
-      { title: "How do you begin an AI project?", text: "We clarify the business decision or workflow, users, available data, constraints and success criteria before choosing technology." },
-      { title: "Can you sign an NDA?", text: "A mutual NDA can be considered before detailed confidential discovery, subject to company review." },
-      { title: "Who owns the delivered software and models?", text: "Ownership, licensing, third-party components and reusable platform elements are defined clearly in the commercial agreement." },
-      { title: "Do you provide support after launch?", text: "Yes. Support can include monitoring, incident response, model review, improvements, cloud operations and product enhancement." }
+      { title: "WHAT KINDS OF PROJECTS DOES TRUEFOX AI TAKE ON?", text: "We build AI and digital systems that improve real workflows, decisions and customer experiences. Our work spans computer vision, biometrics, private AI assistants, agentic workflows, IoT, industrial automation, data platforms, web and mobile products, and applied R&D." },
+      { title: "CAN YOU WORK WITH AN EXISTING PRODUCT OR TEAM?", text: "Yes. We can strengthen a specific area through architecture or specialist engineering, form a focused pilot team, or take responsibility for end-to-end delivery." },
+      { title: "DO YOU SUPPORT ON-PREMISE AND EDGE DEPLOYMENT?", text: "Yes. We support cloud, private cloud, on-premise, edge and hybrid deployments. The architecture is selected around your latency, bandwidth, privacy, resilience and integration requirements." },
+      { title: "HOW DO YOU BEGIN AN AI PROJECT?", text: "We begin with the problem—not the technology. Together, we clarify the workflow or decision being improved, the people involved, available data, operational constraints and measurable success criteria." },
+      { title: "CAN YOU SIGN AN NDA?", text: "Yes. A mutual NDA can be considered and completed before confidential discovery begins, subject to review and agreement by both parties." },
+      { title: "WHO OWNS THE DELIVERED SOFTWARE AND MODELS?", text: "Ownership and licensing terms are agreed before development begins and documented in the commercial agreement. This includes client-specific deliverables, third-party components and any reusable Truefox AI technology." },
+      { title: "DO YOU PROVIDE SUPPORT AFTER LAUNCH?", text: "Yes. Post-launch support can include system monitoring, incident support, model performance reviews, cloud operations, product enhancements and continuous improvement—based on the agreed support plan." }
     ]
   },
   blog: {
@@ -469,13 +449,13 @@ export const pages: Record<string, PageData> = {
   "request-quote": {
     slug: "request-quote",
     navLabel: "Request a Quote",
-    eyebrow: "PROJECT ENQUIRY",
-    title: "Tell us what you’re working through.",
+    eyebrow: "REQUEST A PROPOSAL",
+    title: "START WITH THE PROBLEM—NOT A FINISHED SPECIFICATION.",
     description: "Request a scoped proposal from Truefox AI.",
-    intro: "Share the challenge, the people it affects and any constraints we should understand. You don’t need to have the solution figured out—we’ll help define the right way forward.",
+    intro: "Share the challenge, the people it affects and any constraints we should understand. We’ll help clarify the requirements before recommending an approach, scope and commercial proposal.",
     kind: "form",
     sections: [
-      { title: "WHAT HELPS US GET STARTED", text: "", bullets: ["The current workflow and where it breaks down", "The people who will use or benefit from the solution", "Any relevant data, software or existing systems", "Your preferred timeline or important deadlines", "Cloud, on-premise, edge or other deployment needs", "A budget range, if one has already been established"] }
+      { title: "USEFUL CONTEXT", text: "", bullets: ["How the workflow works today—and where it breaks down", "Who will use or benefit from the solution", "Relevant data, software and existing systems", "Preferred timing or important deadlines", "Cloud, on-premise, edge or other deployment needs", "Budget range, if already established"] }
     ]
   },
   "book-demo": {
@@ -495,36 +475,21 @@ export const pages: Record<string, PageData> = {
     slug: "support",
     navLabel: "Support / Help Centre",
     eyebrow: "SUPPORT",
-    title: "Clear routes for product and project support.",
+    title: "THE RIGHT HELP, WITHOUT THE RUNAROUND.",
     description: "Truefox AI help centre for existing clients, product users and security reports.",
-    intro: "Use the correct channel so the request reaches the team with the right context and urgency.",
+    intro: "Whether you need help with a live product, an active project or a technical issue, choose the appropriate support channel so our team can respond with the right context.",
     kind: "standard",
     cards: [
-      { eyebrow: "CLIENT", title: "Project support", text: "Existing clients should use the support channel and references defined in their service agreement." },
-      { eyebrow: "PRODUCT", title: "Product help", text: "Share product name, environment, user impact, screenshots and steps to reproduce the issue." },
-      { eyebrow: "SECURITY", title: "Security reporting", text: "Report suspected vulnerabilities privately with enough detail for triage. Do not include unnecessary sensitive data." },
-      { eyebrow: "GENERAL", title: "General assistance", text: "For website, billing, partnership or non-urgent questions, use the contact form or company email." }
+      { eyebrow: "CLIENT", title: "PROJECT SUPPORT", text: "For active projects and deployed systems, please use the support channel and project reference provided in your service agreement. This helps your request reach the right team quickly." },
+      { eyebrow: "PRODUCT", title: "PRODUCT SUPPORT", text: "Include the product name, deployment environment, impact on users, screenshots and clear steps to reproduce the issue." },
+      { eyebrow: "SECURITY", title: "SECURITY REPORTING", text: "Report suspected vulnerabilities privately with enough technical detail for us to investigate. Please avoid sharing credentials, personal information or other unnecessary sensitive data." },
+      { eyebrow: "GENERAL", title: "GENERAL ENQUIRIES", text: "For questions about our website, billing, partnerships or other non-urgent matters, please use the contact form or email our team." }
     ],
     sections: [
-      { title: "Before submitting", text: "Include the environment, impact, time first observed, recent changes, error messages and safe reproduction steps where relevant." },
-      { title: "Urgency", text: "Published support hours and response targets must match the signed service agreement. Do not rely on the website for emergency services." }
+      { title: "BEFORE YOU SUBMIT", text: "Help us understand the issue by including the affected environment, user or business impact, when it was first observed, any recent changes, relevant error messages and safe steps to reproduce it." },
+      { title: "RESPONSE AND URGENCY", text: "Support availability and response targets are governed by your signed service agreement. This website is not monitored as an emergency-response channel." }
     ],
-    cta: { label: "Contact support", href: "/contact" }
-  },
-  resources: {
-    slug: "resources",
-    navLabel: "Downloads / Resources",
-    eyebrow: "RESOURCES",
-    title: "Useful material for planning an AI initiative.",
-    description: "Download Truefox AI capability, readiness and deployment resources.",
-    intro: "Use these resources to structure internal conversations, identify gaps and prepare for a productive discovery session.",
-    kind: "resources",
-    cards: [
-      { eyebrow: "PDF", title: "AI Capability Overview", text: "A concise summary of Truefox AI capabilities, delivery model and solution areas.", href: "/resources/truefox-capability-overview.pdf" },
-      { eyebrow: "PDF", title: "AI Readiness Checklist", text: "Questions covering outcomes, users, data, integration, governance and ownership.", href: "/resources/truefox-ai-readiness-checklist.pdf" },
-      { eyebrow: "PDF", title: "Deployment & Security Brief", text: "A discussion guide for cloud, on-premise, edge, access, monitoring and operations.", href: "/resources/truefox-deployment-security-brief.pdf" }
-    ],
-    cta: { label: "Discuss your readiness", href: "/contact" }
+    cta: { label: "CONTACT SUPPORT", href: "/contact" }
   }
 };
 
