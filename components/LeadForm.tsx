@@ -15,7 +15,7 @@ export default function LeadForm({ intent = "contact" }: { intent?: "contact" | 
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, intent })
+        body: JSON.stringify({ ...payload, consent: payload.consent === "on", intent })
       });
       if (!response.ok) throw new Error("Submission failed");
       form.reset();

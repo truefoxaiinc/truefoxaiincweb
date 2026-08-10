@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { createItem } from "@/lib/cms";
+
+export const runtime = "nodejs";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const allowedIntents = new Set(["contact", "quote", "demo"]);
@@ -23,6 +26,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, error: "Invalid form data" }, { status: 400 });
     }
 
+    if (body.consent !== true) return NextResponse.json({ ok: false, error: "Consent is required" }, { status: 400 });
     const lead = {
       intent,
       name,
@@ -35,6 +39,7 @@ export async function POST(request: Request) {
       receivedAt: new Date().toISOString(),
       source: "truefoxaiinc.com"
     };
+    const stored = await createItem("leads", { ...lead, status: "new", notes: "" });
 
     const webhook = process.env.LEADS_WEBHOOK_URL;
     if (webhook) {
@@ -45,11 +50,11 @@ export async function POST(request: Request) {
         cache: "no-store",
         signal: AbortSignal.timeout(8000)
       });
-      if (!response.ok) throw new Error("Lead webhook failed");
+      if (!response.ok) console.error("Lead webhook delivery failed", { leadId: stored.id, status: response.status });
     } else {
       console.info("Truefox AI lead received", { ...lead, message: `${message.slice(0, 120)}${message.length > 120 ? "…" : ""}` });
     }
-    return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+    return NextResponse.json({ ok: true, reference: stored.id }, { headers: { "Cache-Control": "no-store" } });
   } catch {
     return NextResponse.json({ ok: false, error: "Unable to process enquiry" }, { status: 500, headers: { "Cache-Control": "no-store" } });
   }

@@ -1,0 +1,49 @@
+{
+  "leads": [],
+  "applications": [],
+  "jobs": [
+    {
+      "id": "embedded-iot-engineer",
+      "createdAt": "2026-08-07T00:00:00.000Z",
+      "updatedAt": "2026-08-07T00:00:00.000Z",
+      "status": "published",
+      "title": "Embedded & IoT Engineer",
+      "department": "Edge Systems",
+      "location": "India / Hybrid",
+      "employmentType": "Full-time",
+      "summary": "Build reliable firmware and connected-device systems, from sensors and gateways to telemetry, remote management and on-device AI.",
+      "description": "Work with the Truefox AI engineering team to design, build and operate dependable connected systems for real-world environments.",
+      "requirements": "C/C++\nEmbedded Linux or RTOS\nDevice protocols and telemetry\nEdge inference experience",
+      "sortOrder": 1
+    }
+  ],
+  "posts": [
+    {
+      "id": "from-demo-to-production",
+      "createdAt": "2026-08-07T00:00:00.000Z",
+      "updatedAt": "2026-08-07T00:00:00.000Z",
+      "status": "draft",
+      "title": "From AI demo to production system",
+      "slug": "from-ai-demo-to-production-system",
+      "category": "Guide",
+      "excerpt": "The architecture, operating and governance questions that should be answered before scaling a prototype.",
+      "content": "Draft the complete article here before publishing.",
+      "author": "Truefox AI",
+      "publishedAt": "",
+      "readTime": "8 min read"
+    }
+  ],
+  "records": [
+    {
+      "id": "primary-contact-email",
+      "createdAt": "2026-08-07T00:00:00.000Z",
+      "updatedAt": "2026-08-07T00:00:00.000Z",
+      "status": "published",
+      "group": "contact",
+      "label": "Primary contact email",
+      "value": "info@truefoxaiinc.com",
+      "description": "Public enquiry and support email address.",
+      "sortOrder": 1
+    }
+  ]
+}

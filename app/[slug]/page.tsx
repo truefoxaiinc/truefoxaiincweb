@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageRenderer from "@/components/PageRenderer";
 import { pageSlugs, pages, site } from "@/data/site";
+import { readCms } from "@/lib/cms";
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamic = "force-dynamic";
 export const dynamicParams = false;
 export function generateStaticParams() { return pageSlugs.map(slug => ({ slug })); }
 
@@ -35,5 +37,6 @@ export default async function DynamicPage({ params }: Props) {
   const { slug } = await params;
   const page = pages[slug];
   if (!page) notFound();
-  return <PageRenderer page={page} />;
+  const managed = slug === "careers" || slug === "blog" ? await readCms() : undefined;
+  return <PageRenderer page={page} managed={managed ? { jobs: managed.jobs, posts: managed.posts } : undefined} />;
 }
