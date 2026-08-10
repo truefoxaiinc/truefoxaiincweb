@@ -370,7 +370,7 @@ export const pages: Record<string, PageData> = {
       { eyebrow: "04", title: "AL RABEAH WATER FACTORY", text: "Industrial automation" },
       { eyebrow: "05", title: "TEQNIA INC.", text: "Technology engagement" },
       { eyebrow: "06", title: "K&S FOOD INC.", text: "Computer vision for food manufacturing" },
-      { eyebrow: "07", title: "WOW BRAIDS", text: "E-commerce experience for hand-braided wigs" }
+      { eyebrow: "07", title: "WOW BRAIDS", text: "Cosmetic dispensing machine engineering" }
     ],
     sections: [
       { title: "TECHNOLOGY PARTNERSHIPS", text: "We collaborate with cloud, hardware, data, security and specialist technology providers when shared expertise creates a stronger, better-integrated solution." },
@@ -430,9 +430,9 @@ export const pages: Record<string, PageData> = {
     slug: "blog",
     navLabel: "Blog & News",
     eyebrow: "INSIGHTS",
-    title: "Practical thinking for applied AI teams.",
-    description: "Truefox AI articles, project insights, product news and technical explainers.",
-    intro: "A publication area for useful, evidence-based perspectives on AI deployment, computer vision, agents, data, edge systems and digital products.",
+    title: "PRACTICAL THINKING FOR REAL-WORLD AI.",
+    description: "Ideas, lessons and technical perspectives drawn from our work across AI deployment, computer vision, agentic systems, data platforms, edge intelligence and digital product engineering.",
+    intro: "Ideas, lessons and technical perspectives drawn from our work across AI deployment, computer vision, agentic systems, data platforms, edge intelligence and digital product engineering.",
     kind: "blog"
   },
   "request-quote": {

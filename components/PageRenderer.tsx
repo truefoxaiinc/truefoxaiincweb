@@ -7,6 +7,7 @@ import InnerHeroMedia from "@/components/InnerHeroMedia";
 import { PageEntityGraph } from "@/components/seo/JsonLd";
 import AttentionMinderPolicyPage from "@/components/AttentionMinderPolicyPage";
 import TeamVoices from "@/components/TeamVoices";
+import AttentionMinderLaunch from "@/components/AttentionMinderLaunch";
 
 function CardGrid({ page }: { page: PageData }) {
   if (!page.cards?.length) return null;
@@ -65,7 +66,7 @@ export default function PageRenderer({ page }: { page: PageData }) {
   return (
     <main id="main-content">
       <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} faqs={faqData} />
-      <section className={`inner-hero cinematic-inner-hero${page.slug === "request-quote" ? " request-quote-hero" : page.slug === "about" ? " about-hero" : page.slug === "why-choose-us" ? " why-choose-us-hero" : page.slug === "careers" ? " careers-hero" : page.slug === "products" ? " products-hero" : page.slug === "services" ? " services-hero" : page.slug === "book-demo" ? " book-demo-hero" : page.slug === "clients-partners" ? " partnerships-hero" : page.slug === "case-studies" ? " case-studies-hero" : page.slug === "faq" ? " faq-hero" : page.slug === "support" ? " support-hero" : page.slug === "contact" ? " contact-hero" : page.slug === "privacy-policy" ? " privacy-policy-hero" : page.slug === "terms-and-conditions" ? " terms-hero" : page.slug === "team" ? " team-hero" : ""}`}>
+      <section className={`inner-hero cinematic-inner-hero${page.slug === "request-quote" ? " request-quote-hero" : page.slug === "about" ? " about-hero" : page.slug === "why-choose-us" ? " why-choose-us-hero" : page.slug === "careers" ? " careers-hero" : page.slug === "products" ? " products-hero" : page.slug === "services" ? " services-hero" : page.slug === "book-demo" ? " book-demo-hero" : page.slug === "clients-partners" ? " partnerships-hero" : page.slug === "case-studies" ? " case-studies-hero" : page.slug === "faq" ? " faq-hero" : page.slug === "support" ? " support-hero" : page.slug === "contact" ? " contact-hero" : page.slug === "privacy-policy" ? " privacy-policy-hero" : page.slug === "terms-and-conditions" ? " terms-hero" : page.slug === "team" ? " team-hero" : page.slug === "blog" ? " blog-hero" : ""}`}>
         <InnerHeroMedia />
         <div className="shell inner-hero-content">
           <Reveal className="inner-copy">
@@ -160,6 +161,12 @@ export default function PageRenderer({ page }: { page: PageData }) {
                 <p>Terms governing access to and use of the Truefox AI Inc. website, its content and related materials.</p>
                 <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
               </>
+            ) : page.slug === "blog" ? (
+              <>
+                <div><span>PAGE SIGNAL</span></div>
+                <p>Articles, project lessons, product updates and technical perspectives from the people building at Truefox AI.</p>
+                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
+              </>
             ) : page.slug === "team" ? (
               <>
                 <div><span>PAGE SIGNAL</span></div>
@@ -175,7 +182,7 @@ export default function PageRenderer({ page }: { page: PageData }) {
             )}
           </Reveal>
         </div>
-        {page.slug !== "request-quote" && page.slug !== "about" && page.slug !== "why-choose-us" && page.slug !== "careers" && page.slug !== "products" && page.slug !== "services" && page.slug !== "book-demo" && page.slug !== "clients-partners" && page.slug !== "case-studies" && page.slug !== "faq" && page.slug !== "support" && page.slug !== "contact" && page.slug !== "privacy-policy" && page.slug !== "terms-and-conditions" && page.slug !== "team" && <div className="inner-hero-index">TFX / {page.eyebrow}</div>}
+        {page.slug !== "request-quote" && page.slug !== "about" && page.slug !== "why-choose-us" && page.slug !== "careers" && page.slug !== "products" && page.slug !== "services" && page.slug !== "book-demo" && page.slug !== "clients-partners" && page.slug !== "case-studies" && page.slug !== "faq" && page.slug !== "support" && page.slug !== "contact" && page.slug !== "privacy-policy" && page.slug !== "terms-and-conditions" && page.slug !== "team" && page.slug !== "blog" && <div className="inner-hero-index">TFX / {page.eyebrow}</div>}
       </section>
 
       {page.stats && (
@@ -228,6 +235,7 @@ export default function PageRenderer({ page }: { page: PageData }) {
       </section>}
 
       {page.slug === "team" && <TeamVoices />}
+      {page.slug === "blog" && <AttentionMinderLaunch />}
 
       {page.cta && page.kind !== "contact" && page.kind !== "form" && (
         <section className={`page-cta cinematic-page-cta${page.slug === "why-choose-us" ? " why-choose-us-cta" : page.slug === "products" ? " products-cta" : page.slug === "services" ? " services-cta" : page.slug === "clients-partners" ? " partnerships-cta" : page.slug === "case-studies" ? " case-studies-cta" : page.slug === "support" ? " support-cta" : page.slug === "team" ? " team-cta" : ""}`}><div className="shell"><Reveal><span className="eyebrow">{page.slug === "about" ? "READY WHEN YOU ARE" : page.slug === "why-choose-us" ? "READY TO MOVE FORWARD?" : page.slug === "products" ? "EXPLORE THE PRODUCTS" : page.slug === "services" ? "READY TO DEFINE THE WORK?" : page.slug === "clients-partners" ? "OPEN TO COLLABORATION" : page.slug === "case-studies" ? "FACING A SIMILAR CHALLENGE?" : page.slug === "support" ? "NEXT STEP" : page.slug === "team" ? "NEXT OPPORTUNITY" : "NEXT SIGNAL"}</span><h2>{page.slug === "about" ? <>BRING US THE QUESTION.<br />LEAVE WITH A WAY FORWARD.</> : page.slug === "why-choose-us" ? <>FROM OPEN QUESTION<br />TO CLEAR NEXT STEP.</> : page.slug === "products" ? <>SEE HOW IT COULD WORK<br />IN YOUR OPERATION.</> : page.slug === "services" ? <>FROM COMPLEX REQUIREMENT<br />TO CLEAR SCOPE.</> : page.slug === "clients-partners" ? <>LET’S BUILD SOMETHING<br />STRONGER TOGETHER.</> : page.slug === "case-studies" ? <>LET’S UNDERSTAND WHAT<br />YOUR OPERATION NEEDS.</> : page.slug === "support" ? "TELL US WHAT’S HAPPENING." : page.slug === "team" ? "BUILD WORK THAT MAKES IT INTO THE REAL WORLD." : "Turn the question into a practical plan."}</h2><p>{page.slug === "about" ? "Tell us what needs to work better, the environment it must work within and the outcome you’re aiming for. We’ll help identify the most practical next step." : page.slug === "why-choose-us" ? "Tell us what needs to improve, where it must work and what a successful outcome looks like. We’ll help turn that context into a practical way forward." : page.slug === "products" ? "Tell us about your workflow, environment and requirements. We’ll tailor the demonstration around the products and capabilities most relevant to you." : page.slug === "services" ? "Share the workflow, operating environment and outcome you need. We’ll assess the context, identify the right approach and define a practical path forward." : page.slug === "clients-partners" ? "Tell us about your capabilities, the opportunity you see and the kind of partnership you have in mind. We’ll explore where our expertise aligns and what we could create together." : page.slug === "case-studies" ? "Share the workflow, constraints and outcome you’re working toward. We’ll help identify the right approach and a practical way forward." : page.slug === "support" ? "Share the affected product or project, operating environment and impact. We’ll route your request to the right team and help determine the next step." : page.slug === "team" ? "Bring your curiosity, technical depth and sense of ownership. Join a team building intelligent systems designed to perform beyond the prototype." : "Share the workflow, environment and desired result. We will help define the next step."}</p><Link className="button button-primary" href={page.cta.href}>{page.slug === "why-choose-us" ? "DISCUSS YOUR PROJECT" : page.slug === "products" ? "BOOK A PRODUCT DEMO" : page.slug === "services" ? "REQUEST A SCOPING CONVERSATION" : page.slug === "clients-partners" ? "DISCUSS A PARTNERSHIP" : page.slug === "case-studies" ? "DISCUSS YOUR CHALLENGE" : page.slug === "support" ? "CONTACT SUPPORT" : page.cta.label}<ArrowUpRight /></Link></Reveal></div></section>
