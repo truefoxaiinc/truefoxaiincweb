@@ -15,7 +15,7 @@ const voices = [
   },
   {
     image: "/images/team-voices/team-voice-03.jpeg",
-    name: "Mukta AR",
+    name: "Muktha AR",
     discipline: "Senior Machine Learning & Computer Vision Engineer",
     quote: "I get to work on technically challenging problems while staying close to how the system will actually be used. The team is open, supportive and always willing to test an assumption instead of simply accepting it."
   },
