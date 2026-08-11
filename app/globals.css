@@ -7752,7 +7752,6 @@ a.footer-contact-line {
 .career-form-actions{padding:28px clamp(24px,5vw,70px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;background:rgba(255,255,255,.018)}.career-consent{display:flex;align-items:flex-start;gap:11px;max-width:650px;color:#87929e;font-size:10px;line-height:1.6;cursor:pointer}.career-consent input{flex:0 0 auto;width:17px;height:17px;margin:0;accent-color:var(--orange)}.career-form-actions .button{min-width:220px}.career-form-actions .button>span{font-size:18px}.career-application-form>.form-notice{margin:0;padding:16px clamp(24px,5vw,70px);border-radius:0;border-width:1px 0 0}
 @media(max-width:900px){.career-form-head{grid-template-columns:1fr}.career-form-head aside{max-width:430px}.career-form-section{grid-template-columns:1fr;gap:28px}.career-form-section-title small{max-width:none}}
 @media(max-width:640px){.career-application-form{margin-top:52px;border-radius:18px}.career-form-head{padding:34px 22px}.career-form-head h2{font-size:43px}.career-form-head>div>p{font-size:13px}.career-form-head aside{padding:19px}.career-form-section{padding:30px 22px}.career-form-grid{grid-template-columns:1fr;gap:19px}.career-field-wide{grid-column:auto}.career-form-actions{grid-template-columns:1fr;padding:24px 22px}.career-form-actions .button{width:100%;min-width:0}.career-field input,.career-field select{height:52px}}
-=======
 /* Team voices */
 .section.team-content {
   min-height: 0;
