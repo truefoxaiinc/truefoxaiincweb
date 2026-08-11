@@ -1,11 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
-import WhatsApp from "@/components/WhatsApp";
-import CursorGlow from "@/components/CursorGlow";
-import PerformanceObserver from "@/components/PerformanceObserver";
+import SiteChrome from "@/components/SiteChrome";
 import { GlobalEntityGraph } from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
 
@@ -66,14 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <GlobalEntityGraph />
-        <div className="noise-layer" aria-hidden="true" />
-        <CursorGlow />
-        <Header />
-        {children}
-        <Footer />
-        <WhatsApp />
-        <Chatbot />
-        <PerformanceObserver />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

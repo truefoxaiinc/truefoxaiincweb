@@ -91,3 +91,30 @@ Use the WhatsApp number in international format without `+`, spaces or punctuati
 - `public/media/truefox-ai-1080.mp4` — 1920×1080
 - `public/media/truefox-ai-mobile.mp4` — 720×1280 portrait
 - `public/media/video-poster-4k.webp` — fast poster fallback
+
+## Admin dashboard
+
+The protected website control centre is available at `/admin`. Configure strong, unique credentials before opening it:
+
+```env
+ADMIN_USERNAME=your-admin-user
+ADMIN_PASSWORD=use-a-long-random-password
+```
+
+The dashboard uses a dedicated login page and an eight-hour signed, HTTP-only session cookie. Protected pages redirect to `/admin/login`, protected APIs return `401`, repeated failed sign-in attempts are temporarily limited, and the dashboard includes a secure sign-out action. It returns `503` when credentials are absent. Set `ADMIN_SESSION_SECRET` to a long random value in production; the password is used as a fallback signing secret when it is omitted.
+
+### Managed website data
+
+The dashboard can create, review, update and delete contact leads, career applications, jobs, blog posts and general site records. Managed data is stored in SQLite; transactions, indexes, audit logging and versioned migrations are handled by the backend repository. Admin APIs are protected by the same session as `/admin`. Public visitors can submit leads and applications, but cannot read stored records. Only published jobs and blog posts appear publicly.
+
+Run the database migration and integrity check before starting a deployment:
+
+```bash
+npm run db:migrate
+npm run db:check
+npm run db:test
+```
+
+`DATABASE_PATH` defaults to `data/truefox.sqlite`. The first initialization imports existing records from `data/cms.json`, which remains the checked-in seed. The database file, journal and WAL files are excluded from Git. Back up the configured database path as operational data.
+
+SQLite requires a persistent writable filesystem and is suitable for a persistent Node server, VM or container. For serverless deployments with ephemeral filesystems, replace the repository in `lib/database.ts` and `lib/cms.ts` with a managed PostgreSQL or MySQL adapter while retaining the existing API contracts.

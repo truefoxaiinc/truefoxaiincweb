@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "@/components/Icons";
+import { apiUrl } from "@/lib/api";
 
 export default function LeadForm({ intent = "contact" }: { intent?: "contact" | "quote" | "demo" }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -12,10 +13,10 @@ export default function LeadForm({ intent = "contact" }: { intent?: "contact" | 
     const form = event.currentTarget;
     const payload = Object.fromEntries(new FormData(form).entries());
     try {
-      const response = await fetch("/api/lead", {
+      const response = await fetch(apiUrl("/api/v1/leads"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, intent })
+        body: JSON.stringify({ ...payload, consent: payload.consent === "on", intent })
       });
       if (!response.ok) throw new Error("Submission failed");
       form.reset();

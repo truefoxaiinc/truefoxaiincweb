@@ -6,8 +6,14 @@ import LeadForm from "@/components/LeadForm";
 import InnerHeroMedia from "@/components/InnerHeroMedia";
 import { PageEntityGraph } from "@/components/seo/JsonLd";
 import AttentionMinderPolicyPage from "@/components/AttentionMinderPolicyPage";
+
+import ManagedCareers from "@/components/ManagedCareers";
+import ManagedBlog from "@/components/ManagedBlog";
+import type { BlogPost, Job } from "@/lib/cms";
+=======
 import TeamVoices from "@/components/TeamVoices";
 import AttentionMinderLaunch from "@/components/AttentionMinderLaunch";
+
 
 function CardGrid({ page }: { page: PageData }) {
   if (!page.cards?.length) return null;
@@ -59,7 +65,7 @@ function ContentSections({ page }: { page: PageData }) {
   );
 }
 
-export default function PageRenderer({ page }: { page: PageData }) {
+export default function PageRenderer({ page, managed }: { page: PageData; managed?: { jobs: Job[]; posts: BlogPost[] } }) {
   if (page.slug === "attention-minder-privacy-policy") return <AttentionMinderPolicyPage page={page} />;
   const formIntent = page.slug === "request-quote" ? "quote" : page.slug === "book-demo" ? "demo" : "contact";
   const faqData = page.kind === "faq" ? page.sections?.map(({ title, text }) => ({ title, text })) : undefined;
@@ -229,7 +235,7 @@ export default function PageRenderer({ page }: { page: PageData }) {
               <Reveal delay={0.1}><LeadForm intent={formIntent} /></Reveal>
             </div>
           ) : (
-            <>{page.slug === "careers" && <Reveal className="careers-open-heading"><span className="eyebrow">NOW HIRING</span><h2>CURRENT OPEN POSITION</h2></Reveal>}{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} />{page.slug === "careers" && <Reveal className="careers-contact"><span className="eyebrow">INTERESTED IN JOINING TRUEFOX AI?</span><p>Send your resume to <a href="mailto:info@truefoxaiinc.com">info@truefoxaiinc.com</a></p></Reveal>}<ContentSections page={page} /></>
+            <>{page.slug === "careers" ? <ManagedCareers jobs={managed?.jobs ?? []} /> : page.slug === "blog" ? <ManagedBlog posts={managed?.posts ?? []} /> : <>{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} /><ContentSections page={page} /></>}</>
           )}
         </div>
       </section>}

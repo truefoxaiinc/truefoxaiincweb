@@ -2,48 +2,70 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
-import { FormEvent, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { CloseIcon, MessageIcon, SendIcon } from "@/components/Icons";
+import { apiUrl } from "@/lib/api";
 
-type Message = { role: "bot" | "user"; text: string; href?: string; label?: string };
+type Citation = { document_id: string; title: string; source: string; excerpt: string; score: number };
+type Message = { role: "bot" | "user"; text: string; citations?: Citation[]; error?: boolean };
+type ChatResult = { conversation_id: string; answer: string; citations: Citation[] };
 
-const answers = [
-  { terms: ["service", "build", "develop"], text: "Truefox AI delivers computer vision, biometrics, private AI assistants, agentic automation, IoT, data/ML, web, mobile and cloud systems.", href: "/services", label: "Explore services" },
-  { terms: ["product", "security", "biometric", "assistant", "agent"], text: "Our product areas include AI Smart Security, Biometric Intelligence, Private AI Assistants, Agentic Automation and IoT / Edge AI.", href: "/products", label: "View products" },
-  { terms: ["demo", "meeting", "consultation", "call"], text: "You can book a tailored product demonstration or technical consultation. Share the environment and area of interest so the session is relevant.", href: "/book-demo", label: "Book a demo" },
-  { terms: ["canada", "india", "office", "location"], text: "Truefox AI is headquartered in Kitchener, Ontario, Canada, with an engineering delivery centre in India and international client delivery." },
-  { terms: ["support", "help", "issue", "problem"], text: "Existing clients should use the support route defined in their agreement. General support and security reports can be submitted through the Help Centre.", href: "/support", label: "Open Help Centre" },
-  { terms: ["career", "job", "hiring", "apply"], text: "Career areas include AI/ML, full-stack product engineering, IoT/embedded systems, QA and delivery. Current openings must be confirmed on the Careers page.", href: "/careers", label: "Explore careers" }
-];
+const welcome: Message = {
+  role: "bot",
+  text: "Hello — I’m the Truefox AI assistant. Ask me about services, products, demos, offices, support, or careers.",
+};
+
+function citationHref(source: string) {
+  if (source.startsWith("/")) return source;
+  if (/^https:\/\//i.test(source)) return source;
+  return null;
+}
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>([
-    { role: "bot", text: "Hello — I’m the Truefox AI website assistant. Ask about services, products, demos, offices, support or careers." }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([welcome]);
+  const [conversationId, setConversationId] = useState<string>();
+  const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
-  const suggestions = useMemo(() => ["Explore services", "Book a demo", "Request a quote"], []);
+  const suggestions = useMemo(() => ["Explore services", "Book a demo", "How can I apply?"], []);
 
-  function respond(text: string) {
-    const lower = text.toLowerCase();
-    const answer = answers.find(item => item.terms.some(term => lower.includes(term)));
-    const bot: Message = answer
-      ? { role: "bot", text: answer.text, href: answer.href, label: answer.label }
-      : { role: "bot", text: "The best next step is to share a little context about your project. Our team can then recommend a practical discovery, pilot or delivery approach.", href: "/contact", label: "Contact Truefox AI" };
-    window.setTimeout(() => {
-      setMessages(current => [...current, bot]);
-      window.setTimeout(() => listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" }), 50);
-    }, 350);
+  useEffect(() => {
+    listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" });
+  }, [messages, loading]);
+
+  async function ask(text: string) {
+    if (loading) return;
+    setMessages(current => [...current, { role: "user", text }]);
+    setLoading(true);
+    try {
+      const response = await fetch(apiUrl("/api/v1/chat"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, conversation_id: conversationId }),
+      });
+      const result = (await response.json()) as ChatResult & { error?: string };
+      if (!response.ok) throw new Error(result.error || "The assistant is unavailable.");
+      setConversationId(result.conversation_id);
+      setMessages(current => [...current, { role: "bot", text: result.answer, citations: result.citations }]);
+    } catch {
+      setMessages(current => [...current, {
+        role: "bot",
+        text: "I can’t reach the AI service right now. Please try again or contact the Truefox AI team.",
+        citations: [{ document_id: "contact", title: "Contact Truefox AI", source: "/contact", excerpt: "", score: 1 }],
+        error: true,
+      }]);
+    } finally {
+      setLoading(false);
+    }
   }
 
   function submit(event: FormEvent) {
     event.preventDefault();
     const value = input.trim();
-    if (!value) return;
-    setMessages(current => [...current, { role: "user", text: value }]);
+    if (!value || loading) return;
     setInput("");
-    respond(value);
+    void ask(value);
   }
 
   return (
@@ -51,23 +73,30 @@ export default function Chatbot() {
       <AnimatePresence>
         {open && (
           <motion.aside className="chatbot" initial={{ opacity: 0, y: 20, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.96 }} aria-label="Truefox AI assistant">
-            <header className="chatbot-head"><div className="bot-avatar">TFX<i /></div><div><strong>Truefox AI Assistant</strong><span>Online · website guidance</span></div><button onClick={() => setOpen(false)} aria-label="Close chatbot"><CloseIcon /></button></header>
+            <header className="chatbot-head"><div className="bot-avatar">TFX<i /></div><div><strong>Truefox AI Assistant</strong><span>AI-powered · source grounded</span></div><button onClick={() => setOpen(false)} aria-label="Close chatbot"><CloseIcon /></button></header>
             <div className="chatbot-status"><span>CANADA</span><span>INDIA</span><span>INTERNATIONAL</span></div>
-            <div className="chatbot-messages" ref={listRef}>
+            <div className="chatbot-messages" ref={listRef} aria-live="polite">
               {messages.map((message, index) => (
-                <div className={`chat-message ${message.role}`} key={`${message.role}-${index}`}>
+                <div className={`chat-message ${message.role}${message.error ? " error" : ""}`} key={`${message.role}-${index}`}>
                   {message.role === "bot" && <span className="mini-avatar">TFX</span>}
-                  <div><p>{message.text}</p>{message.href && <Link href={message.href}>{message.label} →</Link>}</div>
+                  <div>
+                    <p>{message.text}</p>
+                    {message.citations?.length ? <div className="chat-citations">{message.citations.map((citation, citationIndex) => {
+                      const href = citationHref(citation.source);
+                      return href ? <Link href={href} key={`${citation.document_id}-${citationIndex}`} target={href.startsWith("https://") ? "_blank" : undefined} rel="noreferrer">[{citationIndex + 1}] {citation.title}</Link> : <span key={`${citation.document_id}-${citationIndex}`}>[{citationIndex + 1}] {citation.title}</span>;
+                    })}</div> : null}
+                  </div>
                 </div>
               ))}
+              {loading && <div className="chat-message bot"><span className="mini-avatar">TFX</span><div className="chat-typing" aria-label="Assistant is thinking"><i /><i /><i /></div></div>}
             </div>
-            <div className="chat-suggestions">{suggestions.map(s => <button key={s} onClick={() => { setMessages(current => [...current, { role: "user", text: s }]); respond(s); }}>{s}</button>)}</div>
-            <form className="chat-form" onSubmit={submit}><input value={input} onChange={e => setInput(e.target.value)} placeholder="Ask about a project..." aria-label="Chat message" /><button type="submit" aria-label="Send"><SendIcon /></button></form>
-            <small>Automated website guidance. Do not share confidential information.</small>
+            <div className="chat-suggestions">{suggestions.map(s => <button key={s} disabled={loading} onClick={() => void ask(s)}>{s}</button>)}</div>
+            <form className="chat-form" onSubmit={submit}><input value={input} maxLength={4000} disabled={loading} onChange={e => setInput(e.target.value)} placeholder="Ask about Truefox AI..." aria-label="Chat message" /><button type="submit" disabled={loading || !input.trim()} aria-label="Send"><SendIcon /></button></form>
+            <small>AI answers may be imperfect. Do not share confidential information.</small>
           </motion.aside>
         )}
       </AnimatePresence>
-      <button className="chat-launcher" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-label="Open Truefox AI assistant"><MessageIcon /><span>AI Assistant</span><i /></button>
+      <button className="chat-launcher" onClick={() => setOpen(value => !value)} aria-expanded={open} aria-label="Open Truefox AI assistant"><MessageIcon /><span>AI Assistant</span><i /></button>
     </div>
   );
 }
