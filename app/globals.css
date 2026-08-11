@@ -2101,6 +2101,50 @@ p {
   color: #111
 }
 
+.chat-citations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px
+}
+
+.chat-citations a,
+.chat-citations span {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 7px;
+  border: 1px solid rgba(247, 122, 0, .25);
+  border-radius: 999px;
+  color: var(--orange-2);
+  font-size: 8px
+}
+
+.chat-message.error>div {
+  border-color: rgba(255, 91, 91, .35)
+}
+
+.chat-typing {
+  display: flex;
+  gap: 4px;
+  padding: 14px 15px !important
+}
+
+.chat-typing i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: chat-pulse 1s infinite ease-in-out
+}
+
+.chat-typing i:nth-child(2) { animation-delay: .15s }
+.chat-typing i:nth-child(3) { animation-delay: .3s }
+
+@keyframes chat-pulse {
+  0%, 100% { opacity: .3; transform: translateY(0) }
+  50% { opacity: 1; transform: translateY(-3px) }
+}
+
 .chat-suggestions {
   display: flex;
   gap: 7px;
@@ -2151,6 +2195,12 @@ p {
   display: grid;
   place-items: center;
   cursor: pointer
+}
+
+.chat-form button:disabled,
+.chat-suggestions button:disabled {
+  cursor: not-allowed;
+  opacity: .5
 }
 
 .chat-form svg {

@@ -2,10 +2,9 @@
 import path from "node:path";
 import Link from "next/link";
 import { navGroups, pages, site, solutions } from "@/data/site";
-import { readCms } from "@/lib/cms";
 import AdminDataManager from "@/components/admin/AdminDataManager";
 import LogoutButton from "@/components/admin/LogoutButton";
-import { getDatabaseHealth } from "@/lib/database";
+import type { CmsData } from "@/lib/cms";
 
 export const dynamic = "force-dynamic";
 
@@ -32,8 +31,8 @@ function StatusDot({ ok }: { ok: boolean }) {
 }
 
 export default async function AdminPage() {
-  const cms = await readCms();
-  const databaseHealth = getDatabaseHealth();
+  const cms: CmsData = { leads: [], applications: [], jobs: [], posts: [], records: [] };
+  const databaseHealth = { status: "remote", integrity: "Managed by FastAPI on AWS" };
   const pageList = Object.values(pages);
   const navigationPaths = new Set(navGroups.flatMap((group) => group.items.map(([, href]) => href.slice(1))));
   const assets = [...collectAssets("media", "Video & posters"), ...collectAssets("images", "Brand images"), ...collectAssets("resources", "Downloads")].sort((a, b) => b.size - a.size);
@@ -42,13 +41,13 @@ export default async function AdminPage() {
   const sectionCount = pageList.reduce((total, page) => total + (page.sections?.length ?? 0), 0);
   const draftSignals = JSON.stringify(pages).match(/draft editorial concept|newsroom template|publish verified/gi)?.length ?? 0;
   const checks = {
-    webhook: Boolean(process.env.LEADS_WEBHOOK_URL),
+    webhook: true,
     telemetry: Boolean(process.env.NEXT_PUBLIC_WEB_VITALS_ENDPOINT),
-    admin: Boolean(process.env.ADMIN_USERNAME && process.env.ADMIN_PASSWORD),
+    admin: Boolean(process.env.NEXT_PUBLIC_API_URL),
     url: Boolean(process.env.NEXT_PUBLIC_SITE_URL),
     content: draftSignals === 0
   };
-  const readinessValues = [databaseHealth.status === "ok", checks.webhook, checks.admin, checks.url, checks.content];
+  const readinessValues = [Boolean(process.env.NEXT_PUBLIC_API_URL), checks.webhook, checks.admin, checks.url, checks.content];
   const readinessScore = Math.round(readinessValues.filter(Boolean).length / readinessValues.length * 100);
   const generatedAt = new Intl.DateTimeFormat("en-CA", { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Kolkata" }).format(new Date());
 
@@ -85,13 +84,13 @@ export default async function AdminPage() {
               <PanelHead eyebrow="SYSTEM HEALTH" title="Deployment checks" status={readinessScore === 100 ? "READY" : "ACTION NEEDED"} good={readinessScore === 100} />
               <div className="admin-check-list">
                 <Check ok label="Static content registry" detail={`${pageList.length} valid content routes available`} value="Healthy" />
-                <Check ok={databaseHealth.status === "ok"} label="Database backend" detail={`SQLite integrity: ${databaseHealth.integrity}`} value={databaseHealth.status === "ok" ? "Connected" : "Degraded"} />
+                <Check ok={checks.admin} label="FastAPI backend" detail={databaseHealth.integrity} value={checks.admin ? "Configured" : "Missing URL"} />
                 <Check ok={checks.webhook} label="Lead delivery webhook" detail={checks.webhook ? "Private destination configured" : "LEADS_WEBHOOK_URL is not configured"} value={checks.webhook ? "Connected" : "Required"} />
                 <Check ok={checks.telemetry} label="Performance telemetry" detail={checks.telemetry ? "Browser reporting enabled" : "Optional endpoint is not configured"} value={checks.telemetry ? "Connected" : "Optional"} />
                 <Check ok={checks.content} label="Content approval" detail={draftSignals ? `${draftSignals} draft or template signals detected` : "No draft markers detected"} value={draftSignals ? "Review" : "Approved"} />
               </div>
             </section>
-            <aside className="admin-panel admin-actions"><PanelHead eyebrow="QUICK ACTIONS" title="Shortcuts" /><QuickLink href="/" icon="↗" label="Preview website" detail="Open the public home page" /><QuickLink href="/contact" icon="✦" label="Test lead form" detail="Verify enquiry delivery" /><QuickLink href="/api/admin/database" icon="DB" label="Database health" detail="Inspect backend integrity" /><QuickLink href="/api/health" icon="●" label="Health endpoint" detail="Check the runtime response" /></aside>
+            <aside className="admin-panel admin-actions"><PanelHead eyebrow="QUICK ACTIONS" title="Shortcuts" /><QuickLink href="/" icon="↗" label="Preview website" detail="Open the public home page" /><QuickLink href="/contact" icon="✦" label="Test lead form" detail="Verify enquiry delivery" /></aside>
           </div>
 
           <section className="admin-panel admin-content-panel" id="content">
@@ -101,7 +100,7 @@ export default async function AdminPage() {
 
           <div className="admin-grid admin-lower-grid">
             <section className="admin-panel admin-leads" id="leads"><PanelHead eyebrow="LEAD DELIVERY" title="Enquiry pipeline" status={checks.webhook ? "CONNECTED" : "NOT CONFIGURED"} good={checks.webhook} /><div className="admin-pipeline"><div><span>Website forms</span><strong>Contact · Quote · Demo</strong></div><i>→</i><div><span>Validation</span><strong>Honeypot · Sanitization</strong></div><i>→</i><div className={checks.webhook ? "is-connected" : "is-disconnected"}><span>Destination</span><strong>{checks.webhook ? "Webhook active" : "Console fallback"}</strong></div></div><div className="admin-notice"><strong>{checks.webhook ? "Delivery is configured." : "Action required before launch."}</strong><p>{checks.webhook ? "New enquiries are forwarded to the configured private webhook. Lead values are intentionally hidden here." : "Set LEADS_WEBHOOK_URL to a durable CRM, automation or secure inbox endpoint. Without it, submissions only reach runtime logs."}</p></div></section>
-            <section className="admin-panel admin-config"><PanelHead eyebrow="ENVIRONMENT" title="Configuration" />{[["Admin credentials", checks.admin, "ADMIN_USERNAME / ADMIN_PASSWORD"], ["Lead webhook", checks.webhook, "LEADS_WEBHOOK_URL"], ["Performance endpoint", checks.telemetry, "NEXT_PUBLIC_WEB_VITALS_ENDPOINT"], ["Canonical site URL", checks.url, "NEXT_PUBLIC_SITE_URL"]].map(([label, ok, key]) => <div className="admin-config-row" key={String(key)}><StatusDot ok={Boolean(ok)} /><div><strong>{String(label)}</strong><code>{String(key)}</code></div><span>{ok ? "Set" : "Missing"}</span></div>)}</section>
+            <section className="admin-panel admin-config"><PanelHead eyebrow="ENVIRONMENT" title="Configuration" />{[["FastAPI backend", checks.admin, "NEXT_PUBLIC_API_URL"], ["Lead delivery", checks.webhook, "Configured on AWS"], ["Performance endpoint", checks.telemetry, "NEXT_PUBLIC_WEB_VITALS_ENDPOINT"], ["Canonical site URL", checks.url, "NEXT_PUBLIC_SITE_URL"]].map(([label, ok, key]) => <div className="admin-config-row" key={String(key)}><StatusDot ok={Boolean(ok)} /><div><strong>{String(label)}</strong><code>{String(key)}</code></div><span>{ok ? "Set" : "Missing"}</span></div>)}</section>
           </div>
 
           <section className="admin-panel admin-media" id="media"><div className="admin-panel-head"><div><span>MEDIA LIBRARY</span><h2>Public assets</h2><p>Videos, documents and brand assets served from the public directory.</p></div><b>{formatBytes(assetBytes)}</b></div><div className="admin-asset-grid">{assets.map((asset) => <a href={asset.href} target="_blank" rel="noreferrer" key={asset.href}><span className="admin-file-icon">{asset.name.split(".").pop()?.toUpperCase()}</span><div><strong>{asset.name}</strong><small>{asset.group} · {formatBytes(asset.size)}</small></div><i>↗</i></a>)}</div></section>

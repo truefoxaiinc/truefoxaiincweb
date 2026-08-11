@@ -6,7 +6,7 @@ export default function LogoutButton() {
   const [busy, setBusy] = useState(false);
   async function logout() {
     setBusy(true);
-    try { await fetch("/api/admin/logout", { method: "POST" }); } finally { window.location.assign("/admin/login"); }
+    try { sessionStorage.removeItem("truefox_admin_token"); } finally { window.location.assign("/admin/login"); }
   }
   return <button className="admin-logout" onClick={logout} disabled={busy}>{busy ? "Signing out..." : "Sign out"}</button>;
 }

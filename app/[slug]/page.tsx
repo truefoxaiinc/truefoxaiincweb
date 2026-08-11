@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageRenderer from "@/components/PageRenderer";
 import { pageSlugs, pages, site } from "@/data/site";
-import { readCms } from "@/lib/cms";
+import type { CmsData } from "@/lib/cms";
+import { apiUrl } from "@/lib/api";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -37,6 +38,12 @@ export default async function DynamicPage({ params }: Props) {
   const { slug } = await params;
   const page = pages[slug];
   if (!page) notFound();
-  const managed = slug === "careers" || slug === "blog" ? await readCms() : undefined;
+  let managed: CmsData | undefined;
+  if (slug === "careers" || slug === "blog") {
+    try {
+      const response = await fetch(apiUrl("/api/v1/content"), { next: { revalidate: 60 } });
+      if (response.ok) managed = await response.json() as CmsData;
+    } catch { managed = undefined; }
+  }
   return <PageRenderer page={page} managed={managed ? { jobs: managed.jobs, posts: managed.posts } : undefined} />;
 }

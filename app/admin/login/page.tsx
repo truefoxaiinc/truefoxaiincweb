@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { apiUrl } from "@/lib/api";
 
 export default function AdminLoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,9 +13,10 @@ export default function AdminLoginPage() {
     event.preventDefault(); setStatus("loading"); setMessage("");
     const values = Object.fromEntries(new FormData(event.currentTarget).entries());
     try {
-      const response = await fetch("/api/admin/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
-      const result = await response.json() as { error?: string };
-      if (!response.ok) throw new Error(result.error || "Unable to sign in.");
+      const response = await fetch(apiUrl("/api/v1/admin/login"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
+      const result = await response.json() as { detail?: string; access_token?: string };
+      if (!response.ok || !result.access_token) throw new Error(result.detail || "Unable to sign in.");
+      sessionStorage.setItem("truefox_admin_token", result.access_token);
       const next = new URLSearchParams(window.location.search).get("next");
       window.location.assign(next?.startsWith("/admin") ? next : "/admin");
     } catch (error) { setStatus("error"); setMessage(error instanceof Error ? error.message : "Unable to sign in."); }

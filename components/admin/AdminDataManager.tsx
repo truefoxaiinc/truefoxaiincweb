@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import type { CmsData, CollectionName } from "@/lib/cms";
+import { adminHeaders, apiUrl } from "@/lib/api";
 
 type Item = Record<string, string | number> & { id: string };
 type Field = { name: string; label: string; type?: "text" | "email" | "number" | "date" | "textarea" | "select"; options?: string[]; required?: boolean };
@@ -43,8 +44,11 @@ export default function AdminDataManager({ initialData }: { initialData: CmsData
   const visible = useMemo(() => list.filter((item) => JSON.stringify(item).toLowerCase().includes(search.toLowerCase())), [list, search]);
   const allowCreate = !["leads", "applications"].includes(active);
 
+  useEffect(() => { void refresh().catch(() => setNotice("Sign in to load administration data.")); }, []);
+
   async function refresh() {
-    const response = await fetch("/api/admin/data", { cache: "no-store" });
+    const response = await fetch(apiUrl("/api/v1/admin/data"), { cache: "no-store", headers: adminHeaders() });
+    if (response.status === 401) { window.location.assign("/admin/login"); throw new Error("Unauthorized"); }
     if (!response.ok) throw new Error("Unable to reload data");
     setData(await response.json());
   }
@@ -55,7 +59,7 @@ export default function AdminDataManager({ initialData }: { initialData: CmsData
     const method = creating ? "POST" : "PATCH";
     const body = creating ? { collection: active, item: values } : { collection: active, id: editing?.id, item: values };
     try {
-      const response = await fetch("/api/admin/data", { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      const response = await fetch(apiUrl("/api/v1/admin/data"), { method, headers: adminHeaders(), body: JSON.stringify(body) });
       if (!response.ok) throw new Error("Save failed");
       await refresh(); setEditing(null); setCreating(false); setNotice("Saved successfully.");
     } catch { setNotice("The record could not be saved."); } finally { setBusy(false); }
@@ -65,7 +69,7 @@ export default function AdminDataManager({ initialData }: { initialData: CmsData
     if (!window.confirm("Delete this record permanently?")) return;
     setBusy(true);
     try {
-      const response = await fetch("/api/admin/data", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ collection: active, id: item.id }) });
+      const response = await fetch(apiUrl("/api/v1/admin/data"), { method: "DELETE", headers: adminHeaders(), body: JSON.stringify({ collection: active, id: item.id }) });
       if (!response.ok) throw new Error();
       await refresh(); setEditing(null); setNotice("Record deleted.");
     } catch { setNotice("The record could not be deleted."); } finally { setBusy(false); }

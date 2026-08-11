@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import type { Job } from "@/lib/cms";
+import { apiUrl } from "@/lib/api";
 
 export default function CareerApplicationForm({ jobs }: { jobs: Job[] }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -11,7 +12,7 @@ export default function CareerApplicationForm({ jobs }: { jobs: Job[] }) {
     const form = event.currentTarget;
     const values = Object.fromEntries(new FormData(form).entries());
     try {
-      const response = await fetch("/api/careers/apply", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...values, consent: values.consent === "on" }) });
+      const response = await fetch(apiUrl("/api/v1/applications"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...values, consent: values.consent === "on" }) });
       if (!response.ok) throw new Error();
       form.reset(); setStatus("success");
     } catch { setStatus("error"); }
