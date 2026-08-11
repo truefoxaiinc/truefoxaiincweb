@@ -10,10 +10,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint:content": "node scripts/content-audit.mjs",
-    "db:migrate": "node scripts/database.mjs",
-    "db:check": "node scripts/database.mjs",
-    "db:test": "node scripts/database-test.mjs"
+    "lint:content": "node scripts/content-audit.mjs"
   },
   "dependencies": {
     "motion": "12.43.0",
