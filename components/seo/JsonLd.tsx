@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import type { Card, PageData } from "@/data/site";
 
 type JsonValue = Record<string, unknown> | Record<string, unknown>[];
 
@@ -108,12 +109,16 @@ export function PageEntityGraph({
   title,
   description,
   eyebrow,
+  kind,
+  cards,
   faqs
 }: {
   slug: string;
   title: string;
   description: string;
   eyebrow: string;
+  kind?: PageData["kind"];
+  cards?: Card[];
   faqs?: { title: string; text: string }[];
 }) {
   const url = `${site.url}/${slug}`;
@@ -146,6 +151,38 @@ export function PageEntityGraph({
         "@type": "Question",
         name: faq.title,
         acceptedAnswer: { "@type": "Answer", text: faq.text }
+      }))
+    });
+  }
+  if (slug === "services") {
+    graph.push({
+      "@type": "Service",
+      "@id": `${url}/#service`,
+      name: "Applied AI and Software Engineering Services",
+      description,
+      provider: { "@id": `${site.url}/#organization` },
+      areaServed: ["Canada", "India", "International"],
+      serviceType: cards?.map((card) => card.title) || ["AI development", "Software engineering", "Cloud engineering"]
+    });
+  }
+  if (kind === "products" && slug !== "products") {
+    graph.push({
+      "@type": "Product",
+      "@id": `${url}/#product`,
+      name: title,
+      description,
+      brand: { "@type": "Brand", name: site.shortName },
+      manufacturer: { "@id": `${site.url}/#organization` },
+      url
+    });
+  }
+  if (slug === "products" && cards?.length) {
+    graph.push({
+      "@type": "ItemList",
+      name: "Truefox AI products",
+      itemListElement: cards.map((card, index) => ({
+        "@type": "ListItem", position: index + 1, name: card.title,
+        url: card.href ? `${site.url}${card.href}` : url
       }))
     });
   }

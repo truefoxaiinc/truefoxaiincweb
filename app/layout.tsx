@@ -5,7 +5,7 @@ import { GlobalEntityGraph } from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || site.url),
+  metadataBase: new URL(site.url),
   title: {
     default: "Enterprise AI, Computer Vision & Automation | Truefox AI Inc.",
     template: "%s | Truefox AI Inc."

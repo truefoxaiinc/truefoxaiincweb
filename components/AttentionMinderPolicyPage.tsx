@@ -157,7 +157,7 @@ const sections = [
 export default function AttentionMinderPolicyPage({ page }: { page: PageData }) {
   return (
     <main id="main-content" className="attention-policy-page">
-      <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} />
+      <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} kind={page.kind} />
       <header className="policy-hero">
         <div className="shell policy-hero-inner">
           <nav className="breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><b>Privacy Policy</b></nav>
