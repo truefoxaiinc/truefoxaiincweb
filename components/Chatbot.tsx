@@ -1,40 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { CloseIcon, MessageIcon, SendIcon } from "@/components/Icons";
 import { apiUrl } from "@/lib/api";
 
 type Citation = { document_id: string; title: string; source: string; excerpt: string; score: number };
-type Message = { role: "bot" | "user"; text: string; citations?: Citation[]; error?: boolean };
+type Message = { role: "bot" | "user"; text: string; error?: boolean };
 type ChatResult = { conversation_id: string; answer: string; citations: Citation[] };
-
-const welcome: Message = {
-  role: "bot",
-  text: "Hello — I’m the Truefox AI assistant. Ask me about services, products, demos, offices, support, or careers.",
-};
-
-function citationHref(source: string) {
-  if (source.startsWith("/")) return source;
-  if (/^https:\/\//i.test(source)) return source;
-  return null;
-}
 
 function cleanAnswer(text: string) {
   return text.replace(/\s*\[\d+\]/g, "").trim();
 }
 
-function uniqueCitations(citations: Citation[] = []) {
-  return citations.filter((citation, index, all) =>
-    all.findIndex(item => item.document_id === citation.document_id || item.source === citation.source) === index
-  ).slice(0, 3);
-}
-
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>([welcome]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [conversationId, setConversationId] = useState<string>();
   const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
@@ -57,12 +39,12 @@ export default function Chatbot() {
       const result = (await response.json()) as ChatResult & { error?: string };
       if (!response.ok) throw new Error(result.error || "The assistant is unavailable.");
       setConversationId(result.conversation_id);
-      setMessages(current => [...current, { role: "bot", text: result.answer, citations: result.citations }]);
+      const answer = cleanAnswer(result.answer);
+      setMessages(current => [...current, { role: "bot", text: answer || "I’m sorry — I couldn’t form a useful answer. Could you ask that another way?" }]);
     } catch {
       setMessages(current => [...current, {
         role: "bot",
         text: "I can’t reach the AI service right now. Please try again or contact the Truefox AI team.",
-        citations: [{ document_id: "contact", title: "Contact Truefox AI", source: "/contact", excerpt: "", score: 1 }],
         error: true,
       }]);
     } finally {
@@ -90,11 +72,7 @@ export default function Chatbot() {
                 <div className={`chat-message ${message.role}${message.error ? " error" : ""}`} key={`${message.role}-${index}`}>
                   {message.role === "bot" && <span className="mini-avatar">TFX</span>}
                   <div>
-                    <p>{cleanAnswer(message.text)}</p>
-                    {message.citations?.length ? <details className="chat-citations"><summary>View sources</summary><div>{uniqueCitations(message.citations).map((citation) => {
-                      const href = citationHref(citation.source);
-                      return href ? <Link href={href} key={`${citation.document_id}-${citation.source}`} target={href.startsWith("https://") ? "_blank" : undefined} rel="noreferrer">{citation.title}</Link> : <span key={`${citation.document_id}-${citation.source}`}>{citation.title}</span>;
-                    })}</div></details> : null}
+                    <p>{message.text}</p>
                   </div>
                 </div>
               ))}
