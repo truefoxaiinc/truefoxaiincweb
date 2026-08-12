@@ -110,31 +110,31 @@ export const solutions: Card[] = [
     eyebrow: "01",
     title: "AI Smart Security",
     text: "Real-time video analytics for threat detection, safety monitoring and situational awareness.",
-    href: "/products#security"
+    href: "/ai-smart-security"
   },
   {
     eyebrow: "02",
     title: "Biometric Intelligence",
     text: "Identity, attendance, liveness and anti-spoofing for face and fingerprint workflows.",
-    href: "/products#biometrics"
+    href: "/biometric-intelligence"
   },
   {
     eyebrow: "03",
     title: "Private AI Assistants",
     text: "Secure RAG and domain-aware assistants connected to enterprise knowledge and tools.",
-    href: "/products#assistants"
+    href: "/private-ai-assistants"
   },
   {
     eyebrow: "04",
     title: "Agentic Automation",
     text: "Governed AI agents that reason, use tools and complete multi-step business workflows.",
-    href: "/products#agents"
+    href: "/agentic-automation"
   },
   {
     eyebrow: "05",
     title: "IoT & Edge AI",
     text: "Sensors, firmware, gateways and edge inference for connected operations.",
-    href: "/products#iot"
+    href: "/iot-edge-ai"
   },
   {
     eyebrow: "06",
@@ -202,11 +202,12 @@ export const pages: Record<string, PageData> = {
       "Our products support identity, security and operational decision-making—configured around the environment, connected to existing systems and deployed wherever the work demands: cloud, on-premise, edge or hybrid.",
     kind: "products",
     cards: [
-      { eyebrow: "01", title: "INTELLIGENT SECURITY", text: "Turn live video into timely awareness with real-time detection for security events, safety risks and unusual activity.", href: "/products#security" },
-      { eyebrow: "02", title: "IDENTITY INTELLIGENCE", text: "Support secure identity, access and attendance workflows with face recognition, fingerprint verification, liveness detection and anti-spoofing.", href: "/products#biometrics" },
-      { eyebrow: "03", title: "ENTERPRISE KNOWLEDGE ASSISTANTS", text: "Give teams secure, grounded answers from approved company knowledge—with visible sources, controlled access and connections to the tools they use.", href: "/products#assistants" },
-      { eyebrow: "04", title: "WORKFLOW AGENTS", text: "Coordinate tools, information and multi-step business workflows with permissions, approvals, audit history and human oversight built in.", href: "/products#agents" },
-      { eyebrow: "05", title: "CONNECTED EDGE", text: "Bring intelligence closer to the operation through connected sensors, embedded software, gateways and on-device inference.", href: "/products#iot" }
+      { eyebrow: "01", title: "INTELLIGENT SECURITY", text: "Turn live video into timely awareness with real-time detection for security events, safety risks and unusual activity.", href: "/ai-smart-security" },
+      { eyebrow: "02", title: "IDENTITY INTELLIGENCE", text: "Support secure identity, access and attendance workflows with face recognition, fingerprint verification, liveness detection and anti-spoofing.", href: "/biometric-intelligence" },
+      { eyebrow: "03", title: "ENTERPRISE KNOWLEDGE ASSISTANTS", text: "Give teams secure, grounded answers from approved company knowledge—with visible sources, controlled access and connections to the tools they use.", href: "/private-ai-assistants" },
+      { eyebrow: "04", title: "WORKFLOW AGENTS", text: "Coordinate tools, information and multi-step business workflows with permissions, approvals, audit history and human oversight built in.", href: "/agentic-automation" },
+      { eyebrow: "05", title: "CONNECTED EDGE", text: "Bring intelligence closer to the operation through connected sensors, embedded software, gateways and on-device inference.", href: "/iot-edge-ai" },
+      { eyebrow: "06", title: "ATTENTION MINDER", text: "Support healthier focus habits through guided assessments, personalised training, practical activities and privacy-conscious attention analysis.", href: "/attention-minder" }
     ],
     sections: [
       { title: "AI SMART SECURITY", text: "Turn live video into timely operational awareness with real-time detection for security events, perimeter activity and safety risks.", bullets: ["MULTI-CAMERA ANALYTICS", "CONFIGURABLE EVENT RULES", "REAL-TIME OPERATOR ALERTS", "AUDIT-READY EVENT HISTORY"] },
@@ -216,6 +217,81 @@ export const pages: Record<string, PageData> = {
       { title: "IoT & EDGE AI", text: "Process data closer to its source when response time, connectivity, bandwidth or privacy make cloud-only systems impractical.", bullets: ["SENSOR & DEVICE INTEGRATION", "ON-DEVICE INFERENCE", "GATEWAY SOFTWARE", "FLEET MONITORING"] }
     ],
     cta: { label: "Book a product demo", href: "/book-demo" }
+  },
+  "ai-smart-security": {
+    slug: "ai-smart-security", navLabel: "AI Smart Security", eyebrow: "PRODUCT · INTELLIGENT SECURITY",
+    title: "Turn live signals into timely awareness.",
+    description: "AI-powered video analytics and monitoring for security, safety and operational awareness.",
+    intro: "AI Smart Security applies computer vision to live video and connected signals—helping teams identify relevant events, understand risk and respond with better context.",
+    kind: "products",
+    sections: [
+      { title: "REAL-TIME VIDEO ANALYTICS", text: "Analyze live video for activities, unusual events, safety risks and operational conditions that require attention." },
+      { title: "CONNECTED MONITORING", text: "Bring video, sensors, access-control signals and alert workflows into a more coordinated monitoring environment." },
+      { title: "DEPLOYMENT AROUND THE OPERATION", text: "Architecture can support cloud, private cloud, on-premise, edge or hybrid environments according to latency, privacy, resilience and integration needs." }
+    ], cta: { label: "Book a security demo", href: "/book-demo" }
+  },
+  "biometric-intelligence": {
+    slug: "biometric-intelligence", navLabel: "Biometric Intelligence", eyebrow: "PRODUCT · IDENTITY",
+    title: "Identity signals designed for real workflows.",
+    description: "Face, fingerprint, liveness and attendance capabilities for controlled identity workflows.",
+    intro: "Biometric Intelligence supports identity verification, access and attendance workflows through configurable face and fingerprint capabilities with liveness and anti-spoofing controls.",
+    kind: "products",
+    sections: [
+      { title: "IDENTITY VERIFICATION", text: "Support facial identification, fingerprint recognition and multi-modal verification within approved identity workflows." },
+      { title: "LIVENESS & ANTI-SPOOFING", text: "Add liveness verification and spoof-detection controls where the workflow requires stronger confidence." },
+      { title: "ATTENDANCE INTEGRATION", text: "Connect real-time attendance logging with existing HR, payroll or business systems according to integration requirements." }
+    ], cta: { label: "Discuss an identity workflow", href: "/book-demo" }
+  },
+  "private-ai-assistants": {
+    slug: "private-ai-assistants", navLabel: "Private AI Assistants", eyebrow: "PRODUCT · KNOWLEDGE",
+    title: "Approved knowledge, available through conversation.",
+    description: "Private, grounded AI assistants for company documents, support and enterprise knowledge.",
+    intro: "Private AI Assistants connect approved organizational knowledge to conversational interfaces—helping customers and teams find useful answers while maintaining source control and deployment flexibility.",
+    kind: "products",
+    sections: [
+      { title: "GROUNDED ANSWERS", text: "Use retrieval-augmented generation to answer from approved documents, policies, product information, websites and internal knowledge." },
+      { title: "ENTERPRISE INTEGRATION", text: "Connect assistants with APIs, CRM or ERP platforms, enterprise messaging and controlled business tools where required." },
+      { title: "CONTROLLED DEPLOYMENT", text: "Design for cloud, private-cloud, on-premise or controlled enterprise environments with access and governance requirements considered from the start." }
+    ], cta: { label: "Book an assistant demo", href: "/book-demo" }
+  },
+  "agentic-automation": {
+    slug: "agentic-automation", navLabel: "Agentic Automation", eyebrow: "PRODUCT · WORKFLOWS",
+    title: "Move multi-step work forward with control.",
+    description: "Governed AI agents for orchestrating tools, information and operational workflows.",
+    intro: "Agentic Automation coordinates multi-step work across approved APIs, databases, documents and business systems—with permissions, oversight and traceability designed into the workflow.",
+    kind: "products",
+    sections: [
+      { title: "MULTI-STEP EXECUTION", text: "Orchestrate tasks that require context, decisions, tool use and coordination across more than one system." },
+      { title: "BUSINESS SYSTEM CONNECTIONS", text: "Integrate approved APIs, databases, CRM platforms, documents, internal tools and automation services." },
+      { title: "GOVERNANCE & OVERSIGHT", text: "Apply permissions, human approval, logging and traceability where important actions require control." }
+    ], cta: { label: "Explore an automation use case", href: "/book-demo" }
+  },
+  "iot-edge-ai": {
+    slug: "iot-edge-ai", navLabel: "IoT & Edge AI", eyebrow: "PRODUCT · CONNECTED EDGE",
+    title: "Intelligence closer to where work happens.",
+    description: "Connected sensors, embedded software, gateways and edge inference for operational environments.",
+    intro: "IoT & Edge AI connects devices, sensors and gateways with embedded software and on-device intelligence—supporting faster decisions when connectivity, latency, bandwidth or privacy matter.",
+    kind: "products",
+    sections: [
+      { title: "SENSORS & DEVICES", text: "Connect operational signals through sensors, embedded firmware, secure connectivity and device integration." },
+      { title: "EDGE INFERENCE", text: "Process selected data closer to its source for faster response and reduced dependence on continuous cloud connectivity." },
+      { title: "GATEWAYS & FLEET OPERATIONS", text: "Coordinate device communication, telemetry, gateway software and fleet monitoring within the wider platform." }
+    ], cta: { label: "Discuss an edge deployment", href: "/book-demo" }
+  },
+  "attention-minder": {
+    slug: "attention-minder", navLabel: "Attention Minder", eyebrow: "PRODUCT · ATTENTION",
+    title: "Build healthier focus habits with meaningful feedback.",
+    description: "Attention Minder supports attention awareness, guided practice and engagement analysis.",
+    intro: "Attention Minder helps people understand their attention, build healthier focus habits and follow progress through guided assessments, personalised training and practical activities.",
+    kind: "products",
+    sections: [
+      { title: "GUIDED ATTENTION PRACTICE", text: "Use guided assessments, personalised training and practical activities to support attention awareness and everyday focus habits." },
+      { title: "REAL-TIME ANALYSIS", text: "The device camera can perform live analysis of attention shifts, eye or face direction, posture and screen engagement. Camera frames are not retained after real-time processing." },
+      { title: "EDUCATIONAL SUPPORT", text: "Attention Minder is intended for parents, teachers, institutions and supervised students aged five and above. It is not a medical device and does not diagnose ADHD or replace professional advice." },
+      { title: "PRIVACY INFORMATION", text: "Attention Minder does not record camera video, capture screenshots, store camera images or retain facial biometric templates.", bullets: ["Read the full Attention Minder privacy policy for account, retention and deletion information."] }
+    ],
+    cards: [{ eyebrow: "PRIVACY", title: "ATTENTION MINDER PRIVACY POLICY", text: "Review how Attention Minder handles camera analysis, user information, retention and account deletion.", href: "/attention-minder-privacy-policy" }],
+    cta: { label: "Contact the Attention Minder team", href: "/contact" }
   },
   services: {
     slug: "services",
