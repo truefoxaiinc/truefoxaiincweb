@@ -1,19 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { apiUrl } from "@/lib/api";
 
 export default function AdminLoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    if (window.location.hostname === "www.truefoxaiinc.com") {
-      window.location.replace(`https://truefoxaiinc.com${window.location.pathname}${window.location.search}`);
-    }
-  }, []);
 
   async function login(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setStatus("loading"); setMessage("");
