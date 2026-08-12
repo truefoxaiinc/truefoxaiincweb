@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { apiUrl } from "@/lib/api";
 
 export default function AdminLoginPage() {
@@ -9,11 +9,17 @@ export default function AdminLoginPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [message, setMessage] = useState("");
 
+  useEffect(() => {
+    if (window.location.hostname === "www.truefoxaiinc.com") {
+      window.location.replace(`https://truefoxaiinc.com${window.location.pathname}${window.location.search}`);
+    }
+  }, []);
+
   async function login(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setStatus("loading"); setMessage("");
     const values = Object.fromEntries(new FormData(event.currentTarget).entries());
     try {
-      const response = await fetch(apiUrl("/api/v1/admin/login"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
+      const response = await fetch(apiUrl("/api/v1/admin/login"), { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) });
       const result = await response.json() as { detail?: string; access_token?: string };
       if (!response.ok || !result.access_token) throw new Error(result.detail || "Unable to sign in.");
       sessionStorage.setItem("truefox_admin_token", result.access_token);
