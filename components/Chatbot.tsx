@@ -21,6 +21,16 @@ function citationHref(source: string) {
   return null;
 }
 
+function cleanAnswer(text: string) {
+  return text.replace(/\s*\[\d+\]/g, "").trim();
+}
+
+function uniqueCitations(citations: Citation[] = []) {
+  return citations.filter((citation, index, all) =>
+    all.findIndex(item => item.document_id === citation.document_id || item.source === citation.source) === index
+  ).slice(0, 3);
+}
+
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
@@ -80,11 +90,11 @@ export default function Chatbot() {
                 <div className={`chat-message ${message.role}${message.error ? " error" : ""}`} key={`${message.role}-${index}`}>
                   {message.role === "bot" && <span className="mini-avatar">TFX</span>}
                   <div>
-                    <p>{message.text}</p>
-                    {message.citations?.length ? <div className="chat-citations">{message.citations.map((citation, citationIndex) => {
+                    <p>{cleanAnswer(message.text)}</p>
+                    {message.citations?.length ? <details className="chat-citations"><summary>View sources</summary><div>{uniqueCitations(message.citations).map((citation) => {
                       const href = citationHref(citation.source);
-                      return href ? <Link href={href} key={`${citation.document_id}-${citationIndex}`} target={href.startsWith("https://") ? "_blank" : undefined} rel="noreferrer">[{citationIndex + 1}] {citation.title}</Link> : <span key={`${citation.document_id}-${citationIndex}`}>[{citationIndex + 1}] {citation.title}</span>;
-                    })}</div> : null}
+                      return href ? <Link href={href} key={`${citation.document_id}-${citation.source}`} target={href.startsWith("https://") ? "_blank" : undefined} rel="noreferrer">{citation.title}</Link> : <span key={`${citation.document_id}-${citation.source}`}>{citation.title}</span>;
+                    })}</div></details> : null}
                   </div>
                 </div>
               ))}

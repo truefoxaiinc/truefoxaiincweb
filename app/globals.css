@@ -2086,7 +2086,8 @@ p {
   margin: 0;
   color: inherit;
   font-size: 11px;
-  line-height: 1.55
+  line-height: 1.6;
+  white-space: pre-line
 }
 
 .chat-message a {
@@ -2102,10 +2103,22 @@ p {
 }
 
 .chat-citations {
+  margin-top: 9px
+}
+
+.chat-citations summary {
+  width: max-content;
+  cursor: pointer;
+  color: #9ca7b5;
+  font-size: 9px;
+  font-weight: 700
+}
+
+.chat-citations>div {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-top: 8px
+  margin-top: 7px
 }
 
 .chat-citations a,
@@ -2116,7 +2129,8 @@ p {
   border: 1px solid rgba(247, 122, 0, .25);
   border-radius: 999px;
   color: var(--orange-2);
-  font-size: 8px
+  font-size: 8px;
+  font-weight: 700
 }
 
 .chat-message.error>div {
