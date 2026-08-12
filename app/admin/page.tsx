@@ -3,6 +3,7 @@ import path from "node:path";
 import Link from "next/link";
 import { navGroups, pages, site, solutions } from "@/data/site";
 import AdminDataManager from "@/components/admin/AdminDataManager";
+import KnowledgeManager from "@/components/admin/KnowledgeManager";
 import LogoutButton from "@/components/admin/LogoutButton";
 import type { CmsData } from "@/lib/cms";
 
@@ -58,9 +59,10 @@ export default async function AdminPage() {
         <nav aria-label="Admin navigation">
           <a className="is-active" href="#overview"><i>01</i>Overview</a>
           <a href="#data"><i>02</i>Manage data</a>
-          <a href="#content"><i>03</i>Content</a>
-          <a href="#media"><i>04</i>Media library</a>
-          <a href="#system"><i>05</i>System</a>
+          <a href="#knowledge"><i>03</i>AI knowledge</a>
+          <a href="#content"><i>04</i>Content</a>
+          <a href="#media"><i>05</i>Media library</a>
+          <a href="#system"><i>06</i>System</a>
         </nav>
         <div className="admin-sidebar-foot"><span><StatusDot ok={readinessScore === 100} />System readiness</span><strong>{readinessScore}%</strong><div><i style={{ width: `${readinessScore}%` }} /></div><Link href="/" target="_blank">Open public website ↗</Link></div>
       </aside>
@@ -78,6 +80,7 @@ export default async function AdminPage() {
           </section>
 
           <AdminDataManager initialData={cms} />
+          <KnowledgeManager />
 
           <div className="admin-grid">
             <section className="admin-panel admin-health" id="system">
