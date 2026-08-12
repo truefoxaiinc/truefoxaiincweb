@@ -5,6 +5,6 @@ export function apiUrl(path: string) {
 }
 
 export function adminHeaders(): HeadersInit {
-  const token = typeof window === "undefined" ? "" : sessionStorage.getItem("truefox_admin_token") || "";
+  const token = typeof window === "undefined" ? "" : localStorage.getItem("truefox_admin_token") || sessionStorage.getItem("truefox_admin_token") || "";
   return { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
 }

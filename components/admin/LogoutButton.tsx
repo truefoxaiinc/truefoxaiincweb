@@ -8,7 +8,8 @@ export default function LogoutButton() {
   async function logout() {
     setBusy(true);
     try {
-      await fetch(apiUrl("/api/v1/admin/logout"), { method: "POST", credentials: "include" });
+      await fetch(apiUrl("/api/v1/admin/logout"), { method: "POST" });
+      localStorage.removeItem("truefox_admin_token");
       sessionStorage.removeItem("truefox_admin_token");
     } finally { window.location.assign("/admin/login"); }
   }

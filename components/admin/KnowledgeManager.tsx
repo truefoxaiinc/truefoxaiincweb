@@ -6,7 +6,7 @@ import { adminHeaders, apiUrl } from "@/lib/api";
 type KnowledgeDocument = { id: string; title: string; source: string; mime_type: string; chunk_count: number; created_at: string };
 
 function authOnly(): HeadersInit {
-  const token = sessionStorage.getItem("truefox_admin_token") || "";
+  const token = localStorage.getItem("truefox_admin_token") || sessionStorage.getItem("truefox_admin_token") || "";
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
@@ -16,7 +16,7 @@ export default function KnowledgeManager() {
   const [notice, setNotice] = useState("");
 
   const refresh = useCallback(async () => {
-    const response = await fetch(apiUrl("/api/v1/knowledge"), { cache: "no-store", credentials: "include", headers: adminHeaders() });
+    const response = await fetch(apiUrl("/api/v1/knowledge"), { cache: "no-store", headers: adminHeaders() });
     if (response.status === 401) { window.location.assign("/admin/login"); return; }
     if (!response.ok) throw new Error("Unable to load knowledge");
     setDocuments(await response.json());
@@ -29,7 +29,7 @@ export default function KnowledgeManager() {
     const form = event.currentTarget;
     const values = Object.fromEntries(new FormData(form).entries());
     try {
-      const response = await fetch(apiUrl("/api/v1/knowledge/text"), { method: "POST", credentials: "include", headers: adminHeaders(), body: JSON.stringify(values) });
+      const response = await fetch(apiUrl("/api/v1/knowledge/text"), { method: "POST", headers: adminHeaders(), body: JSON.stringify(values) });
       if (!response.ok) throw new Error();
       form.reset(); await refresh(); setNotice("Knowledge added and indexed for the chatbot.");
     } catch { setNotice("Knowledge could not be added."); } finally { setBusy(false); }
@@ -39,7 +39,7 @@ export default function KnowledgeManager() {
     event.preventDefault(); setBusy(true); setNotice("");
     const form = event.currentTarget;
     try {
-      const response = await fetch(apiUrl("/api/v1/knowledge/upload"), { method: "POST", credentials: "include", headers: authOnly(), body: new FormData(form) });
+      const response = await fetch(apiUrl("/api/v1/knowledge/upload"), { method: "POST", headers: authOnly(), body: new FormData(form) });
       if (!response.ok) throw new Error();
       form.reset(); await refresh(); setNotice("File uploaded and indexed for the chatbot.");
     } catch { setNotice("File could not be indexed. Use PDF, TXT, Markdown, CSV, or HTML."); } finally { setBusy(false); }
@@ -48,7 +48,7 @@ export default function KnowledgeManager() {
   async function synchronize() {
     setBusy(true); setNotice("Synchronizing public website pages…");
     try {
-      const response = await fetch(apiUrl("/api/v1/knowledge/sync-website"), { method: "POST", credentials: "include", headers: adminHeaders(), body: "{}" });
+      const response = await fetch(apiUrl("/api/v1/knowledge/sync-website"), { method: "POST", headers: adminHeaders(), body: "{}" });
       if (!response.ok) throw new Error();
       const indexed = await response.json() as KnowledgeDocument[];
       await refresh(); setNotice(`${indexed.length} website pages synchronized and indexed.`);
@@ -59,7 +59,7 @@ export default function KnowledgeManager() {
     if (!window.confirm(`Remove “${document.title}” from chatbot knowledge?`)) return;
     setBusy(true);
     try {
-      const response = await fetch(apiUrl(`/api/v1/knowledge/${document.id}`), { method: "DELETE", credentials: "include", headers: adminHeaders() });
+      const response = await fetch(apiUrl(`/api/v1/knowledge/${document.id}`), { method: "DELETE", headers: adminHeaders() });
       if (!response.ok) throw new Error();
       await refresh(); setNotice("Knowledge removed from the chatbot.");
     } catch { setNotice("Knowledge could not be removed."); } finally { setBusy(false); }
