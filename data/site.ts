@@ -541,15 +541,127 @@ export const pages: Record<string, PageData> = {
   },
   "agentic-automation": {
     slug: "agentic-automation", navLabel: "Agentic Automation", eyebrow: "PRODUCT · WORKFLOWS",
-    title: "Move multi-step work forward with control.",
-    description: "Governed AI agents for orchestrating tools, information and operational workflows.",
-    intro: "Agentic Automation coordinates multi-step work across approved APIs, databases, documents and business systems—with permissions, oversight and traceability designed into the workflow.",
+    title: "AI agents that reason, use tools and complete multi-step workflows.",
+    description: "Truefox AI builds governed enterprise AI agents that connect reasoning, approved tools, business rules and human oversight.",
+    intro: "Most AI assistants stop at answering a question. Truefox AI Agentic Automation goes further by connecting AI reasoning with approved applications, databases, APIs, documents and operational processes—so suitable parts of a workflow can move forward while consequential decisions remain controlled.",
     kind: "products",
+    stats: [
+      { value: "TOOLS", label: "Approved system access" },
+      { value: "STATE", label: "Multi-step workflow memory" },
+      { value: "HUMAN", label: "Oversight and approval gates" }
+    ],
+    cards: [
+      { eyebrow: "REASON", title: "INTERPRET THE GOAL", text: "Understand a request, identify the required steps and select from an explicitly permitted set of tools and workflow paths." },
+      { eyebrow: "ACT", title: "COORDINATE THE WORK", text: "Retrieve information, prepare structured outputs, update approved systems and preserve state across multi-step or long-running processes." },
+      { eyebrow: "CONTROL", title: "ESCALATE IMPORTANT DECISIONS", text: "Apply permissions, validation, thresholds, approval gates and audit history so the agent stops or asks for review when required." }
+    ],
     sections: [
-      { title: "MULTI-STEP EXECUTION", text: "Orchestrate tasks that require context, decisions, tool use and coordination across more than one system." },
-      { title: "BUSINESS SYSTEM CONNECTIONS", text: "Integrate approved APIs, databases, CRM platforms, documents, internal tools and automation services." },
-      { title: "GOVERNANCE & OVERSIGHT", text: "Apply permissions, human approval, logging and traceability where important actions require control." }
-    ], cta: { label: "Explore an automation use case", href: "/book-demo" }
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT IS AGENTIC AUTOMATION?",
+        text: "Agentic Automation combines AI reasoning with tools, rules and workflow orchestration so a system can work toward a defined goal across multiple steps. An agent may retrieve information, perform calculations, prepare structured outputs, request approval, use authorised tools and record the outcome. Its autonomy should always match the risk and importance of the workflow."
+      },
+      {
+        eyebrow: "ASSISTANTS VS AGENTS",
+        title: "MOVE FROM AI THAT ANSWERS TO AI THAT CAN HELP ACT.",
+        text: "An AI assistant primarily helps a user understand information. An AI agent can also perform controlled actions—for example, gathering approved operational data, identifying missing inputs, preparing a report and routing it to a manager for review. The agent adds workflow execution without removing the people responsible for consequential decisions."
+      },
+      {
+        eyebrow: "MULTI-STEP WORKFLOWS",
+        title: "COORDINATE TASKS THAT CANNOT BE COMPLETED WITH ONE API CALL.",
+        text: "Real business processes often involve a sequence of systems, decisions, documents, validations and approvals. An agentic workflow can manage that sequence while giving each step its own permissions, input checks, completion criteria and failure handling.",
+        bullets: ["UNDERSTAND THE REQUEST AND REQUIRED OUTCOME", "RETRIEVE APPROVED DATA AND DOCUMENTS", "APPLY BUSINESS RULES AND VALIDATIONS", "PREPARE A STRUCTURED RESULT", "REQUEST HUMAN APPROVAL WHERE REQUIRED", "UPDATE THE SYSTEM AND LOG THE OUTCOME"]
+      },
+      {
+        eyebrow: "TOOLS & INTEGRATIONS",
+        title: "GIVE EACH AGENT ONLY THE TOOLS ITS JOB REQUIRES.",
+        text: "Agentic workflows can connect with enterprise applications through authenticated and authorised APIs or controlled integration mechanisms. Tool design defines what an agent can read, prepare, create or update and is therefore one of the most important parts of the architecture.",
+        bullets: ["CRM, ERP AND HRMS", "PROCUREMENT AND TICKETING SYSTEMS", "DOCUMENT REPOSITORIES AND INTERNAL PORTALS", "DATABASES AND REPORTING SERVICES", "CUSTOM APPLICATIONS, APIS AND WORKFLOW ENGINES"]
+      },
+      {
+        eyebrow: "HUMAN OVERSIGHT",
+        title: "AUTOMATE THE WORK WITHOUT AUTOMATING AWAY ACCOUNTABILITY.",
+        text: "Human-in-the-loop workflows pause for review before selected actions execute. Lower-risk tasks may operate with human-on-the-loop supervision, where authorised people inspect activity, stop workflows, override results and investigate exceptions. The appropriate oversight model depends on the consequences of an error.",
+        bullets: ["APPROVAL BEFORE PAYMENTS OR FINANCIAL ADJUSTMENTS", "REVIEW BEFORE CUSTOMER COMMUNICATIONS", "AUTHORISATION FOR ACCESS OR PRODUCTION CHANGES", "OVERRIDE AND STOP CONTROLS", "ESCALATION WHEN THE AGENT IS UNCERTAIN"]
+      },
+      {
+        eyebrow: "PERMISSIONS & GUARDRAILS",
+        title: "BOUND EVERY AGENT BY IDENTITY, POLICY AND LEAST PRIVILEGE.",
+        text: "An agent should receive only the information and actions necessary for its defined workflow. Permissions can reflect both the agent's purpose and the identity of the user requesting the action. Policy enforcement should exist outside the language model rather than depending on the model to follow instructions correctly.",
+        bullets: ["TOOL-LEVEL READ AND WRITE PERMISSIONS", "ROLE-BASED WORKFLOW ACCESS", "TRANSACTION AND APPROVAL THRESHOLDS", "ALLOWED WORKFLOW PATHS", "VALIDATED INPUTS AND STRUCTURED OUTPUTS"]
+      },
+      {
+        eyebrow: "USE CASES",
+        title: "START WITH REPETITIVE DIGITAL WORK THAT HAS CLEAR BOUNDARIES.",
+        text: "Strong candidates combine repeatable steps, information from several systems, unstructured inputs and objective completion criteria. A narrowly defined workflow is usually a better first project than a general agent for the entire company.",
+        bullets: ["PROCUREMENT COMPARISON AND APPROVAL PREPARATION", "INVOICE AND DOCUMENT PROCESSING", "SUPPORT TICKET TRIAGE AND RESPONSE DRAFTING", "CRM RESEARCH AND UPDATE PREPARATION", "EMPLOYEE ONBOARDING COORDINATION", "OPERATIONS REPORTING AND INCIDENT SUPPORT"]
+      },
+      {
+        eyebrow: "ORCHESTRATION & STATE",
+        title: "KEEP MULTI-STEP AND LONG-RUNNING WORKFLOWS COHERENT.",
+        text: "An orchestration layer determines which agent or tool receives a task, what context is shared, which actions require approval and what happens after failure. Workflow state records completed steps, retrieved data, pending approvals, exceptions and responsibility so the process can continue after an external dependency without repeating work or losing context."
+      },
+      {
+        eyebrow: "MULTI-AGENT SYSTEMS",
+        title: "SEPARATE RESPONSIBILITIES WHEN ONE AGENT SHOULD NOT DO EVERYTHING.",
+        text: "Some complex workflows may use specialised agents for research, analysis, policy checking, reporting or approval routing. Separating responsibilities can make systems easier to permission, observe and evaluate, but multi-agent design should only be introduced when it provides a clear operational benefit."
+      },
+      {
+        eyebrow: "RELIABLE EXECUTION",
+        title: "COMBINE AI REASONING WITH DETERMINISTIC SOFTWARE.",
+        text: "Not every step needs AI. A reliable system may use AI to interpret unstructured requests and summarise results, deterministic rules to enforce limits, APIs to retrieve or update data, and an approval service to control final actions. When information is missing, validation fails or a tool is unavailable, the correct behaviour is often to stop and escalate rather than guess.",
+        bullets: ["SCHEMA-VALIDATED TOOL INPUTS AND OUTPUTS", "RETRY AND TIMEOUT POLICIES", "EXPLICIT FAILURE AND EXCEPTION PATHS", "IDEMPOTENT ACTION DESIGN WHERE POSSIBLE", "SAFE ESCALATION TO AN AUTHORISED PERSON"]
+      },
+      {
+        eyebrow: "PRIVATE KNOWLEDGE",
+        title: "COMBINE CONTROLLED ACTION WITH GROUNDED ENTERPRISE CONTEXT.",
+        text: "Private AI Assistants and Agentic Automation can work together. The assistant provides a conversational interface grounded in approved company knowledge; the agent retrieves authorised system data or prepares controlled actions. Users can review the result before permitted changes are made."
+      },
+      {
+        eyebrow: "SECURITY",
+        title: "TOOL-ENABLED AI CREATES A DIFFERENT SECURITY BOUNDARY.",
+        text: "Agent security can include strong authentication, role-based access, tool permissions, secret management, network controls, approval gates, validation, environment isolation and audit logging. Untrusted content and prompt injection require layered defences, including separating trusted data, restricting tools and re-validating every consequential tool argument.",
+        bullets: ["LEAST-PRIVILEGE TOOL AND DATA ACCESS", "CREDENTIAL AND SECRET MANAGEMENT", "POLICY ENFORCEMENT OUTSIDE THE MODEL", "HUMAN APPROVAL FOR SENSITIVE ACTIONS", "MONITORING FOR UNEXPECTED AGENT BEHAVIOUR"]
+      },
+      {
+        eyebrow: "AUDITABILITY & OBSERVABILITY",
+        title: "UNDERSTAND WHAT THE AGENT DID AND WHERE WORKFLOWS FAIL.",
+        text: "Production systems should make agent activity inspectable according to privacy and retention policies. Logs can capture the requesting user, decision, selected tool, attempted action, approval, outcome and exception. Operational monitoring can show running workflows, tool failures, stuck processes, escalation rates and user overrides."
+      },
+      {
+        eyebrow: "EVALUATION",
+        title: "TEST NORMAL CASES, EDGE CASES AND FAILURES BEFORE PRODUCTION.",
+        text: "Agents can misinterpret requests, choose the wrong tool or encounter unexpected integration conditions. Evaluation should use representative workflows and measure task completion, tool selection, data extraction, permission compliance, failure handling, latency, human intervention and the business outcome that matters.",
+        bullets: ["REALISTIC WORKFLOW TEST SETS", "TOOL AND PERMISSION ACCURACY", "APPROVAL AND EXCEPTION BEHAVIOUR", "TASK COMPLETION AND OUTPUT QUALITY", "CONTINUOUS PRODUCTION MONITORING"]
+      },
+      {
+        eyebrow: "DELIVERY",
+        title: "PROVE ONE HIGH-VALUE WORKFLOW BEFORE EXPANDING.",
+        text: "Truefox AI maps the existing process, separates steps suited to AI from deterministic automation and human judgement, then defines tools, permissions and approval boundaries. A focused prototype validates value and failure behaviour before approved integrations and production monitoring are introduced.",
+        bullets: ["01 · WORKFLOW DISCOVERY", "02 · AUTOMATION AND RISK ASSESSMENT", "03 · TOOL, STATE AND PERMISSION DESIGN", "04 · FOCUSED PROTOTYPE", "05 · EDGE-CASE AND FAILURE EVALUATION", "06 · INTEGRATION, DEPLOYMENT AND MONITORING"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW IS AN AI AGENT DIFFERENT FROM A CHATBOT?",
+        text: "A chatbot primarily communicates with users. An AI agent can also use approved tools, retrieve information and perform bounded actions as part of a multi-step workflow. Its permissions and autonomy should be explicitly designed."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN AI AGENTS WORK WITHOUT HUMAN APPROVAL?",
+        text: "Some low-risk workflows may operate with greater autonomy, but higher-impact actions should use appropriate review, approval and override controls. The oversight model should match the consequences of an incorrect action."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "IS AGENTIC AUTOMATION THE SAME AS RPA?",
+        text: "No. Traditional robotic process automation generally follows predefined rules and interface steps. Agentic AI can interpret unstructured information and make bounded workflow decisions. The two approaches can also complement each other within one controlled process."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "CONNECT AGENTS WITH PRIVATE KNOWLEDGE AND ENTERPRISE SOFTWARE.",
+        text: "Agentic Automation can be paired with Private AI Assistants for grounded conversational access or custom software engineering when the workflow requires a purpose-built user interface, integration layer or operational platform.",
+        bullets: ["PRIVATE AI ASSISTANTS · /private-ai-assistants", "CUSTOM SOFTWARE DEVELOPMENT · /services", "BOOK AN AUTOMATION DEMO · /book-demo"]
+      }
+    ], cta: { label: "Discuss your automation use case", href: "/book-demo" }
   },
   "iot-edge-ai": {
     slug: "iot-edge-ai", navLabel: "IoT & Edge AI", eyebrow: "PRODUCT · CONNECTED EDGE",
