@@ -3,6 +3,7 @@ import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 import { GlobalEntityGraph } from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en-CA">
       <body>
+        <GoogleAnalytics />
         <a className="skip-link" href="#main-content">Skip to content</a>
         <GlobalEntityGraph />
         <SiteChrome>{children}</SiteChrome>
