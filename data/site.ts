@@ -140,7 +140,7 @@ export const solutions: Card[] = [
     eyebrow: "06",
     title: "Custom AI & ML",
     text: "Data engineering, model development, MLOps and bespoke decision systems.",
-    href: "/services"
+    href: "/custom-ai-ml"
   },
   {
     eyebrow: "07",
@@ -799,6 +799,126 @@ export const pages: Record<string, PageData> = {
     cards: [{ eyebrow: "PRIVACY", title: "ATTENTION MINDER PRIVACY POLICY", text: "Review how Attention Minder handles camera analysis, user information, retention and account deletion.", href: "/attention-minder-privacy-policy" }],
     cta: { label: "Contact the Attention Minder team", href: "/contact" }
   },
+  "custom-ai-ml": {
+    slug: "custom-ai-ml", navLabel: "Custom AI & ML", eyebrow: "SERVICE · APPLIED AI",
+    title: "AI and machine learning built around your business problem.",
+    description: "Truefox AI develops custom machine-learning systems across data engineering, predictive analytics, computer vision, NLP, MLOps and production deployment.",
+    intro: "Not every business problem fits an off-the-shelf model. Truefox AI designs custom AI and machine-learning systems around the decision that needs to improve, the data that is genuinely available and the conditions in which the system must operate—not around technology for its own sake.",
+    kind: "services",
+    stats: [
+      { value: "DATA", label: "Feasibility before modelling" },
+      { value: "MODEL", label: "Measured against a baseline" },
+      { value: "MLOps", label: "Built to operate and improve" }
+    ],
+    cards: [
+      { eyebrow: "PREDICT", title: "PREDICTIVE SYSTEMS", text: "Develop forecasting, classification, ranking, recommendation and anomaly-detection systems around a defined operational decision." },
+      { eyebrow: "PERCEIVE", title: "VISION & LANGUAGE", text: "Build computer-vision, document-intelligence and natural-language pipelines for specialised data, content and workflows." },
+      { eyebrow: "OPERATE", title: "PRODUCTION MACHINE LEARNING", text: "Connect data pipelines, model services, APIs, monitoring, versioning and controlled retraining into maintainable production software." }
+    ],
+    sections: [
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT IS CUSTOM AI & ML?",
+        text: "Custom AI and machine learning refers to systems designed around a specific organisation, dataset, process or decision. The result may be a prediction service, forecasting platform, recommendation engine, computer-vision model, NLP pipeline, anomaly detector or broader decision-support application integrated into the way people already work."
+      },
+      {
+        eyebrow: "PROBLEM FIRST",
+        title: "START WITH THE DECISION, NOT THE MODEL.",
+        text: "Before selecting technology, the project should define the decision or workflow to improve, the available data, required response time, cost of errors, intended users, integration constraints and measurable outcome. A sophisticated model is not useful if it cannot improve the real process around it.",
+        bullets: ["WHAT DECISION NEEDS TO IMPROVE?", "WHAT DATA AND LABELS EXIST?", "WHAT HAPPENS WHEN THE MODEL IS WRONG?", "HOW FAST MUST THE RESULT ARRIVE?", "WHO USES OR REVIEWS THE OUTPUT?", "HOW WILL BUSINESS VALUE BE MEASURED?"]
+      },
+      {
+        eyebrow: "FEASIBILITY",
+        title: "DETERMINE WHETHER AI IS APPROPRIATE BEFORE FULL DEVELOPMENT.",
+        text: "An AI feasibility assessment examines data quality, label availability, expected performance, infrastructure, operational constraints, integration effort, risk and potential value. It can show whether the project should proceed, be reframed, gather more data or use a simpler non-AI approach.",
+        bullets: ["DATA AND LABEL ASSESSMENT", "TECHNICAL BASELINE", "MODEL AND INFRASTRUCTURE OPTIONS", "RISK AND FAILURE ANALYSIS", "PROOF-OF-CONCEPT RECOMMENDATION"]
+      },
+      {
+        eyebrow: "DATA ENGINEERING",
+        title: "BUILD RELIABLE DATA BEFORE EXPECTING A RELIABLE MODEL.",
+        text: "Real-world datasets commonly contain missing values, duplicate records, inconsistent labels, noisy measurements, sparse history, class imbalance and outdated formats. Truefox AI can design repeatable pipelines for collection, validation, cleaning, transformation, feature generation, storage, versioning and monitoring.",
+        bullets: ["INGESTION AND SCHEMA VALIDATION", "CLEANING AND DUPLICATE HANDLING", "LABEL AND FEATURE PIPELINES", "DATASET VERSIONING AND LINEAGE", "QUALITY AND DISTRIBUTION MONITORING"]
+      },
+      {
+        eyebrow: "MODEL DEVELOPMENT",
+        title: "SELECT THE SIMPLEST APPROACH THAT MEETS THE REQUIREMENT.",
+        text: "Depending on the problem, suitable approaches may include statistical methods, classical machine learning, gradient-boosted trees, neural networks, transformers, time-series models or hybrid systems. The most complex model is not automatically the best; reliability, interpretability, latency, cost and maintainability all matter.",
+        bullets: ["CLASSIFICATION, REGRESSION AND RANKING", "FORECASTING AND PREDICTIVE ANALYTICS", "RECOMMENDATION AND PERSONALISATION", "ANOMALY, FRAUD AND RISK MODELLING", "OPTIMISATION AND DECISION SUPPORT"]
+      },
+      {
+        eyebrow: "VISION & LANGUAGE",
+        title: "APPLY SPECIALISED MODELS TO IMAGES, VIDEO, TEXT AND DOCUMENTS.",
+        text: "Custom computer-vision systems can support object detection, classification and visual inspection. NLP and document-intelligence pipelines can classify, extract, compare or route information from text and business documents. The exact approach depends on representative data, target conditions and the workflow using the result.",
+        bullets: ["CUSTOM OBJECT DETECTION", "VISUAL QUALITY INSPECTION", "TEXT AND DOCUMENT CLASSIFICATION", "INFORMATION AND TABLE EXTRACTION", "DOMAIN-SPECIFIC NLP PIPELINES"]
+      },
+      {
+        eyebrow: "LIMITED DATA",
+        title: "USE THE DATA STRATEGY THAT FITS THE PROBLEM.",
+        text: "Not every use case requires millions of labelled examples. Depending on the available signal, projects may use pre-trained models, transfer learning, human-in-the-loop labelling, weak supervision, carefully governed synthetic data or rule-based augmentation. Feasibility still depends on representative coverage and a defensible evaluation set."
+      },
+      {
+        eyebrow: "FOUNDATION MODELS",
+        title: "USE FINE-TUNING ONLY WHEN IT CHANGES THE RIGHT BEHAVIOUR.",
+        text: "Foundation models may be useful for general language or vision capabilities, while custom models can better suit structured predictions, specialised domains, low-latency workloads or constrained compute. Fine-tuning may help with terminology, output formats or task behaviour, but retrieval or tool integration is often more appropriate when the requirement is access to current knowledge."
+      },
+      {
+        eyebrow: "EVALUATION",
+        title: "MEASURE TECHNICAL PERFORMANCE AND BUSINESS OUTCOMES.",
+        text: "Evaluation metrics should reflect the cost of different errors. Accuracy alone may hide poor behaviour in important cases, so projects can use precision, recall, F1, ranking, forecasting error and segment-level measures alongside operational outcomes such as time saved, downtime reduced or decisions improved.",
+        bullets: ["COMPARE AGAINST A SIMPLE BASELINE", "TEST REPRESENTATIVE AND EDGE CASES", "MEASURE HIGH-COST FALSE POSITIVES AND NEGATIVES", "EVALUATE PERFORMANCE ACROSS RELEVANT SEGMENTS", "CONNECT MODEL METRICS TO BUSINESS VALUE"]
+      },
+      {
+        eyebrow: "EXPLAINABILITY & RESPONSIBILITY",
+        title: "DESIGN FOR THE CONSEQUENCES OF AN INCORRECT OUTPUT.",
+        text: "Where AI affects people or important decisions, architecture should consider explanation, dataset representation, bias testing, threshold review, user awareness and human oversight. Low-confidence or high-risk cases can be routed to an authorised person rather than allowed to proceed automatically."
+      },
+      {
+        eyebrow: "DEPLOYMENT",
+        title: "DELIVER THE MODEL THROUGH THE ENVIRONMENT THE WORK REQUIRES.",
+        text: "Models can be delivered through real-time APIs, scheduled batch pipelines or embedded directly into cloud, private-cloud, on-premise or edge applications. Deployment choices depend on latency, availability, compute, privacy, connectivity, scale and cost—not every prediction needs a real-time service.",
+        bullets: ["REAL-TIME PREDICTION APIS", "BATCH FORECASTING AND ANALYSIS", "PRIVATE-CLOUD OR ON-PREMISE SERVICES", "EDGE AND EMBEDDED INFERENCE", "INTEGRATION WITH EXISTING SOFTWARE"]
+      },
+      {
+        eyebrow: "MLOps",
+        title: "OPERATE THE MODEL AS A VERSIONED PRODUCTION SYSTEM.",
+        text: "Production machine learning requires deployment, testing, versioning, monitoring, rollback, dataset tracking and controlled update workflows. Monitoring can identify changes in inputs, predictions, latency, failures and business performance so drift or degradation does not remain invisible.",
+        bullets: ["MODEL AND DATASET VERSIONING", "AUTOMATED TESTING AND DEPLOYMENT CONTROLS", "LATENCY, FAILURE AND DISTRIBUTION MONITORING", "SAFE ROLLBACK AND MODEL COMPARISON", "REVIEWED RETRAINING AND RELEASE"]
+      },
+      {
+        eyebrow: "SECURITY",
+        title: "PROTECT DATA, MODELS AND INFERENCE SERVICES.",
+        text: "Custom AI should be secured like any other production system. Depending on the application, controls can include authentication, authorisation, encryption, API security, network restrictions, secret management, environment separation and audit logging, with additional protections for sensitive datasets and model assets."
+      },
+      {
+        eyebrow: "DELIVERY",
+        title: "PROTOTYPE THE UNCERTAINTY BEFORE SCALING THE PLATFORM.",
+        text: "Truefox AI begins with discovery and data assessment, establishes a baseline and compares suitable approaches using agreed metrics. A focused prototype proves technical and business feasibility before production APIs, infrastructure, security, monitoring and integrations are built.",
+        bullets: ["01 · PROBLEM AND WORKFLOW DISCOVERY", "02 · DATA AND LABEL ASSESSMENT", "03 · BASELINE AND FEASIBILITY", "04 · CONTROLLED EXPERIMENTATION", "05 · WORKING PROTOTYPE", "06 · PRODUCTION ENGINEERING AND INTEGRATION", "07 · DEPLOYMENT, MONITORING AND IMPROVEMENT"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHEN SHOULD A BUSINESS BUILD A CUSTOM AI MODEL?",
+        text: "Custom development can make sense when the problem is specialised, existing solutions are insufficient, proprietary data provides useful signal or performance and integration requirements are specific. A feasibility assessment should confirm whether building is justified."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DO ALL AI PROJECTS REQUIRE DEEP LEARNING OR LARGE DATASETS?",
+        text: "No. Simpler statistical or machine-learning approaches can be more reliable and maintainable, and pre-trained models or transfer learning can reduce data needs. The required data depends on the problem, expected performance and representativeness of available examples."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT IS MODEL DRIFT?",
+        text: "Model drift occurs when production inputs, behaviour or relationships change compared with development data, causing performance to deteriorate. Monitoring helps identify these changes so the model and surrounding workflow can be investigated before a controlled update."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "CONNECT CUSTOM MODELS WITH EDGE, PRODUCTS AND OPERATIONAL SOFTWARE.",
+        text: "Custom AI & ML can be combined with IoT and Edge AI for local inference, AI Smart Security for computer-vision monitoring, or custom software engineering to deliver the model through a dependable user and integration layer.",
+        bullets: ["IoT & EDGE AI · /iot-edge-ai", "AI SMART SECURITY · /ai-smart-security", "WEB & MOBILE PRODUCTS · /services"]
+      }
+    ],
+    cta: { label: "Request an AI feasibility assessment", href: "/request-quote" }
+  },
   services: {
     slug: "services",
     navLabel: "Services",
@@ -809,7 +929,7 @@ export const pages: Record<string, PageData> = {
       "Truefox AI brings strategy, product, AI, software, cloud and edge engineering into one accountable partnership—helping clients build secure, maintainable systems without managing handoffs across multiple vendors.",
     kind: "services",
     cards: [
-      { eyebrow: "06", title: "CUSTOM AI & ML", text: "Turn complex data into dependable models, decision systems and production-ready machine learning capabilities.", href: "/services#custom-ai-ml" },
+      { eyebrow: "06", title: "CUSTOM AI & ML", text: "Turn complex data into dependable models, decision systems and production-ready machine learning capabilities.", href: "/custom-ai-ml" },
       { eyebrow: "07", title: "WEB & MOBILE PRODUCTS", text: "Create intuitive digital products that bring intelligent workflows to customers, operators and internal teams.", href: "/services#web-mobile-products" },
       { eyebrow: "08", title: "R&D & PRODUCT VALIDATION", text: "Test ambitious ideas through focused research, technical feasibility studies and representative prototypes.", href: "/services#product-validation" }
     ],
