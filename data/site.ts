@@ -152,7 +152,7 @@ export const solutions: Card[] = [
     eyebrow: "08",
     title: "R&D and Prototyping",
     text: "Feasibility studies, rapid prototypes and applied research for ambitious ideas.",
-    href: "/services"
+    href: "/research-development"
   }
 ];
 
@@ -1039,6 +1039,125 @@ export const pages: Record<string, PageData> = {
     ],
     cta: { label: "Start a product discovery session", href: "/request-quote" }
   },
+  "research-development": {
+    slug: "research-development", navLabel: "R&D and Prototyping", eyebrow: "SERVICE · RESEARCH & VALIDATION",
+    title: "Turn ambitious ideas into testable technology.",
+    description: "Truefox AI provides feasibility studies, applied AI research, proof-of-concept development and rapid prototyping across AI, IoT, edge and digital products.",
+    intro: "Not every idea should move directly into full-scale development. Truefox AI helps organisations explore technical possibilities, test assumptions, compare approaches and build working proofs of concept—turning the most important uncertainty into evidence before larger production investment.",
+    kind: "services",
+    stats: [
+      { value: "ASK", label: "Define the uncertainty" },
+      { value: "TEST", label: "Build the smallest experiment" },
+      { value: "DECIDE", label: "Proceed with evidence" }
+    ],
+    cards: [
+      { eyebrow: "FEASIBILITY", title: "TECHNICAL STUDIES", text: "Assess data, models, hardware, integrations, performance, security and delivery constraints before committing to development." },
+      { eyebrow: "EVIDENCE", title: "PROOFS OF CONCEPT", text: "Build a focused implementation that answers one important question using representative inputs and measurable criteria." },
+      { eyebrow: "EXPERIENCE", title: "WORKING PROTOTYPES", text: "Combine enough interface, workflow and system integration for stakeholders to evaluate how the concept could work in practice." }
+    ],
+    sections: [
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT IS R&D PROTOTYPING?",
+        text: "R&D prototyping explores a technical concept through structured research, experimentation and a working early implementation. It does not need every production feature. Its purpose is to focus effort on the uncertainty that matters most—whether a model, device, integration, architecture or user workflow can meet a defined requirement."
+      },
+      {
+        eyebrow: "FROM IDEA TO EVIDENCE",
+        title: "TURN THE BIGGEST ASSUMPTION INTO A TESTABLE QUESTION.",
+        text: "A strong prototype does not begin with a broad request to build an impressive demo. It identifies what the organisation must learn next: whether data is sufficient, accuracy is achievable, hardware can support the workload, a system can operate offline, an integration is practical or users can complete the proposed workflow.",
+        bullets: ["CAN THE TECHNOLOGY WORK IN REPRESENTATIVE CONDITIONS?", "IS THE AVAILABLE DATA SUITABLE?", "CAN THE REQUIRED HARDWARE MEET PERFORMANCE NEEDS?", "ARE INTEGRATION AND SECURITY BOUNDARIES PRACTICAL?", "WILL THE PROPOSED EXPERIENCE HELP THE USER?"]
+      },
+      {
+        eyebrow: "WHEN TO PROTOTYPE",
+        title: "REDUCE UNCERTAINTY BEFORE IT BECOMES EXPENSIVE.",
+        text: "Prototyping is useful when technical feasibility is unclear, several approaches could work, data or hardware needs evaluation, accuracy is unknown, stakeholders need a working concept or production delivery would require significant investment. Finding a limitation early is a successful research outcome when it prevents the wrong system from being scaled."
+      },
+      {
+        eyebrow: "PoC, PROTOTYPE OR MVP",
+        title: "CHOOSE THE STAGE THAT ANSWERS THE QUESTION YOU ACTUALLY HAVE.",
+        text: "A proof of concept asks whether the technology can work. A prototype explores what the solution could look and feel like. A minimum viable product is stable enough for a controlled group of real users and tests whether the product creates value. Choosing the right stage avoids production engineering before technical and product assumptions are ready.",
+        bullets: ["PROOF OF CONCEPT · TECHNICAL FEASIBILITY", "PROTOTYPE · WORKFLOW AND EXPERIENCE", "MVP · REAL-USER VALUE AND ADOPTION"]
+      },
+      {
+        eyebrow: "APPLIED AI RESEARCH",
+        title: "COMPARE MODELS, DATA STRATEGIES AND SYSTEM ARCHITECTURES.",
+        text: "Applied AI experiments can test custom machine learning, generative AI, RAG, computer vision, multimodal systems or controlled agents. The research may compare commercial and open models, retrieval approaches, single and multi-agent designs, cloud and local inference, or AI against a simpler deterministic alternative.",
+        bullets: ["MACHINE-LEARNING AND FORECASTING PROTOTYPES", "GENERATIVE AI AND RAG PROOFS OF CONCEPT", "COMPUTER-VISION BENCHMARKS", "AGENT AND WORKFLOW EXPERIMENTS", "MULTIMODAL AND VOICE CONCEPTS"]
+      },
+      {
+        eyebrow: "IoT, EDGE & HARDWARE",
+        title: "TEST THE PHYSICAL SYSTEM BEFORE COMMITTING TO A FLEET.",
+        text: "IoT and Edge AI prototypes can validate sensor quality, device communication, embedded behaviour, local model performance and connectivity assumptions. Representative hardware benchmarks help determine whether compute, memory, power, thermal behaviour and response time are suitable before equipment is purchased at scale.",
+        bullets: ["SENSOR AND SIGNAL FEASIBILITY", "EMBEDDED AND GATEWAY PROTOTYPES", "EDGE-MODEL PERFORMANCE", "OFFLINE AND NETWORK-LOSS BEHAVIOUR", "HARDWARE AND PROTOCOL INTEGRATION"]
+      },
+      {
+        eyebrow: "DIGITAL PRODUCTS",
+        title: "VALIDATE THE WORKFLOW BEFORE BUILDING THE FULL PLATFORM.",
+        text: "Interactive product prototypes can explore navigation, interface, business rules, AI touchpoints and connections with existing systems. Workflow prototyping also makes it clear which steps benefit from automation and where human judgement, approval or exception handling should remain."
+      },
+      {
+        eyebrow: "DATA & BENCHMARKS",
+        title: "USE REPRESENTATIVE INPUTS AND MEASURABLE SUCCESS CRITERIA.",
+        text: "Clean demonstration data can hide important limitations. R&D should use representative documents, images, sensor readings, user questions, hardware, network conditions and workflows whenever possible. Success criteria are defined before building and can measure accuracy, latency, throughput, memory, cost, usability or another requirement relevant to the decision.",
+        bullets: ["DATA VOLUME, QUALITY, LABELS AND COVERAGE", "MODEL ACCURACY AND ERROR TRADE-OFFS", "LATENCY, THROUGHPUT AND RESOURCE USE", "WORKFLOW COMPLETION AND USER FEEDBACK", "CLEAR PASS, MODIFY OR STOP CRITERIA"]
+      },
+      {
+        eyebrow: "ARCHITECTURE COMPARISON",
+        title: "COMPARE OPTIONS BEFORE CREATING AN EXPENSIVE DEPENDENCY.",
+        text: "A focused technical spike can evaluate an API, framework, database, integration or hardware target without building a complete prototype. Broader research can compare cloud and edge, custom and foundation models, build and buy, or alternative application architectures using the same requirements and benchmarks."
+      },
+      {
+        eyebrow: "SECURITY & PRIVACY",
+        title: "DISCOVER CRITICAL CONSTRAINTS WHILE THE DESIGN CAN STILL CHANGE.",
+        text: "R&D can identify data exposure, authentication, device security, agent permissions, API boundaries, model access and network risks before production architecture is fixed. Sensitive concepts should also test what data is actually required, whether collection can be minimised and whether selected processing can remain local.",
+        bullets: ["DATA AND MODEL ACCESS", "IDENTITY, API AND DEVICE SECURITY", "NETWORK AND DEPLOYMENT BOUNDARIES", "DATA MINIMISATION AND RETENTION", "HUMAN REVIEW FOR HIGH-RISK OUTPUTS"]
+      },
+      {
+        eyebrow: "RAPID EXPERIMENTATION",
+        title: "BUILD TO LEARN, MEASURE AND ADJUST.",
+        text: "Short hypothesis, build, test and measurement cycles keep R&D focused on learning. The simplest useful solution may be rules instead of machine learning, traditional search instead of generative AI, cloud instead of edge or deterministic automation instead of an agent. A recommendation not to use AI can be the most valuable result."
+      },
+      {
+        eyebrow: "DELIVERABLES",
+        title: "LEAVE WITH EVIDENCE AND A CLEAR NEXT DECISION.",
+        text: "Deliverables are defined around what decision the organisation needs to make. They may include a feasibility report, model or hardware benchmark, data assessment, architecture comparison, working proof of concept, interactive prototype, test results, risk analysis and a production roadmap.",
+        bullets: ["WHAT WAS TESTED", "WHAT WORKED AND FAILED", "MEASURED RESULTS AND LIMITATIONS", "RISKS AND TRADE-OFFS", "RECOMMENDED NEXT STEP"]
+      },
+      {
+        eyebrow: "PRODUCTION READINESS",
+        title: "A SUCCESSFUL PROTOTYPE IS NOT AUTOMATICALLY PRODUCTION-READY.",
+        text: "Production usually requires additional reliability, security, monitoring, scalability, user management, data lifecycle, error handling, documentation and infrastructure. A readiness assessment makes this gap visible and can define a staged path from prototype to pilot, production and scale."
+      },
+      {
+        eyebrow: "PROCESS",
+        title: "BUILD THE SMALLEST USEFUL EXPERIMENT AROUND THE BIGGEST QUESTION.",
+        text: "Truefox AI combines research across AI, software, cloud, embedded systems, IoT and product design so complete ideas can be tested rather than isolated components. Each engagement ends with a direct recommendation based on the evidence produced.",
+        bullets: ["01 · DEFINE THE QUESTION", "02 · RESEARCH TECHNOLOGIES, DATA AND CONSTRAINTS", "03 · SET MEASURABLE SUCCESS CRITERIA", "04 · BUILD THE FOCUSED PROTOTYPE", "05 · TEST IN REPRESENTATIVE CONDITIONS", "06 · ANALYSE RESULTS, LIMITATIONS AND RISKS", "07 · RECOMMEND PROCEED, MODIFY, LEARN MORE OR STOP", "08 · DEFINE A PRODUCTION ROADMAP WHEN VIABLE"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT IS THE DIFFERENCE BETWEEN A PROTOTYPE AND AN MVP?",
+        text: "A prototype explores how a solution could work and may not be production-ready. An MVP is a usable product designed for a controlled group of real users so the organisation can test whether it creates enough value to continue."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT HAPPENS IF THE IDEA DOES NOT WORK?",
+        text: "That can still be a successful R&D result. Discovering a technical, data, hardware or business limitation through a focused experiment is less expensive than discovering it after full-scale development. The evidence should inform whether to modify, pause or stop."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN A SUCCESSFUL PROTOTYPE BECOME A PRODUCTION PRODUCT?",
+        text: "Yes, but it generally needs additional engineering for reliability, security, monitoring, scalability, user experience and operations. A production-readiness assessment defines that work rather than treating the prototype as a finished system."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "PROTOTYPE ACROSS AI, EDGE AND DIGITAL PRODUCTS.",
+        text: "R&D engagements can connect with Custom AI & ML, IoT & Edge AI, Private AI Assistants, Agentic Automation and Web & Mobile Products depending on which technical question must be answered.",
+        bullets: ["CUSTOM AI & ML · /custom-ai-ml", "IoT & EDGE AI · /iot-edge-ai", "PRIVATE AI ASSISTANTS · /private-ai-assistants", "WEB & MOBILE PRODUCTS · /web-mobile-products"]
+      }
+    ],
+    cta: { label: "Start a proof of concept", href: "/request-quote" }
+  },
   services: {
     slug: "services",
     navLabel: "Services",
@@ -1051,7 +1170,7 @@ export const pages: Record<string, PageData> = {
     cards: [
       { eyebrow: "06", title: "CUSTOM AI & ML", text: "Turn complex data into dependable models, decision systems and production-ready machine learning capabilities.", href: "/custom-ai-ml" },
       { eyebrow: "07", title: "WEB & MOBILE PRODUCTS", text: "Create intuitive digital products that bring intelligent workflows to customers, operators and internal teams.", href: "/web-mobile-products" },
-      { eyebrow: "08", title: "R&D & PRODUCT VALIDATION", text: "Test ambitious ideas through focused research, technical feasibility studies and representative prototypes.", href: "/services#product-validation" }
+      { eyebrow: "08", title: "R&D & PRODUCT VALIDATION", text: "Test ambitious ideas through focused research, technical feasibility studies and representative prototypes.", href: "/research-development" }
     ],
     sections: [
       { title: "AI STRATEGY & SYSTEMS ARCHITECTURE", text: "Identify the right opportunities, assess feasibility and define a practical roadmap across data, technology, risk and deployment." },
