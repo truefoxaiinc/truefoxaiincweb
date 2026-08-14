@@ -10,12 +10,33 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["*.trycloudflare.com"],
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
   typedRoutes: false,
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
   images: { formats: ["image/avif", "image/webp"], minimumCacheTTL: 31_536_000 },
   experimental: { optimizePackageImports: ["motion"] },
+  async redirects() {
+    return [
+      { source: "/about-us/", destination: "/about", permanent: true },
+      { source: "/about-us", destination: "/about", permanent: true },
+      { source: "/contact-us/", destination: "/contact", permanent: true },
+      { source: "/contact-us", destination: "/contact", permanent: true },
+      {
+        source: "/terms-conditions-and-privacy-policy/",
+        destination: "/terms-and-conditions",
+        permanent: true
+      },
+      {
+        source: "/terms-conditions-and-privacy-policy",
+        destination: "/terms-and-conditions",
+        permanent: true
+      },
+      { source: "/:path+/", destination: "/:path+", permanent: true }
+    ];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },

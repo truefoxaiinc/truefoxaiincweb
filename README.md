@@ -4,7 +4,7 @@ The production frontend for Truefox AI Inc. It is built with the Next.js App Rou
 
 All operational backend functionality lives in the separate Python/FastAPI service:
 
-- Frontend: `https://truefoxaiinc.com`
+- Frontend: `https://www.truefoxaiinc.com`
 - Backend API: `https://api.truefoxaiinc.com`
 - Backend health: `https://api.truefoxaiinc.com/health`
 - Backend repository: `https://github.com/truefoxaiinc/truefoxaiincweb-backend`
@@ -58,7 +58,7 @@ npm start
 ## Vercel configuration
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://truefoxaiinc.com
+NEXT_PUBLIC_SITE_URL=https://www.truefoxaiinc.com
 NEXT_PUBLIC_API_URL=https://api.truefoxaiinc.com
 NEXT_PUBLIC_WHATSAPP_NUMBER=919074897768
 NEXT_PUBLIC_LINKEDIN_URL=https://ca.linkedin.com/company/truefox-ai-inc
@@ -73,8 +73,8 @@ Use the WhatsApp number in international format without `+`, spaces, or punctuat
 
 ## Administrator dashboard
 
-- Dashboard: `https://truefoxaiinc.com/admin`
-- Login: `https://truefoxaiinc.com/admin/login`
+- Dashboard: `https://www.truefoxaiinc.com/admin`
+- Login: `https://www.truefoxaiinc.com/admin/login`
 
 Administrator credentials are checked by FastAPI. Configure `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and `ADMIN_SESSION_SECRET` in the AWS backend environment, not Vercel.
 
