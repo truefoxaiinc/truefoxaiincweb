@@ -1223,7 +1223,7 @@ export const pages: Record<string, PageData> = {
       { title: "15. Third-Party Links", text: "We are not responsible for the content or privacy practices of external websites linked from the Platform." },
       { title: "16. Termination of Use", text: "We may suspend access for Agreement violations or security threats. You may terminate your account at any time by contacting support." },
       { title: "17. Governing Law", text: "These Terms are governed by the laws of your jurisdiction. Disputes shall be settled in the applicable courts." },
-      { title: "18. Contact Information", text: "For questions related to these Terms, privacy, or support, contact Truefox AI Inc. at truefoxaiinc@gmail.com or visit https://www.truefoxaiinc.com/." }
+      { title: "18. Contact Information", text: "For questions related to these Terms, privacy, or support, contact Truefox AI Inc. at info@truefoxaiinc.com or visit https://www.truefoxaiinc.com/." }
     ]
   },
   "privacy-policy": {

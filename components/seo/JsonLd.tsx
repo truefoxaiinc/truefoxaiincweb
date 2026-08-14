@@ -14,6 +14,9 @@ export function JsonLd({ data }: { data: JsonValue }) {
 export function GlobalEntityGraph() {
   const organizationId = `${site.url}/#organization`;
   const websiteId = `${site.url}/#website`;
+  const logoId = `${site.url}/#logo`;
+  const canadaOfficeId = `${site.url}/#canada-office`;
+  const indiaOfficeId = `${site.url}/#india-office`;
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -22,22 +25,24 @@ export function GlobalEntityGraph() {
         "@id": organizationId,
         name: site.name,
         url: site.url,
-        logo: `${site.url}/images/truefox-logo.webp`,
+        logo: { "@id": logoId },
+        image: { "@id": logoId },
         email: site.email,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: site.address.street,
-          addressLocality: site.address.city,
-          addressRegion: site.address.region,
-          postalCode: site.address.postalCode,
-          addressCountry: site.address.country
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "general enquiries",
+          email: site.email,
+          availableLanguage: "English"
         },
+        location: [
+          { "@id": canadaOfficeId },
+          { "@id": indiaOfficeId }
+        ],
         areaServed: [
           { "@type": "Country", name: "Canada" },
           { "@type": "Country", name: "India" },
-          { "@type": "Place", name: "International" }
+          "International"
         ],
-        sameAs: Object.values(site.social).filter(Boolean),
         knowsAbout: [
           "Artificial intelligence",
           "Computer vision",
@@ -48,6 +53,39 @@ export function GlobalEntityGraph() {
           "IoT and edge AI",
           "Web and mobile software"
         ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": logoId,
+        url: `${site.url}/images/truefox-logo.webp`,
+        contentUrl: `${site.url}/images/truefox-logo.webp`,
+        caption: `${site.name} logo`
+      },
+      {
+        "@type": "Place",
+        "@id": canadaOfficeId,
+        name: `${site.name} Canada office`,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: site.address.street,
+          addressLocality: site.address.city,
+          addressRegion: site.address.region,
+          postalCode: site.address.postalCode,
+          addressCountry: site.address.country
+        }
+      },
+      {
+        "@type": "Place",
+        "@id": indiaOfficeId,
+        name: `${site.name} India office`,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Olangattu Tower, Chittethukara, Kakkanad",
+          addressLocality: "Kochi",
+          addressRegion: "Kerala",
+          postalCode: "682037",
+          addressCountry: "IN"
+        }
       },
       {
         "@type": "WebSite",
@@ -64,12 +102,13 @@ export function GlobalEntityGraph() {
 }
 
 export function HomeEntityGraph() {
+  const pageId = `${site.url}/#webpage`;
   const data = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": `${site.url}/#webpage`,
+        "@id": pageId,
         url: site.url,
         name: "Enterprise AI, Computer Vision and Automation | Truefox AI Inc.",
         description: site.description,
@@ -89,15 +128,6 @@ export function HomeEntityGraph() {
           "IoT and Edge AI",
           "Custom AI and Machine Learning"
         ].map((name, index) => ({ "@type": "ListItem", position: index + 1, name }))
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          ["What does Truefox AI build?", "Applied AI systems including computer vision, machine learning, generative AI, private assistants, agentic workflows, biometric intelligence, IoT and custom web or mobile products."],
-          ["Can Truefox AI solutions run on-premise or at the edge?", "Yes. Architecture can be cloud, private cloud, on-premise, edge or hybrid depending on latency, privacy, bandwidth, resilience and integration requirements."],
-          ["Where is Truefox AI located?", "Truefox AI is headquartered in Kitchener, Ontario, Canada, with engineering delivery in India and international client support."],
-          ["How does a Truefox AI engagement begin?", "Engagements typically begin by defining the operational problem, users, data, systems, constraints and success criteria before selecting discovery, prototype, pilot or production delivery."]
-        ].map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } }))
       }
     ]
   };
@@ -122,10 +152,11 @@ export function PageEntityGraph({
   faqs?: { title: string; text: string }[];
 }) {
   const url = `${site.url}/${slug}`;
+  const pageId = `${url}/#webpage`;
   const graph: Record<string, unknown>[] = [
     {
       "@type": "WebPage",
-      "@id": `${url}/#webpage`,
+      "@id": pageId,
       url,
       name: title,
       description,
@@ -147,6 +178,8 @@ export function PageEntityGraph({
   if (faqs?.length) {
     graph.push({
       "@type": "FAQPage",
+      "@id": `${url}/#faq`,
+      isPartOf: { "@id": pageId },
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.title,
@@ -154,15 +187,22 @@ export function PageEntityGraph({
       }))
     });
   }
-  if (slug === "services") {
+  if (kind === "services") {
+    const serviceId = `${url}/#service`;
+    const serviceName = slug === "services" ? "Applied AI and Software Engineering Services" : eyebrow;
+    (graph[0] as Record<string, unknown>).mainEntity = { "@id": serviceId };
     graph.push({
       "@type": "Service",
-      "@id": `${url}/#service`,
-      name: "Applied AI and Software Engineering Services",
+      "@id": serviceId,
+      name: serviceName,
       description,
+      url,
+      mainEntityOfPage: { "@id": pageId },
       provider: { "@id": `${site.url}/#organization` },
       areaServed: ["Canada", "India", "International"],
-      serviceType: cards?.map((card) => card.title) || ["AI development", "Software engineering", "Cloud engineering"]
+      ...(slug === "services" && {
+        serviceType: cards?.map((card) => card.title) || ["AI development", "Software engineering", "Cloud engineering"]
+      })
     });
   }
   if (kind === "products" && slug !== "products") {
