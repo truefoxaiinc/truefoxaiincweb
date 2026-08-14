@@ -36,7 +36,7 @@ export const site = {
   url: "https://www.truefoxaiinc.com",
   email: "info@truefoxaiinc.com",
   phoneLabel: "+1 (Canada)",
-  lastUpdated: "2026-08-12",
+  lastUpdated: "2026-08-14",
   description:
     "Canada-headquartered applied AI engineering with an India delivery centre, serving international organizations with computer vision, generative AI, agentic automation, biometrics, IoT and custom software.",
   address: {
@@ -220,14 +220,94 @@ export const pages: Record<string, PageData> = {
   },
   "ai-smart-security": {
     slug: "ai-smart-security", navLabel: "AI Smart Security", eyebrow: "PRODUCT · INTELLIGENT SECURITY",
-    title: "Turn live signals into timely awareness.",
-    description: "AI-powered video analytics and monitoring for security, safety and operational awareness.",
-    intro: "AI Smart Security applies computer vision to live video and connected signals—helping teams identify relevant events, understand risk and respond with better context.",
+    title: "AI video analytics for faster, better-informed security decisions.",
+    description: "Truefox AI builds intelligent video surveillance and connected monitoring systems for security, safety and operational awareness.",
+    intro: "Truefox AI Smart Security applies computer vision to live video and connected signals so teams can identify relevant events, understand what is happening and respond with better context. Each system is configured around the operating environment, existing infrastructure and the decisions people need to make.",
     kind: "products",
+    stats: [
+      { value: "LIVE", label: "Video and signal analysis" },
+      { value: "EDGE", label: "On-site processing option" },
+      { value: "HUMAN", label: "Operator-led decisions" }
+    ],
+    cards: [
+      { eyebrow: "SECURITY", title: "EVENT AWARENESS", text: "Surface configured security events and unusual activity from live camera feeds so operators can focus attention where it matters." },
+      { eyebrow: "SAFETY", title: "OPERATIONAL MONITORING", text: "Use visual signals to support safety monitoring and awareness of conditions that may require review or intervention." },
+      { eyebrow: "CONTEXT", title: "COORDINATED RESPONSE", text: "Connect video events with sensors, access-control signals and alert workflows to give teams more useful context before they act." }
+    ],
     sections: [
-      { title: "REAL-TIME VIDEO ANALYTICS", text: "Analyze live video for activities, unusual events, safety risks and operational conditions that require attention." },
-      { title: "CONNECTED MONITORING", text: "Bring video, sensors, access-control signals and alert workflows into a more coordinated monitoring environment." },
-      { title: "DEPLOYMENT AROUND THE OPERATION", text: "Architecture can support cloud, private cloud, on-premise, edge or hybrid environments according to latency, privacy, resilience and integration needs." }
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT IS AI VIDEO ANALYTICS?",
+        text: "AI video analytics uses computer vision to examine video streams for defined objects, activities and conditions. Instead of asking operators to watch every feed continuously, it can bring relevant moments to their attention for review. The purpose is not to replace human judgement, but to help people find important signals sooner and respond with clearer visual context."
+      },
+      {
+        eyebrow: "THE OPERATIONAL PROBLEM",
+        title: "MORE CAMERAS DO NOT AUTOMATICALLY CREATE MORE AWARENESS.",
+        text: "Security and operations teams may be responsible for many simultaneous video feeds, disconnected systems and high volumes of routine footage. Important events can be difficult to notice quickly, while generic alerts can create unnecessary noise. Truefox AI designs monitoring around the events, locations, response rules and escalation paths that matter in the actual environment.",
+        bullets: ["TOO MANY FEEDS FOR CONTINUOUS MANUAL REVIEW", "DISCONNECTED VIDEO, SENSOR AND ACCESS SIGNALS", "ALERT NOISE WITHOUT ENOUGH CONTEXT", "TIME-CONSUMING SEARCH THROUGH RECORDED FOOTAGE"]
+      },
+      {
+        eyebrow: "CORE CAPABILITIES",
+        title: "TURN VISUAL ACTIVITY INTO ACTIONABLE EVENTS.",
+        text: "The system can be configured to analyze live video for relevant activities, unusual events, perimeter conditions, safety risks and other operational signals defined during discovery. Detection logic, alert rules and review workflows are shaped around the use case rather than treated as a one-size-fits-all package.",
+        bullets: ["MULTI-CAMERA VIDEO ANALYTICS", "CONFIGURABLE EVENT AND ZONE RULES", "REAL-TIME OPERATOR ALERTS", "SEARCHABLE EVENT HISTORY", "VISUAL CONTEXT FOR REVIEW"]
+      },
+      {
+        eyebrow: "HOW IT WORKS",
+        title: "FROM CAMERA SIGNAL TO OPERATOR REVIEW.",
+        text: "Approved camera feeds and connected signals are processed by computer-vision models configured for the target environment. When a defined condition is detected, the system creates an event, adds the available context and routes it through the required alert or review workflow. Operators remain responsible for verification and response.",
+        bullets: ["01 · CONNECT APPROVED VIDEO AND SIGNAL SOURCES", "02 · ANALYZE DEFINED AREAS AND CONDITIONS", "03 · CREATE A CONTEXTUAL EVENT", "04 · NOTIFY THE RIGHT OPERATOR OR SYSTEM", "05 · REVIEW, RESPOND AND RETAIN THE EVENT HISTORY"]
+      },
+      {
+        eyebrow: "USE CASES",
+        title: "DESIGNED AROUND THE CONDITIONS YOU NEED TO SEE.",
+        text: "Potential applications depend on camera placement, image quality, environment, policies and available training data. During discovery, Truefox AI identifies which events are technically appropriate, operationally useful and safe to deploy before defining a pilot.",
+        bullets: ["PERIMETER AND RESTRICTED-AREA AWARENESS", "UNUSUAL ACTIVITY REVIEW", "WORKPLACE SAFETY MONITORING", "FACILITY AND SITE OVERSIGHT", "OPERATIONAL EVENT DETECTION"]
+      },
+      {
+        eyebrow: "INTEGRATIONS",
+        title: "WORK WITH THE WIDER MONITORING ENVIRONMENT.",
+        text: "AI Smart Security can be designed to connect video with relevant sensors, access-control signals, alert channels and operational systems. Integration scope is confirmed for each project based on available interfaces, security requirements and the actions that should follow a verified event.",
+        bullets: ["CAMERA AND VIDEO STREAM INPUTS", "SENSOR AND ACCESS-CONTROL SIGNALS", "ALERT AND NOTIFICATION WORKFLOWS", "APIS AND APPROVED BUSINESS SYSTEMS"]
+      },
+      {
+        eyebrow: "DEPLOYMENT",
+        title: "PLACE PROCESSING WHERE THE OPERATION REQUIRES IT.",
+        text: "Architecture can support cloud, private-cloud, on-premise, edge or hybrid environments. The right model depends on response time, connectivity, bandwidth, privacy, resilience, camera infrastructure and integration requirements. Edge processing can keep selected analysis closer to the source when continuous cloud dependence is impractical."
+      },
+      {
+        eyebrow: "SECURITY & GOVERNANCE",
+        title: "CONTROL IS PART OF THE SYSTEM DESIGN.",
+        text: "Video systems require clear purpose, controlled access and responsible operation. Truefox AI considers data flow, retention, permissions, auditability, model limitations and human review during solution design. Final policies and legal obligations remain specific to the organisation and deployment location.",
+        bullets: ["ROLE-BASED ACCESS", "CONFIGURABLE RETENTION", "EVENT AND OPERATOR AUDIT HISTORY", "HUMAN VERIFICATION", "DEPLOYMENT-SPECIFIC PRIVACY REVIEW"]
+      },
+      {
+        eyebrow: "DELIVERY",
+        title: "PROVE THE USE CASE BEFORE SCALING IT.",
+        text: "Engagements begin with the operational problem, target events, camera conditions and response workflow. A focused prototype or pilot can then validate data quality, detection behaviour and operator usefulness before broader integration and deployment.",
+        bullets: ["DISCOVERY · DEFINE EVENTS, USERS AND CONSTRAINTS", "VALIDATION · REVIEW VIDEO QUALITY AND FEASIBILITY", "PILOT · TEST IN REPRESENTATIVE CONDITIONS", "INTEGRATION · CONNECT ALERTS AND OPERATING SYSTEMS", "IMPROVEMENT · MONITOR PERFORMANCE AND REFINE"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN AI WORK WITH EXISTING CCTV CAMERAS?",
+        text: "It may be possible to use existing camera infrastructure when compatible video streams are available and the footage has sufficient quality for the intended analysis. Truefox AI reviews stream access, resolution, frame rate, placement, lighting, network conditions and security requirements before confirming compatibility."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DOES AI SMART SECURITY REPLACE SECURITY OPERATORS?",
+        text: "No. AI Smart Security is designed to help operators notice and review relevant events; it does not replace human judgement or responsibility. Alerts should be verified by an authorised person before consequential action is taken."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN THE SYSTEM RUN ON-PREMISE OR AT THE EDGE?",
+        text: "Yes, the architecture can be designed for on-premise, edge, cloud, private-cloud or hybrid deployment. The appropriate option is selected according to latency, privacy, bandwidth, resilience and integration needs."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "CONNECT SECURITY WITH IDENTITY, EDGE AND AUTOMATION.",
+        text: "AI Smart Security can be explored alongside Truefox AI's Biometric Intelligence, IoT and Edge AI, and Agentic Automation capabilities when a workflow requires identity signals, local processing or controlled coordination with other systems.",
+        bullets: ["BIOMETRIC INTELLIGENCE · /biometric-intelligence", "IoT & EDGE AI · /iot-edge-ai", "AGENTIC AUTOMATION · /agentic-automation"]
+      }
     ], cta: { label: "Book a security demo", href: "/book-demo" }
   },
   "biometric-intelligence": {
