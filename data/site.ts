@@ -421,15 +421,123 @@ export const pages: Record<string, PageData> = {
   },
   "private-ai-assistants": {
     slug: "private-ai-assistants", navLabel: "Private AI Assistants", eyebrow: "PRODUCT · KNOWLEDGE",
-    title: "Approved knowledge, available through conversation.",
-    description: "Private, grounded AI assistants for company documents, support and enterprise knowledge.",
-    intro: "Private AI Assistants connect approved organizational knowledge to conversational interfaces—helping customers and teams find useful answers while maintaining source control and deployment flexibility.",
+    title: "Enterprise AI that understands your business, knowledge and workflows.",
+    description: "Truefox AI builds private enterprise AI assistants, RAG systems and copilots grounded in approved company knowledge and controlled business tools.",
+    intro: "Your organisation already has valuable knowledge. Truefox AI Private AI Assistants bring approved documents, data and tools into a secure conversational experience—helping people retrieve relevant information, understand it clearly and, where appropriate, work with authorised enterprise systems.",
     kind: "products",
+    stats: [
+      { value: "RAG", label: "Grounded enterprise retrieval" },
+      { value: "RBAC", label: "Permission-aware access" },
+      { value: "HUMAN", label: "Approval for important actions" }
+    ],
+    cards: [
+      { eyebrow: "KNOWLEDGE", title: "ENTERPRISE SEARCH", text: "Let users ask natural-language questions across approved policies, manuals, reports, knowledge bases and other business information." },
+      { eyebrow: "COPILOT", title: "WORKFLOW SUPPORT", text: "Retrieve relevant records, compare information, summarise context and prepare useful drafts while keeping people responsible for final decisions." },
+      { eyebrow: "CONTROL", title: "PRIVATE AI ARCHITECTURE", text: "Design retrieval, models, identity, permissions, integrations and deployment around the organisation's security and operating requirements." }
+    ],
     sections: [
-      { title: "GROUNDED ANSWERS", text: "Use retrieval-augmented generation to answer from approved documents, policies, product information, websites and internal knowledge." },
-      { title: "ENTERPRISE INTEGRATION", text: "Connect assistants with APIs, CRM or ERP platforms, enterprise messaging and controlled business tools where required." },
-      { title: "CONTROLLED DEPLOYMENT", text: "Design for cloud, private-cloud, on-premise or controlled enterprise environments with access and governance requirements considered from the start." }
-    ], cta: { label: "Book an assistant demo", href: "/book-demo" }
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT IS A PRIVATE AI ASSISTANT?",
+        text: "A Private AI Assistant is an AI-powered system designed to work with an organisation's own approved data, documents, applications and processes. Unlike a general-purpose public chatbot, it can be designed around internal terminology, users, permissions, security requirements and the business systems people already use."
+      },
+      {
+        eyebrow: "THE OPERATIONAL PROBLEM",
+        title: "THE ANSWER EXISTS. FINDING IT SHOULD NOT SLOW THE WORK DOWN.",
+        text: "Important information is often spread across policies, shared folders, technical manuals, support records, knowledge bases, databases and disconnected applications. A private assistant creates a conversational layer over approved information so the experience can move from repeated searching and comparison to asking, retrieving, understanding and acting.",
+        bullets: ["POLICIES AND STANDARD OPERATING PROCEDURES", "TECHNICAL AND PRODUCT DOCUMENTATION", "SUPPORT AND PROJECT RECORDS", "CRM, ERP AND OPERATIONAL DATA", "INTERNAL KNOWLEDGE BASES"]
+      },
+      {
+        eyebrow: "ENTERPRISE RAG",
+        title: "GROUND ANSWERS IN RELEVANT BUSINESS KNOWLEDGE.",
+        text: "Retrieval-Augmented Generation, or RAG, searches approved knowledge before a language model creates a response. The assistant interprets the question, retrieves relevant information, supplies that context to the model and can show supporting sources where verification matters. This lets the system work with organisation-specific information that may not exist in a model's general training data.",
+        bullets: ["INTERPRET THE USER'S REQUEST", "SEARCH APPROVED ENTERPRISE SOURCES", "RANK AND FILTER RELEVANT INFORMATION", "GENERATE A GROUNDED RESPONSE", "SHOW SUPPORTING SOURCES WHEN APPROPRIATE"]
+      },
+      {
+        eyebrow: "KNOWLEDGE CONNECTIONS",
+        title: "CONNECT DOCUMENTS, DATABASES AND BUSINESS APPLICATIONS.",
+        text: "Private AI Assistants can work across structured and unstructured information. The right ingestion and retrieval approach depends on source quality, scale, permissions and update patterns. Structured systems require controlled queries and record-level access, while documents require careful extraction, cleaning, chunking, metadata and indexing.",
+        bullets: ["PDF, WORD, PRESENTATION AND SPREADSHEET CONTENT", "POLICIES, MANUALS, REPORTS AND KNOWLEDGE ARTICLES", "SQL DATABASES AND DATA WAREHOUSES", "CRM, ERP, HRMS AND TICKETING SYSTEMS", "DOCUMENT PLATFORMS, INTERNAL APPS AND CUSTOM APIS"]
+      },
+      {
+        eyebrow: "SOURCE-AWARE ANSWERS",
+        title: "LET USERS VERIFY IMPORTANT INFORMATION.",
+        text: "For important enterprise questions, an answer should not always stand alone. The assistant can provide the relevant document title, section, knowledge article, record or linked source so an authorised user can inspect the information behind the response. Grounding, source restrictions, validation and refusal behaviour help reduce unsupported answers without pretending AI is infallible."
+      },
+      {
+        eyebrow: "USE CASES",
+        title: "DESIGN THE ASSISTANT AROUND ONE HIGH-VALUE WORKFLOW.",
+        text: "A useful first implementation focuses on a real group of users, trusted information and measurable work. The same foundation can later support additional departments and tools after retrieval quality, permissions and user value have been proven.",
+        bullets: ["EMPLOYEE KNOWLEDGE AND POLICY ASSISTANT", "HR AND IT HELPDESK ASSISTANT", "TECHNICAL SUPPORT COPILOT", "ENGINEERING AND OPERATIONS KNOWLEDGE", "SALES AND CUSTOMER-SERVICE SUPPORT", "CONTRACT, POLICY AND DOCUMENT ANALYSIS"]
+      },
+      {
+        eyebrow: "DOCUMENT INTELLIGENCE",
+        title: "MOVE BEYOND SINGLE-DOCUMENT QUESTION ANSWERING.",
+        text: "Where the source material and permissions allow it, assistants can summarise, extract, classify, compare and navigate information across multiple documents. They can preserve useful conversational context for follow-up questions and learn the organisation's terminology, abbreviations, products and processes without carrying irrelevant context into unrelated requests.",
+        bullets: ["SUMMARISATION AND INFORMATION EXTRACTION", "DOCUMENT AND POLICY COMPARISON", "TABLE AND CLAUSE RETRIEVAL", "MULTI-DOCUMENT SYNTHESIS", "DOMAIN-AWARE FOLLOW-UP CONVERSATIONS"]
+      },
+      {
+        eyebrow: "TOOLS & HUMAN CONTROL",
+        title: "FROM KNOWLEDGE ASSISTANT TO CONTROLLED COPILOT.",
+        text: "An assistant can be given permission to use selected tools—for example, retrieving a CRM record, checking ticket status, preparing a report or drafting a response. Higher-risk actions can require explicit human review and approval before execution. Tool access should remain narrow, traceable and aligned with the active user's permissions.",
+        bullets: ["APPROVED TOOL AND API ACCESS", "EXPLICIT OPERATIONAL BOUNDARIES", "HUMAN APPROVAL CHECKPOINTS", "TRACEABLE TOOL AND WORKFLOW HISTORY", "SAFE HANDLING OF EXCEPTIONS"]
+      },
+      {
+        eyebrow: "IDENTITY & PERMISSIONS",
+        title: "THE ASSISTANT MUST NOT BECOME A SHORTCUT AROUND ACCESS CONTROL.",
+        text: "Retrieval and tool use can be designed around roles, individual users and source-level permissions. Depending on the environment, the assistant can integrate with existing identity and Single Sign-On infrastructure for authentication, role mapping, session management and auditability. Sensitive sources should be connected intentionally rather than made available by default.",
+        bullets: ["ROLE-BASED AND USER-LEVEL ACCESS", "DATA-SOURCE PERMISSION ENFORCEMENT", "SINGLE SIGN-ON INTEGRATION", "SESSION AND IDENTITY CONTEXT", "AUDITABLE ACCESS TO KNOWLEDGE AND TOOLS"]
+      },
+      {
+        eyebrow: "DEPLOYMENT & MODELS",
+        title: "SELECT THE ARCHITECTURE AROUND DATA, QUALITY AND OPERATIONS.",
+        text: "Private-cloud, on-premise and hybrid architectures can be evaluated according to data control, networking, infrastructure, workload, latency and security requirements. Commercial, open-source or self-hosted models may be appropriate. Separating application logic, retrieval, tools, security, model interfaces and evaluation helps keep the wider business system maintainable as models change."
+      },
+      {
+        eyebrow: "SECURITY & GOVERNANCE",
+        title: "DEFINE WHAT AI CAN ACCESS, SAY AND DO.",
+        text: "Enterprise AI security begins with clear boundaries. Architecture can include authentication, encryption, API security, environment isolation, tool permissions, data-retention controls, monitoring and audit logs. Prompt injection and untrusted content require layered controls such as input validation, data boundaries, permission checks, output validation, sandboxing and human approval.",
+        bullets: ["CLASSIFIED AND INTENTIONALLY CONNECTED KNOWLEDGE", "PROMPT-INJECTION AND UNTRUSTED-CONTENT CONTROLS", "USAGE, SOURCE AND TOOL AUDITABILITY", "DATA-RETENTION AND MONITORING POLICIES", "DEFINED INCIDENT AND HUMAN-REVIEW PROCESSES"]
+      },
+      {
+        eyebrow: "EVALUATION",
+        title: "A GOOD DEMO IS NOT A PRODUCTION READINESS TEST.",
+        text: "Private AI Assistants should be tested with representative business questions, users and failure cases. Evaluation can measure retrieval accuracy, answer relevance, source correctness, completeness, refusal behaviour, permission handling, tool accuracy, latency and user satisfaction. Weaknesses should be found before wider deployment.",
+        bullets: ["REPRESENTATIVE EVALUATION DATASETS", "RETRIEVAL AND SOURCE QUALITY", "SUPPORTED-ANSWER AND REFUSAL BEHAVIOUR", "PERMISSION AND TOOL-USE TESTING", "CONTINUOUS QUALITY MONITORING"]
+      },
+      {
+        eyebrow: "KNOWLEDGE OPERATIONS",
+        title: "GOOD ANSWERS BEGIN WITH WELL-PREPARED, CURRENT INFORMATION.",
+        text: "Enterprise documents can contain repeated headers, scanned pages, tables, old versions and inconsistent formatting. A reliable pipeline extracts, cleans, structures, chunks, enriches and indexes approved content. Scheduled or event-based synchronization, version tracking, source expiration and re-indexing help prevent outdated information from remaining authoritative."
+      },
+      {
+        eyebrow: "DELIVERY",
+        title: "START WITH ONE WORKFLOW. PROVE IT. THEN EXPAND.",
+        text: "Truefox AI approaches models, RAG, data engineering, search, security, integrations, applications and evaluation as one operational system. Delivery begins by identifying users, approved sources, permissions, prohibited access and useful outcomes before a focused proof of concept and production architecture are defined.",
+        bullets: ["01 · DISCOVER THE WORKFLOW AND USERS", "02 · ASSESS KNOWLEDGE, SYSTEMS AND PERMISSIONS", "03 · PROTOTYPE WITH REALISTIC QUESTIONS", "04 · DESIGN RETRIEVAL, SECURITY AND DEPLOYMENT", "05 · BUILD, INTEGRATE AND EVALUATE", "06 · DEPLOY, MONITOR AND IMPROVE"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW IS A PRIVATE AI ASSISTANT DIFFERENT FROM CHATGPT?",
+        text: "A general-purpose assistant is designed for broad conversation. A Private AI Assistant is built around specific organisational knowledge, permissions, applications, terminology and workflows, with deployment and governance selected for the enterprise environment."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN A PRIVATE AI ASSISTANT HALLUCINATE?",
+        text: "Yes. Language models can produce incorrect information. Retrieval grounding, source restrictions, validation, evaluation and workflow controls can reduce this risk and help the system refuse unsupported questions, but they do not make AI infallible."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN IT RUN ON-PREMISE OR USE OPEN-SOURCE MODELS?",
+        text: "Potentially, yes. On-premise, private-cloud and hybrid deployment can be evaluated, and open-source or self-hosted models may be used when they meet the required quality, infrastructure, latency and security needs."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "CONNECT KNOWLEDGE WITH CONTROLLED AUTOMATION AND PRODUCT ENGINEERING.",
+        text: "Private AI Assistants can be combined with Agentic Automation when approved tools and multi-step actions are required, or delivered through custom web and mobile products that fit the organisation's existing user experience.",
+        bullets: ["AGENTIC AUTOMATION · /agentic-automation", "WEB & MOBILE PRODUCTS · /services", "BOOK A PRIVATE AI DEMO · /book-demo"]
+      }
+    ], cta: { label: "Discuss your private AI requirement", href: "/book-demo" }
   },
   "agentic-automation": {
     slug: "agentic-automation", navLabel: "Agentic Automation", eyebrow: "PRODUCT · WORKFLOWS",
