@@ -12,6 +12,7 @@ import ManagedBlog from "@/components/ManagedBlog";
 import type { BlogPost, Job } from "@/lib/cms";
 import TeamVoices from "@/components/TeamVoices";
 import AttentionMinderLaunch from "@/components/AttentionMinderLaunch";
+import ResearchDevelopmentPage from "@/components/ResearchDevelopmentPage";
 
 
 function CardGrid({ page }: { page: PageData }) {
@@ -66,6 +67,7 @@ function ContentSections({ page }: { page: PageData }) {
 
 export default function PageRenderer({ page, managed }: { page: PageData; managed?: { jobs: Job[]; posts: BlogPost[] } }) {
   if (page.slug === "attention-minder-privacy-policy") return <AttentionMinderPolicyPage page={page} />;
+  if (page.slug === "research-development") return <ResearchDevelopmentPage page={page} />;
   const formIntent = page.slug === "request-quote" ? "quote" : page.slug === "book-demo" ? "demo" : "contact";
   const faqData = page.kind === "faq" ? page.sections?.map(({ title, text }) => ({ title, text })) : undefined;
   return (
