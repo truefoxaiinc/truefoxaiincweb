@@ -14,7 +14,7 @@ export default function ResearchDevelopmentPage({ page }: { page: PageData }) {
 
   return (
     <main id="main-content" className="attention-policy-page">
-      <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} kind={page.kind} cards={page.cards} />
+      <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} kind={page.kind} cards={page.cards} sections={page.sections} />
 
       <header className="policy-hero">
         <div className="shell policy-hero-inner">

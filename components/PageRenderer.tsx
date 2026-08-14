@@ -71,10 +71,9 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
   if (page.slug === "research-development") return <ResearchDevelopmentPage page={page} />;
   if (page.slug === "ai-smart-security") return <AiSmartSecurityPage page={page} />;
   const formIntent = page.slug === "request-quote" ? "quote" : page.slug === "book-demo" ? "demo" : "contact";
-  const faqData = page.kind === "faq" ? page.sections?.map(({ title, text }) => ({ title, text })) : undefined;
   return (
     <main id="main-content">
-      <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} kind={page.kind} cards={page.cards} faqs={faqData} />
+      <PageEntityGraph slug={page.slug} title={page.title} description={page.description} eyebrow={page.navLabel} kind={page.kind} cards={page.cards} sections={page.sections} />
       <section className={`inner-hero cinematic-inner-hero${page.slug === "request-quote" ? " request-quote-hero" : page.slug === "about" ? " about-hero" : page.slug === "why-choose-us" ? " why-choose-us-hero" : page.slug === "careers" ? " careers-hero" : page.slug === "products" ? " products-hero" : page.slug === "services" ? " services-hero" : page.slug === "book-demo" ? " book-demo-hero" : page.slug === "clients-partners" ? " partnerships-hero" : page.slug === "case-studies" ? " case-studies-hero" : page.slug === "faq" ? " faq-hero" : page.slug === "support" ? " support-hero" : page.slug === "contact" ? " contact-hero" : page.slug === "privacy-policy" ? " privacy-policy-hero" : page.slug === "terms-and-conditions" ? " terms-hero" : page.slug === "team" ? " team-hero" : page.slug === "blog" ? " blog-hero" : ""}`}>
         <InnerHeroMedia />
         <div className="shell inner-hero-content">

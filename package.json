@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint:content": "node scripts/content-audit.mjs"
+    "lint:content": "node scripts/content-audit.mjs",
+    "validate:schema": "node scripts/validate-service-schema.mjs"
   },
   "dependencies": {
     "motion": "12.43.0",

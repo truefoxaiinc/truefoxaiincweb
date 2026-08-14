@@ -3,6 +3,17 @@ import type { Card, PageData } from "@/data/site";
 
 type JsonValue = Record<string, unknown> | Record<string, unknown>[];
 
+const servicePageSlugs = new Set([
+  "ai-smart-security",
+  "biometric-intelligence",
+  "private-ai-assistants",
+  "agentic-automation",
+  "iot-edge-ai",
+  "custom-ai-ml",
+  "web-mobile-products",
+  "research-development"
+]);
+
 function safeJson(data: JsonValue) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
@@ -141,7 +152,7 @@ export function PageEntityGraph({
   eyebrow,
   kind,
   cards,
-  faqs
+  sections
 }: {
   slug: string;
   title: string;
@@ -149,10 +160,15 @@ export function PageEntityGraph({
   eyebrow: string;
   kind?: PageData["kind"];
   cards?: Card[];
-  faqs?: { title: string; text: string }[];
+  sections?: PageData["sections"];
 }) {
   const url = `${site.url}/${slug}`;
-  const pageId = `${url}/#webpage`;
+  const pageId = `${url}#webpage`;
+  const breadcrumbId = `${url}#breadcrumb`;
+  const isServicePage = slug === "services" || servicePageSlugs.has(slug);
+  const visibleFaqs = kind === "faq"
+    ? sections
+    : sections?.filter((section) => section.eyebrow?.trim().toUpperCase() === "FAQ");
   const graph: Record<string, unknown>[] = [
     {
       "@type": "WebPage",
@@ -162,33 +178,33 @@ export function PageEntityGraph({
       description,
       isPartOf: { "@id": `${site.url}/#website` },
       about: { "@id": `${site.url}/#organization` },
-      breadcrumb: { "@id": `${url}/#breadcrumb` },
+      breadcrumb: { "@id": breadcrumbId },
       dateModified: site.lastUpdated,
       inLanguage: "en-CA"
     },
     {
       "@type": "BreadcrumbList",
-      "@id": `${url}/#breadcrumb`,
+      "@id": breadcrumbId,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site.url },
         { "@type": "ListItem", position: 2, name: eyebrow, item: url }
       ]
     }
   ];
-  if (faqs?.length) {
+  if (visibleFaqs?.length) {
     graph.push({
       "@type": "FAQPage",
-      "@id": `${url}/#faq`,
+      "@id": `${url}#faq`,
       isPartOf: { "@id": pageId },
-      mainEntity: faqs.map((faq) => ({
+      mainEntity: visibleFaqs.map((faq) => ({
         "@type": "Question",
         name: faq.title,
         acceptedAnswer: { "@type": "Answer", text: faq.text }
       }))
     });
   }
-  if (kind === "services") {
-    const serviceId = `${url}/#service`;
+  if (isServicePage) {
+    const serviceId = `${url}#service`;
     const serviceName = slug === "services" ? "Applied AI and Software Engineering Services" : eyebrow;
     (graph[0] as Record<string, unknown>).mainEntity = { "@id": serviceId };
     graph.push({
@@ -205,10 +221,10 @@ export function PageEntityGraph({
       })
     });
   }
-  if (kind === "products" && slug !== "products") {
+  if (kind === "products" && slug !== "products" && !isServicePage) {
     graph.push({
       "@type": "Product",
-      "@id": `${url}/#product`,
+      "@id": `${url}#product`,
       name: title,
       description,
       brand: { "@type": "Brand", name: site.shortName },
