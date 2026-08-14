@@ -312,15 +312,112 @@ export const pages: Record<string, PageData> = {
   },
   "biometric-intelligence": {
     slug: "biometric-intelligence", navLabel: "Biometric Intelligence", eyebrow: "PRODUCT · IDENTITY",
-    title: "Identity signals designed for real workflows.",
-    description: "Face, fingerprint, liveness and attendance capabilities for controlled identity workflows.",
-    intro: "Biometric Intelligence supports identity verification, access and attendance workflows through configurable face and fingerprint capabilities with liveness and anti-spoofing controls.",
+    title: "Secure identity verification built for real-world workflows.",
+    description: "Truefox AI develops biometric intelligence systems for face recognition, fingerprint authentication, attendance, identity verification, liveness detection and anti-spoofing workflows.",
+    intro: "Identity should be fast, reliable and difficult to fake. Truefox AI designs complete biometric workflows around the real operating environment—including capture devices, lighting, enrollment quality, access rules, network conditions, privacy requirements and integration with existing enterprise systems.",
     kind: "products",
+    stats: [
+      { value: "FACE", label: "Identification and verification" },
+      { value: "LIVE", label: "Liveness and anti-spoofing" },
+      { value: "EDGE", label: "Flexible deployment options" }
+    ],
+    cards: [
+      { eyebrow: "IDENTITY", title: "FACE RECOGNITION", text: "Support identification and one-to-one verification using facial biometrics within defined enrollment, access and attendance workflows." },
+      { eyebrow: "ASSURANCE", title: "LIVENESS DETECTION", text: "Help determine whether a biometric sample comes from a live person rather than a photograph, screen, recording or other presentation attack." },
+      { eyebrow: "WORKFORCE", title: "BIOMETRIC ATTENDANCE", text: "Record verified attendance events and connect them to organisation-specific shifts, reporting, HR, payroll or workforce-management processes." }
+    ],
     sections: [
-      { title: "IDENTITY VERIFICATION", text: "Support facial identification, fingerprint recognition and multi-modal verification within approved identity workflows." },
-      { title: "LIVENESS & ANTI-SPOOFING", text: "Add liveness verification and spoof-detection controls where the workflow requires stronger confidence." },
-      { title: "ATTENDANCE INTEGRATION", text: "Connect real-time attendance logging with existing HR, payroll or business systems according to integration requirements." }
-    ], cta: { label: "Discuss an identity workflow", href: "/book-demo" }
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT IS BIOMETRIC INTELLIGENCE?",
+        text: "Biometric intelligence uses measurable human characteristics—such as the face or fingerprint—to support identity recognition, verification and authentication. Its purpose is not simply to recognise a person, but to establish identity within a defined workflow such as attendance, enrollment, access, visitor management or approval of a sensitive action."
+      },
+      {
+        eyebrow: "IDENTITY DECISIONS",
+        title: "MAKE ACCESS SIMPLE FOR GENUINE USERS AND DIFFICULT TO ABUSE.",
+        text: "A reliable biometric workflow must determine more than whether two samples appear similar. It must consider whether the sample is genuine, whether capture quality is sufficient, whether the person has permission, how failures are handled and how sensitive identity events are protected and audited.",
+        bullets: ["WHO IS THIS PERSON?", "IS THIS THE CLAIMED PERSON?", "IS A LIVE PERSON PRESENT?", "DOES THIS PERSON HAVE PERMISSION?", "WHAT HAPPENS IF VERIFICATION FAILS?"]
+      },
+      {
+        eyebrow: "FACE BIOMETRICS",
+        title: "IDENTIFICATION AND VERIFICATION SERVE DIFFERENT WORKFLOWS.",
+        text: "Face identification asks who a person is by comparing a captured face with multiple enrolled profiles. Face verification asks whether a person matches a specific claimed identity. Truefox AI selects the appropriate approach according to the decision, risk, user experience and operating environment.",
+        bullets: ["KNOWN-USER IDENTIFICATION", "ONE-TO-ONE FACE VERIFICATION", "ENROLLMENT VALIDATION", "CONTROLLED ENTRY", "APPLICATION AND ACCOUNT VERIFICATION"]
+      },
+      {
+        eyebrow: "LIVENESS & ANTI-SPOOFING",
+        title: "VERIFY THAT A REAL PERSON IS PRESENT.",
+        text: "A biometric match alone does not prove that a live person is interacting with the system. Liveness detection can evaluate visual and temporal signals or use a challenge-response step to help identify photographs, displayed images, video replays and other presentation attacks. The appropriate method depends on available hardware, risk and desired user experience.",
+        bullets: ["PASSIVE LIVENESS FOR LOWER-FRICTION CAPTURE", "ACTIVE CHALLENGES FOR SELECTED HIGHER-ASSURANCE FLOWS", "CAPTURE-QUALITY CHECKS", "RISK-BASED ANTI-SPOOFING CONTROLS"]
+      },
+      {
+        eyebrow: "FINGERPRINT & MULTI-FACTOR",
+        title: "COMBINE IDENTITY SIGNALS WHERE THE WORKFLOW REQUIRES IT.",
+        text: "Fingerprint authentication can support attendance, access, enrollment and transaction workflows. Higher-assurance scenarios may combine factors such as employee ID and face, fingerprint and PIN, or face, liveness and device identity. The right combination balances the value of the protected action with acceptable user friction."
+      },
+      {
+        eyebrow: "ENROLLMENT",
+        title: "RECOGNITION QUALITY BEGINS WITH TRUSTED ENROLLMENT.",
+        text: "Enrollment creates the association between a person, their identity record and a biometric representation. A robust process considers consent or acknowledgement, capture quality, duplicate checks, template creation, approval and audit history. Poor enrollment quality can reduce recognition performance later.",
+        bullets: ["IDENTITY AND CONSENT WORKFLOW", "FACE OR FINGERPRINT CAPTURE", "QUALITY ASSESSMENT", "DUPLICATE REVIEW", "BIOMETRIC TEMPLATE AND USER ASSOCIATION"]
+      },
+      {
+        eyebrow: "ATTENDANCE & ACCESS",
+        title: "CONNECT VERIFICATION TO THE BUSINESS RULE THAT FOLLOWS.",
+        text: "A verified identity event can support contactless attendance, physical access, visitor management or workforce operations. Attendance data can include check-in, check-out, device, location, shift and verification result, while the business layer applies organisation-specific rules for schedules, grace periods, exceptions and approvals.",
+        bullets: ["OFFICE AND WORKPLACE ATTENDANCE", "ACCESS-CONTROL DECISIONS", "VISITOR ENROLLMENT AND TEMPORARY PERMISSIONS", "MULTI-LOCATION WORKFORCE REPORTING", "IDENTITY EVENT AUDIT TRAILS"]
+      },
+      {
+        eyebrow: "DIGITAL PRODUCTS & INTEGRATIONS",
+        title: "EMBED BIOMETRIC VERIFICATION INTO EXISTING SYSTEMS.",
+        text: "Selected biometric capabilities can be integrated into mobile, web and enterprise applications through approved interfaces. Depending on project scope, workflows can connect with HRMS, payroll, ERP, access control, workforce management, employee directories and reporting tools rather than creating another isolated application.",
+        bullets: ["ENROLLMENT AND VERIFICATION APIS", "MOBILE IDENTITY WORKFLOWS", "HRMS, PAYROLL AND ERP INTEGRATION", "ACCESS-CONTROL INTEGRATION", "USER, DEVICE AND EVENT MANAGEMENT"]
+      },
+      {
+        eyebrow: "DEPLOYMENT",
+        title: "CHOOSE CLOUD, ON-PREMISE, EDGE OR HYBRID AROUND THE OPERATION.",
+        text: "Edge processing can support lower latency, reduced cloud dependency and continued local operation. On-premise architecture can keep selected application, database and inference components within customer infrastructure. Cloud systems can support central management across locations, while hybrid deployment can combine immediate local verification with central policy, reporting and administration."
+      },
+      {
+        eyebrow: "PRIVACY & SECURITY",
+        title: "BIOMETRIC INFORMATION REQUIRES DELIBERATE CONTROL.",
+        text: "Architecture should define what biometric information is collected, why it is required, where it is processed and stored, who can access it, how long it is retained and how deletion is handled. Applicable privacy and legal requirements vary by jurisdiction and use case and should be reviewed for each deployment.",
+        bullets: ["ROLE-BASED ACCESS AND ADMINISTRATIVE PERMISSIONS", "ENCRYPTION AND SECURE APIS", "DATA RETENTION AND DELETION POLICIES", "DEVICE AND ENVIRONMENT AUTHENTICATION", "AUDIT LOGGING AND MONITORING"]
+      },
+      {
+        eyebrow: "REAL-WORLD PERFORMANCE",
+        title: "ACCURACY DEPENDS ON CAPTURE CONDITIONS AND SYSTEM DESIGN.",
+        text: "No biometric system is 100% accurate. Face performance can be affected by lighting, camera angle, motion, occlusion, resolution, distance and enrollment quality. Fingerprint performance can be influenced by sensor quality, placement and finger condition. Representative testing is required before broad rollout, with a defined fallback for failed verification.",
+        bullets: ["CAPTURE RETRY", "ALTERNATIVE BIOMETRIC OR DEVICE", "PIN OR ACCESS CARD", "MANUAL VERIFICATION", "ADMINISTRATOR REVIEW"]
+      },
+      {
+        eyebrow: "DELIVERY",
+        title: "BUILD AROUND THE IDENTITY DECISION, NOT JUST THE MODEL.",
+        text: "Truefox AI begins by defining the identity decision, users, devices, environment, risks and fallback workflow. A proof of concept then validates representative capture conditions before integration, production deployment and continued evaluation of recognition behaviour, user experience, device reliability and operational exceptions.",
+        bullets: ["01 · UNDERSTAND THE IDENTITY WORKFLOW", "02 · EVALUATE DEVICES AND ENVIRONMENT", "03 · DESIGN ARCHITECTURE AND CONTROLS", "04 · VALIDATE A PROOF OF CONCEPT", "05 · INTEGRATE, DEPLOY AND EVALUATE"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT IS THE DIFFERENCE BETWEEN FACE RECOGNITION AND FACE VERIFICATION?",
+        text: "Face recognition can search for a person's identity among multiple enrolled profiles, while face verification compares a person with one specific claimed identity. The correct method depends on the workflow and risk."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN BIOMETRICS WORK OFFLINE OR ON-PREMISE?",
+        text: "Some biometric workflows can use local or edge processing when connectivity is limited, and selected components can be deployed on-premise. Exact offline behaviour depends on the required models, devices, user volume, synchronization and application architecture."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT HAPPENS IF BIOMETRIC VERIFICATION FAILS?",
+        text: "A well-designed system provides an appropriate fallback, such as retrying capture, using another biometric or credential, or escalating to authorised manual verification. The fallback should match the workflow's operational and security requirements."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "CONNECT IDENTITY WITH SECURITY, EDGE AND DIGITAL WORKFLOWS.",
+        text: "Biometric Intelligence can be explored alongside AI Smart Security, IoT and Edge AI, and Truefox AI's web and mobile product engineering when identity events must connect with monitoring, local devices or business applications.",
+        bullets: ["AI SMART SECURITY · /ai-smart-security", "IoT & EDGE AI · /iot-edge-ai", "WEB & MOBILE PRODUCTS · /services"]
+      }
+    ], cta: { label: "Discuss your biometric requirement", href: "/book-demo" }
   },
   "private-ai-assistants": {
     slug: "private-ai-assistants", navLabel: "Private AI Assistants", eyebrow: "PRODUCT · KNOWLEDGE",
