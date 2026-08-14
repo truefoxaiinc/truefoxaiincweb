@@ -146,7 +146,7 @@ export const solutions: Card[] = [
     eyebrow: "07",
     title: "Web & Mobile Products",
     text: "Modern digital products that bring intelligent workflows to customers and teams.",
-    href: "/services"
+    href: "/web-mobile-products"
   },
   {
     eyebrow: "08",
@@ -415,7 +415,7 @@ export const pages: Record<string, PageData> = {
         eyebrow: "RELATED CAPABILITIES",
         title: "CONNECT IDENTITY WITH SECURITY, EDGE AND DIGITAL WORKFLOWS.",
         text: "Biometric Intelligence can be explored alongside AI Smart Security, IoT and Edge AI, and Truefox AI's web and mobile product engineering when identity events must connect with monitoring, local devices or business applications.",
-        bullets: ["AI SMART SECURITY · /ai-smart-security", "IoT & EDGE AI · /iot-edge-ai", "WEB & MOBILE PRODUCTS · /services"]
+        bullets: ["AI SMART SECURITY · /ai-smart-security", "IoT & EDGE AI · /iot-edge-ai", "WEB & MOBILE PRODUCTS · /web-mobile-products"]
       }
     ], cta: { label: "Discuss your biometric requirement", href: "/book-demo" }
   },
@@ -535,7 +535,7 @@ export const pages: Record<string, PageData> = {
         eyebrow: "RELATED CAPABILITIES",
         title: "CONNECT KNOWLEDGE WITH CONTROLLED AUTOMATION AND PRODUCT ENGINEERING.",
         text: "Private AI Assistants can be combined with Agentic Automation when approved tools and multi-step actions are required, or delivered through custom web and mobile products that fit the organisation's existing user experience.",
-        bullets: ["AGENTIC AUTOMATION · /agentic-automation", "WEB & MOBILE PRODUCTS · /services", "BOOK A PRIVATE AI DEMO · /book-demo"]
+        bullets: ["AGENTIC AUTOMATION · /agentic-automation", "WEB & MOBILE PRODUCTS · /web-mobile-products", "BOOK A PRIVATE AI DEMO · /book-demo"]
       }
     ], cta: { label: "Discuss your private AI requirement", href: "/book-demo" }
   },
@@ -914,10 +914,130 @@ export const pages: Record<string, PageData> = {
         eyebrow: "RELATED CAPABILITIES",
         title: "CONNECT CUSTOM MODELS WITH EDGE, PRODUCTS AND OPERATIONAL SOFTWARE.",
         text: "Custom AI & ML can be combined with IoT and Edge AI for local inference, AI Smart Security for computer-vision monitoring, or custom software engineering to deliver the model through a dependable user and integration layer.",
-        bullets: ["IoT & EDGE AI · /iot-edge-ai", "AI SMART SECURITY · /ai-smart-security", "WEB & MOBILE PRODUCTS · /services"]
+        bullets: ["IoT & EDGE AI · /iot-edge-ai", "AI SMART SECURITY · /ai-smart-security", "WEB & MOBILE PRODUCTS · /web-mobile-products"]
       }
     ],
     cta: { label: "Request an AI feasibility assessment", href: "/request-quote" }
+  },
+  "web-mobile-products": {
+    slug: "web-mobile-products", navLabel: "Web & Mobile Products", eyebrow: "SERVICE · DIGITAL PRODUCTS",
+    title: "Digital products designed around real users, workflows and business goals.",
+    description: "Truefox AI designs and builds custom web applications, mobile apps, SaaS platforms, enterprise products and AI-powered digital experiences.",
+    intro: "A successful digital product is more than an attractive interface. Truefox AI combines product strategy, UX, web and mobile engineering, backend services, cloud architecture, integrations and AI to build software that is useful, reliable, secure, fast and maintainable.",
+    kind: "services",
+    stats: [
+      { value: "UX", label: "Designed around real users" },
+      { value: "FULL", label: "Frontend through cloud" },
+      { value: "LIVE", label: "Operated beyond launch" }
+    ],
+    cards: [
+      { eyebrow: "WEB", title: "CUSTOM WEB APPLICATIONS", text: "Build customer portals, SaaS platforms, workflow applications, dashboards, internal tools and enterprise systems around your processes." },
+      { eyebrow: "MOBILE", title: "iOS & ANDROID EXPERIENCES", text: "Deliver native, cross-platform or progressive web experiences selected according to device integration, performance, offline and roadmap needs." },
+      { eyebrow: "INTELLIGENCE", title: "AI-POWERED PRODUCTS", text: "Integrate private assistants, search, recommendations, computer vision and governed workflow automation into a coherent user experience." }
+    ],
+    sections: [
+      {
+        eyebrow: "PRODUCT FIRST",
+        title: "BUILD SOFTWARE PEOPLE ACTUALLY WANT TO USE.",
+        text: "Product decisions begin with the people, workflow and outcome—not a predetermined feature list. Discovery identifies who will use the product, what they are trying to accomplish, where the current process creates friction, which systems must connect and how success will be measured for users and the business.",
+        bullets: ["TARGET USERS AND OPERATING CONTEXT", "CURRENT JOURNEY AND PAIN POINTS", "CRITICAL TASKS AND INFORMATION", "DESKTOP, MOBILE AND FIELD REQUIREMENTS", "BUSINESS OUTCOMES AND PRODUCT METRICS"]
+      },
+      {
+        eyebrow: "WEB APPLICATIONS",
+        title: "TURN FRAGMENTED PROCESSES INTO ONE COHERENT EXPERIENCE.",
+        text: "Custom web applications can bring customer service, approvals, operations, reporting, content and administration into software shaped around the organisation's own workflow. The architecture is selected for the product's expected users, integrations, security and long-term maintenance needs.",
+        bullets: ["CUSTOMER AND EMPLOYEE PORTALS", "ENTERPRISE WORKFLOW APPLICATIONS", "OPERATIONS AND CASE-MANAGEMENT SYSTEMS", "ADMINISTRATION AND CONTENT PLATFORMS", "REAL-TIME DATA AND MONITORING DASHBOARDS"]
+      },
+      {
+        eyebrow: "MOBILE PRODUCTS",
+        title: "DESIGN FOR HOW AND WHERE THE USER ACTUALLY WORKS.",
+        text: "Mobile products can support customers, field teams, logistics, attendance, service operations, monitoring and internal workflows. Native iOS, Android, cross-platform or progressive-web approaches are selected according to performance, hardware access, distribution, offline behaviour and the long-term product roadmap.",
+        bullets: ["CUSTOMER AND EMPLOYEE APPLICATIONS", "FIELD-SERVICE AND LOGISTICS TOOLS", "OFFLINE DATA CAPTURE AND SYNCHRONISATION", "PUSH NOTIFICATIONS AND ACTION REQUESTS", "MAPS, LOCATION AND DEVICE INTEGRATION"]
+      },
+      {
+        eyebrow: "SaaS & ENTERPRISE",
+        title: "BUILD THE PRODUCT MODEL BEHIND THE INTERFACE.",
+        text: "SaaS and enterprise platforms may require organisations, subscriptions, tenant isolation, account administration, permissions, analytics and operational support. Internal applications must also fit existing processes and identity systems rather than creating another disconnected place to work.",
+        bullets: ["MULTI-TENANT DATA AND CONFIGURATION", "PLANS, SUBSCRIPTIONS AND PRODUCT ACCESS", "ROLE-BASED ADMINISTRATION", "CUSTOMER AND ORGANISATION MANAGEMENT", "ENTERPRISE IDENTITY AND SINGLE SIGN-ON"]
+      },
+      {
+        eyebrow: "AI EXPERIENCES",
+        title: "MAKE INTELLIGENCE PART OF THE PRODUCT, NOT A DISCONNECTED WIDGET.",
+        text: "Existing and new products can integrate private AI assistants, enterprise search, recommendations, computer vision and controlled workflow agents. The experience should make AI limitations, source context, permissions and human decision points clear rather than hiding them behind a generic chat interface.",
+        bullets: ["PRIVATE KNOWLEDGE ASSISTANTS", "SEMANTIC AND ENTERPRISE SEARCH", "RECOMMENDATION AND DECISION SUPPORT", "VISION-ENABLED APPLICATION WORKFLOWS", "GOVERNED AGENTIC EXPERIENCES"]
+      },
+      {
+        eyebrow: "BACKEND & APIS",
+        title: "ENGINEER THE SERVICES USERS DO NOT SEE BUT ALWAYS DEPEND ON.",
+        text: "Backend services manage business rules, accounts, permissions, integrations, files, notifications, payments, AI services and workflows. APIs are designed with authentication, authorisation, validation, versioning, error handling, performance and documentation appropriate to the consumers that depend on them.",
+        bullets: ["APPLICATION AND INTEGRATION APIS", "BUSINESS RULES AND WORKFLOW SERVICES", "RELATIONAL, DOCUMENT, SEARCH AND VECTOR DATA", "EVENT-DRIVEN AND REAL-TIME COMMUNICATION", "BACKGROUND JOBS AND NOTIFICATION SERVICES"]
+      },
+      {
+        eyebrow: "OFFLINE & REAL-TIME",
+        title: "MATCH THE DATA FLOW TO THE OPERATING ENVIRONMENT.",
+        text: "Field applications can store approved information, accept forms and capture evidence while connectivity is unavailable, then synchronize according to conflict and retry rules. Live dashboards, messaging and monitoring products can use event-driven services or persistent connections when users need immediate updates."
+      },
+      {
+        eyebrow: "INTEGRATIONS",
+        title: "CONNECT THE PRODUCT TO THE SYSTEMS THE BUSINESS ALREADY USES.",
+        text: "Products can integrate with approved ERP, CRM, HRMS, payment, identity, IoT and third-party services where suitable interfaces exist. Legacy integration and migration are planned around data integrity, user accounts, service continuity, dependencies and the risk of changing established workflows.",
+        bullets: ["ERP, CRM, HRMS AND INTERNAL SYSTEMS", "PAYMENT AND SUBSCRIPTION PROVIDERS", "IDENTITY, SSO AND USER PROVISIONING", "IoT, AI AND DATA SERVICES", "LEGACY APPLICATIONS AND CUSTOM APIS"]
+      },
+      {
+        eyebrow: "UX & ACCESSIBILITY",
+        title: "MAKE IMPORTANT TASKS CLEAR ACROSS DEVICES AND ABILITIES.",
+        text: "User journeys, information architecture, wireframes and interactive prototypes help identify friction before engineering begins. Responsive design adapts the task—not only the screen size—while accessibility work can address semantic structure, keyboard navigation, form labels, contrast, focus and assistive-technology support according to the product's audience and requirements."
+      },
+      {
+        eyebrow: "SECURITY & PRIVACY",
+        title: "DESIGN PROTECTION INTO THE PRODUCT FROM THE BEGINNING.",
+        text: "Application security can include secure authentication, multi-factor options, role-based authorisation, input validation, encryption, API protection, session management, secret handling, dependency management, audit history and environment separation. Privacy design limits collection to what the product needs and defines consent, retention, access and deletion.",
+        bullets: ["AUTHENTICATION AND ACCOUNT RECOVERY", "ROLE-BASED AND TENANT-AWARE AUTHORISATION", "SECURE API AND DATA HANDLING", "AUDITABLE ADMINISTRATIVE ACTIONS", "DATA-MINIMISATION AND RETENTION CONTROLS"]
+      },
+      {
+        eyebrow: "CLOUD & RELIABILITY",
+        title: "SCALE AROUND REALISTIC DEMAND AND OPERATIONAL IMPORTANCE.",
+        text: "Cloud architecture can use application services, containers, serverless workloads, databases, object storage, queues, caches and content delivery according to the product. Business-critical systems may require redundancy, health checks, backups, automated recovery and tested failure paths, while smaller products should avoid unnecessary complexity."
+      },
+      {
+        eyebrow: "OBSERVABILITY & INSIGHT",
+        title: "KNOW WHEN THE PRODUCT IS UNHEALTHY AND HOW PEOPLE USE IT.",
+        text: "Production monitoring can track response time, errors, API and integration failures, database performance, background jobs and infrastructure health. Product analytics can measure adoption, feature usage, conversion, workflow completion and drop-off—answering defined product questions rather than collecting activity without purpose."
+      },
+      {
+        eyebrow: "MVP & MODERNISATION",
+        title: "VALIDATE THE CORE ASSUMPTION OR IMPROVE THE SYSTEM IN STAGES.",
+        text: "A focused MVP tests whether a workflow creates enough user and business value before every possible feature is built. Existing products can be modernised incrementally through UX improvements, component replacement, performance work, security upgrades or staged infrastructure migration rather than assuming a complete rewrite is always required."
+      },
+      {
+        eyebrow: "QUALITY & DELIVERY",
+        title: "MOVE FROM PRODUCT DISCOVERY TO MEASURED IMPROVEMENT.",
+        text: "Truefox AI combines product, design, frontend, backend, cloud, data and AI as one delivery system. Iterative engineering, automated and manual testing, CI/CD, monitored releases and real user feedback help the product move from a validated concept into dependable production software.",
+        bullets: ["01 · DISCOVER USERS, WORKFLOW AND OUTCOME", "02 · DEFINE JOURNEYS, SCOPE AND PRIORITIES", "03 · DESIGN AND PROTOTYPE THE EXPERIENCE", "04 · ARCHITECT DATA, APIS, SECURITY AND CLOUD", "05 · BUILD AND TEST ITERATIVELY", "06 · DEPLOY WITH MONITORING AND RELEASE CONTROLS", "07 · LEARN FROM USAGE AND IMPROVE"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DO YOU DEVELOP BOTH THE FRONTEND AND BACKEND?",
+        text: "Yes. Truefox AI can design the product experience and build the frontend, backend services, databases, APIs, integrations and cloud infrastructure required for a complete web or mobile product."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN YOU ADD AI TO AN EXISTING APPLICATION?",
+        text: "Potentially, yes. Existing products can integrate capabilities such as private assistants, semantic search, recommendations, computer vision or workflow automation when the data, interfaces, permissions and user experience support the use case."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN AN APPLICATION WORK OFFLINE?",
+        text: "Selected mobile and web workflows can be designed for offline operation. Exact behaviour depends on what data may be stored locally, which tasks require central systems and how synchronization conflicts, retries and permissions must be handled."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "BRING AI, AGENTS AND CONNECTED OPERATIONS INTO THE PRODUCT.",
+        text: "Web & Mobile Product Development can be combined with Custom AI & ML, Private AI Assistants, Agentic Automation and IoT & Edge AI when the application is the interface to a wider intelligent system.",
+        bullets: ["CUSTOM AI & ML · /custom-ai-ml", "PRIVATE AI ASSISTANTS · /private-ai-assistants", "AGENTIC AUTOMATION · /agentic-automation", "IoT & EDGE AI · /iot-edge-ai"]
+      }
+    ],
+    cta: { label: "Start a product discovery session", href: "/request-quote" }
   },
   services: {
     slug: "services",
@@ -930,7 +1050,7 @@ export const pages: Record<string, PageData> = {
     kind: "services",
     cards: [
       { eyebrow: "06", title: "CUSTOM AI & ML", text: "Turn complex data into dependable models, decision systems and production-ready machine learning capabilities.", href: "/custom-ai-ml" },
-      { eyebrow: "07", title: "WEB & MOBILE PRODUCTS", text: "Create intuitive digital products that bring intelligent workflows to customers, operators and internal teams.", href: "/services#web-mobile-products" },
+      { eyebrow: "07", title: "WEB & MOBILE PRODUCTS", text: "Create intuitive digital products that bring intelligent workflows to customers, operators and internal teams.", href: "/web-mobile-products" },
       { eyebrow: "08", title: "R&D & PRODUCT VALIDATION", text: "Test ambitious ideas through focused research, technical feasibility studies and representative prototypes.", href: "/services#product-validation" }
     ],
     sections: [
