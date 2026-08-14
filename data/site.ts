@@ -665,15 +665,124 @@ export const pages: Record<string, PageData> = {
   },
   "iot-edge-ai": {
     slug: "iot-edge-ai", navLabel: "IoT & Edge AI", eyebrow: "PRODUCT · CONNECTED EDGE",
-    title: "Intelligence closer to where work happens.",
-    description: "Connected sensors, embedded software, gateways and edge inference for operational environments.",
-    intro: "IoT & Edge AI connects devices, sensors and gateways with embedded software and on-device intelligence—supporting faster decisions when connectivity, latency, bandwidth or privacy matter.",
+    title: "Connect devices, process data locally and make operations smarter.",
+    description: "Truefox AI builds IoT and Edge AI systems spanning sensors, embedded firmware, gateways, local inference, cloud services and enterprise integrations.",
+    intro: "Modern operations generate data through sensors, machines, cameras, meters and connected devices. Truefox AI turns those signals into useful decisions by designing complete IoT and Edge AI systems around the operating environment—processing what matters locally and connecting the wider platform where it adds value.",
     kind: "products",
+    stats: [
+      { value: "SENSE", label: "Devices and real-world signals" },
+      { value: "EDGE", label: "Local intelligence and response" },
+      { value: "SYNC", label: "Cloud and enterprise integration" }
+    ],
+    cards: [
+      { eyebrow: "DEVICES", title: "CONNECTED SENSING", text: "Integrate appropriate sensors, embedded firmware and communication technologies to capture useful physical and operational signals." },
+      { eyebrow: "INTELLIGENCE", title: "EDGE INFERENCE", text: "Run selected machine-learning workloads near the data source for lower latency, reduced bandwidth and continued local operation." },
+      { eyebrow: "OPERATIONS", title: "MANAGED FLEETS", text: "Coordinate gateways, telemetry, configuration, health, updates, dashboards and enterprise workflows across deployed devices and locations." }
+    ],
     sections: [
-      { title: "SENSORS & DEVICES", text: "Connect operational signals through sensors, embedded firmware, secure connectivity and device integration." },
-      { title: "EDGE INFERENCE", text: "Process selected data closer to its source for faster response and reduced dependence on continuous cloud connectivity." },
-      { title: "GATEWAYS & FLEET OPERATIONS", text: "Coordinate device communication, telemetry, gateway software and fleet monitoring within the wider platform." }
-    ], cta: { label: "Discuss an edge deployment", href: "/book-demo" }
+      {
+        eyebrow: "OVERVIEW",
+        title: "WHAT ARE IoT AND EDGE AI?",
+        text: "The Internet of Things connects physical devices that collect, exchange or act on data. Edge AI runs selected machine-learning workloads on devices close to where that data is generated. Together, they can monitor real-world conditions, make time-sensitive local decisions and send relevant events or summaries to central systems."
+      },
+      {
+        eyebrow: "WHY THE EDGE",
+        title: "NOT EVERY SIGNAL SHOULD WAIT FOR A CLOUD ROUND TRIP.",
+        text: "Cloud processing remains useful for central management, long-term storage and cross-site analytics, but some environments require faster response, lower data transfer, local resilience or greater control over where raw information is processed. Edge architecture handles selected work locally while using cloud services where they provide the most value.",
+        bullets: ["LOWER RESPONSE LATENCY", "REDUCED BANDWIDTH USAGE", "CONTINUED OPERATION DURING CONNECTIVITY LOSS", "LOCAL FILTERING AND DATA MINIMISATION", "MORE EFFICIENT USE OF CENTRAL COMPUTE"]
+      },
+      {
+        eyebrow: "END-TO-END ENGINEERING",
+        title: "DESIGN THE DEVICE, DATA AND APPLICATION LAYERS AS ONE SYSTEM.",
+        text: "IoT projects become fragile when hardware, connectivity, AI and software are treated as separate problems. Truefox AI designs the complete architecture around the decision the operation needs to make and the conditions in which the system must keep working.",
+        bullets: ["SENSORS AND DEVICE INTERFACES", "EMBEDDED FIRMWARE AND LOCAL RULES", "CONNECTIVITY AND COMMUNICATION PROTOCOLS", "GATEWAYS AND EDGE COMPUTE", "AI INFERENCE AND DATA PIPELINES", "CLOUD SERVICES, DASHBOARDS AND ENTERPRISE APIS"]
+      },
+      {
+        eyebrow: "SENSORS & FIRMWARE",
+        title: "CAPTURE THE RIGHT SIGNAL WITH RELIABLE DEVICE SOFTWARE.",
+        text: "Sensor selection depends on accuracy, range, sampling frequency, power, physical conditions and the decision being supported. Embedded firmware can read sensors, control devices, buffer data, manage power and connectivity, run diagnostics and apply local rules. Long-term reliability begins at this layer.",
+        bullets: ["TEMPERATURE, HUMIDITY AND AIR QUALITY", "VIBRATION, MOTION AND MACHINE STATE", "PRESSURE, CURRENT, VOLTAGE AND ENERGY", "POSITION, LIGHT AND ENVIRONMENTAL CONDITIONS", "CUSTOM DEVICE LOGIC AND DIAGNOSTICS"]
+      },
+      {
+        eyebrow: "CONNECTIVITY & GATEWAYS",
+        title: "BRIDGE FIELD DEVICES AND CENTRAL SYSTEMS.",
+        text: "Communication technology is selected according to range, power, bandwidth, infrastructure and environment. Gateways can collect information from multiple devices, translate protocols, buffer records, apply rules, run local models and synchronize selected data when connectivity is available.",
+        bullets: ["WI-FI, BLUETOOTH, ETHERNET AND CELLULAR", "LoRaWAN, ZIGBEE AND OTHER LOW-POWER NETWORKS", "MODBUS, CAN AND RS-485 INDUSTRIAL INTERFACES", "MQTT AND EVENT-DRIVEN MESSAGING", "OFFLINE BUFFERING AND PROTOCOL CONVERSION"]
+      },
+      {
+        eyebrow: "EDGE INFERENCE",
+        title: "RUN SELECTED AI WORKLOADS CLOSE TO THE SOURCE.",
+        text: "Edge devices can perform anomaly detection, condition classification, object detection, audio analysis or other inference tasks within their compute, memory, thermal and power limits. Models may require quantisation, compression or hardware-specific acceleration before they are suitable for a target device.",
+        bullets: ["MACHINE AND EQUIPMENT CONDITION ANALYSIS", "CAMERA-BASED DETECTION AND INSPECTION", "AUDIO AND VIBRATION CLASSIFICATION", "ENVIRONMENTAL EVENT DETECTION", "LOCAL SAFETY OR PROCESS ALERTS"]
+      },
+      {
+        eyebrow: "OFFLINE-FIRST OPERATION",
+        title: "KEEP ESSENTIAL WORK RUNNING WHEN THE NETWORK DOES NOT.",
+        text: "Where required, devices and gateways can continue collecting data, applying local rules, running inference, storing records and triggering local actions during temporary connectivity loss. When service returns, selected information can synchronize according to consistency, priority and retention rules."
+      },
+      {
+        eyebrow: "CLOUD + EDGE",
+        title: "BALANCE IMMEDIATE LOCAL ACTION WITH CENTRAL VISIBILITY.",
+        text: "The edge can handle real-time processing, filtering, compression and immediate alerts. Central services can provide long-term storage, cross-site analysis, configuration, reporting, model distribution and fleet management. A reliable data pipeline defines how telemetry moves from sensor to device, gateway, broker, processing service, database and dashboard.",
+        bullets: ["EVENT AND TELEMETRY PIPELINES", "LONG-TERM DATA STORAGE", "CROSS-SITE REPORTING AND ANALYTICS", "CENTRAL CONFIGURATION AND POLICY", "MODEL AND FIRMWARE DISTRIBUTION"]
+      },
+      {
+        eyebrow: "DEVICE OPERATIONS",
+        title: "PLAN FOR THE FULL FLEET LIFECYCLE.",
+        text: "Production deployments require device identity, registration, configuration, health monitoring, connectivity status, diagnostics and controlled updates. Firmware and model releases should use compatibility checks, signed artifacts, staged rollout, health validation and rollback strategies appropriate to the operational risk.",
+        bullets: ["DEVICE INVENTORY AND PROVISIONING", "HEALTH, VERSION AND CONNECTIVITY MONITORING", "SECURE OVER-THE-AIR UPDATES", "MODEL VERSIONING AND COMPATIBILITY", "STAGED DEPLOYMENT AND ROLLBACK"]
+      },
+      {
+        eyebrow: "SECURITY & PRIVACY",
+        title: "PROTECT EVERY LAYER OF THE CONNECTED SYSTEM.",
+        text: "Each connected device can add to the attack surface. Security architecture can include device identity, secure boot, certificate-based authentication, encrypted communication, signed firmware, restricted APIs, network segmentation and access control. Local processing may reduce how much raw data leaves a site, but privacy requirements still depend on the application and jurisdiction.",
+        bullets: ["DEVICE AND SERVICE AUTHENTICATION", "ENCRYPTION IN TRANSIT AND AT REST", "SIGNED SOFTWARE AND SECURE UPDATES", "NETWORK AND API BOUNDARIES", "DATA RETENTION AND ACCESS POLICIES"]
+      },
+      {
+        eyebrow: "USE CASES",
+        title: "CONNECT THE PHYSICAL SIGNAL TO A MEASURABLE OPERATIONAL OUTCOME.",
+        text: "IoT and Edge AI can support industries where local conditions, equipment or distributed assets need continuous visibility. The viable approach depends on available interfaces, sensor quality, physical conditions and the value of the decision being improved.",
+        bullets: ["MANUFACTURING · CONDITION, QUALITY, ENERGY AND SAFETY", "LOGISTICS · ASSETS, FLEETS, COLD CHAIN AND WAREHOUSES", "BUILDINGS · ENERGY, OCCUPANCY AND EQUIPMENT HEALTH", "UTILITIES & INFRASTRUCTURE · REMOTE CONDITION MONITORING", "AGRICULTURE · ENVIRONMENTAL SENSING AND REMOTE EQUIPMENT", "RETAIL · ENERGY, OCCUPANCY AND ASSET VISIBILITY"]
+      },
+      {
+        eyebrow: "ENTERPRISE INTEGRATION",
+        title: "TURN DEVICE EVENTS INTO DIGITAL OPERATIONS WORKFLOWS.",
+        text: "Dashboards, APIs, alerts and notifications can connect device information with approved maintenance, asset, operations or business systems. Integration should define which events create work, who receives them, what context is required and how acknowledgement or resolution returns to the platform."
+      },
+      {
+        eyebrow: "FIELD PERFORMANCE",
+        title: "EVALUATE MORE THAN MODEL ACCURACY.",
+        text: "A cloud model that performs well in a lab may be too slow, large or power-hungry for an edge device. Representative testing should measure inference latency, memory, processor use, power, thermal behaviour, throughput, connectivity recovery, device reliability and model accuracy under real operating conditions.",
+        bullets: ["TARGET-HARDWARE BENCHMARKS", "REPRESENTATIVE SENSOR AND ENVIRONMENT DATA", "NETWORK AND POWER-LOSS TESTING", "THERMAL AND LONG-DURATION STABILITY", "END-TO-END OPERATIONAL OUTCOMES"]
+      },
+      {
+        eyebrow: "DELIVERY",
+        title: "MOVE FROM A FOCUSED PROTOTYPE TO A MANAGEABLE FLEET.",
+        text: "Truefox AI begins with the operational problem, required response time, available connectivity and physical environment. Sensors, hardware and model feasibility are validated before the device, edge, cloud, security and application architecture is scaled into production.",
+        bullets: ["01 · DEFINE THE SIGNAL, DECISION AND RESPONSE", "02 · EVALUATE SENSORS, HARDWARE AND CONNECTIVITY", "03 · PROTOTYPE DATA QUALITY AND EDGE PERFORMANCE", "04 · DESIGN DEVICE, CLOUD AND SECURITY ARCHITECTURE", "05 · BUILD AND INTEGRATE THE WORKFLOW", "06 · FIELD TEST, DEPLOY AND MONITOR"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT IS THE DIFFERENCE BETWEEN EDGE AI AND CLOUD AI?",
+        text: "Edge AI processes selected data on local devices near its source, while cloud AI runs in remote infrastructure. Many production systems use both: the edge for immediate processing and the cloud for central management, storage and cross-site analysis."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN EDGE AI WORK WITHOUT INTERNET ACCESS?",
+        text: "Yes, selected workloads can continue locally when the architecture provides on-device processing, storage and offline rules. Synchronization, remote management and some integrations may still require connectivity when it becomes available."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN IoT INTEGRATE WITH EXISTING MACHINES?",
+        text: "Often, but compatibility depends on the machine's interfaces, protocols, available signals, ownership constraints and safe access to operational data. These factors must be evaluated before an integration approach is confirmed."
+      },
+      {
+        eyebrow: "RELATED CAPABILITIES",
+        title: "CONNECT EDGE SYSTEMS WITH VISION, SECURITY AND CUSTOM SOFTWARE.",
+        text: "IoT and Edge AI can be paired with AI Smart Security for local video analysis or custom software engineering for dashboards, mobile tools and enterprise workflow integration.",
+        bullets: ["AI SMART SECURITY · /ai-smart-security", "CUSTOM SOFTWARE DEVELOPMENT · /services", "BOOK AN EDGE AI DEMO · /book-demo"]
+      }
+    ], cta: { label: "Discuss your IoT and Edge AI use case", href: "/book-demo" }
   },
   "attention-minder": {
     slug: "attention-minder", navLabel: "Attention Minder", eyebrow: "PRODUCT · ATTENTION",
