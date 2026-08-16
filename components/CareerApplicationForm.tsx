@@ -1,21 +1,28 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import type { Job } from "@/lib/cms";
 import { apiUrl } from "@/lib/api";
+import { trackApplication } from "@/lib/analytics";
 
 export default function CareerApplicationForm({ jobs }: { jobs: Job[] }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const submissionInProgress = useRef(false);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); setStatus("sending");
+    event.preventDefault();
+    if (submissionInProgress.current) return;
+    submissionInProgress.current = true;
+    setStatus("sending");
     const form = event.currentTarget;
     const values = Object.fromEntries(new FormData(form).entries());
     try {
       const response = await fetch(apiUrl("/api/v1/applications"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...values, consent: values.consent === "on" }) });
       if (!response.ok) throw new Error();
+      trackApplication();
       form.reset(); setStatus("success");
     } catch { setStatus("error"); }
+    finally { submissionInProgress.current = false; }
   }
 
   if (!jobs.length) return null;

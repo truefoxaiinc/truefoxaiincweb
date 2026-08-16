@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PerformanceObserver from "@/components/PerformanceObserver";
 import WhatsApp from "@/components/WhatsApp";
+import AnalyticsInteractions from "@/components/AnalyticsInteractions";
 
 export default function SiteChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -23,6 +24,7 @@ export default function SiteChrome({ children }: { children: ReactNode }) {
       <Footer />
       <WhatsApp />
       <Chatbot />
+      <AnalyticsInteractions />
       <PerformanceObserver />
     </>
   );

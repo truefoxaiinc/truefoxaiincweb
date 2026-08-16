@@ -1,14 +1,18 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { ArrowUpRight } from "@/components/Icons";
 import { apiUrl } from "@/lib/api";
+import { trackLead } from "@/lib/analytics";
 
 export default function LeadForm({ intent = "contact" }: { intent?: "contact" | "quote" | "demo" }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const submissionInProgress = useRef(false);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submissionInProgress.current) return;
+    submissionInProgress.current = true;
     setStatus("sending");
     const form = event.currentTarget;
     const payload = Object.fromEntries(new FormData(form).entries());
@@ -19,10 +23,13 @@ export default function LeadForm({ intent = "contact" }: { intent?: "contact" | 
         body: JSON.stringify({ ...payload, consent: payload.consent === "on", intent })
       });
       if (!response.ok) throw new Error("Submission failed");
+      trackLead(intent);
       form.reset();
       setStatus("success");
     } catch {
       setStatus("error");
+    } finally {
+      submissionInProgress.current = false;
     }
   }
 

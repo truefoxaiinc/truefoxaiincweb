@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { CloseIcon, MessageIcon, SendIcon } from "@/components/Icons";
 import { apiUrl } from "@/lib/api";
+import { trackEvent } from "@/lib/analytics";
 
 type Citation = { document_id: string; title: string; source: string; excerpt: string; score: number };
 type Message = { role: "bot" | "user"; text: string; error?: boolean };
@@ -60,6 +61,14 @@ export default function Chatbot() {
     void ask(value);
   }
 
+  function toggleChat() {
+    setOpen(value => {
+      const next = !value;
+      if (next) trackEvent("chat_start", { chat_type: "website_assistant", link_location: "floating_launcher" });
+      return next;
+    });
+  }
+
   return (
     <div className="chatbot-wrap">
       <AnimatePresence>
@@ -84,7 +93,7 @@ export default function Chatbot() {
           </motion.aside>
         )}
       </AnimatePresence>
-      <button className="chat-launcher" onClick={() => setOpen(value => !value)} aria-expanded={open} aria-label="Open Truefox AI assistant"><MessageIcon /><span>AI Assistant</span><i /></button>
+      <button className="chat-launcher" onClick={toggleChat} aria-expanded={open} aria-label="Open Truefox AI assistant"><MessageIcon /><span>AI Assistant</span><i /></button>
     </div>
   );
 }
