@@ -72,7 +72,7 @@ export default function HomePage() {
               THAT EARNS ITS PLACE
               IN THE REAL WORLD.</h2>
             <div className="manifesto-bottom">
-              <p>Truefox AI brings strategy, design and engineering together to create intelligent products that solve meaningful problems. From computer vision and AI agents to healthcare platforms and connected systems, we build technology people can trust, teams can use and businesses can grow with.</p>
+              <p>Truefox AI is a Canada-headquartered AI engineering company bringing strategy, design and engineering together to create intelligent products for real operational needs. From computer vision and private AI to governed agents, connected systems and digital products, we build technology people can trust, teams can use and organisations can improve. Explore our <Link href="/services">AI development services</Link>.</p>
             </div>
           </Reveal>
         </div>

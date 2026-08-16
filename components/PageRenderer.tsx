@@ -14,6 +14,7 @@ import TeamVoices from "@/components/TeamVoices";
 import AttentionMinderLaunch from "@/components/AttentionMinderLaunch";
 import ResearchDevelopmentPage from "@/components/ResearchDevelopmentPage";
 import AiSmartSecurityPage from "@/components/AiSmartSecurityPage";
+import CapabilityRelatedLinks, { capabilitySlugs } from "@/components/CapabilityRelatedLinks";
 
 
 function CardGrid({ page }: { page: PageData }) {
@@ -238,7 +239,7 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
               <Reveal delay={0.1}><LeadForm intent={formIntent} /></Reveal>
             </div>
           ) : (
-            <>{page.slug === "careers" ? <ManagedCareers jobs={managed?.jobs ?? []} /> : page.slug === "blog" ? <ManagedBlog posts={managed?.posts ?? []} /> : <>{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} /><ContentSections page={page} />{(page.slug === "kitchener" || page.slug === "kochi") && <Reveal><nav className="location-related-links" aria-label="Related company pages"><Link className="button button-ghost" href="/services">Explore AI services<ArrowUpRight /></Link><Link className="button button-ghost" href="/about">About Truefox AI<ArrowUpRight /></Link><Link className="button button-ghost" href="/contact">Contact our team<ArrowUpRight /></Link></nav></Reveal>}</>}</>
+            <>{page.slug === "careers" ? <ManagedCareers jobs={managed?.jobs ?? []} /> : page.slug === "blog" ? <ManagedBlog posts={managed?.posts ?? []} /> : <>{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} /><ContentSections page={page} />{(page.slug === "kitchener" || page.slug === "kochi") && <Reveal><nav className="location-related-links" aria-label="Related company pages"><Link className="button button-ghost" href="/services">Explore AI development services<ArrowUpRight /></Link><Link className="button button-ghost" href="/about">About Truefox AI<ArrowUpRight /></Link><Link className="button button-ghost" href="/contact">Contact our team<ArrowUpRight /></Link></nav></Reveal>}{capabilitySlugs.has(page.slug) && <Reveal><CapabilityRelatedLinks slug={page.slug} /></Reveal>}</>}</>
           )}
         </div>
       </section>}

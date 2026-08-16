@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { PageData } from "@/data/site";
 import { PageEntityGraph } from "@/components/seo/JsonLd";
+import CapabilityRelatedLinks from "@/components/CapabilityRelatedLinks";
 
 function sectionId(title: string, index: number) {
   return `${String(index + 1).padStart(2, "0")}-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
@@ -80,7 +81,7 @@ export default function ResearchDevelopmentPage({ page }: { page: PageData }) {
           })}
         </article>
       </div>
-
+      <div className="shell"><CapabilityRelatedLinks slug={page.slug} /></div>
     </main>
   );
 }

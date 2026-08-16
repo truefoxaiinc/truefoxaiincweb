@@ -16,13 +16,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = pages[slug];
   if (!page) return {};
   const canonical = `${site.url}/${slug}`;
+  const title = page.seoTitle || page.navLabel;
+  const socialTitle = title.includes("|") ? title : `${title} | ${site.name}`;
   return {
-    title: page.seoTitle || page.navLabel,
+    title: title.includes("|") ? { absolute: title } : title,
     description: page.description,
     alternates: { canonical, languages: { "en-CA": canonical, "x-default": canonical } },
-    keywords: [page.navLabel, page.eyebrow, "Truefox AI", "applied AI Canada", "AI engineering India"],
+    keywords: page.seoKeywords || [page.navLabel, page.eyebrow, "Truefox AI"],
     openGraph: {
-      title: `${page.seoTitle || page.navLabel} | ${site.name}`,
+      title: socialTitle,
       description: page.description,
       url: canonical,
       type: "website",
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: site.name,
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${page.navLabel} — Truefox AI` }]
     },
-    twitter: { card: "summary_large_image", title: `${page.seoTitle || page.navLabel} | ${site.name}`, description: page.description, images: ["/twitter-image"] }
+    twitter: { card: "summary_large_image", title: socialTitle, description: page.description, images: ["/twitter-image"] }
   };
 }
 

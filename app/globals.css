@@ -7238,7 +7238,7 @@ body::before {
   .policy-layout { padding-top: 65px; padding-bottom: 90px; }
   .policy-toc nav { grid-template-columns: 1fr; }
   .policy-section { padding: 31px 0; }
-  .policy-section-highlight { margin-inline: -10px; padding: 26px 20px; }
+  .policy-section-highlight { margin-inline: 0; padding: 26px 20px; }
 }
 
 /* R&D and Prototyping editorial capability page */

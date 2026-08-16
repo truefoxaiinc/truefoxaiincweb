@@ -10,6 +10,7 @@ export type PageData = {
   slug: string;
   navLabel: string;
   seoTitle?: string;
+  seoKeywords?: string[];
   title: string;
   eyebrow: string;
   description: string;
@@ -200,6 +201,8 @@ export const pages: Record<string, PageData> = {
   kitchener: {
     slug: "kitchener",
     navLabel: "AI Engineering in Kitchener",
+    seoTitle: "AI Engineering Company in Kitchener | Truefox AI",
+    seoKeywords: ["AI company Kitchener", "AI engineering Kitchener", "AI development Kitchener", "AI solutions Kitchener", "AI company Kitchener-Waterloo"],
     eyebrow: "CANADIAN HEADQUARTERS",
     title: "AI Engineering & Development in Kitchener",
     description: "Truefox AI provides custom AI engineering from Kitchener, Ontario, including computer vision, private AI, automation, edge systems and product development.",
@@ -371,9 +374,11 @@ export const pages: Record<string, PageData> = {
   },
   "ai-smart-security": {
     slug: "ai-smart-security", navLabel: "AI Smart Security", eyebrow: "PRODUCT · INTELLIGENT SECURITY",
+    seoTitle: "AI Video Analytics & Smart Security | Truefox AI",
+    seoKeywords: ["AI video analytics", "intelligent video surveillance", "computer vision security", "operational monitoring"],
     title: "AI video analytics for faster, better-informed security decisions.",
-    description: "Truefox AI builds intelligent video surveillance and connected monitoring systems for security, safety and operational awareness.",
-    intro: "Truefox AI Smart Security applies computer vision to live video and connected signals so teams can identify relevant events, understand what is happening and respond with better context. Each system is configured around the operating environment, existing infrastructure and the decisions people need to make.",
+    description: "Truefox AI builds AI video analytics and intelligent surveillance systems for security, safety and operational awareness.",
+    intro: "Truefox AI builds computer vision security systems for organisations that need to identify relevant events across live video and connected signals. Each AI video analytics system is shaped around the operating environment, existing camera infrastructure, operator workflow and decisions people need to make.",
     kind: "products",
     stats: [
       { value: "LIVE", label: "Video and signal analysis" },
@@ -463,9 +468,11 @@ export const pages: Record<string, PageData> = {
   },
   "biometric-intelligence": {
     slug: "biometric-intelligence", navLabel: "Biometric Intelligence", eyebrow: "PRODUCT · IDENTITY",
+    seoTitle: "Biometric AI & Identity Verification | Truefox AI",
+    seoKeywords: ["biometric AI solutions", "identity verification", "face recognition", "liveness detection", "anti-spoofing"],
     title: "Secure identity verification built for real-world workflows.",
     description: "Truefox AI develops biometric intelligence systems for face recognition, fingerprint authentication, attendance, identity verification, liveness detection and anti-spoofing workflows.",
-    intro: "Identity should be fast, reliable and difficult to fake. Truefox AI designs complete biometric workflows around the real operating environment—including capture devices, lighting, enrollment quality, access rules, network conditions, privacy requirements and integration with existing enterprise systems.",
+    intro: "Truefox AI develops biometric AI solutions for organisations that need reliable identity verification, attendance or access workflows. Each system is designed around face or fingerprint capture, liveness, anti-spoofing, permissions, operating conditions, privacy requirements and integration with existing systems.",
     kind: "products",
     stats: [
       { value: "FACE", label: "Identification and verification" },
@@ -480,7 +487,7 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "OVERVIEW",
-        title: "WHAT IS BIOMETRIC INTELLIGENCE?",
+        title: "WHAT ARE BIOMETRIC AI SOLUTIONS?",
         text: "Biometric intelligence uses measurable human characteristics—such as the face or fingerprint—to support identity recognition, verification and authentication. Its purpose is not simply to recognise a person, but to establish identity within a defined workflow such as attendance, enrollment, access, visitor management or approval of a sensitive action."
       },
       {
@@ -572,9 +579,11 @@ export const pages: Record<string, PageData> = {
   },
   "private-ai-assistants": {
     slug: "private-ai-assistants", navLabel: "Private AI Assistants", eyebrow: "PRODUCT · KNOWLEDGE",
+    seoTitle: "Private AI Assistants & Enterprise RAG | Truefox AI",
+    seoKeywords: ["private enterprise AI assistants", "enterprise RAG", "secure AI assistants", "enterprise chatbot"],
     title: "Enterprise AI that understands your business, knowledge and workflows.",
     description: "Truefox AI builds private enterprise AI assistants, RAG systems and copilots grounded in approved company knowledge and controlled business tools.",
-    intro: "Your organisation already has valuable knowledge. Truefox AI Private AI Assistants bring approved documents, data and tools into a secure conversational experience—helping people retrieve relevant information, understand it clearly and, where appropriate, work with authorised enterprise systems.",
+    intro: "Truefox AI builds private enterprise AI assistants and RAG systems that help authorised users work with approved documents, data and business tools. Unlike general chatbots, these assistants are designed around organisational knowledge, retrieval quality, permissions, security, integrations and human handoff.",
     kind: "products",
     stats: [
       { value: "RAG", label: "Grounded enterprise retrieval" },
@@ -692,9 +701,11 @@ export const pages: Record<string, PageData> = {
   },
   "agentic-automation": {
     slug: "agentic-automation", navLabel: "Agentic Automation", eyebrow: "PRODUCT · WORKFLOWS",
+    seoTitle: "AI Agent Development & Automation | Truefox AI",
+    seoKeywords: ["AI agent development", "agentic AI", "AI workflow automation", "governed business agents"],
     title: "AI agents that reason, use tools and complete multi-step workflows.",
     description: "Truefox AI builds governed enterprise AI agents that connect reasoning, approved tools, business rules and human oversight.",
-    intro: "Most AI assistants stop at answering a question. Truefox AI Agentic Automation goes further by connecting AI reasoning with approved applications, databases, APIs, documents and operational processes—so suitable parts of a workflow can move forward while consequential decisions remain controlled.",
+    intro: "Truefox AI develops governed AI agents for organisations with bounded, multi-step digital workflows. Unlike an assistant focused on retrieving and explaining knowledge, an agent can use approved tools, applications, databases and APIs to help execute work while permissions, validation and consequential decisions remain under human control.",
     kind: "products",
     stats: [
       { value: "TOOLS", label: "Approved system access" },
@@ -709,7 +720,7 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "OVERVIEW",
-        title: "WHAT IS AGENTIC AUTOMATION?",
+        title: "WHAT IS AGENTIC AI DEVELOPMENT?",
         text: "Agentic Automation combines AI reasoning with tools, rules and workflow orchestration so a system can work toward a defined goal across multiple steps. An agent may retrieve information, perform calculations, prepare structured outputs, request approval, use authorised tools and record the outcome. Its autonomy should always match the risk and importance of the workflow."
       },
       {
@@ -816,9 +827,11 @@ export const pages: Record<string, PageData> = {
   },
   "iot-edge-ai": {
     slug: "iot-edge-ai", navLabel: "IoT & Edge AI", eyebrow: "PRODUCT · CONNECTED EDGE",
+    seoTitle: "Edge AI & IoT Development | Truefox AI",
+    seoKeywords: ["Edge AI development", "IoT AI", "embedded AI", "local inference", "connected device systems"],
     title: "Connect devices, process data locally and make operations smarter.",
     description: "Truefox AI builds IoT and Edge AI systems spanning sensors, embedded firmware, gateways, local inference, cloud services and enterprise integrations.",
-    intro: "Modern operations generate data through sensors, machines, cameras, meters and connected devices. Truefox AI turns those signals into useful decisions by designing complete IoT and Edge AI systems around the operating environment—processing what matters locally and connecting the wider platform where it adds value.",
+    intro: "Truefox AI provides Edge AI and IoT development for operations that depend on sensors, machines, cameras, meters and connected devices. We design the device, firmware, gateway, local-inference and cloud layers around the real environment—processing time-sensitive signals locally and connecting wider systems where they add value.",
     kind: "products",
     stats: [
       { value: "SENSE", label: "Devices and real-world signals" },
@@ -833,7 +846,7 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "OVERVIEW",
-        title: "WHAT ARE IoT AND EDGE AI?",
+        title: "WHAT IS EDGE AI DEVELOPMENT?",
         text: "The Internet of Things connects physical devices that collect, exchange or act on data. Edge AI runs selected machine-learning workloads on devices close to where that data is generated. Together, they can monitor real-world conditions, make time-sensitive local decisions and send relevant events or summaries to central systems."
       },
       {
@@ -952,9 +965,11 @@ export const pages: Record<string, PageData> = {
   },
   "custom-ai-ml": {
     slug: "custom-ai-ml", navLabel: "Custom AI & ML", eyebrow: "SERVICE · APPLIED AI",
+    seoTitle: "Custom Machine Learning Development | Truefox AI",
+    seoKeywords: ["custom machine learning development", "custom ML models", "predictive analytics", "NLP", "MLOps"],
     title: "AI and machine learning built around your business problem.",
     description: "Truefox AI develops custom machine-learning systems across data engineering, predictive analytics, computer vision, NLP, MLOps and production deployment.",
-    intro: "Not every business problem fits an off-the-shelf model. Truefox AI designs custom AI and machine-learning systems around the decision that needs to improve, the data that is genuinely available and the conditions in which the system must operate—not around technology for its own sake.",
+    intro: "Truefox AI provides custom machine-learning development for specialised decisions that off-the-shelf systems cannot address reliably. This page focuses on data readiness, predictive analytics, computer vision, NLP, model evaluation, production integration and MLOps; broader custom AI service discovery belongs within our AI development services portfolio.",
     kind: "services",
     stats: [
       { value: "DATA", label: "Feasibility before modelling" },
@@ -969,7 +984,7 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "OVERVIEW",
-        title: "WHAT IS CUSTOM AI & ML?",
+        title: "WHAT IS CUSTOM MACHINE-LEARNING DEVELOPMENT?",
         text: "Custom AI and machine learning refers to systems designed around a specific organisation, dataset, process or decision. The result may be a prediction service, forecasting platform, recommendation engine, computer-vision model, NLP pipeline, anomaly detector or broader decision-support application integrated into the way people already work."
       },
       {
@@ -1072,9 +1087,11 @@ export const pages: Record<string, PageData> = {
   },
   "web-mobile-products": {
     slug: "web-mobile-products", navLabel: "Web & Mobile Products", eyebrow: "SERVICE · DIGITAL PRODUCTS",
+    seoTitle: "AI Product, Web & Mobile Development | Truefox AI",
+    seoKeywords: ["AI product engineering", "AI software development", "AI applications", "SaaS development", "mobile development"],
     title: "Digital products designed around real users, workflows and business goals.",
     description: "Truefox AI designs and builds custom web applications, mobile apps, SaaS platforms, enterprise products and AI-powered digital experiences.",
-    intro: "A successful digital product is more than an attractive interface. Truefox AI combines product strategy, UX, web and mobile engineering, backend services, cloud architecture, integrations and AI to build software that is useful, reliable, secure, fast and maintainable.",
+    intro: "Truefox AI provides AI product engineering for organisations building or improving web applications, mobile products, SaaS platforms and enterprise software. Product strategy, UX, frontend, backend, cloud systems, integrations and applied AI are engineered as one maintainable product rather than disconnected technical workstreams.",
     kind: "services",
     stats: [
       { value: "UX", label: "Designed around real users" },
@@ -1089,7 +1106,7 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "PRODUCT FIRST",
-        title: "BUILD SOFTWARE PEOPLE ACTUALLY WANT TO USE.",
+        title: "AI PRODUCT ENGINEERING STARTS WITH THE USER AND WORKFLOW.",
         text: "Product decisions begin with the people, workflow and outcome—not a predetermined feature list. Discovery identifies who will use the product, what they are trying to accomplish, where the current process creates friction, which systems must connect and how success will be measured for users and the business.",
         bullets: ["TARGET USERS AND OPERATING CONTEXT", "CURRENT JOURNEY AND PAIN POINTS", "CRITICAL TASKS AND INFORMATION", "DESKTOP, MOBILE AND FIELD REQUIREMENTS", "BUSINESS OUTCOMES AND PRODUCT METRICS"]
       },
@@ -1192,9 +1209,11 @@ export const pages: Record<string, PageData> = {
   },
   "research-development": {
     slug: "research-development", navLabel: "R&D and Prototyping", eyebrow: "SERVICE · RESEARCH & VALIDATION",
+    seoTitle: "AI Proof of Concept & Prototyping | Truefox AI",
+    seoKeywords: ["AI proof of concept development", "AI feasibility studies", "applied AI research", "AI prototyping", "MVP validation"],
     title: "Turn ambitious ideas into testable technology.",
     description: "Truefox AI provides feasibility studies, applied AI research, proof-of-concept development and rapid prototyping across AI, IoT, edge and digital products.",
-    intro: "Not every idea should move directly into full-scale development. Truefox AI helps organisations explore technical possibilities, test assumptions, compare approaches and build working proofs of concept—turning the most important uncertainty into evidence before larger production investment.",
+    intro: "Truefox AI provides AI proof-of-concept development and feasibility studies for organisations that need evidence before larger production investment. We define the most important uncertainty, test it with representative data, hardware or workflows, and turn the results into a practical proceed, modify or stop decision.",
     kind: "services",
     stats: [
       { value: "ASK", label: "Define the uncertainty" },
@@ -1209,7 +1228,7 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "OVERVIEW",
-        title: "WHAT IS R&D PROTOTYPING?",
+        title: "WHAT IS AI PROOF-OF-CONCEPT DEVELOPMENT?",
         text: "R&D prototyping explores a technical concept through structured research, experimentation and a working early implementation. It does not need every production feature. Its purpose is to focus effort on the uncertainty that matters most—whether a model, device, integration, architecture or user workflow can meet a defined requirement."
       },
       {
@@ -1312,20 +1331,26 @@ export const pages: Record<string, PageData> = {
   services: {
     slug: "services",
     navLabel: "Services",
-    seoTitle: "AI Development Services",
+    seoTitle: "AI Development Services | Truefox AI Inc.",
+    seoKeywords: ["AI development services", "enterprise AI solutions", "custom AI development", "AI consulting", "AI systems engineering"],
     eyebrow: "SERVICES",
     title: "FROM COMPLEX NEED TO WORKING SYSTEM.",
-    description: "Strategy, product and engineering services for secure, maintainable systems.",
+    description: "Explore AI strategy, custom development, computer vision, private AI, agents, machine learning, edge systems and product engineering from Truefox AI.",
     intro:
-      "Truefox AI brings strategy, product, AI, software, cloud and edge engineering into one accountable partnership—helping clients build secure, maintainable systems without managing handoffs across multiple vendors.",
+      "Truefox AI provides AI development services spanning strategy, custom AI development, systems engineering, software, cloud and edge delivery. We help organisations select the right capability and move from discovery and feasibility through integration, deployment and ongoing improvement without managing handoffs across multiple vendors.",
     kind: "services",
     cards: [
+      { eyebrow: "01", title: "AI SMART SECURITY", text: "Apply AI video analytics to security, safety and operational monitoring workflows.", href: "/ai-smart-security" },
+      { eyebrow: "02", title: "BIOMETRIC INTELLIGENCE", text: "Build identity verification, attendance, liveness and anti-spoofing workflows.", href: "/biometric-intelligence" },
+      { eyebrow: "03", title: "PRIVATE AI ASSISTANTS", text: "Create secure assistants and enterprise RAG around approved knowledge and permissions.", href: "/private-ai-assistants" },
+      { eyebrow: "04", title: "AGENTIC AUTOMATION", text: "Develop governed AI agents for approved tools and multi-step business workflows.", href: "/agentic-automation" },
+      { eyebrow: "05", title: "IoT & EDGE AI", text: "Connect devices, embedded systems, local inference and central operations.", href: "/iot-edge-ai" },
       { eyebrow: "06", title: "CUSTOM AI & ML", text: "Turn complex data into dependable models, decision systems and production-ready machine learning capabilities.", href: "/custom-ai-ml" },
       { eyebrow: "07", title: "WEB & MOBILE PRODUCTS", text: "Create intuitive digital products that bring intelligent workflows to customers, operators and internal teams.", href: "/web-mobile-products" },
       { eyebrow: "08", title: "R&D & PRODUCT VALIDATION", text: "Test ambitious ideas through focused research, technical feasibility studies and representative prototypes.", href: "/research-development" }
     ],
     sections: [
-      { title: "AI STRATEGY & SYSTEMS ARCHITECTURE", text: "Identify the right opportunities, assess feasibility and define a practical roadmap across data, technology, risk and deployment." },
+      { title: "AI DEVELOPMENT STRATEGY & SYSTEMS ARCHITECTURE", text: "Identify the right opportunities, assess feasibility and define a practical roadmap across data, technology, risk and deployment." },
       { title: "COMPUTER VISION & BIOMETRICS", text: "Build systems for detection, tracking, inspection and identity—with liveness, anti-spoofing and human oversight where required." },
       { title: "GENERATIVE & AGENTIC AI", text: "Create secure knowledge assistants and governed agents that retrieve information, use approved tools and move workflows forward." },
       { title: "DATA, MACHINE LEARNING & MLOps", text: "Develop the pipelines, models and operating practices needed to experiment, deploy, monitor and improve machine learning systems." },

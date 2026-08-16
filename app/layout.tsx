@@ -8,24 +8,23 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Enterprise AI, Computer Vision & Automation | Truefox AI Inc.",
+    default: "Enterprise AI Engineering Company | Truefox AI Inc.",
     template: "%s | Truefox AI Inc."
   },
-  description: site.description,
+  description: "Truefox AI is a Canada-headquartered AI engineering company building computer vision, private AI, governed agents, biometrics, edge systems and digital products.",
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
   publisher: site.name,
   category: "Artificial intelligence",
   keywords: [
-    "applied AI company Canada",
-    "computer vision solutions",
-    "generative AI consulting",
-    "agentic AI systems",
-    "biometric intelligence",
-    "edge AI and IoT",
-    "AI engineering India",
-    "enterprise AI development"
+    "enterprise AI engineering company",
+    "Canada-headquartered AI engineering",
+    "computer vision",
+    "private AI",
+    "AI agents",
+    "edge AI",
+    "biometrics"
   ],
   alternates: { canonical: "/", languages: { "en-CA": "/", "x-default": "/" } },
   openGraph: {
