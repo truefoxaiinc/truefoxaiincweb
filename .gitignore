@@ -9,3 +9,7 @@ npm-debug.log*
 *.tsbuildinfo
 data/*.sqlite
 data/*.sqlite-*
+data/analytics-imports/*
+!data/analytics-imports/README.md
+reports/seo-performance/*
+!reports/seo-performance/.gitkeep

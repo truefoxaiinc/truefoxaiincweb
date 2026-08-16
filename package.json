@@ -15,7 +15,9 @@
     "validate:kochi": "node scripts/validate-kochi-schema.mjs",
     "validate:kitchener": "node scripts/validate-kitchener-schema.mjs",
     "validate:phase-one": "node scripts/validate-phase-one-seo.mjs",
-    "validate:analytics": "node scripts/validate-analytics.mjs"
+    "validate:analytics": "node scripts/validate-analytics.mjs",
+    "report:seo": "node scripts/seo-reporting/generate-report.mjs",
+    "validate:reporting": "node scripts/seo-reporting/validate-reporting.mjs"
   },
   "dependencies": {
     "motion": "12.43.0",
@@ -29,6 +31,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@types/three": "^0.185.3",
+    "read-excel-file": "^9.3.10",
     "typescript": "^5.9.0"
   }
 }

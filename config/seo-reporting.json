@@ -1,0 +1,31 @@
+{
+  "baselineDate": "2026-08-16",
+  "migrationDate": "2026-08-16",
+  "siteOrigin": "https://www.truefoxaiinc.com",
+  "brandPatterns": ["truefox", "truefox ai", "truefox ai inc", "truefoxai"],
+  "organicChannel": "Organic Search",
+  "primaryCountry": "canada",
+  "opportunityRules": {
+    "minimumImpressions": 50,
+    "lowCtrRelativeToWeightedAverage": 0.75,
+    "positionFourToTen": [4, 10],
+    "positionEightToTwenty": [8, 20],
+    "positionTwentyToFifty": [20, 50]
+  },
+  "currentPages": ["/", "/services", "/kitchener", "/kochi", "/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development", "/products", "/attention-minder", "/case-studies", "/contact", "/request-quote", "/book-demo"],
+  "servicePages": ["/services", "/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development"],
+  "legacyPaths": ["/about-us/", "/contact-us/", "/author/"],
+  "ownership": [
+    { "name": "enterprise AI engineering company", "pattern": "enterprise.*ai.*engineering|ai.*engineering.*company", "page": "/" },
+    { "name": "AI development services", "pattern": "ai.*development.*service|artificial intelligence.*development", "page": "/services" },
+    { "name": "Kitchener local intent", "pattern": "kitchener|kitchener.waterloo|waterloo", "page": "/kitchener" },
+    { "name": "AI video analytics", "pattern": "video analytics|smart security|computer vision.*security", "page": "/ai-smart-security" },
+    { "name": "biometric AI", "pattern": "biometric", "page": "/biometric-intelligence" },
+    { "name": "private enterprise AI / RAG", "pattern": "private ai|enterprise rag|rag assistant", "page": "/private-ai-assistants" },
+    { "name": "AI agent development", "pattern": "ai agent|agentic automation", "page": "/agentic-automation" },
+    { "name": "edge AI development", "pattern": "edge ai|iot.*ai|ai.*iot", "page": "/iot-edge-ai" },
+    { "name": "custom machine learning", "pattern": "custom machine learning|custom ml|ml development", "page": "/custom-ai-ml" },
+    { "name": "AI product engineering", "pattern": "ai product engineering|web.*mobile.*development", "page": "/web-mobile-products" },
+    { "name": "AI proof of concept", "pattern": "ai proof of concept|ai poc|ai prototyp", "page": "/research-development" }
+  ]
+}
