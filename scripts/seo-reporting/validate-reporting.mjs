@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { buildReport, normalizeGa4Leads, normalizeGa4Traffic, normalizeGsc, parseCsv, toCsv, writeReport } from "./core.mjs";
+import { buildNativeGscReport } from "./native-gsc.mjs";
 
 const root = process.cwd();
 const config = JSON.parse(await fs.readFile(path.join(root, "config/seo-reporting.json"), "utf8"));
@@ -27,6 +28,19 @@ if (!toCsv(report.pages).includes("organicSessions")) failures.push("landing-pag
 const duplicatedGsc = normalizeGsc(parseCsv(`${gscText.trim()}\n${gscText.trim().split("\n")[1]}\n`), config, "duplicate fixture");
 if (!duplicatedGsc.issues.some(issue => issue.reason === "DUPLICATE_ROW")) failures.push("duplicate-row detection");
 
+const nativeReport = buildNativeGscReport({
+  chart: [{ date: "2026-08-01", clicks: 10, impressions: 100, ctr: 0.1, position: 5 }],
+  queries: [{ query: "truefox", clicks: 4, impressions: 20, ctr: 0.2, position: 2 }],
+  pages: [{ page: "/", originalPage: "https://truefoxaiinc.com/", clicks: 10, impressions: 100, ctr: 0.1, position: 5 }],
+  countries: [{ country: "canada", clicks: 6, impressions: 30, ctr: 0.2, position: 2 }],
+  devices: [{ device: "mobile", clicks: 10, impressions: 100, ctr: 0.1, position: 5 }],
+  appearance: [], filters: { Date: "Last 3 months", "Search type": "Web" }
+}, config);
+if (nativeReport.executive.organicClicks !== 10 || nativeReport.executive.canadaClicks !== 6) failures.push("native GSC aggregation");
+if (nativeReport.executive.organicSessions !== "DATA UNAVAILABLE") failures.push("native GSC missing-GA4 handling");
+if (nativeReport.pages[0].migrationStatus !== "CURRENT_URL") failures.push("native GSC page classification");
+if (!nativeReport.metadata.limitation.includes("do not join query, page")) failures.push("native GSC dimensional limitation");
+
 const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "truefox-seo-report-"));
 try {
   await writeReport(report, tempDir);
@@ -48,4 +62,4 @@ for (const malformed of [
 if (failures.length) {
   console.error("Reporting validation failed:"); failures.forEach(item => console.error(`- ${item}`)); process.exit(1);
 }
-console.log("Reporting validation passed: imports, organic filter, brand split, lead attribution, ownership flags, Kitchener reporting, validation errors, and outputs are correct.");
+console.log("Reporting validation passed: combined and native GSC imports, organic filter, brand split, lead attribution, ownership flags, Kitchener reporting, validation errors, and outputs are correct.");
