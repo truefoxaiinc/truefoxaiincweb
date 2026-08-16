@@ -46,13 +46,20 @@ for (const path of paths) {
   const serviceId = `${canonicalUrl}${path}#service`;
   const webpage = byType("WebPage").find((entity) => entity["@id"] === pageId);
   const service = byType("Service").find((entity) => entity["@id"] === serviceId);
+  const unexpectedProductCount = byType("Product").length;
+  const legacyProductMarkers = [
+    '"@type":"Product"',
+    `${canonicalUrl}${path}#product`,
+    '"manufacturer":'
+  ].filter((value) => html.includes(value));
   const providerMatches = service?.provider?.["@id"] === `${canonicalUrl}/#organization`;
   const mainEntityMatches = webpage?.mainEntity?.["@id"] === serviceId;
   const websiteMatches = webpage?.isPartOf?.["@id"] === `${canonicalUrl}/#website`;
   const forbiddenMatches = forbidden.filter((value) => html.includes(value));
   const pass = response.ok && invalidJson === 0 && Boolean(webpage && service)
     && providerMatches && mainEntityMatches && websiteMatches
-    && byType("Organization").length === 1 && forbiddenMatches.length === 0;
+    && byType("Organization").length === 1 && unexpectedProductCount === 0
+    && legacyProductMarkers.length === 0 && forbiddenMatches.length === 0;
 
   failed ||= !pass;
   console.log(JSON.stringify({
@@ -65,6 +72,8 @@ for (const path of paths) {
     website: byType("WebSite").length,
     webpage: byType("WebPage").length,
     service: byType("Service").length,
+    product: byType("Product").length,
+    unexpectedProductCount,
     faqPage: byType("FAQPage").length,
     imageObject: byType("ImageObject").length,
     place: byType("Place").length,
@@ -72,6 +81,7 @@ for (const path of paths) {
     providerMatches,
     mainEntityMatches,
     websiteMatches,
+    legacyProductMarkers,
     forbiddenMatches,
     result: pass ? "PASS" : "FAIL"
   }));

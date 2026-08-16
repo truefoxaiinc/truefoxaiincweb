@@ -14,6 +14,13 @@ const servicePageSlugs = new Set([
   "research-development"
 ]);
 
+// Product structured data is opt-in. Several capability pages use the
+// "products" presentation style but represent professional services, not
+// standalone products eligible for Product rich results.
+const productPageSlugs = new Set([
+  "attention-minder"
+]);
+
 function safeJson(data: JsonValue) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
@@ -226,7 +233,7 @@ export function PageEntityGraph({
       })
     });
   }
-  if (kind === "products" && slug !== "products" && !isServicePage) {
+  if (productPageSlugs.has(slug)) {
     graph.push({
       "@type": "Product",
       "@id": `${url}#product`,
