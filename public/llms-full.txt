@@ -10,4 +10,7 @@ Deployment may be cloud, private cloud, on-premise, edge or hybrid, depending on
 
 Contact: info@truefoxaiinc.com
 Headquarters: Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada
+Kitchener headquarters page: https://www.truefoxaiinc.com/kitchener. The Canadian office supports company strategy, client engagement and delivery leadership.
+India engineering office: Olangattu Tower, Chittethukara, Kakkanad, Kochi, Kerala 682037, India. The Kochi operation supports AI research, product engineering, software development and technical delivery.
 Website: https://www.truefoxaiinc.com
+Kochi engineering page: https://www.truefoxaiinc.com/kochi

@@ -9,6 +9,7 @@ export type Card = {
 export type PageData = {
   slug: string;
   navLabel: string;
+  seoTitle?: string;
   title: string;
   eyebrow: string;
   description: string;
@@ -36,7 +37,7 @@ export const site = {
   url: "https://www.truefoxaiinc.com",
   email: "info@truefoxaiinc.com",
   phoneLabel: "+1 (Canada)",
-  lastUpdated: "2026-08-14",
+  lastUpdated: "2026-08-16",
   description:
     "Canada-headquartered applied AI engineering with an India delivery centre, serving international organizations with computer vision, generative AI, agentic automation, biometrics, IoT and custom software.",
   address: {
@@ -72,6 +73,8 @@ export const navGroups = [
     label: "Company",
     items: [
       ["About Us", "/about"],
+      ["Kitchener Headquarters", "/kitchener"],
+      ["Kochi Engineering Office", "/kochi"],
       ["Our Team", "/team"],
       ["Why Choose Us", "/why-choose-us"],
       ["Careers", "/careers"]
@@ -174,7 +177,9 @@ export const pages: Record<string, PageData> = {
     cards: [
       { eyebrow: "MISSION", title: "MAKE INTELLIGENCE USEFUL.", text: "We turn ambitious ideas into systems that improve real decisions, workflows and outcomes—not technology that exists for its own sake." },
       { eyebrow: "HOW WE WORK", title: "ONE TEAM, CONNECTED BY THE WORK.", text: "Across Canada and India, strategy, research, design and engineering work together from the first question through production and continuous improvement." },
-      { eyebrow: "OUR STANDARD", title: "BUILT BEYOND THE DEMO.", text: "Security, governance, observability, maintainability and user adoption are designed into every system from the beginning—not added after launch." }
+      { eyebrow: "OUR STANDARD", title: "BUILT BEYOND THE DEMO.", text: "Security, governance, observability, maintainability and user adoption are designed into every system from the beginning—not added after launch." },
+      { eyebrow: "CANADA HEADQUARTERS", title: "OUR KITCHENER PRESENCE.", text: "Learn how Truefox AI’s Canadian headquarters connects client strategy, AI engineering and delivery leadership from Kitchener, Ontario.", href: "/kitchener" },
+      { eyebrow: "INDIA ENGINEERING", title: "OUR KOCHI ENGINEERING PRESENCE.", text: "Learn how the engineering team in Kakkanad supports AI research, product development, software engineering and technical delivery.", href: "/kochi" }
     ],
     sections: [
       {
@@ -191,6 +196,152 @@ export const pages: Record<string, PageData> = {
       }
     ],
     cta: { label: "Start a conversation", href: "/contact" }
+  },
+  kitchener: {
+    slug: "kitchener",
+    navLabel: "AI Engineering in Kitchener",
+    eyebrow: "CANADIAN HEADQUARTERS",
+    title: "AI Engineering & Development in Kitchener",
+    description: "Truefox AI provides custom AI engineering from Kitchener, Ontario, including computer vision, private AI, automation, edge systems and product development.",
+    intro: "Truefox AI Inc. is a Canada-headquartered AI engineering company with its Canadian office in Kitchener, Ontario. The team connects client strategy and commercial engagement with AI, software and product delivery supported by the company’s engineering presence in Kochi, India.",
+    kind: "standard",
+    stats: [
+      { value: "CANADA", label: "Primary commercial presence" },
+      { value: "08", label: "Connected capability areas" },
+      { value: "ONE", label: "Integrated Canada–India team" }
+    ],
+    cards: [
+      { eyebrow: "01 · VISION", title: "AI SMART SECURITY", text: "Computer-vision and video-analytics systems for security, safety and operational awareness.", href: "/ai-smart-security" },
+      { eyebrow: "02 · IDENTITY", title: "BIOMETRIC INTELLIGENCE", text: "Identity, access and attendance workflows using face, fingerprint, liveness and anti-spoofing capabilities.", href: "/biometric-intelligence" },
+      { eyebrow: "03 · KNOWLEDGE", title: "PRIVATE AI ASSISTANTS", text: "Enterprise assistants grounded in approved knowledge and connected to controlled business data and tools.", href: "/private-ai-assistants" },
+      { eyebrow: "04 · WORKFLOWS", title: "AGENTIC AUTOMATION", text: "Governed AI agents that coordinate permitted tools and information across multi-step workflows.", href: "/agentic-automation" },
+      { eyebrow: "05 · EDGE", title: "IoT & EDGE AI", text: "Connected devices, embedded systems, gateways and local inference for distributed and real-world operations.", href: "/iot-edge-ai" },
+      { eyebrow: "06 · APPLIED AI", title: "CUSTOM AI & ML", text: "Purpose-built machine-learning systems spanning data engineering, prediction, vision, language and MLOps.", href: "/custom-ai-ml" },
+      { eyebrow: "07 · PRODUCTS", title: "WEB & MOBILE PRODUCTS", text: "Web applications, mobile products and enterprise platforms built around real users and workflows.", href: "/web-mobile-products" },
+      { eyebrow: "08 · VALIDATION", title: "RESEARCH & DEVELOPMENT", text: "Feasibility studies, applied research and representative prototypes that test important assumptions early.", href: "/research-development" }
+    ],
+    sections: [
+      {
+        eyebrow: "CANADIAN PRESENCE",
+        title: "HEADQUARTERED IN KITCHENER, CONNECTED THROUGH DELIVERY.",
+        text: "Truefox AI’s Kitchener headquarters supports company strategy, client engagement and delivery leadership. Work is coordinated through an integrated Canada–India model, with the Kochi engineering presence contributing AI research, product engineering, software development and technical delivery."
+      },
+      {
+        eyebrow: "VERIFIED OFFICE",
+        title: "TRUEFOX AI INC. — CANADIAN HEADQUARTERS",
+        text: "Suite 300 · 72 Victoria Street South · Kitchener, Ontario N2G 4Y9 · Canada"
+      },
+      {
+        eyebrow: "CUSTOM AI DEVELOPMENT",
+        title: "ENGINEERING AROUND THE DECISION, WORKFLOW AND ENVIRONMENT.",
+        text: "Truefox AI develops AI and software systems around a defined operational need rather than a predetermined technology. Work can include opportunity assessment, data and feasibility review, architecture, machine learning, software integration, deployment and the operating controls required to maintain and improve the system."
+      },
+      {
+        eyebrow: "ENGAGEMENT PROCESS",
+        title: "MOVE FROM OPEN QUESTION TO OPERATING SYSTEM.",
+        text: "An engagement can begin with discovery, continue through feasibility work or a focused proof of concept, and progress into development, integration, deployment and ongoing improvement. The appropriate starting point depends on the available data, current systems, operating constraints, risk and outcome that needs to improve.",
+        bullets: ["DISCOVERY", "FEASIBILITY & PROOF OF CONCEPT", "DEVELOPMENT", "INTEGRATION & DEPLOYMENT", "ONGOING IMPROVEMENT"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHERE IS TRUEFOX AI LOCATED IN CANADA?",
+        text: "Truefox AI Inc. has its Canadian headquarters at Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada. The Kitchener office supports company strategy, client engagement and delivery leadership, working with the company’s engineering presence in Kochi, India."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT AI DEVELOPMENT SERVICES DOES TRUEFOX AI PROVIDE IN KITCHENER?",
+        text: "Truefox AI provides AI strategy, custom machine learning, computer vision, biometric systems, private AI assistants, agentic automation, IoT and edge AI, web and mobile product engineering, and applied research. Each engagement is shaped around the organization’s workflow, data, systems, operating environment and required outcome."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DOES TRUEFOX AI BUILD CUSTOM AI SYSTEMS FOR CANADIAN BUSINESSES?",
+        text: "Yes. Truefox AI develops custom AI and software systems for organizations with specific operational requirements. The work can begin with discovery or a proof of concept and continue through production development, integration, deployment and ongoing improvement, depending on feasibility and project scope."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN TRUEFOX AI DEVELOP AI AGENTS AND AUTOMATION SYSTEMS?",
+        text: "Yes. Truefox AI builds governed AI agents that can retrieve approved information, use permitted tools and coordinate bounded multi-step workflows. Permissions, validation, human approval, exception handling and auditability are designed according to the sensitivity and consequences of the workflow."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DOES TRUEFOX AI BUILD COMPUTER-VISION SOLUTIONS?",
+        text: "Yes. Truefox AI develops computer-vision systems for applications such as video analytics, detection, tracking, inspection, security awareness and operational monitoring. The design considers camera conditions, representative data, response requirements, integration needs, deployment location and human review."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW CAN A COMPANY DISCUSS AN AI PROJECT WITH TRUEFOX AI?",
+        text: "Use the project enquiry form to share the workflow, current challenge, available systems or data, operating environment and desired result. A short overview is enough to begin. The team can then identify whether discovery, a proof of concept, a demonstration or a scoped development engagement is appropriate."
+      }
+    ],
+    cta: { label: "Discuss an AI project", href: "/request-quote" }
+  },
+  kochi: {
+    slug: "kochi",
+    navLabel: "AI Engineering in Kochi",
+    eyebrow: "INDIA ENGINEERING OFFICE",
+    title: "AI Engineering & Development in Kochi",
+    description: "Truefox AI’s Kochi engineering team develops custom AI, computer vision, private assistants, automation, edge systems and digital products.",
+    intro: "Truefox AI Inc. is an applied AI and product engineering company with an engineering presence in Kakkanad, Kochi, supporting AI research, software development and technical delivery across the company’s capability areas.",
+    kind: "standard",
+    stats: [
+      { value: "KOCHI", label: "India engineering presence" },
+      { value: "08", label: "Connected capability areas" },
+      { value: "ONE", label: "Integrated Canada–India team" }
+    ],
+    cards: [
+      { eyebrow: "01 · VISION", title: "AI SMART SECURITY", text: "Computer-vision systems for video analytics, situational awareness and operational monitoring.", href: "/ai-smart-security" },
+      { eyebrow: "02 · IDENTITY", title: "BIOMETRIC INTELLIGENCE", text: "Identity and attendance workflows spanning face, fingerprint, liveness and anti-spoofing capabilities.", href: "/biometric-intelligence" },
+      { eyebrow: "03 · KNOWLEDGE", title: "PRIVATE AI ASSISTANTS", text: "Grounded enterprise assistants that work with approved knowledge, controlled data and business tools.", href: "/private-ai-assistants" },
+      { eyebrow: "04 · WORKFLOWS", title: "AGENTIC AUTOMATION", text: "Governed AI agents that reason across multi-step workflows and use explicitly permitted tools.", href: "/agentic-automation" },
+      { eyebrow: "05 · EDGE", title: "IoT & EDGE AI", text: "Connected devices, embedded systems, gateways and local inference for real-world operations.", href: "/iot-edge-ai" },
+      { eyebrow: "06 · APPLIED AI", title: "CUSTOM AI & ML", text: "Purpose-built machine-learning systems across data engineering, prediction, vision, language and MLOps.", href: "/custom-ai-ml" },
+      { eyebrow: "07 · PRODUCTS", title: "WEB & MOBILE PRODUCTS", text: "Web applications, mobile products, SaaS platforms and enterprise software connected to reliable backend systems.", href: "/web-mobile-products" },
+      { eyebrow: "08 · VALIDATION", title: "RESEARCH & DEVELOPMENT", text: "Feasibility studies, applied research and representative prototypes that reduce uncertainty before larger investment.", href: "/research-development" }
+    ],
+    sections: [
+      {
+        eyebrow: "KOCHI ENGINEERING PRESENCE",
+        title: "A CONNECTED PART OF TRUEFOX AI’S DELIVERY TEAM.",
+        text: "The Kochi engineering operation supports AI research, product engineering, software development and technical delivery. It works as part of Truefox AI’s integrated Canada–India model, connecting early discovery and technical validation with production engineering, deployment and ongoing improvement."
+      },
+      {
+        eyebrow: "VERIFIED OFFICE",
+        title: "INDIA ENGINEERING OFFICE",
+        text: "Olangattu Tower · Chittethukara · Kakkanad · Kochi, Kerala 682037 · India"
+      },
+      {
+        eyebrow: "ENGAGEMENT MODEL",
+        title: "FROM THE FIRST QUESTION TO A SYSTEM THAT CAN OPERATE.",
+        text: "Engagements can begin with discovery and feasibility work, move through a focused proof of concept, and continue into product development, integration, deployment and ongoing improvement. The path depends on the workflow, available data, operating environment, risks and outcome the organization needs to improve.",
+        bullets: ["DISCOVERY", "PROOF OF CONCEPT", "DEVELOPMENT", "INTEGRATION", "ONGOING IMPROVEMENT"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHERE IS TRUEFOX AI LOCATED IN KOCHI?",
+        text: "Truefox AI’s India engineering office is at Olangattu Tower, Chittethukara, Kakkanad, Kochi, Kerala 682037, India. The location supports AI research, product engineering, software development and technical delivery as part of the company’s integrated Canada–India team."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT AI SERVICES DOES THE KOCHI ENGINEERING TEAM PROVIDE?",
+        text: "The Kochi engineering team contributes across computer vision, biometric systems, private AI assistants, agentic automation, IoT and edge AI, custom machine learning, web and mobile products, and research and prototyping. The exact technical approach is shaped around the client’s workflow, data, environment and integration requirements."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DOES TRUEFOX AI BUILD CUSTOM AI AND MACHINE-LEARNING SYSTEMS?",
+        text: "Yes. Truefox AI develops custom AI and machine-learning systems around a defined operational problem and the data that is genuinely available. Work can include data engineering, predictive analytics, computer vision, natural-language processing, model integration, deployment and MLOps."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN TRUEFOX AI DEVELOP PRIVATE AI ASSISTANTS AND AI AGENTS?",
+        text: "Yes. Truefox AI builds private assistants grounded in approved company knowledge and governed AI agents that can use permitted tools within defined workflows. Access control, validation, human approval and auditability are designed according to the sensitivity and consequences of each use case."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW CAN A COMPANY DISCUSS AN AI PROJECT WITH TRUEFOX AI?",
+        text: "Use the project enquiry form to describe the workflow, current challenge, operating environment and desired outcome. A short overview is enough to begin; the team can then identify whether discovery, a proof of concept, a demonstration or a scoped development engagement is the most practical next step."
+      }
+    ],
+    cta: { label: "Discuss an AI project", href: "/request-quote" }
   },
   products: {
     slug: "products",
@@ -1161,6 +1312,7 @@ export const pages: Record<string, PageData> = {
   services: {
     slug: "services",
     navLabel: "Services",
+    seoTitle: "AI Development Services",
     eyebrow: "SERVICES",
     title: "FROM COMPLEX NEED TO WORKING SYSTEM.",
     description: "Strategy, product and engineering services for secure, maintainable systems.",
@@ -1192,8 +1344,8 @@ export const pages: Record<string, PageData> = {
     intro: "Tell us about the workflow, operational challenge or product idea you’re exploring. We’ll help turn the context into a clear and practical next step.",
     kind: "contact",
     sections: [
-      { title: "CANADA", text: "Kitchener, Ontario\nHeadquarters, client strategy and delivery leadership." },
-      { title: "INDIA", text: "Kochi, Kerala\nAI engineering, software development and technical support." },
+      { title: "CANADA", text: "Suite 300 · 72 Victoria Street South · Kitchener, Ontario N2G 4Y9 · Canada\nHeadquarters, client strategy and delivery leadership." },
+      { title: "INDIA", text: "Olangattu Tower · Chittethukara · Kakkanad · Kochi, Kerala 682037 · India\nAI engineering, software development and technical support." },
       { title: "INTERNATIONAL", text: "Remote discovery, delivery and ongoing support for clients across regions." }
     ]
   },

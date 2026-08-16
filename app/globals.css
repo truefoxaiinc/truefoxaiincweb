@@ -6772,6 +6772,13 @@ body::before {
   text-underline-offset: 4px
 }
 
+.location-related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px
+}
+
 @media(max-width:600px) {
   .section.company-details-section {
     padding-top: 56px;

@@ -17,12 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!page) return {};
   const canonical = `${site.url}/${slug}`;
   return {
-    title: page.navLabel,
+    title: page.seoTitle || page.navLabel,
     description: page.description,
     alternates: { canonical, languages: { "en-CA": canonical, "x-default": canonical } },
     keywords: [page.navLabel, page.eyebrow, "Truefox AI", "applied AI Canada", "AI engineering India"],
     openGraph: {
-      title: `${page.navLabel} | ${site.name}`,
+      title: `${page.seoTitle || page.navLabel} | ${site.name}`,
       description: page.description,
       url: canonical,
       type: "website",
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: site.name,
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: `${page.navLabel} — Truefox AI` }]
     },
-    twitter: { card: "summary_large_image", title: `${page.navLabel} | ${site.name}`, description: page.description, images: ["/twitter-image"] }
+    twitter: { card: "summary_large_image", title: `${page.seoTitle || page.navLabel} | ${site.name}`, description: page.description, images: ["/twitter-image"] }
   };
 }
 

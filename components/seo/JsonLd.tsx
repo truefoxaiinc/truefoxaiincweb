@@ -166,6 +166,11 @@ export function PageEntityGraph({
   const pageId = `${url}#webpage`;
   const breadcrumbId = `${url}#breadcrumb`;
   const isServicePage = slug === "services" || servicePageSlugs.has(slug);
+  const pageAboutId = slug === "kitchener"
+    ? `${site.url}/#canada-office`
+    : slug === "kochi"
+      ? `${site.url}/#india-office`
+      : `${site.url}/#organization`;
   const visibleFaqs = kind === "faq"
     ? sections
     : sections?.filter((section) => section.eyebrow?.trim().toUpperCase() === "FAQ");
@@ -177,7 +182,7 @@ export function PageEntityGraph({
       name: title,
       description,
       isPartOf: { "@id": `${site.url}/#website` },
-      about: { "@id": `${site.url}/#organization` },
+      about: { "@id": pageAboutId },
       breadcrumb: { "@id": breadcrumbId },
       dateModified: site.lastUpdated,
       inLanguage: "en-CA"

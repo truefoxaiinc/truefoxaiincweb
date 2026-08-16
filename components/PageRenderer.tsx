@@ -206,8 +206,8 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
                 <p>Truefox AI is an AI product and engineering company operating across Canada and India, supporting clients from early discovery through production and continuous improvement.</p>
                 <div className="company-entity"><span>LEGAL ENTITY</span><b>Truefox AI Inc.</b></div>
                 <div className="company-office-grid">
-                  <article><span>CANADA OFFICE</span><address>Suite 300<br />72 Victoria Street South<br />Kitchener, Ontario N2G 4Y9<br />Canada</address></article>
-                  <article><span>INDIA OFFICE</span><address>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</address></article>
+                  <article><span>CANADA OFFICE</span><address>Suite 300<br />72 Victoria Street South<br />Kitchener, Ontario N2G 4Y9<br />Canada</address><Link href="/kitchener">Explore our Kitchener headquarters<ArrowUpRight /></Link></article>
+                  <article><span>INDIA OFFICE</span><address>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</address><Link href="/kochi">Meet our Kochi engineering team<ArrowUpRight /></Link></article>
                 </div>
                 <div className="company-detail-footer">
                   <div><span>DELIVERY</span><b>Canada · India · International</b></div>
@@ -233,11 +233,12 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
                 <h2>{page.kind === "contact" ? "A CLEAR CHALLENGE IS ENOUGH TO BEGIN." : page.slug === "request-quote" ? <>WHAT SHOULD WE<br />UNDERSTAND?</> : page.slug === "book-demo" ? <>HELP US MAKE THE<br />CONVERSATION USEFUL.</> : "Help us prepare a useful response."}</h2>
                 <p>{page.kind === "contact" ? "Whether you’re exploring an idea, improving an existing system or looking for specialist support, tell us what you’re working through. We’ll help identify the most practical next step." : page.slug === "request-quote" ? "A short overview is enough. Tell us what needs to work better, why it matters and what a successful outcome would look like." : page.slug === "book-demo" ? "Choose the type of session you need and the capability you’re interested in. Add a little context about your workflow or environment, and we’ll tailor the conversation accordingly." : page.description}</p>
                 <ContentSections page={page} />
+                {page.slug === "contact" && <><Link className="button button-secondary" href="/kitchener">Explore our Kitchener headquarters<ArrowUpRight /></Link><Link className="button button-secondary" href="/kochi">Explore our Kochi engineering office<ArrowUpRight /></Link></>}
               </Reveal>
               <Reveal delay={0.1}><LeadForm intent={formIntent} /></Reveal>
             </div>
           ) : (
-            <>{page.slug === "careers" ? <ManagedCareers jobs={managed?.jobs ?? []} /> : page.slug === "blog" ? <ManagedBlog posts={managed?.posts ?? []} /> : <>{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} /><ContentSections page={page} /></>}</>
+            <>{page.slug === "careers" ? <ManagedCareers jobs={managed?.jobs ?? []} /> : page.slug === "blog" ? <ManagedBlog posts={managed?.posts ?? []} /> : <>{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} /><ContentSections page={page} />{(page.slug === "kitchener" || page.slug === "kochi") && <Reveal><nav className="location-related-links" aria-label="Related company pages"><Link className="button button-ghost" href="/services">Explore AI services<ArrowUpRight /></Link><Link className="button button-ghost" href="/about">About Truefox AI<ArrowUpRight /></Link><Link className="button button-ghost" href="/contact">Contact our team<ArrowUpRight /></Link></nav></Reveal>}</>}</>
           )}
         </div>
       </section>}

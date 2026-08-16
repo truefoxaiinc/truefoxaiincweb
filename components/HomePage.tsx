@@ -148,7 +148,7 @@ export default function HomePage() {
       <section className="global-cinematic">
         <div className="global-lines" aria-hidden="true" />
         <div className="shell global-stage">
-          <Reveal className="global-copy"><span className="eyebrow">06 / GLOBAL DELIVERY</span><h2>Close to the challenge.<br />Connected through the build.<br /><em>Committed beyond launch.</em></h2><p>Our teams across Canada and India bring strategy, design and engineering into one continuous partnership—turning early questions into dependable products that keep improving in the real world.</p><Link href="/contact" className="button button-primary">Connect with our team<ArrowUpRight /></Link></Reveal>
+          <Reveal className="global-copy"><span className="eyebrow">06 / GLOBAL DELIVERY</span><h2>Close to the challenge.<br />Connected through the build.<br /><em>Committed beyond launch.</em></h2><p>Our teams across Canada and India bring strategy, design and engineering into one continuous partnership—turning early questions into dependable products that keep improving in the real world.</p><Link href="/contact" className="button button-primary">Connect with our team<ArrowUpRight /></Link><Link href="/kitchener" className="text-link">Explore our Kitchener headquarters<ArrowUpRight /></Link></Reveal>
           <Reveal className="world-interface" delay={0.12}>
             <div className="world-ring ring-1" /><div className="world-ring ring-2" /><div className="world-ring ring-3" />
             <div className="world-core"><b>ONE TEAM</b><span>END-TO-END<br />DELIVERY</span></div>
