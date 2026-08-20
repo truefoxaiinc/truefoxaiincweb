@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: title.includes("|") ? { absolute: title } : title,
     description: page.description,
     alternates: { canonical, languages: { "en-CA": canonical, "x-default": canonical } },
-    keywords: page.seoKeywords || [page.navLabel, page.eyebrow, "Truefox AI"],
     openGraph: {
       title: socialTitle,
       description: page.description,

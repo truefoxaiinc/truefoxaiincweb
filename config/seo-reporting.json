@@ -12,13 +12,14 @@
     "positionEightToTwenty": [8, 20],
     "positionTwentyToFifty": [20, 50]
   },
-  "currentPages": ["/", "/services", "/kitchener", "/kochi", "/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development", "/products", "/attention-minder", "/case-studies", "/contact", "/request-quote", "/book-demo"],
+  "currentPages": ["/", "/services", "/kitchener", "/kochi", "/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development", "/products", "/attention-minder", "/case-studies", "/about", "/contact", "/request-quote", "/book-demo"],
   "servicePages": ["/services", "/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development"],
   "legacyPaths": ["/about-us/", "/contact-us/", "/author/"],
   "ownership": [
     { "name": "enterprise AI engineering company", "pattern": "enterprise.*ai.*engineering|ai.*engineering.*company", "page": "/" },
     { "name": "AI development services", "pattern": "ai.*development.*service|artificial intelligence.*development", "page": "/services" },
     { "name": "Kitchener local intent", "pattern": "kitchener|kitchener.waterloo|waterloo", "page": "/kitchener" },
+    { "name": "Kochi local intent", "pattern": "kochi|ai.*company.*kerala|ai.*development.*kerala", "page": "/kochi" },
     { "name": "AI video analytics", "pattern": "video analytics|smart security|computer vision.*security", "page": "/ai-smart-security" },
     { "name": "biometric AI", "pattern": "biometric", "page": "/biometric-intelligence" },
     { "name": "private enterprise AI / RAG", "pattern": "private ai|enterprise rag|rag assistant", "page": "/private-ai-assistants" },

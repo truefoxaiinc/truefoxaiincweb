@@ -3,7 +3,7 @@ const canonicalUrl = "https://www.truefoxaiinc.com/kochi";
 const organizationId = "https://www.truefoxaiinc.com/#organization";
 const websiteId = "https://www.truefoxaiinc.com/#website";
 const indiaOfficeId = "https://www.truefoxaiinc.com/#india-office";
-const expectedTitle = "AI Engineering in Kochi | Truefox AI Inc.";
+const expectedTitle = "AI Development Company in Kochi | Truefox AI";
 const expectedH1 = "AI Engineering &amp; Development in Kochi";
 const forbidden = [
   "truefoxaiinc@gmail.com",

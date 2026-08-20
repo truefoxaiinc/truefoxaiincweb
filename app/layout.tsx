@@ -5,31 +5,25 @@ import { GlobalEntityGraph } from "@/components/seo/JsonLd";
 import { site } from "@/data/site";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
+const homeTitle = "Enterprise AI Engineering Company | Truefox AI Inc.";
+const homeDescription = "Truefox AI is a Canada-headquartered enterprise AI engineering company building computer vision, private AI, agents, biometrics, edge systems and product engineering.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Enterprise AI Engineering Company | Truefox AI Inc.",
-    template: "%s | Truefox AI Inc."
+    default: homeTitle,
+    template: "%s | Truefox AI"
   },
-  description: "Truefox AI is a Canada-headquartered AI engineering company building computer vision, private AI, governed agents, biometrics, edge systems and digital products.",
+  description: homeDescription,
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
   publisher: site.name,
   category: "Artificial intelligence",
-  keywords: [
-    "enterprise AI engineering company",
-    "Canada-headquartered AI engineering",
-    "computer vision",
-    "private AI",
-    "AI agents",
-    "edge AI",
-    "biometrics"
-  ],
   alternates: { canonical: "/", languages: { "en-CA": "/", "x-default": "/" } },
   openGraph: {
-    title: site.name,
-    description: site.description,
+    title: homeTitle,
+    description: homeDescription,
     type: "website",
     locale: "en_CA",
     url: site.url,
@@ -38,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
-    description: site.description,
+    title: homeTitle,
+    description: homeDescription,
     images: ["/twitter-image"]
   },
   icons: { icon: "/images/truefox-logo.webp", apple: "/images/truefox-logo.webp" },

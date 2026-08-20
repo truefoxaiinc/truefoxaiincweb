@@ -5,7 +5,7 @@ const organizationId = `${rootUrl}/#organization`;
 const websiteId = `${rootUrl}/#website`;
 const canadaOfficeId = `${rootUrl}/#canada-office`;
 const expectedTitle = "AI Engineering Company in Kitchener | Truefox AI";
-const expectedDescription = "Truefox AI provides custom AI engineering from Kitchener, Ontario, including computer vision, private AI, automation, edge systems and product development.";
+const expectedDescription = "Truefox AI builds custom AI solutions from Kitchener, Ontario, including computer vision, private AI, agentic automation, edge systems and AI product engineering for Canadian organizations.";
 const expectedH1 = "AI Engineering &amp; Development in Kitchener";
 const forbidden = [
   "truefoxaiinc@gmail.com",

@@ -164,9 +164,10 @@ export const pages: Record<string, PageData> = {
   about: {
     slug: "about",
     navLabel: "About Us",
+    seoTitle: "About Truefox AI | AI Engineering in Canada",
     eyebrow: "COMPANY",
     title: "We build intelligence that earns its place.",
-    description: "Learn about Truefox AI, our Canada–India delivery model and our approach to production-grade AI.",
+    description: "Meet Truefox AI, a Canada-headquartered AI engineering company with an integrated Kochi delivery team building practical, production-ready AI systems.",
     intro:
       "Truefox AI brings strategy, product thinking and deep engineering together to create systems people can trust and organisations can put to work—from computer vision and intelligent agents to connected platforms and digital products.",
     kind: "standard",
@@ -205,7 +206,7 @@ export const pages: Record<string, PageData> = {
     seoKeywords: ["AI company Kitchener", "AI engineering Kitchener", "AI development Kitchener", "AI solutions Kitchener", "AI company Kitchener-Waterloo"],
     eyebrow: "CANADIAN HEADQUARTERS",
     title: "AI Engineering & Development in Kitchener",
-    description: "Truefox AI provides custom AI engineering from Kitchener, Ontario, including computer vision, private AI, automation, edge systems and product development.",
+    description: "Truefox AI builds custom AI solutions from Kitchener, Ontario, including computer vision, private AI, agentic automation, edge systems and AI product engineering for Canadian organizations.",
     intro: "Truefox AI Inc. is a Canada-headquartered AI engineering company with its Canadian office in Kitchener, Ontario. The team connects client strategy and commercial engagement with AI, software and product delivery supported by the company’s engineering presence in Kochi, India.",
     kind: "standard",
     stats: [
@@ -281,9 +282,11 @@ export const pages: Record<string, PageData> = {
   kochi: {
     slug: "kochi",
     navLabel: "AI Engineering in Kochi",
+    seoTitle: "AI Development Company in Kochi | Truefox AI",
+    seoKeywords: ["AI company Kochi", "AI development company Kochi", "AI engineering Kochi", "AI development Kerala"],
     eyebrow: "INDIA ENGINEERING OFFICE",
     title: "AI Engineering & Development in Kochi",
-    description: "Truefox AI’s Kochi engineering team develops custom AI, computer vision, private assistants, automation, edge systems and digital products.",
+    description: "Truefox AI’s Kochi engineering team supports AI development, computer vision, private AI, automation, edge systems and product engineering for Canadian and international clients.",
     intro: "Truefox AI Inc. is an applied AI and product engineering company with an engineering presence in Kakkanad, Kochi, supporting AI research, software development and technical delivery across the company’s capability areas.",
     kind: "standard",
     stats: [
@@ -349,9 +352,10 @@ export const pages: Record<string, PageData> = {
   products: {
     slug: "products",
     navLabel: "Products",
+    seoTitle: "AI Products for Security, Identity & Operations | Truefox AI",
     eyebrow: "PRODUCTS",
-    title: "INTELLIGENCE THAT ADAPTS TO THE OPERATION.",
-    description: "Truefox AI products for identity, security and operational decision-making.",
+    title: "AI products for security, identity and operational intelligence.",
+    description: "Explore Truefox AI products for AI video analytics, biometric intelligence, private assistants, agentic automation and connected edge systems.",
     intro:
       "Our products support identity, security and operational decision-making—configured around the environment, connected to existing systems and deployed wherever the work demands: cloud, on-premise, edge or hybrid.",
     kind: "products",
@@ -950,8 +954,9 @@ export const pages: Record<string, PageData> = {
   },
   "attention-minder": {
     slug: "attention-minder", navLabel: "Attention Minder", eyebrow: "PRODUCT · ATTENTION",
-    title: "Build healthier focus habits with meaningful feedback.",
-    description: "Attention Minder supports attention awareness, guided practice and engagement analysis.",
+    seoTitle: "Attention Minder | Educational Focus Support | Truefox AI",
+    title: "Attention Minder helps people build healthier focus habits.",
+    description: "See how Attention Minder supports focus awareness through guided practice, progress tracking and privacy-conscious analysis in supervised educational settings.",
     intro: "Attention Minder helps people understand their attention, build healthier focus habits and follow progress through guided assessments, personalised training and practical activities.",
     kind: "products",
     sections: [
@@ -1363,9 +1368,10 @@ export const pages: Record<string, PageData> = {
   contact: {
     slug: "contact",
     navLabel: "Contact Us",
+    seoTitle: "Contact Truefox AI in Canada | AI Project Enquiries",
     eyebrow: "CONTACT",
     title: "WHAT SHOULD WORK BETTER?",
-    description: "Contact Truefox AI for AI consulting, product development, demonstrations, support and partnerships.",
+    description: "Contact Truefox AI in Kitchener, Canada, to discuss AI consulting, product development, demonstrations, support, partnerships or a specific project.",
     intro: "Tell us about the workflow, operational challenge or product idea you’re exploring. We’ll help turn the context into a clear and practical next step.",
     kind: "contact",
     sections: [
@@ -1499,9 +1505,10 @@ export const pages: Record<string, PageData> = {
   "case-studies": {
     slug: "case-studies",
     navLabel: "Case Studies",
+    seoTitle: "AI Engineering Case Studies | Truefox AI",
     eyebrow: "SELECTED WORK",
     title: "SYSTEMS SHAPED BY THE WORK THEY NEED TO DO.",
-    description: "Selected Truefox AI engagements across intelligent operations, automation, computer vision and digital product engineering.",
+    description: "Explore selected Truefox AI case studies across computer vision, workflow automation and digital product engineering, designed around real operations.",
     intro: "Explore selected engagements across intelligent operations, automation, computer vision and digital product engineering—each designed around the people, processes and environments it serves.",
     kind: "proof",
     cards: [
@@ -1556,9 +1563,10 @@ export const pages: Record<string, PageData> = {
   "request-quote": {
     slug: "request-quote",
     navLabel: "Request a Quote",
+    seoTitle: "Request an AI Development Quote | Truefox AI",
     eyebrow: "REQUEST A PROPOSAL",
     title: "START WITH THE PROBLEM—NOT A FINISHED SPECIFICATION.",
-    description: "Request a scoped proposal from Truefox AI.",
+    description: "Tell Truefox AI about your workflow, product idea or technical constraints to receive a scoped AI development proposal built around your requirements.",
     intro: "Share the challenge, the people it affects and any constraints we should understand. We’ll help clarify the requirements before recommending an approach, scope and commercial proposal.",
     kind: "form",
     sections: [
@@ -1568,9 +1576,10 @@ export const pages: Record<string, PageData> = {
   "book-demo": {
     slug: "book-demo",
     navLabel: "Book a Demo",
+    seoTitle: "Book an AI Product Demo | Truefox AI",
     eyebrow: "PRODUCT DEMO",
     title: "SEE THE PRODUCT IN THE CONTEXT THAT MATTERS.",
-    description: "Book a tailored Truefox AI product demonstration.",
+    description: "Book a tailored Truefox AI product demo for video analytics, biometrics, private AI, agentic automation or Edge AI, shaped around your workflow.",
     intro: "Tell us which capability you’re exploring, how the workflow operates today and where the system would need to run. We’ll tailor the session around your questions, environment and requirements—not a generic feature walkthrough.",
     kind: "form",
     sections: [
