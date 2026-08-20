@@ -2,8 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import Chatbot from "@/components/Chatbot";
-import CursorGlow from "@/components/CursorGlow";
+import DeferredExperience from "@/components/DeferredExperience";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PerformanceObserver from "@/components/PerformanceObserver";
@@ -18,12 +17,11 @@ export default function SiteChrome({ children }: { children: ReactNode }) {
   return (
     <>
       <div className="noise-layer" aria-hidden="true" />
-      <CursorGlow />
+      <DeferredExperience />
       <Header />
       {children}
       <Footer />
       <WhatsApp />
-      <Chatbot />
       <AnalyticsInteractions />
       <PerformanceObserver />
     </>

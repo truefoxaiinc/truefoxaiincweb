@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "@/components/Icons";
 
 const benefits = [
@@ -46,6 +47,7 @@ export default function AttentionMinderLaunch() {
             <a className="button button-primary" href="https://play.google.com/store/apps/details?id=com.trufox.attentionminder" target="_blank" rel="noreferrer">
               VIEW ON GOOGLE PLAY <ArrowUpRight />
             </a>
+            <Link className="button button-ghost" href="/attention-minder">EXPLORE ATTENTION MINDER <ArrowUpRight /></Link>
             <span>GUIDED · PERSONALISED · PROGRESS-FOCUSED</span>
           </div>
 

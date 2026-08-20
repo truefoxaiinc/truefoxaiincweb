@@ -28,6 +28,13 @@ function CardGrid({ page }: { page: PageData }) {
             <h3>{card.title}</h3>
             <p>{card.text}</p>
             {card.meta && <small>{card.meta}</small>}
+            {page.slug === "case-studies" && card.caseStudy && <div className="case-study-detail">
+              {card.caseStudy.challenge && <p><b>Challenge:</b> {card.caseStudy.challenge}</p>}
+              {card.caseStudy.approach && <p><b>Approach:</b> {card.caseStudy.approach}</p>}
+              {card.caseStudy.technology?.length && <p><b>Technology:</b> {card.caseStudy.technology.join(" · ")}</p>}
+              {card.caseStudy.verifiedOutcomes?.length && <ul>{card.caseStudy.verifiedOutcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}</ul>}
+              {card.caseStudy.relatedServices?.length && <nav aria-label={`Related services for ${card.title}`}>{card.caseStudy.relatedServices.map((service) => <Link key={service.href} href={service.href}>{service.label}<ArrowUpRight /></Link>)}</nav>}
+            </div>}
             {card.href && (card.href.endsWith(".pdf")
               ? <a href={card.href} target="_blank" rel="noreferrer">Open resource<ArrowUpRight /></a>
               : <Link href={card.href}>{page.slug === "products" ? "Explore Product" : "Learn more"}<ArrowUpRight /></Link>)}

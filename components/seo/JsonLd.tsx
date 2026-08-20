@@ -1,5 +1,6 @@
 import { site } from "@/data/site";
 import type { Card, PageData } from "@/data/site";
+import type { BlogPost } from "@/lib/cms";
 
 type JsonValue = Record<string, unknown> | Record<string, unknown>[];
 
@@ -27,6 +28,27 @@ function safeJson(data: JsonValue) {
 
 export function JsonLd({ data }: { data: JsonValue }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(data) }} />;
+}
+
+export function BlogPostingEntityGraph({ post }: { post: BlogPost }) {
+  const url = `${site.url}/blog/${post.slug}`;
+  return <JsonLd data={{
+    "@context": "https://schema.org",
+    "@graph": [{
+      "@type": "BlogPosting",
+      "@id": `${url}#article`,
+      headline: post.title,
+      description: post.excerpt,
+      url,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      datePublished: post.publishedAt,
+      dateModified: post.updatedAt,
+      author: { "@type": "Organization", name: post.author },
+      publisher: { "@id": `${site.url}/#organization` },
+      articleSection: post.category,
+      inLanguage: "en-CA"
+    }]
+  }} />;
 }
 
 export function GlobalEntityGraph() {

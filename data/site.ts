@@ -4,6 +4,17 @@ export type Card = {
   text: string;
   meta?: string;
   href?: string;
+  caseStudy?: {
+    clientContext?: string;
+    challenge?: string;
+    approach?: string;
+    architecture?: string;
+    implementation?: string;
+    constraints?: string;
+    technology?: string[];
+    verifiedOutcomes?: string[];
+    relatedServices?: { label: string; href: string }[];
+  };
 };
 
 export type PageData = {
@@ -1512,9 +1523,9 @@ export const pages: Record<string, PageData> = {
     intro: "Explore selected engagements across intelligent operations, automation, computer vision and digital product engineering—each designed around the people, processes and environments it serves.",
     kind: "proof",
     cards: [
-      { eyebrow: "FOOD MANUFACTURING · ONTARIO", title: "REAL-TIME QUALITY INTELLIGENCE", text: "A conveyor-side computer vision system designed to identify visible product defects and help operators investigate issues sooner.", meta: "COMPUTER VISION · EDGE PROCESSING · OPERATOR WORKFLOW" },
-      { eyebrow: "INDUSTRIAL AUTOMATION · SAUDI ARABIA", title: "CONNECTED PROCESS CONTROL", text: "A custom filling and control system designed around the production requirements, equipment and operating workflow of a water manufacturer.", meta: "AUTOMATION · CONTROL SYSTEMS · OPERATIONAL INTEGRATION" },
-      { eyebrow: "HOSPITALITY · ONTARIO", title: "WORKFORCE IDENTITY & ATTENDANCE", text: "A biometric sign-in and attendance system designed to make everyday employee access and workforce records easier to manage.", meta: "BIOMETRICS · ATTENDANCE · WORKFLOW INTEGRATION" }
+      { eyebrow: "FOOD MANUFACTURING · ONTARIO", title: "REAL-TIME QUALITY INTELLIGENCE", text: "A conveyor-side computer vision system designed to identify visible product defects and help operators investigate issues sooner.", meta: "COMPUTER VISION · EDGE PROCESSING · OPERATOR WORKFLOW", caseStudy: { relatedServices: [{ label: "Explore AI smart security", href: "/ai-smart-security" }] } },
+      { eyebrow: "INDUSTRIAL AUTOMATION · SAUDI ARABIA", title: "CONNECTED PROCESS CONTROL", text: "A custom filling and control system designed around the production requirements, equipment and operating workflow of a water manufacturer.", meta: "AUTOMATION · CONTROL SYSTEMS · OPERATIONAL INTEGRATION", caseStudy: { relatedServices: [{ label: "Explore IoT and edge AI", href: "/iot-edge-ai" }] } },
+      { eyebrow: "HOSPITALITY · ONTARIO", title: "WORKFORCE IDENTITY & ATTENDANCE", text: "A biometric sign-in and attendance system designed to make everyday employee access and workforce records easier to manage.", meta: "BIOMETRICS · ATTENDANCE · WORKFLOW INTEGRATION", caseStudy: { relatedServices: [{ label: "Explore biometric intelligence", href: "/biometric-intelligence" }] } }
     ],
     sections: [
       { eyebrow: "HOW WE DOCUMENT OUTCOMES", title: "THE FULL STORY—NOT JUST THE TECHNOLOGY.", text: "Our case studies follow the work from operating context and constraints through architecture, implementation and adoption. Results are included only when they can be verified and approved." }
