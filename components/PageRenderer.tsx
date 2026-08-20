@@ -232,7 +232,7 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
         </section>
       )}
 
-      {page.slug !== "blog" && <section className={`section page-content${page.slug === "request-quote" ? " request-quote-content" : page.slug === "about" ? " about-content" : page.slug === "why-choose-us" ? " why-choose-us-content" : page.slug === "careers" ? " careers-content" : page.slug === "products" ? " products-content" : page.slug === "services" ? " services-content" : page.slug === "book-demo" ? " book-demo-content" : page.slug === "clients-partners" ? " partnerships-content" : page.slug === "case-studies" ? " case-studies-content" : page.slug === "faq" ? " faq-content" : page.slug === "support" ? " support-content" : page.slug === "contact" ? " contact-content" : page.slug === "privacy-policy" ? " privacy-policy-content" : page.slug === "terms-and-conditions" ? " terms-content" : page.slug === "team" ? " team-content" : ""}`}>
+      <section className={`section page-content${page.slug === "request-quote" ? " request-quote-content" : page.slug === "about" ? " about-content" : page.slug === "why-choose-us" ? " why-choose-us-content" : page.slug === "careers" ? " careers-content" : page.slug === "products" ? " products-content" : page.slug === "services" ? " services-content" : page.slug === "book-demo" ? " book-demo-content" : page.slug === "clients-partners" ? " partnerships-content" : page.slug === "case-studies" ? " case-studies-content" : page.slug === "faq" ? " faq-content" : page.slug === "support" ? " support-content" : page.slug === "contact" ? " contact-content" : page.slug === "privacy-policy" ? " privacy-policy-content" : page.slug === "terms-and-conditions" ? " terms-content" : page.slug === "team" ? " team-content" : ""}`}>
         <div className="shell">
           {(page.kind === "contact" || page.kind === "form") ? (
             <div className="form-layout">
@@ -249,7 +249,7 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
             <>{page.slug === "careers" ? <ManagedCareers jobs={managed?.jobs ?? []} /> : page.slug === "blog" ? <ManagedBlog posts={managed?.posts ?? []} /> : <>{page.slug === "clients-partners" && <Reveal className="partnerships-section-heading"><span className="eyebrow">SELECTED ENGAGEMENTS</span></Reveal>}<CardGrid page={page} /><ContentSections page={page} />{(page.slug === "kitchener" || page.slug === "kochi") && <Reveal><nav className="location-related-links" aria-label="Related company pages"><Link className="button button-ghost" href="/services">Explore AI development services<ArrowUpRight /></Link><Link className="button button-ghost" href="/about">About Truefox AI<ArrowUpRight /></Link><Link className="button button-ghost" href="/contact">Contact our team<ArrowUpRight /></Link></nav></Reveal>}{capabilitySlugs.has(page.slug) && <Reveal><CapabilityRelatedLinks slug={page.slug} /></Reveal>}</>}</>
           )}
         </div>
-      </section>}
+      </section>
 
       {page.slug === "team" && <TeamVoices />}
       {page.slug === "blog" && <AttentionMinderLaunch />}

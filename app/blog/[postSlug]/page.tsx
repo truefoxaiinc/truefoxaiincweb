@@ -39,6 +39,7 @@ export default async function BlogPostPage({ params }: Props) {
       <p className="blog-post-dek">{post.excerpt}</p>
       <div className="blog-post-meta"><span>{post.author}</span><time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString("en-CA", { dateStyle: "long" })}</time><span>{post.readTime}</span></div>
       <div className="blog-post-copy">{post.content.split("\n").filter(Boolean).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+      {post.relatedLinks?.length ? <nav className="blog-post-related" aria-label="Related services">{post.relatedLinks.map((link) => <Link className="button button-ghost" href={link.href} key={link.href}>{link.label}<ArrowUpRight /></Link>)}</nav> : null}
       <Link className="button button-ghost" href="/blog">More perspectives<ArrowUpRight /></Link>
     </article>
   </main>;

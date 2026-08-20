@@ -1,13 +1,17 @@
 import { apiUrl } from "@/lib/api";
 import type { BlogPost, CmsData } from "@/lib/cms";
+import localCms from "@/data/cms.json";
 
 export async function getCmsData(): Promise<CmsData | undefined> {
   try {
     const response = await fetch(apiUrl("/api/v1/content"), { next: { revalidate: 60 } });
-    return response.ok ? await response.json() as CmsData : undefined;
-  } catch {
-    return undefined;
-  }
+    if (response.ok) {
+      const remote = await response.json() as CmsData;
+      const localPosts = localCms.posts as BlogPost[];
+      return { ...remote, posts: [...remote.posts, ...localPosts.filter((post) => !remote.posts.some((remotePost) => remotePost.id === post.id))] };
+    }
+  } catch { /* Fall back to the checked-in published content below. */ }
+  return localCms as CmsData;
 }
 
 export function publishedBlogPosts(data: Pick<CmsData, "posts"> | undefined): BlogPost[] {
