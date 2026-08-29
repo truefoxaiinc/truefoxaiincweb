@@ -72,7 +72,7 @@ export default function HomePage() {
               THAT EARNS ITS PLACE
               IN THE REAL WORLD.</h2>
             <div className="manifesto-bottom">
-              <p>Truefox AI is a Canada-headquartered AI engineering company bringing strategy, design and engineering together to create intelligent products for real operational needs. From computer vision and private AI to governed agents, connected systems and digital products, we build technology people can trust, teams can use and organisations can improve. Explore our <Link href="/services">AI development services</Link>.</p>
+              <p>Truefox AI is an AI engineering company with a Home Office in Canada and a Branch in India, bringing strategy, design and engineering together to create intelligent products for real operational needs. From computer vision and private AI to governed agents, connected systems and digital products, we build technology people can trust, teams can use and organisations can improve. Explore our <Link href="/services">AI development services</Link>.</p>
             </div>
           </Reveal>
         </div>
@@ -148,7 +148,7 @@ export default function HomePage() {
       <section className="global-cinematic">
         <div className="global-lines" aria-hidden="true" />
         <div className="shell global-stage">
-          <Reveal className="global-copy"><span className="eyebrow">06 / GLOBAL DELIVERY</span><h2>Close to the challenge.<br />Connected through the build.<br /><em>Committed beyond launch.</em></h2><p>Our teams across Canada and India bring strategy, design and engineering into one continuous partnership—turning early questions into dependable products that keep improving in the real world.</p><Link href="/contact" className="button button-primary">Connect with our team<ArrowUpRight /></Link><Link href="/kitchener" className="text-link">Explore our Kitchener headquarters<ArrowUpRight /></Link></Reveal>
+              <Reveal className="global-copy"><span className="eyebrow">06 / GLOBAL DELIVERY</span><h2>Close to the challenge.<br />Connected through the build.<br /><em>Committed beyond launch.</em></h2><p>Our teams across Canada and India bring strategy, design and engineering into one continuous partnership—turning early questions into dependable products that keep improving in the real world.</p><Link href="/contact" className="button button-primary">Connect with our team<ArrowUpRight /></Link><Link href="/kitchener" className="text-link">Explore our Kitchener Home Office<ArrowUpRight /></Link></Reveal>
           <Reveal className="world-interface" delay={0.12}>
             <div className="world-ring ring-1" /><div className="world-ring ring-2" /><div className="world-ring ring-3" />
             <div className="world-core"><b>ONE TEAM</b><span>END-TO-END<br />DELIVERY</span></div>

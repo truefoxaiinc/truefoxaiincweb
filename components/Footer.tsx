@@ -64,11 +64,11 @@ export default function Footer() {
           <div className="footer-office-list">
             <address className="footer-contact-line">
               <PinIcon />
-              <span><strong>Canada office</strong>{site.address.street}<br />{site.address.city}, {site.address.region} {site.address.postalCode}<br />Canada</span>
+              <span><strong>Home Office · Canada</strong>{site.address.street}<br />{site.address.city}, {site.address.region} {site.address.postalCode}<br />Canada</span>
             </address>
             <address className="footer-contact-line">
               <PinIcon />
-              <span><strong>India office</strong>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</span>
+              <span><strong>Branch · India</strong>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</span>
             </address>
           </div>
           <div className="social-block">

@@ -103,7 +103,7 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
               <>
                 <div><span>ABOUT TRUEFOX AI</span><b>08</b></div>
                 <p>ENGINEERING INTELLIGENCE<br />FROM FIRST QUESTION<br />TO PRODUCTION.</p>
-                <ul><li>CANADA · HEADQUARTERS &amp; PARTNERSHIP</li><li>INDIA · PRODUCT &amp; ENGINEERING</li><li>WORLDWIDE · CLIENT ENGAGEMENTS</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>WORLDWIDE · CLIENT ENGAGEMENTS</li></ul>
               </>
             ) : page.slug === "why-choose-us" ? (
               <>
@@ -157,43 +157,43 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
               <>
                 <div><span>PAGE SIGNAL</span></div>
                 <p>Find the right support channel for active projects, Truefox AI products and responsible security reporting.</p>
-                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · SUPPORT</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>INTERNATIONAL · SUPPORT</li></ul>
               </>
             ) : page.slug === "contact" ? (
               <>
                 <div><span>PAGE SIGNAL</span></div>
                 <p>Connect with Truefox AI about AI strategy, product engineering, tailored demonstrations, client support or partnership opportunities.</p>
-                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>INTERNATIONAL · DELIVERY</li></ul>
               </>
             ) : page.slug === "privacy-policy" ? (
               <>
                 <div><span>PAGE SIGNAL</span></div>
                 <p>How Truefox AI Inc. handles personal information collected through its website, contact forms and business enquiries.</p>
-                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>INTERNATIONAL · DELIVERY</li></ul>
               </>
             ) : page.slug === "terms-and-conditions" ? (
               <>
                 <div><span>PAGE SIGNAL</span></div>
                 <p>Terms governing access to and use of the Truefox AI Inc. website, its content and related materials.</p>
-                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>INTERNATIONAL · DELIVERY</li></ul>
               </>
             ) : page.slug === "blog" ? (
               <>
                 <div><span>PAGE SIGNAL</span></div>
                 <p>Articles, project lessons, product updates and technical perspectives from the people building at Truefox AI.</p>
-                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>INTERNATIONAL · DELIVERY</li></ul>
               </>
             ) : page.slug === "team" ? (
               <>
                 <div><span>PAGE SIGNAL</span></div>
                 <p>Meet the people and disciplines behind Truefox AI’s research, product development and client delivery.</p>
-                <ul><li>CANADA · HEADQUARTERS</li><li>INDIA · ENGINEERING</li><li>INTERNATIONAL · DELIVERY</li></ul>
+                <ul><li>HOME OFFICE · CANADA</li><li>BRANCH · INDIA</li><li>INTERNATIONAL · DELIVERY</li></ul>
               </>
             ) : (
               <>
                 <div><span>PAGE SIGNAL</span><b>0{Math.max(1, page.navLabel.length % 9)}</b></div>
                 <p>{page.description}</p>
-                <ul><li>Canada headquarters</li><li>India engineering</li><li>International delivery</li></ul>
+                <ul><li>Home Office · Canada</li><li>Branch · India</li><li>International delivery</li></ul>
               </>
             )}
           </Reveal>
@@ -214,8 +214,8 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
                 <p>Truefox AI is an AI product and engineering company operating across Canada and India, supporting clients from early discovery through production and continuous improvement.</p>
                 <div className="company-entity"><span>LEGAL ENTITY</span><b>Truefox AI Inc.</b></div>
                 <div className="company-office-grid">
-                  <article><span>CANADA OFFICE</span><address>Suite 300<br />72 Victoria Street South<br />Kitchener, Ontario N2G 4Y9<br />Canada</address><Link href="/kitchener">Explore our Kitchener headquarters<ArrowUpRight /></Link></article>
-                  <article><span>INDIA OFFICE</span><address>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</address><Link href="/kochi">Meet our Kochi engineering team<ArrowUpRight /></Link></article>
+                  <article><span>HOME OFFICE · CANADA</span><address>Suite 300<br />72 Victoria Street South<br />Kitchener, Ontario N2G 4Y9<br />Canada</address><Link href="/kitchener">Explore our Kitchener Home Office<ArrowUpRight /></Link></article>
+                  <article><span>BRANCH · INDIA</span><address>Olangattu Tower<br />Chittethukara, Kakkanad<br />Kochi, Kerala 682037<br />India</address><Link href="/kochi">Meet our Kochi Branch team<ArrowUpRight /></Link></article>
                 </div>
                 <div className="company-detail-footer">
                   <div><span>DELIVERY</span><b>Canada · India · International</b></div>
@@ -241,7 +241,7 @@ export default function PageRenderer({ page, managed }: { page: PageData; manage
                 <h2>{page.kind === "contact" ? "A CLEAR CHALLENGE IS ENOUGH TO BEGIN." : page.slug === "request-quote" ? <>WHAT SHOULD WE<br />UNDERSTAND?</> : page.slug === "book-demo" ? <>HELP US MAKE THE<br />CONVERSATION USEFUL.</> : "Help us prepare a useful response."}</h2>
                 <p>{page.kind === "contact" ? "Whether you’re exploring an idea, improving an existing system or looking for specialist support, tell us what you’re working through. We’ll help identify the most practical next step." : page.slug === "request-quote" ? "A short overview is enough. Tell us what needs to work better, why it matters and what a successful outcome would look like." : page.slug === "book-demo" ? "Choose the type of session you need and the capability you’re interested in. Add a little context about your workflow or environment, and we’ll tailor the conversation accordingly." : page.description}</p>
                 <ContentSections page={page} />
-                {page.slug === "contact" && <><Link className="button button-secondary" href="/kitchener">Explore our Kitchener headquarters<ArrowUpRight /></Link><Link className="button button-secondary" href="/kochi">Explore our Kochi engineering office<ArrowUpRight /></Link></>}
+                {page.slug === "contact" && <><Link className="button button-secondary" href="/kitchener">Explore our Kitchener Home Office<ArrowUpRight /></Link><Link className="button button-secondary" href="/kochi">Explore our Kochi Branch<ArrowUpRight /></Link></>}
               </Reveal>
               <Reveal delay={0.1}><LeadForm intent={formIntent} /></Reveal>
             </div>

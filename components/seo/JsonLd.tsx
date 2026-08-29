@@ -104,7 +104,7 @@ export function GlobalEntityGraph() {
       {
         "@type": "Place",
         "@id": canadaOfficeId,
-        name: `${site.name} Canada office`,
+        name: `${site.name} Home Office Canada`,
         address: {
           "@type": "PostalAddress",
           streetAddress: site.address.street,
@@ -117,7 +117,7 @@ export function GlobalEntityGraph() {
       {
         "@type": "Place",
         "@id": indiaOfficeId,
-        name: `${site.name} India office`,
+        name: `${site.name} India Branch`,
         address: {
           "@type": "PostalAddress",
           streetAddress: "Olangattu Tower, Chittethukara, Kakkanad",

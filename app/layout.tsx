@@ -6,7 +6,7 @@ import { site } from "@/data/site";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const homeTitle = "Enterprise AI Engineering Company | Truefox AI Inc.";
-const homeDescription = "Truefox AI is a Canada-headquartered enterprise AI engineering company building computer vision, private AI, agents, biometrics, edge systems and product engineering.";
+const homeDescription = "Truefox AI is an enterprise AI engineering company with a Home Office in Canada and a Branch in India, building computer vision, private AI, agents, biometrics, edge systems and product engineering.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

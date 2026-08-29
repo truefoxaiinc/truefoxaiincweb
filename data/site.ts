@@ -51,7 +51,7 @@ export const site = {
   phoneLabel: "+1 (Canada)",
   lastUpdated: "2026-08-16",
   description:
-    "Canada-headquartered applied AI engineering with an India delivery centre, serving international organizations with computer vision, generative AI, agentic automation, biometrics, IoT and custom software.",
+    "Applied AI engineering with a Home Office in Canada and a Branch in India, serving international organizations with computer vision, generative AI, agentic automation, biometrics, IoT and custom software.",
   address: {
     street: "Suite 300, 72 Victoria Street South",
     city: "Kitchener",
@@ -63,7 +63,7 @@ export const site = {
     {
       country: "Canada",
       city: "Kitchener, Ontario",
-      role: "Headquarters, strategy and client success"
+      role: "Strategy and client success"
     },
     {
       country: "India",
@@ -85,7 +85,7 @@ export const navGroups = [
     label: "Company",
     items: [
       ["About Us", "/about"],
-      ["Kitchener Headquarters", "/kitchener"],
+      ["Kitchener Home Office", "/kitchener"],
       ["Kochi Engineering Office", "/kochi"],
       ["Our Team", "/team"],
       ["Why Choose Us", "/why-choose-us"],
@@ -178,7 +178,7 @@ export const pages: Record<string, PageData> = {
     seoTitle: "About Truefox AI | AI Engineering in Canada",
     eyebrow: "COMPANY",
     title: "We build intelligence that earns its place.",
-    description: "Meet Truefox AI, a Canada-headquartered AI engineering company with an integrated Kochi delivery team building practical, production-ready AI systems.",
+    description: "Meet Truefox AI, an AI engineering company with a Home Office in Canada and a Branch in India, building practical, production-ready systems.",
     intro:
       "Truefox AI brings strategy, product thinking and deep engineering together to create systems people can trust and organisations can put to work—from computer vision and intelligent agents to connected platforms and digital products.",
     kind: "standard",
@@ -191,8 +191,8 @@ export const pages: Record<string, PageData> = {
       { eyebrow: "MISSION", title: "MAKE INTELLIGENCE USEFUL.", text: "We turn ambitious ideas into systems that improve real decisions, workflows and outcomes—not technology that exists for its own sake." },
       { eyebrow: "HOW WE WORK", title: "ONE TEAM, CONNECTED BY THE WORK.", text: "Across Canada and India, strategy, research, design and engineering work together from the first question through production and continuous improvement." },
       { eyebrow: "OUR STANDARD", title: "BUILT BEYOND THE DEMO.", text: "Security, governance, observability, maintainability and user adoption are designed into every system from the beginning—not added after launch." },
-      { eyebrow: "CANADA HEADQUARTERS", title: "OUR KITCHENER PRESENCE.", text: "Learn how Truefox AI’s Canadian headquarters connects client strategy, AI engineering and delivery leadership from Kitchener, Ontario.", href: "/kitchener" },
-      { eyebrow: "INDIA ENGINEERING", title: "OUR KOCHI ENGINEERING PRESENCE.", text: "Learn how the engineering team in Kakkanad supports AI research, product development, software engineering and technical delivery.", href: "/kochi" }
+      { eyebrow: "HOME OFFICE · CANADA", title: "OUR KITCHENER PRESENCE.", text: "Learn how Truefox AI’s Kitchener Home Office connects client strategy, AI engineering and delivery leadership from Kitchener, Ontario.", href: "/kitchener" },
+      { eyebrow: "BRANCH · INDIA", title: "OUR KOCHI ENGINEERING PRESENCE.", text: "Learn how the team at our India Branch in Kakkanad supports AI research, product development, software engineering and technical delivery.", href: "/kochi" }
     ],
     sections: [
       {
@@ -215,10 +215,10 @@ export const pages: Record<string, PageData> = {
     navLabel: "AI Engineering in Kitchener",
     seoTitle: "AI Engineering Company in Kitchener | Truefox AI",
     seoKeywords: ["AI company Kitchener", "AI engineering Kitchener", "AI development Kitchener", "AI solutions Kitchener", "AI company Kitchener-Waterloo"],
-    eyebrow: "CANADIAN HEADQUARTERS",
+    eyebrow: "HOME OFFICE · CANADA",
     title: "AI Engineering & Development in Kitchener",
     description: "Truefox AI builds custom AI solutions from Kitchener, Ontario, including computer vision, private AI, agentic automation, edge systems and AI product engineering for Canadian organizations.",
-    intro: "Truefox AI Inc. is a Canada-headquartered AI engineering company with its Canadian office in Kitchener, Ontario. The team connects client strategy and commercial engagement with AI, software and product delivery supported by the company’s engineering presence in Kochi, India.",
+    intro: "Truefox AI Inc. is an AI engineering company with its Home Office in Kitchener, Ontario and a Branch in Kochi, India. The team connects client strategy and commercial engagement with AI, software and product delivery.",
     kind: "standard",
     stats: [
       { value: "CANADA", label: "Primary commercial presence" },
@@ -238,12 +238,12 @@ export const pages: Record<string, PageData> = {
     sections: [
       {
         eyebrow: "CANADIAN PRESENCE",
-        title: "HEADQUARTERED IN KITCHENER, CONNECTED THROUGH DELIVERY.",
-        text: "Truefox AI’s Kitchener headquarters supports company strategy, client engagement and delivery leadership. Work is coordinated through an integrated Canada–India model, with the Kochi engineering presence contributing AI research, product engineering, software development and technical delivery."
+        title: "KITCHENER HOME OFFICE, CONNECTED THROUGH DELIVERY.",
+        text: "Truefox AI’s Kitchener Home Office supports company strategy, client engagement and delivery leadership. Work is coordinated through an integrated Canada–India model, with the Kochi Branch contributing AI research, product engineering, software development and technical delivery."
       },
       {
         eyebrow: "VERIFIED OFFICE",
-        title: "TRUEFOX AI INC. — CANADIAN HEADQUARTERS",
+        title: "TRUEFOX AI INC. — KITCHENER HOME OFFICE",
         text: "Suite 300 · 72 Victoria Street South · Kitchener, Ontario N2G 4Y9 · Canada"
       },
       {
@@ -260,7 +260,7 @@ export const pages: Record<string, PageData> = {
       {
         eyebrow: "FAQ",
         title: "WHERE IS TRUEFOX AI LOCATED IN CANADA?",
-        text: "Truefox AI Inc. has its Canadian headquarters at Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada. The Kitchener office supports company strategy, client engagement and delivery leadership, working with the company’s engineering presence in Kochi, India."
+        text: "Truefox AI Inc. has its Home Office at Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada. The Kitchener Home Office supports company strategy, client engagement and delivery leadership, working with the company’s Branch in Kochi, India."
       },
       {
         eyebrow: "FAQ",
@@ -295,13 +295,13 @@ export const pages: Record<string, PageData> = {
     navLabel: "AI Engineering in Kochi",
     seoTitle: "AI Development Company in Kochi | Truefox AI",
     seoKeywords: ["AI company Kochi", "AI development company Kochi", "AI engineering Kochi", "AI development Kerala"],
-    eyebrow: "INDIA ENGINEERING OFFICE",
+    eyebrow: "BRANCH · INDIA",
     title: "AI Engineering & Development in Kochi",
     description: "Truefox AI’s Kochi engineering team supports AI development, computer vision, private AI, automation, edge systems and product engineering for Canadian and international clients.",
     intro: "Truefox AI Inc. is an applied AI and product engineering company with an engineering presence in Kakkanad, Kochi, supporting AI research, software development and technical delivery across the company’s capability areas.",
     kind: "standard",
     stats: [
-      { value: "KOCHI", label: "India engineering presence" },
+      { value: "KOCHI", label: "India Branch" },
       { value: "08", label: "Connected capability areas" },
       { value: "ONE", label: "Integrated Canada–India team" }
     ],
@@ -317,13 +317,13 @@ export const pages: Record<string, PageData> = {
     ],
     sections: [
       {
-        eyebrow: "KOCHI ENGINEERING PRESENCE",
+        eyebrow: "INDIA BRANCH",
         title: "A CONNECTED PART OF TRUEFOX AI’S DELIVERY TEAM.",
         text: "The Kochi engineering operation supports AI research, product engineering, software development and technical delivery. It works as part of Truefox AI’s integrated Canada–India model, connecting early discovery and technical validation with production engineering, deployment and ongoing improvement."
       },
       {
         eyebrow: "VERIFIED OFFICE",
-        title: "INDIA ENGINEERING OFFICE",
+        title: "TRUEFOX AI INC. — INDIA BRANCH",
         text: "Olangattu Tower · Chittethukara · Kakkanad · Kochi, Kerala 682037 · India"
       },
       {
@@ -335,7 +335,7 @@ export const pages: Record<string, PageData> = {
       {
         eyebrow: "FAQ",
         title: "WHERE IS TRUEFOX AI LOCATED IN KOCHI?",
-        text: "Truefox AI’s India engineering office is at Olangattu Tower, Chittethukara, Kakkanad, Kochi, Kerala 682037, India. The location supports AI research, product engineering, software development and technical delivery as part of the company’s integrated Canada–India team."
+        text: "Truefox AI’s India Branch is at Olangattu Tower, Chittethukara, Kakkanad, Kochi, Kerala 682037, India. The Branch supports AI research, product engineering, software development and technical delivery as part of the company’s integrated Canada–India team."
       },
       {
         eyebrow: "FAQ",
@@ -1386,7 +1386,7 @@ export const pages: Record<string, PageData> = {
     intro: "Tell us about the workflow, operational challenge or product idea you’re exploring. We’ll help turn the context into a clear and practical next step.",
     kind: "contact",
     sections: [
-      { title: "CANADA", text: "Suite 300 · 72 Victoria Street South · Kitchener, Ontario N2G 4Y9 · Canada\nHeadquarters, client strategy and delivery leadership." },
+      { title: "CANADA", text: "Suite 300 · 72 Victoria Street South · Kitchener, Ontario N2G 4Y9 · Canada\nClient strategy and delivery leadership." },
       { title: "INDIA", text: "Olangattu Tower · Chittethukara · Kakkanad · Kochi, Kerala 682037 · India\nAI engineering, software development and technical support." },
       { title: "INTERNATIONAL", text: "Remote discovery, delivery and ongoing support for clients across regions." }
     ]
