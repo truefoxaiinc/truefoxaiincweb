@@ -86,7 +86,7 @@ export const navGroups = [
     items: [
       ["About Us", "/about"],
       ["Kitchener Home Office", "/kitchener"],
-      ["Kochi Engineering Office", "/kochi"],
+      ["Kochi Branch", "/kochi"],
       ["Our Team", "/team"],
       ["Why Choose Us", "/why-choose-us"],
       ["Careers", "/careers"]
@@ -192,7 +192,7 @@ export const pages: Record<string, PageData> = {
       { eyebrow: "HOW WE WORK", title: "ONE TEAM, CONNECTED BY THE WORK.", text: "Across Canada and India, strategy, research, design and engineering work together from the first question through production and continuous improvement." },
       { eyebrow: "OUR STANDARD", title: "BUILT BEYOND THE DEMO.", text: "Security, governance, observability, maintainability and user adoption are designed into every system from the beginning—not added after launch." },
       { eyebrow: "HOME OFFICE · CANADA", title: "OUR KITCHENER PRESENCE.", text: "Learn how Truefox AI’s Kitchener Home Office connects client strategy, AI engineering and delivery leadership from Kitchener, Ontario.", href: "/kitchener" },
-      { eyebrow: "BRANCH · INDIA", title: "OUR KOCHI ENGINEERING PRESENCE.", text: "Learn how the team at our India Branch in Kakkanad supports AI research, product development, software engineering and technical delivery.", href: "/kochi" }
+      { eyebrow: "BRANCH · INDIA", title: "OUR KOCHI BRANCH.", text: "Learn how the team at our Kochi Branch in Kakkanad supports AI research, product development, software engineering and technical delivery.", href: "/kochi" }
     ],
     sections: [
       {
@@ -297,7 +297,7 @@ export const pages: Record<string, PageData> = {
     seoKeywords: ["AI company Kochi", "AI development company Kochi", "AI engineering Kochi", "AI development Kerala"],
     eyebrow: "BRANCH · INDIA",
     title: "AI Engineering & Development in Kochi",
-    description: "Truefox AI’s Kochi engineering team supports AI development, computer vision, private AI, automation, edge systems and product engineering for Canadian and international clients.",
+    description: "Truefox AI’s Kochi Branch supports AI development, computer vision, private AI, automation, edge systems and product engineering for Canadian and international clients.",
     intro: "Truefox AI Inc. is an applied AI and product engineering company with an engineering presence in Kakkanad, Kochi, supporting AI research, software development and technical delivery across the company’s capability areas.",
     kind: "standard",
     stats: [
@@ -339,8 +339,8 @@ export const pages: Record<string, PageData> = {
       },
       {
         eyebrow: "FAQ",
-        title: "WHAT AI SERVICES DOES THE KOCHI ENGINEERING TEAM PROVIDE?",
-        text: "The Kochi engineering team contributes across computer vision, biometric systems, private AI assistants, agentic automation, IoT and edge AI, custom machine learning, web and mobile products, and research and prototyping. The exact technical approach is shaped around the client’s workflow, data, environment and integration requirements."
+        title: "WHAT AI SERVICES DOES THE KOCHI BRANCH PROVIDE?",
+        text: "The Kochi Branch contributes across computer vision, biometric systems, private AI assistants, agentic automation, IoT and edge AI, custom machine learning, web and mobile products, and research and prototyping. The exact technical approach is shaped around the client’s workflow, data, environment and integration requirements."
       },
       {
         eyebrow: "FAQ",
