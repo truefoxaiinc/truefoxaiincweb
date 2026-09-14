@@ -16,6 +16,12 @@ import ResearchDevelopmentPage from "@/components/ResearchDevelopmentPage";
 import AiSmartSecurityPage from "@/components/AiSmartSecurityPage";
 import CapabilityRelatedLinks, { capabilitySlugs } from "@/components/CapabilityRelatedLinks";
 
+function renderInternalLinks(text: string) {
+  return text.split(/(\[[^\]]+\]\(\/[a-z0-9-/?=&]+\))/i).map((part, index) => {
+    const match = /^\[([^\]]+)\]\((\/[^)]+)\)$/i.exec(part);
+    return match ? <Link href={match[2]} key={`${match[2]}-${index}`}>{match[1]}</Link> : part;
+  });
+}
 
 function CardGrid({ page }: { page: PageData }) {
   if (!page.cards?.length) return null;
@@ -67,7 +73,7 @@ function ContentSections({ page }: { page: PageData }) {
       {page.sections.map((section, index) => (
         <Reveal className="detail-section cinematic-detail" key={section.title} delay={Math.min(index * 0.035, 0.16)}>
           <span>{String(index + 1).padStart(2, "0")}</span>
-          <div>{section.eyebrow ? <div className="detail-title"><span className="detail-eyebrow">{section.eyebrow}</span><h2>{section.title}</h2></div> : <h2>{section.title}</h2>}{section.text && (page.slug === "privacy-policy" && section.title === "CONTACT US" ? <p>For privacy-related questions or requests, contact:<br /><br />Truefox AI Inc.<br /><a href="mailto:info@truefoxaiinc.com">info@truefoxaiinc.com</a></p> : page.slug === "terms-and-conditions" && section.title === "CONTACT US" ? <p>For questions about these terms, contact:<br /><br />Truefox AI Inc.<br /><a href="mailto:info@truefoxaiinc.com">info@truefoxaiinc.com</a></p> : <p>{section.text}</p>)}{section.bullets && <ul>{section.bullets.map(item => <li key={item}>{item}</li>)}</ul>}</div>
+          <div>{section.eyebrow ? <div className="detail-title"><span className="detail-eyebrow">{section.eyebrow}</span><h2>{section.title}</h2></div> : <h2>{section.title}</h2>}{section.text && (page.slug === "privacy-policy" && section.title === "CONTACT US" ? <p>For privacy-related questions or requests, contact:<br /><br />Truefox AI Inc.<br /><a href="mailto:info@truefoxaiinc.com">info@truefoxaiinc.com</a></p> : page.slug === "terms-and-conditions" && section.title === "CONTACT US" ? <p>For questions about these terms, contact:<br /><br />Truefox AI Inc.<br /><a href="mailto:info@truefoxaiinc.com">info@truefoxaiinc.com</a></p> : <p>{renderInternalLinks(section.text)}</p>)}{section.bullets && <ul>{section.bullets.map(item => <li key={item}>{item}</li>)}</ul>}</div>
         </Reveal>
       ))}
     </div>

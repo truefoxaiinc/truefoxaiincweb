@@ -981,10 +981,10 @@ export const pages: Record<string, PageData> = {
   },
   "custom-ai-ml": {
     slug: "custom-ai-ml", navLabel: "Custom AI & ML", eyebrow: "SERVICE · APPLIED AI",
-    seoTitle: "Custom Machine Learning Development | Truefox AI",
+    seoTitle: "Custom Machine Learning Solutions & Development Company | Truefox AI",
     seoKeywords: ["custom machine learning development", "custom ML models", "predictive analytics", "NLP", "MLOps"],
-    title: "AI and machine learning built around your business problem.",
-    description: "Truefox AI develops custom machine-learning systems across data engineering, predictive analytics, computer vision, NLP, MLOps and production deployment.",
+    title: "Custom Machine Learning Solutions Built Around Your Business Problem",
+    description: "Truefox AI delivers custom machine learning solutions for forecasting, vision, NLP and decision systems—built around your data, workflow and deployment needs.",
     intro: "Truefox AI provides custom machine-learning development for specialised decisions that off-the-shelf systems cannot address reliably. This page focuses on data readiness, predictive analytics, computer vision, NLP, model evaluation, production integration and MLOps; broader custom AI service discovery belongs within our AI development services portfolio.",
     kind: "services",
     stats: [
@@ -1004,6 +1004,11 @@ export const pages: Record<string, PageData> = {
         text: "Custom AI and machine learning refers to systems designed around a specific organisation, dataset, process or decision. The result may be a prediction service, forecasting platform, recommendation engine, computer-vision model, NLP pipeline, anomaly detector or broader decision-support application integrated into the way people already work."
       },
       {
+        eyebrow: "CUSTOM DEVELOPMENT",
+        title: "CUSTOM MACHINE LEARNING SOLUTIONS FOR REAL OPERATING CONDITIONS",
+        text: "As a custom machine learning development company, Truefox AI helps organisations turn specialised data, repeatable decisions and operational constraints into practical systems. The work may involve a focused [AI feasibility assessment](/research-development), a production model, or a complete solution that connects data pipelines, model services and the tools people already use. Custom machine learning solutions work best when they are designed around the actual decision, the available data and the environment in which the result will be used. We assess the workflow before choosing the model, so the approach can account for accuracy needs, response time, integration, oversight and the cost of errors."
+      },
+      {
         eyebrow: "PROBLEM FIRST",
         title: "START WITH THE DECISION, NOT THE MODEL.",
         text: "Before selecting technology, the project should define the decision or workflow to improve, the available data, required response time, cost of errors, intended users, integration constraints and measurable outcome. A sophisticated model is not useful if it cannot improve the real process around it.",
@@ -1014,6 +1019,11 @@ export const pages: Record<string, PageData> = {
         title: "DETERMINE WHETHER AI IS APPROPRIATE BEFORE FULL DEVELOPMENT.",
         text: "An AI feasibility assessment examines data quality, label availability, expected performance, infrastructure, operational constraints, integration effort, risk and potential value. It can show whether the project should proceed, be reframed, gather more data or use a simpler non-AI approach.",
         bullets: ["DATA AND LABEL ASSESSMENT", "TECHNICAL BASELINE", "MODEL AND INFRASTRUCTURE OPTIONS", "RISK AND FAILURE ANALYSIS", "PROOF-OF-CONCEPT RECOMMENDATION"]
+      },
+      {
+        eyebrow: "DELIVERY PATH",
+        title: "FROM FEASIBILITY TO PRODUCTION MACHINE LEARNING",
+        text: "A custom machine learning project can begin with data and workflow discovery, then move through baseline evaluation, controlled experimentation, integration and ongoing monitoring. This approach helps teams make an informed decision before committing to full-scale development. Explore our [AI development services](/services), [computer-vision systems](/ai-smart-security), [edge deployment](/iot-edge-ai), or [discuss a custom machine learning project](/request-quote)."
       },
       {
         eyebrow: "DATA ENGINEERING",
@@ -1353,7 +1363,7 @@ export const pages: Record<string, PageData> = {
     title: "FROM COMPLEX NEED TO WORKING SYSTEM.",
     description: "Explore AI strategy, custom development, computer vision, private AI, agents, machine learning, edge systems and product engineering from Truefox AI.",
     intro:
-      "Truefox AI provides AI development services spanning strategy, custom AI development, systems engineering, software, cloud and edge delivery. We help organisations select the right capability and move from discovery and feasibility through integration, deployment and ongoing improvement without managing handoffs across multiple vendors.",
+      "Truefox AI provides AI consulting and custom AI development services spanning strategy, systems engineering, software, cloud and edge delivery. We help organisations select the right capability and move from discovery and feasibility through integration, deployment and ongoing improvement—without managing handoffs across multiple vendors.",
     kind: "services",
     cards: [
       { eyebrow: "01", title: "AI SMART SECURITY", text: "Apply AI video analytics to security, safety and operational monitoring workflows.", href: "/ai-smart-security" },

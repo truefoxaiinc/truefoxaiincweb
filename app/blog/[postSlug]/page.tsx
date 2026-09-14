@@ -3,6 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "@/components/Icons";
 import { BlogPostingEntityGraph } from "@/components/seo/JsonLd";
+
+function renderInternalLinks(text: string) {
+  return text.split(/(\[[^\]]+\]\(\/[a-z0-9-/?=&]+\))/i).map((part, index) => {
+    const match = /^\[([^\]]+)\]\((\/[^)]+)\)$/i.exec(part);
+    return match ? <Link href={match[2]} key={`${match[2]}-${index}`}>{match[1]}</Link> : part;
+  });
+}
 import { site } from "@/data/site";
 import { getCmsData, getPublishedBlogPost, publishedBlogPosts } from "@/lib/content";
 
@@ -38,7 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
       <h1>{post.title}</h1>
       <p className="blog-post-dek">{post.excerpt}</p>
       <div className="blog-post-meta"><span>{post.author}</span><time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString("en-CA", { dateStyle: "long" })}</time><span>{post.readTime}</span></div>
-      <div className="blog-post-copy">{post.content.split("\n").filter(Boolean).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>
+      <div className="blog-post-copy">{post.content.split("\n").filter(Boolean).map((paragraph, index) => paragraph.startsWith("## ") ? <h2 key={index}>{paragraph.slice(3)}</h2> : <p key={index}>{renderInternalLinks(paragraph)}</p>)}</div>
       {post.relatedLinks?.length ? <nav className="blog-post-related" aria-label="Related services">{post.relatedLinks.map((link) => <Link className="button button-ghost" href={link.href} key={link.href}>{link.label}<ArrowUpRight /></Link>)}</nav> : null}
       <Link className="button button-ghost" href="/blog">More perspectives<ArrowUpRight /></Link>
     </article>

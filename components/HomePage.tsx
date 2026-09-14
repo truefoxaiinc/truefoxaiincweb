@@ -72,7 +72,7 @@ export default function HomePage() {
               THAT EARNS ITS PLACE
               IN THE REAL WORLD.</h2>
             <div className="manifesto-bottom">
-              <p>Truefox AI is an AI engineering company with a Home Office in Canada and a Branch in India, bringing strategy, design and engineering together to create intelligent products for real operational needs. From computer vision and private AI to governed agents, connected systems and digital products, we build technology people can trust, teams can use and organisations can improve. Explore our <Link href="/services">AI development services</Link>.</p>
+              <p>Truefox AI is an AI engineering company with a Home Office in Canada and a Branch in India, bringing strategy, design and engineering together to create intelligent products for real operational needs. Our work spans custom AI development, AI consulting, computer vision, private AI, governed agents, connected systems and digital products—built to be trusted, usable and maintainable. Explore our <Link href="/services">AI development services</Link>.</p>
             </div>
           </Reveal>
         </div>
