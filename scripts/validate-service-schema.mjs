@@ -1,5 +1,5 @@
 const baseUrl = (process.argv[2] || "http://localhost:3000").replace(/\/$/, "");
-const canonicalUrl = "https://www.truefoxaiinc.com";
+const canonicalUrl = "https://truefoxaiinc.com";
 const paths = [
   "/ai-smart-security",
   "/biometric-intelligence",

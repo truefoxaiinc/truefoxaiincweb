@@ -46,7 +46,7 @@ export type PageData = {
 export const site = {
   name: "Truefox AI Inc.",
   shortName: "Truefox AI",
-  url: "https://www.truefoxaiinc.com",
+  url: "https://truefoxaiinc.com",
   email: "info@truefoxaiinc.com",
   phoneLabel: "+1 (Canada)",
   lastUpdated: "2026-08-16",

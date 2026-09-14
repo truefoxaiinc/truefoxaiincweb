@@ -1,8 +1,8 @@
 const baseUrl = (process.argv[2] || "http://localhost:3000").replace(/\/$/, "");
-const canonicalUrl = "https://www.truefoxaiinc.com/kochi";
-const organizationId = "https://www.truefoxaiinc.com/#organization";
-const websiteId = "https://www.truefoxaiinc.com/#website";
-const indiaOfficeId = "https://www.truefoxaiinc.com/#india-office";
+const canonicalUrl = "https://truefoxaiinc.com/kochi";
+const organizationId = "https://truefoxaiinc.com/#organization";
+const websiteId = "https://truefoxaiinc.com/#website";
+const indiaOfficeId = "https://truefoxaiinc.com/#india-office";
 const expectedTitle = "AI Development Company in Kochi | Truefox AI";
 const expectedH1 = "AI Engineering &amp; Development in Kochi";
 const forbidden = [
@@ -43,7 +43,7 @@ const officeReferenceMatches = webpage?.about?.["@id"] === indiaOfficeId;
 const websiteMatches = webpage?.isPartOf?.["@id"] === websiteId;
 const breadcrumbMatches = webpage?.breadcrumb?.["@id"] === `${canonicalUrl}#breadcrumb`;
 const faqMatches = faq?.isPartOf?.["@id"] === `${canonicalUrl}#webpage` && faq?.mainEntity?.length === 5;
-const visibleFaqs = (html.match(/<h2>(WHERE IS TRUEFOX AI LOCATED IN KOCHI\?|WHAT AI SERVICES DOES THE KOCHI ENGINEERING TEAM PROVIDE\?|DOES TRUEFOX AI BUILD CUSTOM AI AND MACHINE-LEARNING SYSTEMS\?|CAN TRUEFOX AI DEVELOP PRIVATE AI ASSISTANTS AND AI AGENTS\?|HOW CAN A COMPANY DISCUSS AN AI PROJECT WITH TRUEFOX AI\?)<\/h2>/g) || []).length;
+const visibleFaqs = (html.match(/<h2>(WHERE IS TRUEFOX AI LOCATED IN KOCHI\?|WHAT AI SERVICES DOES THE KOCHI BRANCH PROVIDE\?|DOES TRUEFOX AI BUILD CUSTOM AI AND MACHINE-LEARNING SYSTEMS\?|CAN TRUEFOX AI DEVELOP PRIVATE AI ASSISTANTS AND AI AGENTS\?|HOW CAN A COMPANY DISCUSS AN AI PROJECT WITH TRUEFOX AI\?)<\/h2>/g) || []).length;
 const forbiddenMatches = forbidden.filter((value) => html.includes(value));
 const sitemapResponse = await fetch(`${baseUrl}/sitemap.xml`, { signal: AbortSignal.timeout(20_000) });
 const sitemap = await sitemapResponse.text();

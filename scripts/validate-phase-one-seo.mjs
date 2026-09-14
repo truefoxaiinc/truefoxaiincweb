@@ -1,5 +1,5 @@
-const baseUrl = (process.argv[2] || "https://www.truefoxaiinc.com").replace(/\/$/, "");
-const canonicalRoot = "https://www.truefoxaiinc.com";
+const baseUrl = (process.argv[2] || "https://truefoxaiinc.com").replace(/\/$/, "");
+const canonicalRoot = "https://truefoxaiinc.com";
 
 const pages = [
   { path: "/", title: "Enterprise AI Engineering Company | Truefox AI Inc.", links: ["/services", "/kitchener"] },

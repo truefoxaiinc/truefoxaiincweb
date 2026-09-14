@@ -1,6 +1,6 @@
 const baseUrl = (process.argv[2] || "http://localhost:3000").replace(/\/$/, "");
-const canonicalUrl = "https://www.truefoxaiinc.com/kitchener";
-const rootUrl = "https://www.truefoxaiinc.com";
+const canonicalUrl = "https://truefoxaiinc.com/kitchener";
+const rootUrl = "https://truefoxaiinc.com";
 const organizationId = `${rootUrl}/#organization`;
 const websiteId = `${rootUrl}/#website`;
 const canadaOfficeId = `${rootUrl}/#canada-office`;
@@ -12,8 +12,8 @@ const forbidden = [
   "/about-us/",
   "/contact-us/",
   "/terms-conditions-and-privacy-policy/",
-  "https://truefoxaiinc.com",
-  "http://truefoxaiinc.com",
+  "https://www.truefoxaiinc.com",
+  "http://www.truefoxaiinc.com",
   '"@type":"LocalBusiness"',
   '"telephone"',
   '"openingHours"',

@@ -2,7 +2,7 @@
 
 ## Current redirect rules
 
-`next.config.ts` keeps legacy `/about-us`, `/contact-us`, and historic terms URLs on their current canonical destinations. The trailing-slash redirect is permanent and preserves path segments. Production HTTP and non-www canonicalization are handled by the hosting layer.
+`next.config.ts` keeps legacy `/about-us`, `/contact-us`, and historic terms URLs on their current canonical destinations. The trailing-slash redirect is permanent and preserves path segments. The canonical production origin is `https://truefoxaiinc.com`; the hosting layer must permanently redirect `www` to that origin in one hop.
 
 Do not add redirect chains, generic redirect rules, or bulk destination changes without first confirming the source URL, destination, response status, and canonical target in production.
 
