@@ -981,7 +981,7 @@ export const pages: Record<string, PageData> = {
   },
   "custom-ai-ml": {
     slug: "custom-ai-ml", navLabel: "Custom AI & ML", eyebrow: "SERVICE · APPLIED AI",
-    seoTitle: "Custom Machine Learning Solutions & Development Company | Truefox AI",
+    seoTitle: "Custom Machine Learning Development | Truefox AI",
     seoKeywords: ["custom machine learning development", "custom ML models", "predictive analytics", "NLP", "MLOps"],
     title: "Custom Machine Learning Solutions Built Around Your Business Problem",
     description: "Truefox AI delivers custom machine learning solutions for forecasting, vision, NLP and decision systems—built around your data, workflow and deployment needs.",
