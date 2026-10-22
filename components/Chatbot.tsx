@@ -8,7 +8,7 @@ import { trackEvent } from "@/lib/analytics";
 
 type Citation = { document_id: string; title: string; source: string; excerpt: string; score: number };
 type Message = { role: "bot" | "user"; text: string; error?: boolean };
-type ChatResult = { conversation_id: string; answer: string; citations: Citation[] };
+type ChatResult = { conversation_id: string; capability_token?: string | null; answer: string; citations: Citation[] };
 
 function cleanAnswer(text: string) {
   return text.replace(/\s*\[\d+\]/g, "").trim();
@@ -19,6 +19,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [conversationId, setConversationId] = useState<string>();
+  const [conversationCapability, setConversationCapability] = useState<string>();
   const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
   const suggestions = useMemo(() => ["Explore services", "Book a demo", "How can I apply?"], []);
@@ -34,12 +35,22 @@ export default function Chatbot() {
     try {
       const response = await fetch(apiUrl("/api/v1/chat"), {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(conversationId && conversationCapability ? { "X-Conversation-Capability": conversationCapability } : {}),
+        },
         body: JSON.stringify({ message: text, conversation_id: conversationId }),
       });
       const result = (await response.json()) as ChatResult & { error?: string };
-      if (!response.ok) throw new Error(result.error || "The assistant is unavailable.");
+      if (!response.ok) {
+        if (response.status === 404 && conversationId) {
+          setConversationId(undefined);
+          setConversationCapability(undefined);
+        }
+        throw new Error(result.error || "The assistant is unavailable.");
+      }
       setConversationId(result.conversation_id);
+      if (result.capability_token) setConversationCapability(result.capability_token);
       const answer = cleanAnswer(result.answer);
       setMessages(current => [...current, { role: "bot", text: answer || "I’m sorry — I couldn’t form a useful answer. Could you ask that another way?" }]);
     } catch {
