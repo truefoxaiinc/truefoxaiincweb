@@ -1,7 +1,8 @@
+.leadLayout{grid-template-rows:auto auto minmax(0,1fr) auto auto auto auto auto}
 .leadAction{padding:0 14px 10px}
-.leadToggle{width:100%;border:1px solid rgba(247,122,0,.42);border-radius:12px;background:rgba(247,122,0,.1);color:#ffd5ad;padding:10px 12px;font:700 11px inherit;cursor:pointer}
+.leadToggle{width:100%;border:1px solid rgba(247,122,0,.42);border-radius:12px;background:rgba(247,122,0,.1);color:#ffd5ad;padding:10px 12px;font-size:11px;font-weight:700;cursor:pointer}
 .leadToggle:disabled{opacity:.5;cursor:not-allowed}
-.leadForm{min-height:0;overflow-y:auto;margin:0 12px 10px;padding:13px;display:flex;flex-direction:column;gap:10px;border:1px solid rgba(247,122,0,.3);border-radius:15px;background:#0d1520;color:#f4f6f8}
+.leadForm{max-height:min(360px,48vh);min-height:0;overflow-y:auto;margin:0 12px 10px;padding:13px;display:flex;flex-direction:column;gap:10px;border:1px solid rgba(247,122,0,.3);border-radius:15px;background:#0d1520;color:#f4f6f8}
 .leadForm strong{font-size:13px}
 .leadForm>span{font-size:10px;line-height:1.6;color:#a7b0bc}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}
