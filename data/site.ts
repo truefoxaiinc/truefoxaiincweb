@@ -1357,34 +1357,35 @@ export const pages: Record<string, PageData> = {
   services: {
     slug: "services",
     navLabel: "Services",
-    seoTitle: "AI Development Services | Truefox AI Inc.",
-    seoKeywords: ["AI development services", "enterprise AI solutions", "custom AI development", "AI consulting", "AI systems engineering"],
-    eyebrow: "SERVICES",
-    title: "FROM COMPLEX NEED TO WORKING SYSTEM.",
-    description: "Explore AI strategy, custom development, computer vision, private AI, agents, machine learning, edge systems and product engineering from Truefox AI.",
-    intro:
-      "Truefox AI provides AI consulting and custom AI development services spanning strategy, systems engineering, software, cloud and edge delivery. We help organisations select the right capability and move from discovery and feasibility through integration, deployment and ongoing improvement—without managing handoffs across multiple vendors.",
+    seoTitle: "AI & ML Development, AI CCTV Surveillance and AI Agents | Truefox AI",
+    seoKeywords: ["AI development services", "custom AI and machine learning development", "AI CCTV surveillance", "AI video analytics", "AI agent development", "enterprise AI automation"],
+    eyebrow: "AI-FIRST ENGINEERING SERVICES",
+    title: "AI DEVELOPMENT, INTELLIGENT CCTV & AI AGENTS.",
+    description: "Truefox AI builds custom AI and machine learning systems, AI-powered CCTV surveillance and video analytics, and secure enterprise AI agents, backed by software and cloud engineering.",
+    intro: "Truefox AI helps organisations build production-ready AI systems across three core specialisms: custom AI and machine learning development, AI-powered CCTV surveillance and video analytics, and governed AI agents. From feasibility and model evaluation to secure integration, deployment and monitoring, our team connects AI engineering with the software and infrastructure needed to operate it.",
     kind: "services",
     cards: [
-      { eyebrow: "01", title: "AI SMART SECURITY", text: "Apply AI video analytics to security, safety and operational monitoring workflows.", href: "/ai-smart-security" },
-      { eyebrow: "02", title: "BIOMETRIC INTELLIGENCE", text: "Build identity verification, attendance, liveness and anti-spoofing workflows.", href: "/biometric-intelligence" },
-      { eyebrow: "03", title: "PRIVATE AI ASSISTANTS", text: "Create secure assistants and enterprise RAG around approved knowledge and permissions.", href: "/private-ai-assistants" },
-      { eyebrow: "04", title: "AGENTIC AUTOMATION", text: "Develop governed AI agents for approved tools and multi-step business workflows.", href: "/agentic-automation" },
-      { eyebrow: "05", title: "IoT & EDGE AI", text: "Connect devices, embedded systems, local inference and central operations.", href: "/iot-edge-ai" },
-      { eyebrow: "06", title: "CUSTOM AI & ML", text: "Turn complex data into dependable models, decision systems and production-ready machine learning capabilities.", href: "/custom-ai-ml" },
-      { eyebrow: "07", title: "WEB & MOBILE PRODUCTS", text: "Create intuitive digital products that bring intelligent workflows to customers, operators and internal teams.", href: "/web-mobile-products" },
-      { eyebrow: "08", title: "R&D & PRODUCT VALIDATION", text: "Test ambitious ideas through focused research, technical feasibility studies and representative prototypes.", href: "/research-development" }
+      { eyebrow: "01 · CORE AI", title: "AI & MACHINE LEARNING DEVELOPMENT", text: "Design, train, evaluate and deploy custom machine learning, computer-vision, NLP and predictive models with practical MLOps and business integration.", href: "/custom-ai-ml" },
+      { eyebrow: "02 · CORE AI", title: "AI CCTV SURVEILLANCE & VIDEO ANALYTICS", text: "Turn authorised CCTV and camera feeds into configurable security and safety events, with detection, alerts, operator review and privacy-aware deployment.", href: "/ai-smart-security" },
+      { eyebrow: "03 · CORE AI", title: "AI AGENTS & INTELLIGENT AUTOMATION", text: "Build enterprise AI agents that use approved tools, coordinate multi-step workflows and maintain human approval for consequential actions.", href: "/agentic-automation" },
+      { eyebrow: "04 · AI SOLUTIONS", title: "PRIVATE AI ASSISTANTS & RAG", text: "Connect AI assistants to approved organisational knowledge with retrieval, source grounding and access controls.", href: "/private-ai-assistants" },
+      { eyebrow: "05 · AI SOLUTIONS", title: "BIOMETRIC INTELLIGENCE", text: "Engineer identity, liveness, anti-spoofing and attendance workflows with appropriate governance.", href: "/biometric-intelligence" },
+      { eyebrow: "06 · AI SOLUTIONS", title: "IoT & EDGE AI", text: "Bring inference closer to cameras, sensors and embedded systems when latency, resilience or privacy require local processing.", href: "/iot-edge-ai" },
+      { eyebrow: "07 · ENGINEERING", title: "CUSTOM SOFTWARE & SaaS DEVELOPMENT", text: "Develop web and mobile products, APIs and enterprise platforms that integrate AI with business workflows.", href: "/web-mobile-products" },
+      { eyebrow: "08 · ENGINEERING", title: "RESEARCH & PROTOTYPING", text: "Validate data readiness, feasibility and technical risk through focused discovery and representative prototypes.", href: "/research-development" }
     ],
     sections: [
-      { title: "AI DEVELOPMENT STRATEGY & SYSTEMS ARCHITECTURE", text: "Identify the right opportunities, assess feasibility and define a practical roadmap across data, technology, risk and deployment." },
-      { title: "COMPUTER VISION & BIOMETRICS", text: "Build systems for detection, tracking, inspection and identity—with liveness, anti-spoofing and human oversight where required." },
-      { title: "GENERATIVE & AGENTIC AI", text: "Create secure knowledge assistants and governed agents that retrieve information, use approved tools and move workflows forward." },
-      { title: "DATA, MACHINE LEARNING & MLOps", text: "Develop the pipelines, models and operating practices needed to experiment, deploy, monitor and improve machine learning systems." },
-      { title: "IoT, EMBEDDED & EDGE SYSTEMS", text: "Connect sensors, devices and gateways with reliable firmware, telemetry, edge inference and operational controls." },
-      { title: "WEB, MOBILE & CLOUD PRODUCTS", text: "Build customer experiences, operational applications, APIs and cloud platforms that connect intelligence to everyday work." },
-      { title: "RESEARCH & RAPID PROTOTYPING", text: "Resolve technical uncertainty through product discovery, feasibility studies and proof-of-concept systems built with representative inputs." }
+      { eyebrow: "PRIMARY SPECIALISM", title: "CUSTOM AI & MACHINE LEARNING DEVELOPMENT", text: "We develop machine learning systems around real datasets and measurable decisions: forecasting, classification, anomaly detection, natural-language processing, computer vision and model APIs. Each project considers data quality, evaluation, monitoring and ongoing model operations. Explore [custom AI and ML development](/custom-ai-ml) or [request a project assessment](/request-quote).", bullets: ["DATA READINESS & FEASIBILITY", "CUSTOM MODEL DEVELOPMENT", "MODEL EVALUATION & MLOps", "PRODUCTION INTEGRATION"] },
+      { eyebrow: "PRIMARY SPECIALISM", title: "AI-POWERED CCTV SURVEILLANCE & VIDEO ANALYTICS", text: "AI video analytics can help authorised security and operations teams review relevant events across existing camera feeds. Potential workflows include object or vehicle detection, defined-zone intrusion alerts, safety-event review and searchable event history. Feasibility depends on camera quality, lighting, integration and the operational environment; detection is not infallible. Read about [AI smart security and video analytics](/ai-smart-security).", bullets: ["CAMERA & VIDEO STREAM INTEGRATION", "CONFIGURABLE ZONE AND EVENT DETECTION", "REAL-TIME ALERTS & HUMAN REVIEW", "ACCESS CONTROLS, RETENTION & PRIVACY"] },
+      { eyebrow: "PRIMARY SPECIALISM", title: "AI AGENT DEVELOPMENT & INTELLIGENT AUTOMATION", text: "We build bounded AI agents for business processes where approved APIs, knowledge and tools need to work together. Examples include document processing, ticket triage, internal reporting and approval preparation. Tool permissions, human checkpoints, validation, audit logs and recovery paths are essential. Explore [AI agent development and automation](/agentic-automation).", bullets: ["TOOL-CALLING & API INTEGRATION", "MULTI-STEP WORKFLOW ORCHESTRATION", "RAG & APPROVED KNOWLEDGE ACCESS", "HUMAN APPROVAL & AUDITABILITY"] },
+      { eyebrow: "SUPPORTING ENGINEERING", title: "SOFTWARE, CLOUD & SECURITY THAT SUPPORT PRODUCTION AI", text: "AI systems need reliable applications, integrations and infrastructure. Our supporting work spans custom web and mobile software, SaaS platforms, backend APIs, cloud and DevOps delivery, and security-conscious deployment. Cloud, DevOps and cybersecurity scopes are assessed per engagement rather than presented as separate certified offerings. Explore [web and mobile product engineering](/web-mobile-products) and [IoT and edge AI](/iot-edge-ai).", bullets: ["CUSTOM SOFTWARE & SaaS", "CLOUD & DEVOPS ENGINEERING", "CYBERSECURITY & DEVSECOPS PRACTICES", "API & ENTERPRISE INTEGRATIONS"] },
+      { eyebrow: "HOW WE WORK", title: "FROM DISCOVERY TO MEASURED PRODUCTION OUTCOMES", text: "We start by defining the workflow and success criteria, then assess data and feasibility, design the architecture, build and evaluate a pilot, integrate it securely, and monitor performance after rollout.", bullets: ["01 · DISCOVER THE PROBLEM", "02 · ASSESS DATA & FEASIBILITY", "03 · BUILD & EVALUATE", "04 · DEPLOY WITH CONTROLS", "05 · MONITOR & IMPROVE"] },
+      { eyebrow: "FAQ", title: "WHAT AI DEVELOPMENT SERVICES DOES TRUEFOX AI OFFER?", text: "Truefox AI focuses on custom AI and machine learning development, AI CCTV surveillance and video analytics, and enterprise AI agent development. Supporting services include software, cloud and integration engineering." },
+      { eyebrow: "FAQ", title: "CAN AI VIDEO ANALYTICS WORK WITH EXISTING CCTV CAMERAS?", text: "Often, yes, when compatible video streams or integrations are available. Suitability depends on camera resolution, lighting, network access, supported protocols and the events that need to be detected. A feasibility review is needed before confirming compatibility." },
+      { eyebrow: "FAQ", title: "HOW ARE AI AGENTS KEPT UNDER CONTROL?", text: "Enterprise AI agents should use narrowly scoped permissions, validated inputs and outputs, tool-level access controls, audit logs and human approval for consequential actions. Governance is designed for each workflow's risks." },
+      { eyebrow: "FAQ", title: "HOW DO WE START AN AI OR CCTV ANALYTICS PROJECT?", text: "Start with a discovery conversation about the operational goal, existing systems, data access, security requirements and success criteria. A scoped feasibility assessment can establish the appropriate next step." }
     ],
-    cta: { label: "Request a scoped proposal", href: "/request-quote" }
+    cta: { label: "Discuss an AI project", href: "/request-quote" }
   },
   contact: {
     slug: "contact",
