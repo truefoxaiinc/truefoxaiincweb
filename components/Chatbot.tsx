@@ -22,7 +22,7 @@ export default function Chatbot() {
   const [conversationCapability, setConversationCapability] = useState<string>();
   const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
-  const suggestions = useMemo(() => ["Explore services", "Book a demo", "How can I apply?"], []);
+  const suggestions = useMemo(() => ["AI CCTV security", "Build an AI solution", "Talk about my project"], []);
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" });
@@ -85,9 +85,10 @@ export default function Chatbot() {
       <AnimatePresence>
         {open && (
           <motion.aside className="chatbot" initial={{ opacity: 0, y: 20, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.96 }} aria-label="Truefox AI assistant">
-            <header className="chatbot-head"><div className="bot-avatar">TFX<i /></div><div><strong>Truefox AI Assistant</strong><span>AI-powered · source grounded</span></div><button onClick={() => setOpen(false)} aria-label="Close chatbot"><CloseIcon /></button></header>
+            <header className="chatbot-head"><div className="bot-avatar">TFX<i /></div><div><strong>TFX · Virtual Consultant</strong><span>Here to help with your project</span></div><button onClick={() => setOpen(false)} aria-label="Close chatbot"><CloseIcon /></button></header>
             <div className="chatbot-status"><span>CANADA</span><span>INDIA</span><span>INTERNATIONAL</span></div>
             <div className="chatbot-messages" ref={listRef} aria-live="polite">
+              {messages.length === 0 && <div className="chat-message bot"><span className="mini-avatar">TFX</span><div><p>Hi! Welcome to Truefox AI. What are you looking to build or improve?</p></div></div>}
               {messages.map((message, index) => (
                 <div className={`chat-message ${message.role}${message.error ? " error" : ""}`} key={`${message.role}-${index}`}>
                   {message.role === "bot" && <span className="mini-avatar">TFX</span>}
@@ -99,12 +100,12 @@ export default function Chatbot() {
               {loading && <div className="chat-message bot"><span className="mini-avatar">TFX</span><div className="chat-typing" aria-label="Assistant is thinking"><i /><i /><i /></div></div>}
             </div>
             <div className="chat-suggestions">{suggestions.map(s => <button key={s} disabled={loading} onClick={() => void ask(s)}>{s}</button>)}</div>
-            <form className="chat-form" onSubmit={submit}><input value={input} maxLength={4000} disabled={loading} onChange={e => setInput(e.target.value)} placeholder="Ask about Truefox AI..." aria-label="Chat message" /><button type="submit" disabled={loading || !input.trim()} aria-label="Send"><SendIcon /></button></form>
-            <small>AI answers may be imperfect. Do not share confidential information.</small>
+            <form className="chat-form" onSubmit={submit}><input value={input} maxLength={4000} disabled={loading} onChange={e => setInput(e.target.value)} placeholder="Tell me what you need..." aria-label="Chat message" /><button type="submit" disabled={loading || !input.trim()} aria-label="Send"><SendIcon /></button></form>
+            <small>TFX is an AI assistant. Responses may be imperfect; please avoid sharing confidential information.</small>
           </motion.aside>
         )}
       </AnimatePresence>
-      <button className="chat-launcher" onClick={toggleChat} aria-expanded={open} aria-label="Open Truefox AI assistant"><MessageIcon /><span>AI Assistant</span><i /></button>
+      <button className="chat-launcher" onClick={toggleChat} aria-expanded={open} aria-label="Open Truefox AI assistant"><MessageIcon /><span>Chat with TFX</span><i /></button>
     </div>
   );
 }
