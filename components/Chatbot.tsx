@@ -152,7 +152,7 @@ export default function Chatbot() {
     <div className="chatbot-wrap">
       <AnimatePresence>
         {open && (
-          <motion.aside className="chatbot" initial={{ opacity: 0, y: 20, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.96 }} aria-label="Truefox AI assistant">
+          <motion.aside className={`chatbot ${styles.leadLayout}`} initial={{ opacity: 0, y: 20, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 20, scale: 0.96 }} aria-label="Truefox AI assistant">
             <header className="chatbot-head"><div className="bot-avatar">TFX<i /></div><div><strong>TFX · Virtual Consultant</strong><span>Here to help with your project</span></div><button onClick={() => setOpen(false)} aria-label="Close chatbot"><CloseIcon /></button></header>
             <div className="chatbot-status"><span>CANADA</span><span>INDIA</span><span>INTERNATIONAL</span></div>
             <div className="chatbot-messages" ref={listRef} aria-live="polite">
