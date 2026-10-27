@@ -1,0 +1,19 @@
+.leadLayout{grid-template-rows:auto auto minmax(0,1fr) auto auto auto auto auto}
+.leadAction{padding:0 14px 10px}
+.leadToggle{width:100%;border:1px solid rgba(247,122,0,.42);border-radius:12px;background:rgba(247,122,0,.1);color:#ffd5ad;padding:10px 12px;font-size:11px;font-weight:700;cursor:pointer}
+.leadToggle:disabled{opacity:.5;cursor:not-allowed}
+.leadForm{max-height:min(360px,48vh);min-height:0;overflow-y:auto;margin:0 12px 10px;padding:13px;display:flex;flex-direction:column;gap:10px;border:1px solid rgba(247,122,0,.3);border-radius:15px;background:#0d1520;color:#f4f6f8}
+.leadForm strong{font-size:13px}
+.leadForm>span{font-size:10px;line-height:1.6;color:#a7b0bc}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.leadForm input:not([type=checkbox]),.leadForm textarea{width:100%;min-width:0;border:1px solid #354152;background:#101b29;color:#fff;border-radius:9px;padding:10px;font:inherit;font-size:11px;outline-offset:2px}
+.leadForm textarea{resize:vertical}
+.leadForm label{font-size:10px;color:#e2e9f1}
+.consent{display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.consent input{margin-top:3px;accent-color:#f77a00;flex-shrink:0}
+.consent span{font-size:10px}
+.sendLead{border:0;border-radius:10px;background:var(--orange);color:#0b0d11;padding:11px;font-size:11px;font-weight:800;cursor:pointer}
+.sendLead:disabled{opacity:.5;cursor:not-allowed}
+.error{font-size:10px;color:#ff9c9c;margin:0}
+.mailLink{color:#ffad6b;text-align:center;font-size:10px}
+@media(max-width:440px){.fields{grid-template-columns:1fr}}
