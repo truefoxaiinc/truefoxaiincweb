@@ -16,6 +16,7 @@ function scan(dir) {
     if (entry.isDirectory()) {
       scan(fullPath);
     } else if (entry.isFile() && contentExtensions.has(path.extname(entry.name))) {
+      if (path.resolve(fullPath) === path.resolve(import.meta.filename)) continue;
       const content = fs.readFileSync(fullPath, "utf8");
       checked++;
       for (const pattern of banned) {
