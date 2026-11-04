@@ -258,6 +258,27 @@ export const pages: Record<string, PageData> = {
         bullets: ["DISCOVERY", "FEASIBILITY & PROOF OF CONCEPT", "DEVELOPMENT", "INTEGRATION & DEPLOYMENT", "ONGOING IMPROVEMENT"]
       },
       {
+        eyebrow: "KITCHENER AI DEVELOPMENT",
+        title: "HOW TO SCOPE A CUSTOM AI PROJECT WITH A KITCHENER-BASED COMPANY.",
+        text: "For organisations exploring AI development services in Kitchener or Waterloo Region, the first step is to define a business workflow, the information already available and the outcome worth measuring. Truefox AI’s Kitchener Home Office supports client engagement and delivery planning, while engineering work is coordinated with its Kochi Branch. Explore [custom machine learning development](/custom-ai-ml), [AI video analytics](/ai-smart-security) and the [full services portfolio](/services) before requesting a tailored [project scoping conversation](/request-quote).",
+        bullets: ["IDENTIFY THE DECISION OR PROCESS", "REVIEW DATA, SYSTEMS AND COMPLIANCE REQUIREMENTS", "AGREE FEASIBILITY AND SUCCESS CRITERIA", "PLAN A PILOT BEFORE FULL DEPLOYMENT"]
+      },
+      {
+        eyebrow: "REGIONAL DELIVERY",
+        title: "AI SERVICES FOR CANADIAN ORGANISATIONS WITHOUT A ONE-SIZE-FITS-ALL MODEL.",
+        text: "An organisation in Kitchener, Waterloo or elsewhere in Canada may need a discovery engagement, a focused feasibility assessment, software integration or a longer-term AI engineering programme. Project scope, collaboration format and deployment location should be agreed according to the organisation's requirements. Truefox AI's Canadian presence and integrated Canada–India delivery model do not imply that every engineering task is completed physically in Kitchener. Read [how to deploy AI in business](/blog/how-to-deploy-ai-in-business) and [enterprise knowledge AI considerations](/blog/enterprise-rag-private-ai-approved-knowledge) for additional implementation context."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW CAN A KITCHENER BUSINESS START A CUSTOM AI DEVELOPMENT PROJECT?",
+        text: "Share the workflow to improve, systems and data already available, target users, operating constraints and expected outcome through the [project enquiry form](/request-quote). Truefox AI can then discuss whether discovery, a feasibility study, a proof of concept or a larger engineering engagement is appropriate."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "DOES TRUEFOX AI SUPPORT ORGANISATIONS OUTSIDE KITCHENER?",
+        text: "Yes. The Kitchener Home Office supports strategy and client engagement, and the company coordinates technical delivery with its Kochi Branch. The suitable collaboration and implementation approach depends on the project, client requirements and applicable constraints."
+      },
+      {
         eyebrow: "FAQ",
         title: "WHERE IS TRUEFOX AI LOCATED IN CANADA?",
         text: "Truefox AI Inc. has its Home Office at Suite 300, 72 Victoria Street South, Kitchener, Ontario N2G 4Y9, Canada. The Kitchener Home Office supports company strategy, client engagement and delivery leadership, working with the company’s Branch in Kochi, India."
