@@ -3,7 +3,7 @@ const canonicalRoot = "https://truefoxaiinc.com";
 
 const pages = [
   { path: "/", title: "Enterprise AI Engineering Company | Truefox AI Inc.", links: ["/services", "/kitchener"] },
-  { path: "/services", title: "AI Development Services | Truefox AI Inc.", links: ["/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development"] },
+  { path: "/services", title: "AI &amp; ML Development, AI CCTV Surveillance and AI Agents | Truefox AI", links: ["/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development"] },
   { path: "/kitchener", title: "AI Engineering Company in Kitchener | Truefox AI", links: ["/services"] },
   { path: "/ai-smart-security", title: "AI Video Analytics &amp; Smart Security | Truefox AI", links: ["/biometric-intelligence", "/iot-edge-ai", "/request-quote"] },
   { path: "/biometric-intelligence", title: "Biometric AI &amp; Identity Verification | Truefox AI", links: ["/ai-smart-security", "/request-quote"] },

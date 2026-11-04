@@ -2,25 +2,39 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
-const files = [];
-function walk(dir) {
-  for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, item.name);
-    if (item.isDirectory() && !["node_modules", ".next"].includes(item.name)) walk(full);
-    else if (item.isFile() && /\.(tsx?|md|txt)$/.test(item.name)) files.push(full);
-  }
-}
-walk(root);
+const allowedRoots = ["app", "components", "data", "docs", "lib", "scripts", "config"];
+const excludedDirs = new Set(["node_modules", ".next", ".git", ".pytest_cache", ".venv", "venv", "dist", "build", "coverage", "__pycache__"]);
+const contentExtensions = new Set([".tsx", ".ts", ".js", ".mjs", ".md", ".txt"]);
 const banned = [/guaranteed ranking/i, /100% lag free/i, /best company in canada/i];
+let checked = 0;
 let failed = false;
-for (const file of files) {
-  const text = fs.readFileSync(file, "utf8");
-  for (const pattern of banned) {
-    if (pattern.test(text)) {
-      console.error(`Content audit: ${pattern} found in ${path.relative(root, file)}`);
-      failed = true;
+
+function scan(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (excludedDirs.has(entry.name)) continue;
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      scan(fullPath);
+    } else if (entry.isFile() && contentExtensions.has(path.extname(entry.name))) {
+      const content = fs.readFileSync(fullPath, "utf8");
+      checked++;
+      for (const pattern of banned) {
+        if (pattern.test(content)) {
+          console.error(`Content audit: ${pattern} found in ${path.relative(root, fullPath)}`);
+          failed = true;
+        }
+      }
     }
   }
 }
+
+for (const folder of allowedRoots) {
+  const fullPath = path.join(root, folder);
+  if (fs.existsSync(fullPath)) scan(fullPath);
+}
+if (checked === 0) {
+  console.error("Content audit: No source files scanned; check project path.");
+  process.exit(1);
+}
 if (failed) process.exit(1);
-console.log(`Content audit passed (${files.length} files).`);
+console.log(`Content audit passed (${checked} source files).`);
