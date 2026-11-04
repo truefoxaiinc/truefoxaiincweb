@@ -1103,10 +1103,31 @@ export const pages: Record<string, PageData> = {
         text: "Model drift occurs when production inputs, behaviour or relationships change compared with development data, causing performance to deteriorate. Monitoring helps identify these changes so the model and surrounding workflow can be investigated before a controlled update."
       },
       {
+        eyebrow: "BUYER GUIDE",
+        title: "HOW DO YOU CHOOSE A CUSTOM MACHINE LEARNING DEVELOPMENT COMPANY?",
+        text: "Choose a development partner based on the problem they can validate, not just the models they advertise. Ask how the team will assess your data, establish a non-AI or simple-model baseline, define acceptance metrics, test failure cases, integrate with existing systems and support the model after launch. A clear proposal should separate a time-boxed feasibility study from implementation and ongoing operations. Learn more about our [AI proof-of-concept approach](/research-development) and [full AI engineering services](/services).",
+        bullets: ["PROBLEM AND DATA DISCOVERY", "BASELINE AND ACCEPTANCE CRITERIA", "SECURITY AND SYSTEM INTEGRATION", "OWNERSHIP, MONITORING AND MAINTENANCE"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW LONG DOES A CUSTOM MACHINE LEARNING PROJECT TAKE?",
+        text: "There is no reliable universal timeline. A focused feasibility study can identify data gaps and evaluation requirements before implementation is scoped. Delivery depends on data access, labelling effort, model complexity, integration, testing and approval needs. Request a [project assessment](/request-quote) for a plan tied to the actual workflow."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "CAN A CUSTOM MACHINE LEARNING SOLUTION USE OUR EXISTING DATA AND SOFTWARE?",
+        text: "Potentially. Existing databases, documents, event streams and business applications can often be evaluated as inputs or integration points, subject to access rights, data quality, privacy requirements and security controls. The feasibility stage determines what can be reused safely and where new collection or integration work is necessary."
+      },
+      {
+        eyebrow: "RELATED READING",
+        title: "EXPLORE REAL-WORLD AI DESIGN AND VALIDATION QUESTIONS.",
+        text: "For examples of the decisions that shape an implementation, read our [practical guide to AI deployment](/blog/how-to-deploy-ai-in-business) and [computer-vision feasibility and inspection guide](/blog/computer-vision-feasibility-quality-inspection). These articles explain evaluation and deployment considerations, not guaranteed outcomes."
+      },
+      {
         eyebrow: "RELATED CAPABILITIES",
         title: "CONNECT CUSTOM MODELS WITH EDGE, PRODUCTS AND OPERATIONAL SOFTWARE.",
-        text: "Custom AI & ML can be combined with IoT and Edge AI for local inference, AI Smart Security for computer-vision monitoring, or custom software engineering to deliver the model through a dependable user and integration layer.",
-        bullets: ["IoT & EDGE AI · /iot-edge-ai", "AI SMART SECURITY · /ai-smart-security", "WEB & MOBILE PRODUCTS · /web-mobile-products"]
+        text: "Custom models can be combined with [IoT and Edge AI](/iot-edge-ai) for local inference, [AI Smart Security](/ai-smart-security) for computer-vision monitoring, and [web and mobile product engineering](/web-mobile-products) to deliver the result through an accessible workflow. Each capability has its own scope; the custom machine learning service focuses on dataset-specific modelling and ongoing model evaluation.",
+        bullets: ["EDGE INFERENCE AND CONNECTED DEVICES", "VISION AND VIDEO ANALYTICS", "USER-FACING SOFTWARE AND APIS"]
       }
     ],
     cta: { label: "Request an AI feasibility assessment", href: "/request-quote" }
