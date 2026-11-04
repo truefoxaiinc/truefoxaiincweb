@@ -50,8 +50,8 @@ const officeReferenceMatches = webpage?.about?.["@id"] === canadaOfficeId;
 const organizationOfficeMatches = organization[0]?.location?.some((location) => location["@id"] === canadaOfficeId) === true;
 const websiteMatches = webpage?.isPartOf?.["@id"] === websiteId;
 const breadcrumbMatches = webpage?.breadcrumb?.["@id"] === `${canonicalUrl}#breadcrumb`;
-const faqMatches = faq?.isPartOf?.["@id"] === `${canonicalUrl}#webpage` && faq?.mainEntity?.length === 6;
-const visibleFaqs = (html.match(/<h2>(WHERE IS TRUEFOX AI LOCATED IN CANADA\?|WHAT AI DEVELOPMENT SERVICES DOES TRUEFOX AI PROVIDE IN KITCHENER\?|DOES TRUEFOX AI BUILD CUSTOM AI SYSTEMS FOR CANADIAN BUSINESSES\?|CAN TRUEFOX AI DEVELOP AI AGENTS AND AUTOMATION SYSTEMS\?|DOES TRUEFOX AI BUILD COMPUTER-VISION SOLUTIONS\?|HOW CAN A COMPANY DISCUSS AN AI PROJECT WITH TRUEFOX AI\?)<\/h2>/g) || []).length;
+const faqMatches = faq?.isPartOf?.["@id"] === `${canonicalUrl}#webpage` && faq?.mainEntity?.length === 8;
+const visibleFaqs = (html.match(/<h2>(WHERE IS TRUEFOX AI LOCATED IN CANADA\?|WHAT AI DEVELOPMENT SERVICES DOES TRUEFOX AI PROVIDE IN KITCHENER\?|DOES TRUEFOX AI BUILD CUSTOM AI SYSTEMS FOR CANADIAN BUSINESSES\?|CAN TRUEFOX AI DEVELOP AI AGENTS AND AUTOMATION SYSTEMS\?|DOES TRUEFOX AI BUILD COMPUTER-VISION SOLUTIONS\?|HOW CAN A COMPANY DISCUSS AN AI PROJECT WITH TRUEFOX AI\?|HOW CAN A KITCHENER BUSINESS START A CUSTOM AI DEVELOPMENT PROJECT\?|DOES TRUEFOX AI SUPPORT ORGANISATIONS OUTSIDE KITCHENER\?)<\/h2>/g) || []).length;
 const forbiddenMatches = forbidden.filter((value) => html.includes(value));
 const requiredLinks = ["/services", "/about", "/contact", "/request-quote", "/ai-smart-security", "/biometric-intelligence", "/private-ai-assistants", "/agentic-automation", "/iot-edge-ai", "/custom-ai-ml", "/web-mobile-products", "/research-development"];
 const missingLinks = requiredLinks.filter((href) => !html.includes(`href="${href}"`));
@@ -109,7 +109,7 @@ const pass = response.ok && canonicalMatches && titleMatches && descriptionMatch
   && canadaPlaces.length === 1 && byType("Place").length === 2
   && byType("BreadcrumbList").length === 1 && byType("FAQPage").length === 1
   && officeReferenceMatches && organizationOfficeMatches && websiteMatches && breadcrumbMatches
-  && visibleFaqs === 6 && faqMatches && sitemapMatches === 1
+  && visibleFaqs === 8 && faqMatches && sitemapMatches === 1
   && missingLinks.length === 0 && missingSupportingLinks.length === 0
   && contactAddressMatches && forbiddenMatches.length === 0;
 

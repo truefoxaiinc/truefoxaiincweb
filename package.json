@@ -15,6 +15,7 @@
     "validate:kochi": "node scripts/validate-kochi-schema.mjs",
     "validate:kitchener": "node scripts/validate-kitchener-schema.mjs",
     "validate:phase-one": "node scripts/validate-phase-one-seo.mjs",
+    "validate:technical-seo": "node scripts/validate-technical-seo.mjs",
     "validate:analytics": "node scripts/validate-analytics.mjs",
     "report:seo": "node scripts/seo-reporting/generate-report.mjs",
     "validate:reporting": "node scripts/seo-reporting/validate-reporting.mjs",
