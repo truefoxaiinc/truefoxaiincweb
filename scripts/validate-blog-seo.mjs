@@ -6,7 +6,7 @@ if(guides.length!==8)errors.push(`Expected 8 guides, found ${guides.length}`);
 const allPublished=cms.posts.filter(p=>p.status==="published");
 for(const key of ["slug","id"]){const seen=new Set();for(const p of allPublished){if(seen.has(p[key]))errors.push(`Duplicate published ${key}: ${p[key]}`);seen.add(p[key]);}}
 for(const p of guides){
- const words=p.content.trim().split(/\\s+/).length;
+ const words=p.content.trim().split(/\s+/).length;
  if(words<550)errors.push(`${p.slug}: only ${words} words (minimum 550)`);
  if(p.title.length>75)errors.push(`${p.slug}: title >75 chars`);
  if(p.excerpt.length<70 || p.excerpt.length>165)errors.push(`${p.slug}: excerpt outside 70-165 chars`);
@@ -20,4 +20,4 @@ for(const p of guides){
  if(Number.isNaN(Date.parse(p.publishedAt)) || Number.isNaN(Date.parse(p.updatedAt)))errors.push(`${p.slug}: invalid dates`);
  console.log(`${p.slug}: ${words} words`);
 }
-if(errors.length){console.error(errors.join("\\n"));process.exitCode=1;}else{console.log("Eight blog SEO editorial checks passed.");}
+if(errors.length){console.error(errors.join("\n"));process.exitCode=1;}else{console.log("Eight blog SEO editorial checks passed.");}
