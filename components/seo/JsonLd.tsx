@@ -240,7 +240,7 @@ export function PageEntityGraph({
   }
   if (isServicePage) {
     const serviceId = `${url}#service`;
-    const serviceName = slug === "services" ? "Applied AI and Software Engineering Services" : slug === "custom-ai-ml" ? "Custom Machine Learning Development Services" : eyebrow;
+    const serviceName = slug === "services" ? "Applied AI and Software Engineering Services" : slug === "custom-ai-ml" ? "Custom Machine Learning Development Services" : slug === "ai-smart-security" ? "AI CCTV Video Analytics and Smart Security Services" : eyebrow;
     (graph[0] as Record<string, unknown>).mainEntity = { "@id": serviceId };
     graph.push({
       "@type": "Service",

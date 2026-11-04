@@ -474,10 +474,37 @@ export const pages: Record<string, PageData> = {
         text: "Yes, the architecture can be designed for on-premise, edge, cloud, private-cloud or hybrid deployment. The appropriate option is selected according to latency, privacy, bandwidth, resilience and integration needs."
       },
       {
+        eyebrow: "SMART VIDEO ANALYTICS",
+        title: "HOW DOES SMART VIDEO ANALYTICS DIFFER FROM CONVENTIONAL CCTV?",
+        text: "Conventional CCTV records or displays footage for people to review. Smart video analytics adds configured computer-vision detection and event rules that can help an authorised operator find relevant activity across selected cameras. Useful performance depends on lighting, camera placement, image quality, model evaluation, alert thresholds and the response workflow. It should not be described as perfect detection or a substitute for on-site safety procedures.",
+        bullets: ["DEFINE THE EVENTS THAT MATTER", "TEST WITH REPRESENTATIVE CAMERA FOOTAGE", "MEASURE MISSED EVENTS AND FALSE ALERTS", "ROUTE ALERTS FOR HUMAN VERIFICATION"]
+      },
+      {
+        eyebrow: "PILOT MEASUREMENT",
+        title: "HOW SHOULD AN AI CCTV PILOT BE EVALUATED?",
+        text: "Before rollout, teams should agree which events are in scope, what video can be used lawfully, how ground truth will be checked and what operator response looks like. Useful pilot metrics can include event-level precision and recall, false alerts per camera-hour, alert delivery latency, missed events and operator review workload. Results should be measured against a manual or existing-system baseline in the actual deployment conditions.",
+        bullets: ["EVENT-LEVEL PRECISION AND RECALL", "FALSE ALERTS PER CAMERA-HOUR", "END-TO-END NOTIFICATION LATENCY", "OPERATOR REVIEW TIME AND ESCALATION QUALITY"]
+      },
+      {
+        eyebrow: "FAQ",
+        title: "WHAT IS SMART VIDEO ANALYTICS FOR CCTV?",
+        text: "Smart video analytics applies configurable computer-vision models and alert rules to supported CCTV footage so security or operations teams can review selected events more efficiently. The appropriate detections and deployment architecture depend on the cameras, environment, privacy requirements and intended operator response."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW DO YOU REDUCE FALSE ALERTS IN AI VIDEO SURVEILLANCE?",
+        text: "False alerts can sometimes be reduced by reviewing camera angles and image quality, defining zones and event thresholds, testing representative day and night footage and measuring false alerts against missed events. Threshold changes must be validated carefully because reducing alerts can also increase missed detections."
+      },
+      {
+        eyebrow: "FAQ",
+        title: "HOW IS CCTV FOOTAGE HANDLED FOR PRIVACY AND SECURITY?",
+        text: "Video access, retention and processing should be scoped to an approved purpose. Controls may include role-based access, encryption, logging, retention limits and human approval for sensitive actions. Exact requirements depend on the jurisdiction, organisation and use case; a deployment-specific privacy and legal assessment is necessary."
+      },
+      {
         eyebrow: "RELATED CAPABILITIES",
         title: "CONNECT SECURITY WITH IDENTITY, EDGE AND AUTOMATION.",
-        text: "AI Smart Security can be explored alongside Truefox AI's Biometric Intelligence, IoT and Edge AI, and Agentic Automation capabilities when a workflow requires identity signals, local processing or controlled coordination with other systems.",
-        bullets: ["BIOMETRIC INTELLIGENCE · /biometric-intelligence", "IoT & EDGE AI · /iot-edge-ai", "AGENTIC AUTOMATION · /agentic-automation"]
+        text: "AI Smart Security can be explored alongside biometric identification, edge processing and governed automation when a specific response workflow requires those capabilities. Each integration requires separate review of access, suitability, privacy and failure modes.",
+        bullets: ["IDENTITY AND ACCESS SIGNALS", "EDGE VIDEO PROCESSING", "APPROVED ALERT AND RESPONSE WORKFLOWS"]
       }
     ], cta: { label: "Book a security demo", href: "/book-demo" }
   },
