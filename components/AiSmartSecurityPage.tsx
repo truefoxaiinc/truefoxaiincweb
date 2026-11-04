@@ -79,6 +79,15 @@ export default function AiSmartSecurityPage({ page }: { page: PageData }) {
           })}
         </article>
       </div>
+      <section className="shell" aria-labelledby="video-analytics-resources-title">
+        <h2 id="video-analytics-resources-title">Video analytics implementation guides</h2>
+        <p>Explore practical considerations for an AI CCTV pilot, computer-vision evaluation and responsible integration into an operating workflow.</p>
+        <nav className="location-related-links" aria-label="AI video analytics articles">
+          <Link className="button button-ghost" href="/blog/ai-cctv-security">AI CCTV security: planning and evaluation</Link>
+          <Link className="button button-ghost" href="/blog/computer-vision-feasibility-quality-inspection">Computer vision feasibility and evaluation</Link>
+          <Link className="button button-ghost" href="/blog/industrial-iot-edge-monitoring">Edge AI monitoring considerations</Link>
+        </nav>
+      </section>
       <div className="shell"><CapabilityRelatedLinks slug={page.slug} /></div>
     </main>
   );
