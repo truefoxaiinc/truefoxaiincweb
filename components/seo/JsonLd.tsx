@@ -38,6 +38,7 @@ export function BlogPostingEntityGraph({ post }: { post: BlogPost }) {
       "@type": "BlogPosting",
       "@id": `${url}#article`,
       headline: post.title,
+      ...(post.imageUrl ? { image: { "@type": "ImageObject", url: `${site.url}${post.imageUrl}`, caption: post.imageAlt || post.title, width: 1200, height: 630 } } : {}),
       description: post.excerpt,
       url,
       mainEntityOfPage: { "@type": "WebPage", "@id": url },

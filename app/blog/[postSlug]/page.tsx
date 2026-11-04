@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowUpRight } from "@/components/Icons";
 import { BlogPostingEntityGraph } from "@/components/seo/JsonLd";
@@ -29,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: title }, description: post.excerpt,
     alternates: { canonical, languages: { "en-CA": canonical, "x-default": canonical } },
-    openGraph: { title, description: post.excerpt, url: canonical, type: "article", locale: "en_CA", siteName: site.name, publishedTime: post.publishedAt, modifiedTime: post.updatedAt, images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: post.title }] },
-    twitter: { card: "summary_large_image", title, description: post.excerpt, images: ["/twitter-image"] }
+    openGraph: { title, description: post.excerpt, url: canonical, type: "article", locale: "en_CA", siteName: site.name, publishedTime: post.publishedAt, modifiedTime: post.updatedAt, images: [{ url: post.imageUrl || "/opengraph-image", width: 1200, height: 630, alt: post.imageAlt || post.title }] },
+    twitter: { card: "summary_large_image", title, description: post.excerpt, images: [post.imageUrl || "/twitter-image"] }
   };
 }
 
@@ -44,6 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
       <span className="eyebrow">{post.category}</span>
       <h1>{post.title}</h1>
       <p className="blog-post-dek">{post.excerpt}</p>
+      {post.imageUrl ? <figure className="blog-post-figure"><Image src={post.imageUrl} alt={post.imageAlt || post.title} width={1200} height={630} priority className="blog-post-cover" /><figcaption>Truefox AI conceptual workflow illustration</figcaption></figure> : null}
       <div className="blog-post-meta"><span>{post.author}</span><time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString("en-CA", { dateStyle: "long" })}</time><span>{post.readTime}</span></div>
       <div className="blog-post-copy">{post.content.split("\n").filter(Boolean).map((paragraph, index) => paragraph.startsWith("## ") ? <h2 key={index}>{paragraph.slice(3)}</h2> : <p key={index}>{renderInternalLinks(paragraph)}</p>)}</div>
       {post.relatedLinks?.length ? <nav className="blog-post-related" aria-label="Related services">{post.relatedLinks.map((link) => <Link className="button button-ghost" href={link.href} key={link.href}>{link.label}<ArrowUpRight /></Link>)}</nav> : null}

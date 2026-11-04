@@ -151,6 +151,214 @@
         }
       ],
       "content": "Deploying AI in a business starts with a measurable workflow problem, not with picking a model. Define the decision or task to improve, identify the data and people involved, and agree on what a successful pilot would prove. The right design may use conventional automation, machine learning, retrieval-augmented generation (RAG), an AI agent, or a combination. This guide explains how to move from idea to a secure, supportable production system.\n## What is enterprise AI deployment?\nEnterprise AI deployment means integrating an AI-enabled capability into a real business workflow, with appropriate data access, evaluation, security controls, human oversight, monitoring and operational ownership. A demonstration is not a production deployment: real users, uncertain inputs, failure modes and ongoing costs must be accounted for.\n## 1. Choose one high-value business problem\nStart with a workflow that has a clear owner and repeatable inputs. Examples include searching approved internal documents, assisting a support representative with suggested responses, or helping inspectors prioritize images for review. Record baseline turnaround time, accuracy, rework and escalation rates. Define constraints such as privacy, latency, languages and integration requirements. Avoid automating high-stakes decisions without qualified human review.\n## 2. Assess data quality and permissions\nInventory the information the system needs, where it resides, who may access it and how long it may be retained. Check licensing, consent, classification, personal information, conflicting records and update frequency. Restrict retrieval and model tool access to the user's existing permissions. If the information is not reliable, begin with data preparation before investing in a sophisticated model.\n## 3. Select the simplest suitable architecture\nUse deterministic rules or conventional software when the task has stable, explicit logic. Use predictive machine learning for patterns supported by representative labeled data. Use RAG when responses must cite current approved documents. Use agents only where multi-step tool use delivers genuine value and actions can be constrained, logged and approved. Consider a managed model API, dedicated private deployment or on-device inference based on confidentiality, residency, latency, operational capacity and cost. [Private AI assistants](/private-ai-assistants), [agentic automation](/agentic-automation), and [custom AI and machine learning](/custom-ai-ml) address different needs; none is universally best.\n## 4. Design security and governance before launch\nApply least-privilege access, encryption in transit and at rest, secure secrets management, audit logs and retention rules. Treat retrieved documents, user inputs and external tool outputs as untrusted; protect against prompt injection and unauthorized tool actions. Establish human approval for consequential operations and escalation paths for uncertain answers. Assess your relevant legal and contractual requirements with qualified advisers. For risk management, consult the NIST AI Risk Management Framework and the OWASP guidance for large language model applications.\n## 5. Build a representative pilot and evaluate it\nCreate a test set that resembles actual user tasks, including edge cases, outdated documents, adversarial inputs and failures. Compare outputs against an agreed baseline. Track task completion, groundedness or factual accuracy where applicable, refusal and escalation quality, latency, accessibility and cost per completed task. Document acceptance criteria and test any integration in a non-production environment before phased rollout.\n## 6. Plan total cost of ownership\nAI deployment cost is more than model tokens or hardware. Budget for discovery, data preparation, integrations, evaluation, cloud or GPU resources, observability, security reviews, human oversight, support, retraining and change management. Usage-based model costs vary with input size, output length, retrieval operations and retries. Prepare low, expected and high adoption scenarios rather than presenting one universal project price.\n## 7. Measure return on investment honestly\nA simple starting formula is ROI = (measured benefits minus total costs) divided by total costs, multiplied by 100%. Benefits may include staff time recovered, fewer errors, faster resolution or additional revenue, but count only outcomes supported by measurement and avoid double-counting. Compare a pilot group with a credible baseline; include review time, incidents and maintenance. Report qualitative improvements separately from verified financial savings.\n## 8. Deploy gradually and keep improving\nBegin with a limited user group, documented rollback, alert thresholds and named owners. Monitor uptime, response latency, failed tasks, security events, cost and user feedback. Review data freshness, model changes and access permissions regularly. Maintain a process for incident response and model or prompt version rollback.\n## Practical AI deployment checklist\nBefore launch, confirm that the workflow and baseline are defined; data ownership and access are documented; the architecture is justified; security and privacy reviews are complete; evaluation passes agreed thresholds; users can request human support; costs and monitoring have owners; and rollback has been tested.\n## Frequently asked questions\nHow long does business AI deployment take? It depends on data readiness, integration complexity, security needs and scope. A narrow pilot is normally simpler than a company-wide rollout; set timelines after discovery rather than relying on a generic promise.\nIs private AI always more secure than a managed API? No. Security depends on architecture, configuration, provider controls, access permissions and operational discipline. Evaluate actual threat models and contracts before choosing.\nShould every AI project use an AI agent? No. Retrieval, conventional automation and simpler models are often easier to govern and maintain. Use agents only when multi-step tool-based work justifies the added risk and complexity.\nHow can a small business start with AI? Choose one recurring, measurable workflow, identify reliable data, retain human review and run a limited pilot before broadening access.\n## Next step\nIf you are planning a practical deployment, review [Truefox AI services](/services) or [contact the team](/contact) to discuss feasibility, architecture and production requirements."
+    },
+    {
+      "id": "guide-private-ai",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "Private AI for Enterprises: How to Build a Secure Knowledge Assistant",
+      "slug": "private-ai",
+      "category": "Private AI",
+      "excerpt": "A practical Truefox AI guide to private AI knowledge assistant: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/private-ai.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for private AI knowledge assistant: source documents, access control, cited answers",
+      "relatedLinks": [
+        {
+          "label": "Explore private ai services",
+          "href": "/private-ai-assistants"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "A private AI knowledge assistant answers questions using approved organizational sources, rather than treating a general chatbot as a source of truth.\n## What is private AI knowledge assistant?\nA private AI knowledge assistant answers questions using approved organizational sources, rather than treating a general chatbot as a source of truth. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nInventory trusted PDFs, policies and databases, enforce document-level permissions before retrieval, then produce answers with citations and explicit uncertainty. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nEvaluate groundedness, permission leakage, stale documents, abstentions, latency and cost using representative employee questions. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nPrivate deployment does not automatically guarantee security: encryption, identity, retention, logging and prompt-injection defenses remain necessary. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nIs RAG the same as training a new model? No. RAG retrieves relevant content at answer time. Can this run on premises? Yes, if hardware, model licensing and operational capacity permit.\n## How Truefox AI can help\nExplore our [private ai engineering](/private-ai-assistants) and [request an initial scope discussion](/request-quote). The proposed Truefox Private AI direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-ai-cctv-security",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "AI CCTV Security: Designing Real-Time Video Analytics for Safer Sites",
+      "slug": "ai-cctv-security",
+      "category": "Computer Vision",
+      "excerpt": "A practical Truefox AI guide to AI video analytics: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/ai-cctv-security.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for AI video analytics: camera stream, event analysis, human response",
+      "relatedLinks": [
+        {
+          "label": "Explore computer vision services",
+          "href": "/ai-smart-security"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "AI CCTV analytics detects predefined events in existing camera streams; it does not replace security professionals or certified life-safety equipment.\n## What is AI video analytics?\nAI CCTV analytics detects predefined events in existing camera streams; it does not replace security professionals or certified life-safety equipment. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nChoose one measurable scenario such as restricted-zone crossing or after-hours intrusion. Validate camera positioning, lighting, occlusion and alert handoff. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nCompare missed incidents, false alerts, response latency and operator workload under actual site conditions. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nPrefer limited metadata over continuous cloud video where possible. Apply retention limits, access controls and privacy reviews; biometric recognition is a separate use case. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nCan existing IP cameras be used? Often, if streams and site permissions are compatible. Does smoke detection replace a fire alarm? No, it is supplementary.\n## How Truefox AI can help\nExplore our [computer vision engineering](/ai-smart-security) and [request an initial scope discussion](/request-quote). The proposed Truefox Vision direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-enterprise-ai-agents",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "Enterprise AI Agents: A Practical Guide to Governed Workflow Automation",
+      "slug": "enterprise-ai-agents",
+      "category": "Agentic Automation",
+      "excerpt": "A practical Truefox AI guide to enterprise AI agents: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/enterprise-ai-agents.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for enterprise AI agents: task trigger, approval gate, audited action",
+      "relatedLinks": [
+        {
+          "label": "Explore agentic automation services",
+          "href": "/agentic-automation"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "Enterprise AI agents orchestrate tool-assisted steps in business processes with defined permissions, approval rules and exception handling.\n## What is enterprise AI agents?\nEnterprise AI agents orchestrate tool-assisted steps in business processes with defined permissions, approval rules and exception handling. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nBegin with a read-only or draft-only workflow such as email triage or CRM note preparation. Map tool access and human ownership before allowing write actions. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nTest tool failures, ambiguous instructions, prompt injection, authorization bypass and duplicate actions; measure completion and human correction rates. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nUse least-privilege service credentials, tenant isolation, audit trails and mandatory approval before external emails, payments or irreversible changes. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nDoes every automation need an agent? No. Deterministic rules are often preferable. Can an agent act autonomously? Only within approved and carefully tested boundaries.\n## How Truefox AI can help\nExplore our [agentic automation engineering](/agentic-automation) and [request an initial scope discussion](/request-quote). The proposed Truefox AgentOS direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-workforce-biometric-attendance",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "Biometric Attendance Systems: Privacy, Liveness and Workforce Operations",
+      "slug": "workforce-biometric-attendance",
+      "category": "Biometric AI",
+      "excerpt": "A practical Truefox AI guide to biometric attendance: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/workforce-biometric-attendance.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for biometric attendance: enrolment, liveness check, attendance audit",
+      "relatedLinks": [
+        {
+          "label": "Explore biometric ai services",
+          "href": "/biometric-intelligence"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "Biometric attendance verifies an enrolled person's identity for attendance events, rather than identifying unknown people in a crowd.\n## What is biometric attendance?\nBiometric attendance verifies an enrolled person's identity for attendance events, rather than identifying unknown people in a crowd. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nDefine shifts, error correction, accessible alternatives and supervisor review before linking attendance to payroll. Evaluate whether non-biometric methods suffice. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nTest false accepts, false rejects, liveness robustness, lighting variation and manual exception volume with appropriate fairness review. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nBiometric templates need minimization, lawful basis, notice, security, strict retention and deletion. Never infer employment misconduct from a single failed match. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nIs face verification required for attendance? No. Do liveness checks prevent all spoofing? No; attacks and environmental failures remain possible.\n## How Truefox AI can help\nExplore our [biometric ai engineering](/biometric-intelligence) and [request an initial scope discussion](/request-quote). The proposed Truefox BioTrack direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-ai-visual-quality-inspection",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "AI Visual Quality Inspection: From Defect Dataset to Factory Pilot",
+      "slug": "ai-visual-quality-inspection",
+      "category": "Manufacturing AI",
+      "excerpt": "A practical Truefox AI guide to AI quality inspection: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/ai-visual-quality-inspection.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for AI quality inspection: image capture, defect review, line decision",
+      "relatedLinks": [
+        {
+          "label": "Explore manufacturing ai services",
+          "href": "/custom-ai-ml"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "AI visual inspection uses camera images and machine learning to help detect product, packaging or surface defects during manufacturing.\n## What is AI quality inspection?\nAI visual inspection uses camera images and machine learning to help detect product, packaging or surface defects during manufacturing. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nDefine defect classes with plant experts, capture varied batches and lighting conditions, and reserve independent test images. Camera optics and illumination often matter as much as models. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nRun shadow mode before automatic rejection. Track defect recall, false-reject rate, inspection latency, throughput and operator overrides. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nIntegrate with manufacturing systems through controlled interfaces. Design safe behavior for network loss, model uncertainty and camera calibration drift. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nCan anomaly detection work without labeled defects? It may, but needs representative normal samples and validation. Is demo accuracy factory accuracy? No.\n## How Truefox AI can help\nExplore our [manufacturing ai engineering](/custom-ai-ml) and [request an initial scope discussion](/request-quote). The proposed Truefox Inspect direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-healthcare-ai-document-workflows",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "Healthcare AI Assistants: Safer Document and Administrative Workflows",
+      "slug": "healthcare-ai-document-workflows",
+      "category": "Healthcare AI",
+      "excerpt": "A practical Truefox AI guide to healthcare AI document assistants: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/healthcare-ai-document-workflows.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for healthcare AI document assistants: record access, draft summary, clinician review",
+      "relatedLinks": [
+        {
+          "label": "Explore healthcare ai services",
+          "href": "/private-ai-assistants"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "Healthcare AI assistants can organize authorized documents and draft administrative summaries for human review; they must not be framed as independent clinicians.\n## What is healthcare AI document assistants?\nHealthcare AI assistants can organize authorized documents and draft administrative summaries for human review; they must not be framed as independent clinicians. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nChoose low-risk workflows such as policy lookup or appointment administration. Set document completeness checks, escalation paths and a qualified reviewer before record entry. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nEvaluate omissions, unsupported details, data access boundaries and review burden on representative cases with qualified healthcare personnel. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nApply minimum-necessary access, encryption, auditability, privacy agreements and jurisdiction-specific governance. Do not upload patient data to unapproved consumer tools. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nCan a language model independently diagnose patients? This guide does not recommend that. Is private RAG automatically compliant? No.\n## How Truefox AI can help\nExplore our [healthcare ai engineering](/private-ai-assistants) and [request an initial scope discussion](/request-quote). The proposed Truefox MediAI direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-industrial-iot-edge-monitoring",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "Industrial IoT and Edge AI: Building Reliable Sensor Monitoring",
+      "slug": "industrial-iot-edge-monitoring",
+      "category": "Edge AI",
+      "excerpt": "A practical Truefox AI guide to industrial IoT edge monitoring: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/industrial-iot-edge-monitoring.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for industrial IoT edge monitoring: sensor data, edge gateway, operator alert",
+      "relatedLinks": [
+        {
+          "label": "Explore edge ai services",
+          "href": "/iot-edge-ai"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "Industrial IoT combines authenticated sensors, gateways and monitoring workflows; edge AI can add local anomaly analysis when bandwidth or latency requires it.\n## What is industrial IoT edge monitoring?\nIndustrial IoT combines authenticated sensors, gateways and monitoring workflows; edge AI can add local anomaly analysis when bandwidth or latency requires it. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nDefine signals such as temperature, vibration, humidity and equipment status, including calibration, sampling and a named response for every alert. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nPlan encrypted transport, device identity, network segmentation, offline buffering, firmware updates and safe recovery after communications failure. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nValidate alert usefulness, false alarms, downtime and maintenance outcomes before describing anomaly monitoring as predictive maintenance. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nMust every edge device have a GPU? No. Can data stay onsite? Yes, subject to operations and remote-support needs.\n## How Truefox AI can help\nExplore our [edge ai engineering](/iot-edge-ai) and [request an initial scope discussion](/request-quote). The proposed Truefox Edge direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
+    },
+    {
+      "id": "guide-retail-computer-vision-analytics",
+      "createdAt": "2026-11-04T00:00:00.000Z",
+      "updatedAt": "2026-11-04T00:00:00.000Z",
+      "status": "published",
+      "title": "Retail Computer Vision: Footfall, Queues and Shelf Analytics Explained",
+      "slug": "retail-computer-vision-analytics",
+      "category": "Retail AI",
+      "excerpt": "A practical Truefox AI guide to retail computer vision analytics: architecture, implementation, security, evaluation and common questions.",
+      "author": "Truefox AI Inc.",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "readTime": "5 min read",
+      "imageUrl": "/images/blog/retail-computer-vision-analytics.svg",
+      "imageAlt": "Original Truefox AI workflow illustration for retail computer vision analytics: store video, aggregate signal, staff action",
+      "relatedLinks": [
+        {
+          "label": "Explore retail ai services",
+          "href": "/custom-ai-ml"
+        },
+        {
+          "label": "Discuss an AI pilot",
+          "href": "/request-quote"
+        }
+      ],
+      "content": "Retail computer vision turns camera observations into operational metrics such as footfall, checkout queues or visible shelf gaps without requiring identity recognition.\n## What is retail computer vision analytics?\nRetail computer vision turns camera observations into operational metrics such as footfall, checkout queues or visible shelf gaps without requiring identity recognition. The right architecture depends on data quality, organizational goals, privacy requirements and existing workflows. A product demonstration alone does not establish production readiness.\n## Where to begin: a practical pilot\nStart with one business decision: when to open a checkout, replenish a shelf or reassign staff. Validate counting rules and camera blind spots. Document success criteria, responsible people and the consequences of inaccurate results before choosing technology. Start with one controlled site or workflow and expand only after independent validation.\n## Architecture and integration\nDesign a bounded data flow from input through processing to a reviewed output or operational action. Prefer simple, testable components over unnecessary model complexity. Specify permissions, monitoring, rollback, retention and integration contracts, then evaluate on examples drawn from the actual environment.\n## How to measure outcomes\nTrack queue duration, counting error, shelf-check effort, staff response and cost against a store baseline before scaling. Compare results against an agreed baseline, record operating costs and track the cases where a person needs to intervene. Report uncertainty and avoid promising universal accuracy or financial returns.\n## Security, privacy and governance\nFavor aggregate measurements and minimal raw-video retention; review notices, access controls, privacy obligations and limitations on customer tracking. Document responsible ownership, access review, incidents and ongoing maintenance. Regulatory requirements depend on use case and jurisdiction and should be assessed with qualified advisers.\n## Frequently asked questions\nDoes footfall counting need facial recognition? No. Can video analytics replace inventory systems? No, it complements POS and stock records.\n## How Truefox AI can help\nExplore our [retail ai engineering](/custom-ai-ml) and [request an initial scope discussion](/request-quote). The proposed Truefox RetailAI direction is discussed here as an illustrative solution concept, not as a claim of a released product, client outcome or guaranteed performance."
     }
   ],
   "records": [

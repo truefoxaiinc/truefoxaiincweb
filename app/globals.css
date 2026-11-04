@@ -8487,3 +8487,6 @@ a.footer-contact-line {
   }
 }
 
+
+/* Editorial article visual guides */
+.blog-post-figure{margin:1.8rem 0 2.3rem}.blog-post-cover{width:100%;height:auto;border:1px solid var(--line);border-radius:16px}.blog-post-figure figcaption{margin-top:.55rem;color:var(--muted);font-size:.8rem}.blog-card-image-link{display:block;margin-bottom:1rem;overflow:hidden;border-radius:12px}.blog-card-cover{display:block;width:100%;height:auto;aspect-ratio:40/21;object-fit:cover;transition:transform .3s ease}.blog-card-image-link:hover .blog-card-cover{transform:scale(1.025)}
